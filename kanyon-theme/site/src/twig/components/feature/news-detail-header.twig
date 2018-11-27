@@ -1,0 +1,99 @@
+{#
+	{{site.anchor("News Detail Header")}}
+	{% include feat ~ "news-detail-header.twig" with {
+        title: "Here Comes the Sun",
+        theme: "purple",
+        tags: "<a href='#'>Enhance</a> \ The West Quad",
+        description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch you eye.",
+        image: 9,
+        caption: "Curabitur blandit tempus portitor. Maecenas sed diam eget risus varius."
+	} %}
+#}
+
+<div class="news_detail_header{% if theme %} theme_{{theme}}{% endif %}{% if image %} has_image{% endif %}">
+
+    <div class="news_detail_header_content">
+
+        <div class="fs-row">
+            <div class="fs-cell fs-lg-10 fs-lg-push-1"> 
+
+                <header class="news_detail_header_header">
+                    <span class="news_detail_header_tags">{{tags}}</span>
+                    <h1 class="news_detail_header_heading">{{title}}</h1>
+                    <p class="news_detail_header_description">{{description}}</p>
+                </header>
+
+            </div>
+        </div>  
+
+    </div>
+
+    
+    <div class="fs-row">
+        <div class="fs-cell fs-lg-12">
+
+            <div class="news_detail_media_inner">
+
+                <div class="news_detail_share_buttons{% if theme %} theme_{{theme}}{% endif %}">
+                    <div class="share_buttons_label">
+                        <span class="share_buttons_label_text">Share This Story</span>
+                    </div>
+                    <div data-network="twitter" class="st-custom-button">
+                        <span class="custom_social_share twitter">
+                            {{site.icon("twitter")}}
+                        </span>
+                    </div>
+                    <div data-network="facebook" class="st-custom-button">
+                        <span class="custom_social_share facebook">
+                            {{site.icon("facebook")}}
+                        </span>
+                    </div>
+                    <div data-network="email" class="st-custom-button">
+                        <span class="custom_social_share email">
+                            {{site.icon("email")}}
+                        </span>
+                    </div>
+                </div>
+
+                {% if image %}
+                    <div class="news_detail_image">
+                        <div class="news_detail_image_inner">
+                            
+                            {% include par ~ "picture.twig" with {
+                                class: "news_detail_image",
+                                fallback: "placeholder",
+                                image: image,
+                                itemprop: "",
+                                sources: {
+                                    "1220px": img.ultrawide.xlrg,
+                                    "980px": img.ultrawide.lrg,
+                                    "740px": img.ultrawide.med,
+                                    "500px": img.wide.sml,
+                                    "0px": img.full.xsml
+                                }
+                            } %}
+
+                            {% if caption %}
+                            <div class="news_detail_image_caption">
+                                <div class="fs-cell fs-lg-10 fs-lg-push-1">
+                                    <div class="news_detail_image_caption_inner">
+                                        <span class="news_detail_image_caption_text">{{caption}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="news_detail_back">
+        <a class="news_detail_back_link" href="#">Back To Stories</a>
+    </div>
+
+</div>

@@ -1,0 +1,142 @@
+/* ==========================================================================
+	Contact Info Callout
+============================================================================= */
+
+	.contact_info_wrap {
+		.relative;
+		.text_center;
+		background: @red;
+		
+		padding: 30px 40px;
+		
+		border-radius: 4px;
+		overflow: hidden;
+		
+		@media @min_lg {
+			padding: 30px 20px;
+		}
+		
+		&:before {
+			.absolute;
+			.block;
+			
+			top: -80%;
+			left: -25%;
+			
+			height: 150%;
+			width: 150%;
+			
+			background-image: radial-gradient(100% 82%, #B62551 0%, #7F1028 62%);
+			
+			content: "";
+		}
+	}
+	
+	.contact_info {
+		.relative;
+		
+		a {
+			.block;
+			.color_white_true;
+			.font_size(18);
+			
+			.no-touchevents &:hover {
+				color: fade(@gray_pale, 60);
+			}
+		}
+	}
+	
+	.heading_dashed {
+		.avenir;
+		.relative;
+		.uppercase;
+		color: fade(@gray_pale, 60);
+		
+		display: inline-block;
+		letter-spacing: 4px;
+		
+		&:before,
+		&:after {
+			.absolute;
+				
+			width: 14%;
+			
+			top: 7px;
+			
+			border-top: 1px solid fade(@gray_pale, 60);
+			display: block;
+			content: "";
+
+			@media @max_sm,
+			@min_lg @and_max_xl {
+				border: none;
+			}
+			
+			@media @min_md @and_max_lg {
+				width: 25%;
+			}
+			
+		}
+		
+		&:before {
+			@media @min_sm {
+				left: -21%;
+			}
+			
+			@media @min_md {
+				left: -31%;
+			}
+			
+			@media @min_lg {
+				left: -20%;
+			}
+		}
+		
+		&:after {
+			@media @min_sm {
+				right: -21%;
+			}
+			
+			@media @min_md {
+				right: -31%;
+			}
+			
+			@media @min_lg {
+				right: -20%;
+			}
+		}
+	}
+	
+	.heading_bold {
+		.garamond_bold;
+		.color_white_true;
+		.font_size(20);
+		
+		margin: 37px 0 10px 0;
+	}
+	
+	.ico_phone_white {
+		.icon_only_before;
+		
+		&:before {
+			.icon_phone_white;
+			
+			margin-right: 10px;
+		}
+	}
+	
+	.underlined {
+		.underline;
+		
+		margin-top: 8px;
+	}
+	
+	.gray_italic {
+		.avenir_italic;
+		color: fade(@white_true, 60);
+		line-height: 28px;
+		
+		margin: 40px 0 0 0;
+	}
+
+

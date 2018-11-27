@@ -1,0 +1,51 @@
+{#
+	{{site.anchor("Emphasized Callout")}}
+	{% include full ~ "emphasized-callout.twig" with {
+		background: 6,
+		goal: "Endure: $35 Million",
+		title: "Power the Activities that make Kenyon Exceptional",
+		subheading: "With Annual Giving, We Can Build Kenyon's Future on Our Proud Tradition",
+		links: [
+			{
+				href: "#",
+				name: "Learn More"
+			}
+		]
+	} %}
+#}
+
+<!-- Flex Callout -->
+<section class="flex_callout emphasized">
+	<div class="fs-row">
+		<div class="fs-cell fs-lg-12"> 
+			<div class="flex_callout_wrapper">
+				<header class="flex_callout_header">
+					<span class="flex_callout_meta">{{goal}}</span>
+					<span class="flex_callout_title">{{title}}</span>
+					<span class="flex_callout_subheading">{{subheading}}</span>
+				</header>
+				{% if links %}
+				<footer class="flex_callout_links">
+					{% for link in links %}
+					{{site.button("flex_callout", link.name, link.href)}}
+					{% endfor %}
+				</footer>
+				{% endif %}
+			</div>
+		</div>
+		<div class="flex_callout_emphasized_overlay"></div>
+		{% if background %}
+			{% include par ~ "background.twig" with {
+				class: "flex_callout",
+				sources: {
+					"0px": img.portraitClassic.sml,
+					"500px": img.full.sml,
+					"740px": img.wide.med,
+					"980px": img.ultrawide.lrg
+				},
+				image: background
+			} %}
+		{% endif %}
+	</div>
+</section>
+<!-- END: Flex Callout -->

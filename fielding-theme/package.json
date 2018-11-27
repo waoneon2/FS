@@ -1,0 +1,94 @@
+{
+  "name": "fielding",
+  "id": "fgu",
+  "version": "0.0.1",
+  "description": "Fielding Graduate University",
+  "author": "Fastspot",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/fastspot/fielding"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "grunt": "^0.4.5",
+    "grunt-bless": "^0.2.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-replace": "^3.2.0",
+    "grunt-include-source": "^0.7.1",
+    "grunt-modernizr": "^1.0.1",
+    "grunt-newer": "^1.1.1",
+    "grunt-postcss": "^0.7.1",
+    "grunt-prettify": "^0.4.0",
+    "grunt-stripmq": "0.0.6",
+    "grunt-svgmin": "^3.1.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "load-grunt-tasks": "^3.3.0"
+  },
+  "css": {
+    "css/site.css": "css/src/site.less",
+    "css/site-ie8.css": "css/src/ie/ie8.less",
+    "css/site-ie9.css": "css/src/ie/ie9.less",
+    "css/admin.css": "css/src/admin.less",
+    "css/admin-editor.css": "css/src/admin-editor.less",
+    "css/header-footer.css": "css/src/header-footer.less",
+    "css/ie8-header-footer.css": "css/src/ie/ie8-header-footer.less"
+  },
+  "js": {
+    "js/site.js": [
+      "js/src/lib/utils.js",
+      "js/src/lib/maps.js",
+      "components/formstone/dist/js/core.js",
+      "components/formstone/dist/js/analytics.js",
+      "components/formstone/dist/js/background.js",
+      "components/formstone/dist/js/checkbox.js",
+      "components/formstone/dist/js/dropdown.js",
+      "components/formstone/dist/js/equalize.js",
+      "components/formstone/dist/js/lightbox.js",
+      "components/formstone/dist/js/navigation.js",
+      "components/formstone/dist/js/mediaquery.js",
+      "components/formstone/dist/js/swap.js",
+      "components/formstone/dist/js/touch.js",
+      "components/formstone/dist/js/transition.js",
+      "components/picturefill/dist/picturefill.js",
+      "js/src/formstone/carousel.js",
+      "js/src/site.js",
+      "js/src/modules/header.js",
+      "js/src/modules/map.js",
+      "js/src/modules/page.js",
+      "js/src/modules/people.js"
+    ],
+    "js/site-ie8.js": [
+      "components/html5shiv/dist/html5shiv.min.js",
+      "components/html5shiv/dist/html5shiv-printshiv.min.js",
+      "js/src/ie/matchMedia.ie8.js"
+    ],
+    "js/site-ie9.js": [
+      "js/src/ie/matchMedia.ie9.js"
+    ],
+    "js/admin.js": [
+      "js/src/admin.js"
+    ]
+  },
+  "js_ignores": [
+    "js/src/ie/*/",
+    "js/src/lib/*/"
+  ],
+  "vars": {
+    "namespace": "fgu",
+    "clientname": "Fielding",
+    "mq_min_ht": "800",
+    "mq_min_xs": "320",
+    "mq_min_sm": "500",
+    "mq_min_md": "740",
+    "mq_min_lg": "980",
+    "mq_min_xl": "1220",
+    "google_maps_key": "AIzaSyCNa5hdZYqcz_WpqEDuUfE2cteuIyiWr10"
+  }
+}

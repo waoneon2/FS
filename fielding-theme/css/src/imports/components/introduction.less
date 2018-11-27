@@ -1,0 +1,99 @@
+/* ==========================================================================
+	Introduction
+============================================================================= */
+
+	.introduction_section {}
+
+	.introduction_wrapper {
+
+		@media @max_md {
+			.inset_small;
+		}
+
+		@media @min_sm {
+			text-align: center;
+		}
+	}
+
+	.introduction_header {}
+
+	.introduction_label {
+		.avenir;
+		.font_size(13);
+		.line_height(20, 13);
+
+		color: @red;
+		letter-spacing: 3.25px;
+		margin: 10px 0;
+		text-transform: uppercase;
+
+		@media @min_lg {
+			.font_size(16);
+		}
+	}
+
+	.introduction_title {
+		.garamond;
+		.font_size(28);
+		.line_height(39, 28);
+
+		color: @black;
+		margin: 10px 0;
+
+		@media @min_lg {
+			.font_size(44);
+		}
+	}
+
+	.introduction_description {
+		.avenir;
+		.font_size(16);
+		.line_height(32, 16);
+
+		color: fade(@black, 60);
+		margin: 10px 0 30px;
+
+		@media @min_lg {
+			.font_size(20);
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.introduction_footer {
+
+		@media @max_md {
+			margin-left: -20px;
+		}
+	}
+
+	.introduction_button {
+		&:extend(.btn all);
+		&:extend(.icon_only_after all);
+
+		background-color: @white_true;
+		padding-bottom: 16px;
+
+		&:after {
+			.icon_pencil;
+			.relative;
+
+			bottom: -2px;
+
+			margin-left: 10px;
+			opacity: 0.2;
+			transition:
+				opacity @base_transition_duration,
+				transform @base_transition_duration;
+		}
+
+		.no-touchevents &:hover {
+
+			&:after {
+				.icon_pencil_red;
+				opacity: 1;
+			}
+		}
+	}

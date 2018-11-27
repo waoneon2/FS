@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Pillar Header
+============================================================================= */
+
+.pillar_header {
+    
+}
+
+.pillar_header_media {
+
+}
+
+.pillar_header_content {
+    position: relative;
+
+    background: rgba($blue, 0.65);
+    z-index: 1;
+
+    &.theme_blue {
+        background: rgba($blue, 0.65);
+    }
+
+    &.theme_purple {
+        background: rgba($purple, 0.65);
+
+        .pillar_header_cta_label {
+            color: $white;
+        }
+    }
+
+    &.theme_orange {
+        background: rgba($orange, 0.65);
+    }
+
+    &.theme_green {
+        background: rgba($green, 0.65);
+    }
+
+    &.theme_yellow {
+        background: rgba($yellow, 0.65);
+    }
+
+    &.theme_black {
+        background: rgba($black, 0.65);
+
+        .pillar_header_cta_label {
+            color: $white;
+        }
+    }
+
+    @media #{$min_md} {
+        background: transparent !important;
+
+        &:after {
+            width: 1000px;
+            height: 100%;
+            display: block;
+    
+            position: absolute;
+            right: calc(100% - ((100% - 300px) / 2));
+            top: 0;
+    
+            background: rgba($blue, 0.65);
+            content: '';
+    
+            @media #{$min_md} {
+                right: calc(100% - ((100% - 720px) / 2));
+            }
+    
+            @media #{$min_lg} {
+                right: calc(100% - ((100% - 960px) / 2));
+            }
+    
+            @media #{$min_xl} {
+                right: calc(100% - ((100% - 1200px) / 2));
+            }
+    
+            @media only screen and (min-width: 1300px) {
+                right: calc(100% - ((100% - 1280px) / 2));
+            }
+        }
+
+        &.theme_blue:after {
+            background: rgba($blue, 0.65);
+        }
+    
+        &.theme_purple:after {
+            background: rgba($purple, 0.65);
+        }
+    
+        &.theme_orange:after {
+            background: rgba($orange, 0.65);
+        }
+    
+        &.theme_green:after {
+            background: rgba($green, 0.65);
+        }
+    
+        &.theme_yellow:after {
+            background: rgba($yellow, 0.65);
+        }
+    
+        &.theme_black:after {
+            background: rgba($black, 0.65);
+        }
+    }
+
+    
+
+}
+
+.pillar_heading {
+    width: 100%;
+    margin-bottom: 73px;
+}
+
+.pillar_header_inner {
+    height: 420px;
+    display: flex;
+
+    position: relative;
+
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+
+    @media #{$min_md} {
+        height: auto;
+        display: block;
+
+        background: rgba($blue, 0.65);
+        clip-path: polygon(0 0, calc(100% - 250px) 0, 100% 100%, 0% 100%);
+        padding: 342px 0 47px;
+
+        .pillar_header_content.theme_blue & {
+            background: rgba($blue, 0.65);
+        }
+
+        .pillar_header_content.theme_purple & {
+            background: rgba($purple, 0.65);
+        }
+
+        .pillar_header_content.theme_orange & {
+            background: rgba($orange, 0.65);
+        }
+
+        .pillar_header_content.theme_green & {
+            background: rgba($green, 0.65);
+        }
+
+        .pillar_header_content.theme_yellow & {
+            background: rgba($yellow, 0.65);
+        }
+
+        .pillar_header_content.theme_black & {
+            background: rgba($black, 0.65);
+        }
+    }
+
+    @media #{$min_lg} {
+        clip-path: polygon(0 0, calc(75% - 250px) 0, 75% 100%, 0% 100%);
+    }
+
+    @media #{$min_xl} {
+        clip-path: polygon(0 0, calc(60% - 250px) 0, 60% 100%, 0% 100%);
+    }
+
+    @media only screen and (min-width: 1600px) {
+        padding: 450px 0 47px;
+    }
+}
+
+.pillar_header_headline {
+    @include h1;
+    
+    color: $white;
+    font-weight: 900;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.pillar_header_description {
+    @include h1;
+
+    color: $white;
+}
+
+.pillar_header_cta {
+    display: flex;
+
+    align-content: center;
+}
+
+.pillar_header_link {
+    will-change: transform;
+
+    &:hover {
+
+        .pillar_header_cta_label {
+            color: $white;
+        }
+    }
+
+    .pillar_header_content.theme_purple &,
+    .pillar_header_content.theme_black & {
+
+        &:hover {
+
+            .pillar_header_cta_label {
+                color: rgba($white, 0.6);
+            }
+        }
+    }
+}
+
+.pillar_header_icon {
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+}
+
+.pillar_header_cta_label {
+    @include h6;
+    @include font_smoothing;
+
+    color: $black;
+    transition: color 0.25s ease;
+}

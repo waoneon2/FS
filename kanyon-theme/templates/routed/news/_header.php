@@ -1,0 +1,1 @@
+<?php $CampaignNews = new TheCampaignNews;

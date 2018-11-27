@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "News and Media Landing"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-news-media.html')
+					</div>
+				</div>
+
+
+				<!-- Page Header -->
+
+				@@include('../partials/components/featured-story.html', {
+					"margin": "margined_lg_bottom",
+					"title": "Jean-Pierre Isbouts to Reveal True Story of Walt Disney at Winter Session",
+					"image": "10",
+					"alt": ""
+				})
+
+				@@include('../partials/_page-header.html', {
+					"class": "heading_red",
+					"heading": "News &amp; Media",
+					"page_header": ""
+				})
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+							@@include('../partials/components/sub-navigation.html')
+							@@include('../partials/components/sidebar-social-media-callouts.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							@@include('../partials/components/in-content-news-list.html')
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+
+							</div><!-- END: typography -->
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

@@ -1,0 +1,82 @@
+/* ==========================================================================
+	Mobile Sidebar
+============================================================================= */
+
+.mobile_sidebar_handle_wrapper {
+	position: relative;
+
+	@media print {
+		display: none;
+	}
+
+	@media #{$min_lg} {
+		display: none;
+	}
+}
+
+.mobile_sidebar_handle {}
+
+
+// Sidebar
+// =============================================================================
+
+.mobile_sidebar {
+	@include focus_outline_none;
+	display: block;
+	background: $black;
+
+	@media print {
+		display: none;
+	}
+
+	@media #{$min_lg} {
+		display: none;
+	}
+
+	.preload & {
+		display: none;
+	}
+
+	.js & {
+		@include fake_scroll(true);
+
+		width: 100%;
+		max-width: 100%;
+		height: calc(100vh - 85px);
+		max-height: calc(100vh - 85px);
+
+		position: fixed;
+		top: 85px;
+		right: 0;
+		z-index: 400;
+
+		transition: transform .4s cubic-bezier(.51,.92,.24,1);
+
+		transform: translate(0, 100vh);
+
+		@media #{$min_sm} {
+			height: calc(100vh - 107px);
+			max-height: calc(100vh - 107px);
+
+			top: 107px;
+		}
+
+		@media #{$min_md} {
+			height: calc(100vh - 130px);
+			max-height: calc(100vh - 130px);
+
+			top: 130px;
+		}
+	}
+
+	.no-js & {
+
+		@media #{$min_lg} {
+			display: none;
+		}
+	}
+
+	&.fs-swap-active {
+		transform: translate(0, 0);
+	}
+}

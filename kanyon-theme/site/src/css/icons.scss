@@ -1,0 +1,43 @@
+/* ==========================================================================
+	Icons
+============================================================================= */
+
+.icon {
+	display: block;
+	stroke: inherit;
+	fill: currentColor;
+	transition: fill $base_speed;
+
+	@media print {
+		display: none; 
+	}
+
+	$icons: (
+		(caret_down, 20, 10),
+		(caret_right, 8, 11),
+		(caret_left, 8, 11),
+		(chevron_left, 20, 20),
+		(chevron_right, 20, 20),
+		(arrow_down, 15, 13),
+		(close, 20, 20),
+		(email, 18, 14),
+		(logo, 101, 45),
+		(logo_white, 101, 45),
+		(logo_footer, 428, 66),
+		(search, 20, 20),
+		(play, 30, 20),
+		(pause, 10, 13),
+		(twitter, 18, 15),
+		(youtube, 22, 15),
+		(facebook, 15, 15),
+		(instagram, 15, 15)
+	);
+
+	@each $label, $w, $h in $icons {
+
+		&_#{$label} {
+			height: $h#{px};
+			width: $w#{px};
+		}
+	}
+}

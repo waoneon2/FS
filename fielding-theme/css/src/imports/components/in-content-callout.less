@@ -1,0 +1,52 @@
+/* ==========================================================================
+	In Content Callout
+============================================================================= */
+
+	.in_content_callout_wrap {
+		background: @white_true;
+
+		border-top: 4px solid #F0F0F0;
+
+		@media @min_sm {
+			padding: 43px 58px 43px 47px;
+		}
+
+
+		img {
+			width: 100%;
+
+			margin-bottom: 20px;
+			
+			@media @min_sm {
+				padding-right: 10px;
+			}
+
+			@media @min_md {
+				padding-right: 35px;
+			}
+		}
+
+		h4 {
+			margin: 0 0 10px 0;
+		}
+
+		p {
+			.body_text();
+			.color_gray_dark;
+
+			margin: 0 0 20px 0;
+
+			@media @min_sm {
+				.font_size(18);
+				.line_height(32,18);
+			}
+		}
+	}
+
+	.in_content_callout {
+		padding: 20px;
+
+		@media @min_sm {
+			padding: 0;
+		}
+	}

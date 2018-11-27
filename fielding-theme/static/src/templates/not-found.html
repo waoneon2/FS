@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Alumni Landing"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb-->
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+						<div class="not_found">
+							<div class="fs-row">
+								<div class="fs-cell">
+
+									<h1 class="heading_1">404 Error</h1>
+
+									<p class="intro_serif">We're sorry, but the page you are looking for has moved or does not exist.  Let us help you find what you are looking for.</p>
+
+								</div>
+							</div>
+
+							<div class="fs-row">
+								<div class="fs-cell fs-lg-6 events_heading">
+
+									<div class="search_wrap">
+										<form action="#" class="search_form">
+											<input type="text" class="search_input" placeholder="Search...">
+											<input type="hidden" class="search_submit" value="Go">
+											<button class="search_submit icon_text" type="submit">Search</button>
+										</form>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

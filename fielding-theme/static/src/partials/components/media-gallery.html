@@ -1,0 +1,62 @@
+<section class="media_carousel_section @@margin">
+
+	<header class="media_carousel_header">
+		<div class="fs-row destroy_md">
+			<div class="fs-cell destroy_md">
+				<h2 class="media_carousel_label">Media Gallery</h2>
+				<h3 class="media_carousel_heading">@@heading</h3>
+			</div>
+		</div>
+	</header>
+
+	<div class="media_carousel_body">
+		<div class="fs-row destroy_md">
+			<div class="fs-cell destroy_md">
+				<div class="media_carousel_full">
+					<div class="js-carousel js-linked-carousel media_carousel" data-carousel-options='{"theme": "combo_pager", "autoHeight": true, "single": true, "contained": false}'>
+
+						@@include('media-gallery-item-full.html', {
+							"image": "1",
+							"caption": "<figcaption class=\"media_carousel_caption media_carousel_full_caption\">Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs.</figcaption>"
+						})
+
+						@@include('media-gallery-item-full.html', {
+							"image": "2",
+							"caption": "<figcaption class=\"media_carousel_caption media_carousel_full_caption\">Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs. Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs.</figcaption>"
+						})
+
+						@@include('media-gallery-item-full.html', {
+							"image": "3",
+							"caption": ""
+						})
+
+					</div>
+				</div>
+
+				<div class="js-carousel-counter media_carousel_captions" aria-hidden="true">
+					<header class="media_carousel_captions_header">
+						<div class="carousel_count media_carousel_count">
+							<span class="carousel_count_index media_carousel_index"></span> of <span class="carousel_count_total media_carousel_total"></span>
+						</div>
+					</header>
+					<div class="js-carousel js-linked-carousel-sibling media_carousel" data-carousel-options='{"theme": "controls_circ_lg", "autoHeight": true, "pagination": false, "single": true, "contained": false}'>
+
+						@@include('media-gallery-item-caption.html', {
+							"caption": "<p class=\"media_carousel_caption media_carousel_captions_caption\">Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs.</p>"
+						})
+
+						@@include('media-gallery-item-caption.html', {
+							"caption": "<p class=\"media_carousel_caption media_carousel_captions_caption\">Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs. Future students meeting with members from the School of Educational Leadership for Change to learn about the school's unique programs.</p>"
+						})
+
+						@@include('media-gallery-item-caption.html', {
+							"caption": ""
+						})
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>

@@ -1,0 +1,65 @@
+{#
+	{{site.anchor("Cover Callout")}}
+	{% include full ~ "cover-callout.twig" with {
+		background: 1,
+		heading: "Wrong Direction",
+		text: "This is unfortunately not the correct path to the information you are trying to find. Let us help send you in the right direction!",
+		links: [
+			{
+				href: "#",
+				name: "Contact Us"
+            },
+            {
+				href: "#",
+				name: "Accessibility"
+            },
+            {
+				href: "#",
+				name: "About The Campaign"
+			}
+		]
+	} %}
+#}
+
+<!-- Flex Callout -->
+<section class="cover_callout">
+	<div class="fs-row">
+		<div class="fs-cell fs-lg-12"> 
+			<div class="cover_callout_inner">
+
+				<header class="cover_callout_header">
+					<h1 class="cover_callout_heading">{{heading}}</h1>
+                </header>
+
+                {% if text %}
+                    <div class="cover_callout_body">
+                        <p>{{text}}</p>
+                    </div>
+                {% endif %}
+
+				{% if links %}
+                    <footer class="cover_callout_links">
+                        {% for link in links %}
+                            {{site.button("cover_callout", link.name, link.href)}}
+                        {% endfor %}
+                    </footer>
+                {% endif %}
+                
+			</div>
+		</div>
+		{% if background %}
+			{% include par ~ "background.twig" with {
+				class: "cover_callout",
+				sources: {
+                    "1220px": img.ultrawide.xlrg,
+                    "980px": img.wide.lrg,
+                    "740px": img.full.lrg,
+                    "500px": img.square.med,
+					"0px": img.portraitFull.xsml                   
+				},
+				image: background
+			} %}
+		{% endif %}
+	</div>
+</section>
+<!-- END: Flex Callout -->

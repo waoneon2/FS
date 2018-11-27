@@ -1,0 +1,116 @@
+{#
+	{{site.anchor("Home Pillars")}}
+	{% include full ~ "home-pillars.twig" with {
+		items: [
+			{
+				title: "Extend"
+				icon: "caret_right",
+				goal: "150 Million",
+				description: "A larger endowment will sustain the spirit of discourse that is central to a Kenyon education. We must make Kenyon affordable for promising students regardless of their financial circumstances.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			},
+			{
+				title: "Enhance",
+				icon: "caret_right",
+				goal: "80 Million",
+				description: "A campus adapted to 21st century teaching and learning is crucial to support a talented and diverse student body and to foster exceptional programs for both students and faculty.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			},
+			{
+				title: "Enrich",
+				icon: "caret_right",
+				goal: "70 Million",
+				description: "Eqiup students from all backgrounds to thrive in an increasingly complex world through hands-on learning and curricular innovation.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			}
+		]
+	} %}
+#}
+
+<section class="home_pillars js-home-pillars" data-position="one">
+
+	<div class="home_pillars_media js-background" data-background-options='{"source": {"mp4":"/files/kenyon.mp4", "poster":"https://images.fastspot.com/kenyon-campaign/12/full-xlrg/"}, "alt":"Our Path Forward"}'></div>
+
+	<div class="home_pillars_content">
+		<div class="fs-row">
+			<div class="fs-cell fs-lg-12">
+
+				<div class="home_pillars_inner js-pillar-content">
+
+					<div class="home_pillars_logo">
+						{% include par ~ "logo.twig" with {
+							modifier: "home_pillars",
+							icon: "logo_white"
+						} %}
+					</div>
+
+					<div class="home_pillars_sections">
+
+						<div class="home_pillars_sections_inner">
+
+							{% for item in items %}
+
+								<div class="home_pillar_section pillar_section_{{loop.index}} js-pillar">
+									<h2 class="home_pillar_title">
+										<a class="pillar_title_link js-pillar-title-link" href="{{item.link.href}}">{{item.title}}</a>
+										<span class="pillar_icon">
+											{{site.icon("caret_right")}}
+										</span>
+									</h2>
+									<div class="home_pillar_inner_content">
+										<p class="home_pillar_goal">Goal: {{item.goal}}</p>
+										<p class="home_pillar_description">{{item.description}}</p>
+										<a class="home_pillar_mobile_link" href="{{item.link.href}}">
+											<span class="home_pillar_mobile_link_label">{{item.link.mobileLabel}}</span>
+											<span class="home_pillar_mobile_link_icon" aria-hidden="true">
+												<svg class="icon icon_caret_right">
+													<use xlink:href="../../../images/icons.svg#caret_right"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+
+							{% endfor %}
+
+						</div>
+
+					</div>
+
+					<div class="video_cta_pause">
+
+						<div class="mobile_video_cta">
+							<span class="mobile_video_cta_icon">
+								{{site.icon("play")}}
+							</span>
+							<a class="js-lightboxing" href="https://www.youtube.com/watch?v=10AqBMovKGE"><span class="mobile_video_cta_label">Watch The Campaign Video</span></a>
+						</div>
+
+						<div class="video_pause">
+							<button class="js-video-play-pause" aria-hidden="true">
+								<span class="video_pause_label">Pause</span>
+								{{site.icon("pause")}}
+							</button>
+						</div>
+					</div>
+
+					
+					
+				</div>
+
+			</div>
+		</div>
+	</div>   
+
+	<div class="home_pillars_background js-pillars-background"></div>
+
+</section>

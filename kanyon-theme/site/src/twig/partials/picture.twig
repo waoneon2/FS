@@ -1,0 +1,19 @@
+{#
+	{% include par ~ "picture.twig" with {
+		class: "media",
+		fallback: "placeholder",
+		image: item.image,
+		itemprop: "",
+		sources: {
+			"1220px": img.wide.med,
+			"500px": img.wide.sml
+		}
+	} %}
+#}
+
+<picture class="{{class}}_picture">
+	{% for key, source in sources %}
+	<source media="(min-width: {{key}})" srcset="{% if source == "placeholder" %}../../images/placeholder.png{% else %}//images.fastspot.com/{{vars.images}}/{{source}}/{{image}}{% endif %}">
+	{% endfor %}
+	<img class="{{class}}_image" src="{% if fallback == "placeholder" %}../../images/placeholder.png{% else %}//images.fastspot.com/{{vars.images}}/{{fallback}}/{{image}}{% endif %}" alt=""{% if itemprop %} itemprop="{{itemprop}}"{% endif %}>
+</picture>

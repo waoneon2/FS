@@ -1,0 +1,128 @@
+/* ==========================================================================
+	Social Navigation
+============================================================================= */
+
+.social_nav {
+	margin-top: 34px;
+
+	@media #{$min_md} {
+		margin-top: 12px;
+	}
+
+	@media #{$min_lg} {
+		margin-top: 16px;
+	}
+
+	@media #{$min_xl} {
+		margin-top: 16px;
+	}
+}
+
+.social_nav_header {}
+
+.social_nav_title {
+	@include visually_hide;
+}
+
+
+// Social Links
+// =============================================================================
+
+.social_nav_list {
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+
+	@media #{$min_md} {
+		margin-left: 30px;
+		padding-left: 30px;
+		text-align: right;
+
+		&:after {
+			width: 1px;
+			height: 50px;
+
+			position: absolute;
+			left: 0;
+			top: -13px;
+
+			background: $royal;
+			content: '';
+			display: block;
+		}
+	}
+
+	@media #{$min_xl} {
+		
+
+		
+	}
+}
+
+.social_nav_item {
+	display: inline-block;
+	margin-right: 12px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.social_nav_link {
+	display: block;
+
+	transition: opacity 0.25s ease;
+
+	&:focus,
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.social_nav_icon {
+	
+	.icon_twitter,
+	.icon_youtube,
+	.icon_facebook,
+	.icon_instagram {
+		fill: $white;
+	}
+
+	@media #{$min_lg} {
+
+		.icon_twitter {
+			width: 22px;
+			height: 18px;
+
+			fill: $white;
+		}
+
+		.icon_youtube {
+			width: 28px;
+			height: 16px;
+
+			position: relative;
+			top: -1px;
+
+			fill: $white;
+		}
+
+		.icon_facebook {
+			width: 18px;
+			height: 18px;
+
+			fill: $white;
+		}
+
+		.icon_instagram {
+			width: 18px;
+			height: 18px;
+
+			fill: $white;
+		}
+	}
+}
+
+.social_nav_label {
+	@include visually_hide;
+}

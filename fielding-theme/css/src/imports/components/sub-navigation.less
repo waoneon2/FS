@@ -1,0 +1,165 @@
+/* ==========================================================================
+	Subnavigation
+============================================================================= */
+
+	.subnavigation_wrap {
+		background: @white_true;
+
+		margin-bottom: 25px;
+		padding: 8px 20px;
+
+		box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.10);
+		border-radius: 4px;
+
+		@media @min_lg {
+			padding: 20px 20px;
+			margin: 0 -20px 0 -20px;
+		}
+
+		@media @min_xl {
+			padding: 20px 40px;
+			margin: 0 -40px 0 -40px;
+		}
+
+		.menu {}
+
+		.menu-item {
+			.font_size(16);
+
+			line-height: 1.3;
+
+			padding: 20px 0;
+
+			border-bottom: 1px solid @gray_light;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			> a {
+				.relative;
+				.uppercase;
+				.color_gray_dark;
+				.block;
+				.transition_link();
+
+				margin-left: -20px;
+				padding-left: 20px;
+
+				border-left: 5px solid transparent;
+				line-height: 25px;
+
+				@media @min_xl {
+					margin-left: -40px;
+					padding-left: 40px;
+				}
+
+				.no-touchevents &:hover {
+					.color_red;
+					border-left-color: @red;
+				}
+			}
+
+			&.current-menu-item {
+
+				> a {
+					.color_red;
+					border-left-color: @red;
+				}
+			}
+		}
+	}
+
+	.sub-menu {
+		padding-left: 20px;
+
+		.menu-item {
+			padding: 5px 0;
+
+			border-bottom: none;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			> a {
+				border-left: none;
+
+				text-transform: none;
+			}
+		}
+	}
+
+	.subnavigation_link {
+		.relative;
+		.uppercase;
+		.color_gray_dark;
+		.block;
+
+		border-bottom: 1px solid @gray_light;
+		line-height: 1.3;
+		padding: 20px 0;
+
+		&:before {
+			.absolute;
+
+			height: 40%;
+
+			top: 25%;
+			left: -20px;
+
+			border-left: 5px solid transparent;
+			content: "";
+
+			@media @min_xl {
+				left: -40px;
+			}
+		}
+
+		&.active,
+		.no-touchevents &:hover {
+			.color_red;
+
+			&:before {
+				border-left: 5px solid @red;
+			}
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	//mobile
+
+	.subnavigation_handle,
+	.subnavigation_handle.fs-navigation-handle.fs-navigation-enabled {
+		.color_red;
+		.uppercase;
+		.font_size(16);
+
+		border: none;
+
+		&:after {
+			.size(18, 2);
+
+			right: 0;
+
+			background: @gray;
+			box-shadow: 0 5px 0 @gray, 0 -5px 0 @gray;
+		}
+
+		&.fs-navigation-open:after {
+			.size(15);
+
+			background: transparent;
+			box-shadow: none;
+			color: @gray;
+		}
+	}
+
+	.subnavigation.fs-navigation-toggle-nav.fs-navigation-enabled {
+		border: none;
+		padding: 0;
+	}
+

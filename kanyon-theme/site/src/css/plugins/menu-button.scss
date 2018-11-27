@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Menu button
+============================================================================= */
+
+.menu {
+	float: left;
+}
+
+.menu_trigger {
+	align-items: center;
+	background-color: #000;
+	color: #fff;
+	display: flex;
+	padding: 15px 30px;
+}
+
+.menu_trigger_label {}
+
+.menu_trigger_icon {
+	margin-left: 10px;
+}
+
+.menu_panel {
+	background-color: #000;
+	color: #fff;
+}
+
+.menu_panel_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu_panel_item {}
+
+.menu_panel_link {
+	color: inherit;
+	display: block;
+}

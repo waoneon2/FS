@@ -1,0 +1,81 @@
+/* ==========================================================================
+	News Listings
+============================================================================= */
+
+	//heading
+
+	.events_heading {
+		.search_wrap {
+			.relative;
+
+			top: 20px;
+
+			margin: 5px 0 15px 0;
+			padding: 0;
+
+			width: 100%;
+
+			@media @min_sm {
+				margin: 0;
+			}
+		}
+		.search_input {
+			width: 100%;
+		}
+	}
+
+	//date
+
+	.news_date {
+		.color_gray_dark;
+		.uppercase;
+		.font_size(16);
+
+		margin-top: 0;
+
+		letter-spacing: 4px;
+	}
+
+	//news image
+
+	.news_image {
+
+		img {
+			width: 100%;
+		}
+	}
+
+	//tag icon
+
+	.tag {
+		.inline_block;
+
+		.icon_only_before;
+		.icon_left;
+
+		&:before {
+			.icon_tag;
+		}
+
+		&:after {
+			.relative;
+
+			top: -4px;
+
+			width: 20px;
+
+			margin-right: 8px;
+
+			border-top: 1px solid @gray;
+			content: "";
+			display: inline-block;
+		}
+	}
+	
+	.news_categories {
+		margin-top: 8px;
+		
+		.bold_link {
+			.inline_block;
+		}
+	}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Alumni Landing"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb-->
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h1 class="heading_1">Search</h1>
+								<script>
+								  (function() {
+								    var cx = '011125037378944117833:n3_zbiffqrm';
+								    var gcse = document.createElement('script');
+								    gcse.type = 'text/javascript';
+								    gcse.async = true;
+								    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+								        '//www.google.com/cse/cse.js?cx=' + cx;
+								    var s = document.getElementsByTagName('script')[0];
+								    s.parentNode.insertBefore(gcse, s);
+								  })();
+								</script>
+								<gcse:search></gcse:search>
+							</div>
+						</div>
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

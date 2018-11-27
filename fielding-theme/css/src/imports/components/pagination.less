@@ -1,0 +1,138 @@
+/* ==========================================================================
+	 Wordpress: Pagination
+============================================================================= */
+
+	.pagination {
+		.clearfix;
+		.relative;
+		
+		margin: 40px 0 40px 85px;
+		
+		@media @max_sm {
+			.text_center;
+			
+			margin-left: 0;
+		}
+
+		ul.page-numbers {
+			.relative;
+			display: inline-block;
+			
+			margin: 0;
+			padding: 0;
+			
+			li {
+				.block;
+				
+				margin: 0;
+				
+				list-style: none;
+				float: left;
+					
+				a.page-numbers,
+				span.page-numbers {
+					.avenir_black;
+					.block;
+					.color_white_true;
+					.text_center;
+					.font_size(18);	
+					.size(35);
+					background: @red;
+					
+					margin-right: 10px;
+				
+					border: 1px solid transparent;
+					border-radius: 25px;
+					
+					@media @min_sm {
+						.size(50);
+						
+						padding-top: 6px;
+					}
+					
+					&.current,
+					.no-touchevents &:hover {
+						background: transparent;
+						border: 1px solid @gray_medium;
+						color: #525252;
+					}
+					
+					&.prev,
+					&.next {
+						&:extend(.icon_only_before all);
+						.absolute;
+						
+						background: none;
+						border: none;
+						color: transparent;
+						cursor: pointer;
+			
+						&:before {
+							&:extend(.icon_horizontal_arrow);
+						}
+						
+						&:after {
+							.absolute;
+			
+							width: 50px;
+
+							top: 45%;
+			
+							border-top: 1px solid fade(@gray_medium, 40);
+							content: "";
+							margin-top: -1px;
+						}
+						
+						@media @max_sm {
+							&:before,
+							&:after {
+								content: none;
+							}
+						}
+						
+						.no-touchevents &:hover {
+							background: none;
+							border: none;
+							color: transparent;
+						}
+					}
+					
+					&.prev {
+						left: -100px;
+					
+						&:before {
+							&:extend(.icon_left_red);
+						}
+						
+						.no-touchevents &:hover {
+							&:before {
+								&:extend(.icon_left_black);
+							}
+						}
+						
+						&:after {
+							left: 40px;
+						}
+					}
+					 
+					&.next {
+						 right: -100px;
+					
+						&:before {
+							&:extend(.icon_right_red);
+						}
+						
+						.no-touchevents &:hover {
+							&:before {
+								&:extend(.icon_right_black);
+							}
+						}
+						
+						&:after {
+							right: 40px;
+						}
+					}
+				}
+			}
+		}
+	}	

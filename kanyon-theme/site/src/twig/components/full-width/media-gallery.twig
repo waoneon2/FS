@@ -1,0 +1,104 @@
+{#
+	{{site.anchor("Media Gallery")}}
+	{% include full ~ "media-gallery.twig" with {
+        title: "Changes on Campus",
+        subheading: "And the People who Made Them Happen",
+		items: [
+			{
+                image: 12,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            },
+            {
+                image: 8,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            }
+            {
+                image: 4,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            }
+            {
+                image: 9,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            }
+		]
+	} %}
+#}
+
+<section class="media_gallery js-media-gallery">
+
+    <div class="fs-row">
+        <div class="fs-cell fs-lg-12">
+
+            <div class="media_gallery_inner">
+
+                <header class="media_gallery_header">
+                    <h2 class="media_gallery_title">{{title}}</h2>
+                    <span class="media_gallery_subheading">{{subheading}}</span>
+                </header>
+
+                <div class="media_gallery_items">
+
+                    <div class="media_gallery_items_inner js-media-gallery-items">
+
+                        {% for item in items %}
+
+                            <div class="media_gallery_item">
+                                <div class="media_gallery_item_inner">
+
+                                    <div class="media_gallery_item_wrapper">
+                                
+                                        {% include par ~ "picture.twig" with {
+                                            class: "media_gallery_item_media",
+                                            fallback: "placeholder",
+                                            image: item.image,
+                                            itemprop: "",
+                                            sources: {
+                                                "1220px": img.wide.lrg,
+                                                "980px": img.wide.med,
+                                                "500px": img.wide.sml,
+                                                "0px": img.wide.xsml
+                                            }
+                                        } %}
+
+                                        {% if item.video %}
+                                            {% if item.video.service == "youtube" %}
+                                                {% set href = "//www.youtube.com/watch?v=" ~ item.video.id %}
+                                            {% elseif item.video.service == "vimeo" %}
+                                                {% set href = "//vimeo.com/" ~ id %}
+                                            {% endif %}
+                                            <a class="js-video-appender video_item_trigger" href="{{href}}" data-video-id="{{item.video.id}}" data-video-service="{{item.video.service}}" aria-label="Watch The Video">
+                                                <span class="video_item_trigger_hint">
+                                                    <span class="video_item_hint_icon">{{site.icon("caret_right")}}</span>
+                                                </span>
+                                            </a>
+                                        {% endif %}
+
+                                    </div>
+                                
+                                    <div class="media_gallery_item_caption">
+                                        <div class="media_gallery_item_count">
+
+                                        </div>
+                                        <p class="media_gallery_caption_text">{{item.caption}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="media_gallery_nav">
+                    <span class="media_gallery_nav_prev"></span>
+                    <span class="media_gallery_nav_next"></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>

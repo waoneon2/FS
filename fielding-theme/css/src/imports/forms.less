@@ -1,0 +1,300 @@
+/* ==========================================================================
+	Forms
+============================================================================= */
+
+	fieldset {
+		border: 0;
+		margin: 0 0 30px;
+		padding: 0;
+	}
+
+	input,
+	textarea {
+		border: none;
+		-webkit-appearance: none;
+	}
+
+	input::-ms-clear {
+		width: 0;
+		height: 0;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=tel],
+	input[type=url],
+	input[type=number],
+	input[type=date],
+	textarea {
+		outline: none;
+
+		&::-webkit-input-placeholder {
+			.color_red;
+			opacity: 1;
+			text-overflow: ellipsis;
+		}
+
+		&::-moz-placeholder {
+			.color_red;
+			opacity: 1;
+			text-overflow: ellipsis;
+		}
+
+		&:-ms-input-placeholder {
+			.color_red;
+			opacity: 1;
+			text-overflow: ellipsis;
+		}
+
+		&:focus, &:active {
+			color: @black_true;
+		}
+	}
+
+	input[type=submit],
+	button[type=submit] {
+		.color_red;
+		.avenir;
+		.font_size(13);
+		.uppercase;
+
+
+		display: inline-block;
+		letter-spacing: 3.5px;
+		padding: 20px 25px;
+		transition: background @base_transition_duration;
+
+		.no-touchevents &:hover {
+			//background: darken(@red, 10);
+		}
+	}
+
+	//wrap for all inputs
+
+	.input_wrap {
+		margin-top: 30px;
+
+		//input and textarea
+
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		input[type=tel],
+		input[type=file],
+		textarea {
+			.border_radius;
+			.block;
+			.font_size(18);
+			border: 1px solid @gray_medium;
+			color: fade(@black_true,70);
+
+			width: 100%;
+
+			padding: 15px;
+
+			&.error {
+				border-color: @red;
+
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	//base form
+
+	.base_form {
+
+		p {
+			.body_text();
+		}
+
+		label,
+		.heading_5 {
+			.avenir_black;
+			.block;
+			.color_gray_dark;
+			.uppercase;
+			.font_size(14);
+
+			margin-bottom: 15px;
+
+			letter-spacing: 3.5px;
+		}
+	}
+
+	//small label underneath input
+
+	.label_small {
+
+		.input_wrap {
+			margin-top: 0;
+		}
+
+		label {
+			.avenir;
+			.font_size(13);
+
+			margin-top: 10px;
+		}
+	}
+
+	//no file chosen
+
+	.none {
+		.avenir;
+		.block;
+		.font_size(18);
+		color: fade(@black_true,70);
+
+		margin-top: 5px;
+
+		@media @min_sm {
+			margin-top: 50px;
+		}
+	}
+
+	//required
+
+	span.required {
+		.color_red;
+	}
+
+
+	// WP Plugin
+
+	.visual-form-builder {
+		&:extend(.base_form all);
+
+		.margined_top;
+		.margined_md_bottom;
+
+		.vfb-legend {
+			display: none;
+		}
+
+		.vfb-section,
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+
+		.vfb-item {
+			&:extend(.input_wrap all);
+			&:extend(.clear_fix all);
+		}
+
+		.vfb-required-asterisk {
+			color: @red;
+		}
+
+		.vfb-span,
+		.vfb-full,
+		.vfb-left,
+		.vfb-right,
+		.vfb-time {
+			&:extend(.label_small all);
+		}
+
+		.vfb-full {
+			display: block;
+		}
+
+		.vfb-left,
+		.vfb-right {
+			display: block;
+
+			@media @min_md {
+				width: 48%;
+			}
+		}
+
+		.vfb-left {
+
+			@media @min_md {
+				.left;
+			}
+		}
+
+		.vfb-right {
+
+			@media @min_md {
+				.right;
+			}
+		}
+
+		.vfb-time {
+			.left;
+
+			width: 85px;
+
+			margin: 0 10px 0 0;
+
+			@media @min_sm {
+				width: 120px;
+			}
+
+			label {
+				text-align: center;
+			}
+
+			.fs-dropdown-selected {
+
+				@media @max_sm {
+
+					&:before,
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.vfb-item-file-upload {
+
+			input {
+				background: @white_true;
+			}
+		}
+
+		.vfb-item-secret {
+			margin-top: 10px;
+		}
+
+		.vfb-item-submit {
+
+			.vfb-submit {
+				&:extend(.btn all);
+				&:extend(.btn_gray all);
+
+				width: auto;
+
+				padding: 18px 40px;
+			}
+		}
+
+		// error
+
+		.vfb-error {
+			border-color: @red;
+		}
+
+		label.vfb-error {
+			color: @red;
+		}
+	}
+
+	.form_success {
+		font-weight: bold;
+	}

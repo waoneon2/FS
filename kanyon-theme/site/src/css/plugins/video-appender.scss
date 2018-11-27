@@ -1,0 +1,43 @@
+.video_item_figure {
+	@include responsive_image;
+
+	position: relative;
+}
+
+.video_item_trigger {
+	@include cover;
+}
+
+.video_item_trigger_hint {
+	@include button_layout;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	color: #fff;
+	transform: translate(-50%, -50%);
+}
+
+.video_item_hint_icon {
+
+	.icon_play {
+
+		@media #{$min_sm} {
+			width: 50px;
+			height: 34px;
+		}
+
+		@media #{$min_md} {
+			width: 74px;
+			height: 50px;
+		}
+	}
+}
+
+.video_item_hint_label {}
+
+.video_item_iframe {
+	@include cover;
+	z-index: 1;
+}

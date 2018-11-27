@@ -1,0 +1,90 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaImage: "/images/temp/social-wide.jpg",
+		metaImageWidth: "1220",
+		metaImageHeight: "686",
+		metaCard: "summary_large_image",
+		title: "Master Sub",
+		theme: "gray",
+		layout: "default"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+{% endblock %}
+
+{% block typography %}
+
+	<h2>Our Campaign Priorities</h2>
+	<p>Our path extends from the true north of our strong liberal arts tradition - rigorous inquiry, generous mentorship and multiple viewpoints. Our destination is clear: To equip citizens and leaders with the knowledge and skills, courage and confidence to propel society forward.</p>
+
+{% endblock %}
+
+{% block in_content_callouts %}
+{% endblock %}
+
+{% block full_width_callouts %}
+
+	{% include full ~ "bar-graph.twig" with {
+		heading: "Goal: $70 Million",
+		title: "Extend",
+		summary: "Sustain the spirit of discourse that is central to a Kenyon education.",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.",
+		link: {
+			href: "#",
+			label: "More On This Priority"
+		},
+		theme: "",
+		color: "orange",
+		goal: "$150,000,000",
+		progress: "$100,000,000"
+	} %}
+
+	{% include full ~ "bar-graph.twig" with {
+		heading: "Goal: $70 Million",
+		title: "Extend",
+		summary: "Sustain the spirit of discourse that is central to a Kenyon education.",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.",
+		link: {
+			href: "#",
+			label: "More On This Priority"
+		},
+		theme: "",
+		color: "blue",
+		goal: "$150,000,000",
+		progress: "$80,000,000"
+	} %}
+
+	{% include full ~ "wysiwyg.twig" with {
+		content: "<h2>Additional Goals</h2><p>In addition to funding key institutional priorities, the campaign has a number of outcomes not tied specifically to its financial goals. These include:</p> <ul><li>Number of voluntieers</li><li>Number of attendees per campaign event</li></ul>"
+	} %}
+
+	{% include full ~ "linked-list.twig" with {
+		title: "Ways To Get Involved",
+		items: [
+			{
+				href: "#",
+				name: "Donate",
+				icon: "caret_right"
+			},
+			{
+				href: "#",
+				name: "Attend an Event",
+				icon: "caret_right"
+			},
+			{
+				href: "#",
+				name: "Share the Campaign",
+				icon: "caret_right"
+			}
+		]
+	} %}
+
+	
+
+{% endblock %}
+
+
+

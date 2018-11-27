@@ -1,0 +1,62 @@
+/* ==========================================================================
+	Footer
+============================================================================= */
+
+.footer {
+	position: relative;
+
+	background: $purple;
+	padding: 34px 0 42px;
+
+	@media #{$min_md} {
+		padding: 44px 0 52px;
+	}
+
+	@media #{$min_lg} {
+		padding: 62px 0 67px;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	.page_layout_home & {
+		z-index: 2;
+	}
+}
+
+.footer_ribbon {}
+
+.footer_ribbon_inner {
+
+	@media #{$min_xl} {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+
+// Address
+// =============================================================================
+
+.footer_address {}
+
+.footer_address_name {}
+
+.footer_address_street {}
+
+.footer_address_city {}
+
+.footer_address_state {}
+
+.footer_address_zip {}
+
+.footer_address_email {}
+
+.footer_address_phone {
+	color: inherit;
+}
+
+.footer_address_icon {}
+
+.footer_address_label {}

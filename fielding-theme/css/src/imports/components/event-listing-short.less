@@ -1,0 +1,96 @@
+/* ==========================================================================
+	Event Listings - Short
+============================================================================= */
+
+	//short events listing
+
+	.short_events {
+
+		.heading_2 {
+			.color_red;
+			.line_height(44,50);
+
+			margin: 14px 0 10px 0;
+
+			float: left;
+
+			@media @min_lg {
+				margin: 6px 0 0 0;
+			}
+		}
+
+		.event_bubble {
+			margin-right: 16px;
+		}
+
+		.event_locations {
+			width: 100%;
+
+			margin: 15px 0 20px;
+
+			float: left;
+
+			@media @min_sm {
+				width: 85%;
+
+				margin: 15px 0 20px;
+			}
+		}
+
+		.event_buttons {
+
+			.btn {
+				background: @white_true;
+
+				margin: 0 15px 5px 0;
+
+				@media @min_sm {
+					margin: 0 5px 5px 0;
+				}
+
+				@media @max_sm {
+					.text_center;
+				}
+
+				&.btn_text {
+
+					@media @max_md {
+						background: transparent;
+						border: none;
+						padding: 0;
+					}
+				}
+			}
+		}
+
+		.event_details {
+
+			@media @min_sm {
+				width: 76%;
+			}
+
+			@media @min_md {
+				width: 80%;
+			}
+		}
+
+		.event_listing_wrap {
+			padding: 47px 0;
+		}
+
+		.event_listing {
+			margin: 0;
+		}
+
+		.bold_link {
+			.block;
+
+			@media @min_xl {
+				display: inline-block;
+			}
+
+			&:first-child {
+				margin-right: 20px;
+			}
+		}
+	}

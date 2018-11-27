@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Program Landing"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb w/ Image behind -->
+
+				<div class="fs-row breadcrumb_wrap">
+					<div class="fs-cell breadcrumb_overlay">
+						@@include('../partials/breadcrumb/page-program.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+
+				@@include('../partials/components/feature-callout.html', {
+					"image": "4",
+					"title": "PhD Human and Organizational Systems",
+					"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+					"button1": "@@include('feature-callout-button-1.html')",
+					"button2": "@@include('feature-callout-button-2.html')",
+					"spotlight": "@@include('feature-callout-spotlight.html')"
+				})
+
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+							@@include('../partials/components/sub-navigation.html')
+							@@include('../partials/components/contact-info.html')
+							@@include('../partials/components/sidebar-event-listing.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h2>Program Overview</h2>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely. At the same time, our faculty represent a unique diversity of disciplines, ethnicity, cultures, professions, and academic interests. That's important, because at Fielding, you are in the driver's seat.</p>
+
+								<p>Matching your research to your career goals is a major part of what we do. We believe that you have  many valuable things to contribute to your learning process, so what we try to accomplish in our programs is to define that sweet spot, that unique intersection between your professional expertise and academic interests, and the unique theoretical knowledge of our professors. We are dedicated to finding that intersection and nurturing your doctoral competency to make it a reality.</p>
+
+							</div><!-- END: typography -->
+
+							<!-- In Content Video Embed Component -->
+							@@include('../partials/components/in-content-video-embed.html')
+							<!-- END: In Content Video Embed Component -->
+
+							<!-- In Content Callout Component -->
+							@@include('../partials/components/in-content-callout.html')
+							<!-- END: In Content Callout Component -->
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+						@@include('../partials/components/full-width-2x-callout.html')
+
+						@@include('../partials/components/testimonials.html')
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

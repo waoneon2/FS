@@ -1,0 +1,174 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaImage: "/images/temp/social-wide.jpg",
+		metaImageWidth: "1220",
+		metaImageHeight: "686",
+		metaCard: "summary_large_image",
+		title: "Home",
+		intro: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		layout: "home"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+
+	{% include full ~ "home-pillars.twig" with {
+		items: [
+			{
+				title: "Extend",
+				icon: "caret_right",
+				goal: "150 Million",
+				description: "A larger endowment will sustain the spirit of discourse that is central to a Kenyon education. We must make Kenyon affordable for promising students regardless of their financial circumstances.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			},
+			{
+				title: "Enhance",
+				icon: "caret_right",
+				goal: "80 Million",
+				description: "A campus adapted to 21st century teaching and learning is crucial to support a talented and diverse student body and to foster exceptional programs for both students and faculty.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			},
+			{
+				title: "Enrich",
+				icon: "caret_right",
+				goal: "70 Million",
+				description: "Eqiup students from all backgrounds to thrive in an increasingly complex world through hands-on learning and curricular innovation.",
+				link: {
+					href: "#",
+					mobileLabel: "Learn More"
+				}
+			}
+		]
+	} %}
+
+{% endblock %}
+
+{% block full_width_callouts %}
+
+	{% include full ~ "bar-graph.twig" with {
+		heading: "Join Our Campaign",
+		title: "Over 1200 People Have Supported the Campaign.",
+		summary: "Join us in Forging our Path Forward.",
+		description: "",
+		link: {
+			href: "#",
+			label: "Give Now",
+			large: false
+		},
+		theme: "dark",
+		color: "purple",
+		goal: "$300,000,000",
+		progress: "$180,800,000"
+	} %}
+
+	{% include full ~ "emphasized-callout.twig" with {
+		background: 7,
+		goal: "Endure: $35 Million",
+		title: "Power the Activities that make Kenyon Exceptional",
+		subheading: "With Annual Giving, We Can Build Kenyon's Future on Our Proud Tradition",
+		links: [
+			{
+				href: "#",
+				name: "The Kenyon Fund"
+			},
+			{
+				href: "#",
+				name: "Kenyon Parents Fund"
+			}
+		]
+	} %}
+
+	{% include full ~ "topic-row.twig" with {
+		title: "Campaign Impact",
+		heading: "Learning Experiences That Challenge Students to Go Deeper.",
+		subheading: "Explore How Your Support Transforms our Community.",
+		items: [          
+			{
+				title: "Here Comes the Sun",
+				image: 13,
+				description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch your eye.",
+				tags: "<a href='#'>Enhance</a> The West Quad",
+				links: [
+					{
+						href: "#",
+						name: "Read The Story"
+					}
+				]								
+			},
+			{
+				title: "Breaking Down Barriers",
+				image: 6,
+				description: "Kenyon has been selected as one of 24 schools nationwide to participdate in the Hower Hughes Medical Institute (HHMI) Inclusive Excellence initiative, aimed at helping colleges and universities recruit and advance students in the natural sciences.",
+				tags: "<a href='#'>Extend</a> <a href='#'>Link</a> Financial Aid \ Sciences",
+				links: [
+					{
+						href: "#",
+						name: "Read The Story"
+					}
+				]
+			}
+		]
+	} %}
+
+	{% include full ~ "facts-stats.twig" with {
+        heading: "Facts and Stats",
+        subheading: "The Numbers That Really Matter",
+        items: [
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "green",
+                text: "Our Goal for participation from the Kenyon alumni community. <strong>Over 1200</strong> people have supported the campaign so far.",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "blue",
+                text: "<strong>75 scholars</strong> received a $4,000 stipend to conduct research with faculty members in the natural science, social sciences, and humanities over the summer of 2017."
+            },
+            {
+                image: 5,
+                infoglyph: "",
+                theme: "purple",
+                text: "<strong>Financial aid is the fastest growing item in Kenyon's budget.</strong>",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "orange",
+                text: "Almost all Kenyon classrooms will be accessible when the West Quad and associated work is complete."
+            }
+        ]
+	} %}
+
+	{% include full ~ "flexible-callout.twig" with {
+		theme: "dark",
+		background: 8,
+		meta: "Monday, May 14",
+		title: "<strong>Annual Senior Student</strong> Art Exhibition",
+		description: "Senior art majors share work across all media: painting, photography, printmaking, sculpture, installation, drawing, new and mixed media.",
+		links: [
+			{
+				href: "#",
+				name: "View More Events"
+			}
+		]
+	} %}
+
+{% endblock %}

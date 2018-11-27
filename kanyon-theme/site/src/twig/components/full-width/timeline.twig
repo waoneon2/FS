@@ -1,0 +1,95 @@
+{#
+	{{site.anchor("Timeline")}}
+	{% include full ~ "timeline.twig" with {
+        title: "The Timeline",
+        heading: "From New Buildings to Updated Technology & Services...",
+        subheading: "We Are Creating Spaces Designed for Innovation",
+		items: [
+			{
+                title: "The West Quad",
+                color: "green"
+				image: 1,
+				description: "The West Quad enables us to make major strides toward a more accessible Kenyon campus. We estimate that when all of the West Quad projects are complete 90% of classrooms will be accessible, up from 71 percent currently; 100 percent of classrooms with 20 - 99-seat capacity will be accessible."
+            },
+            {
+                title: "A Modern Library",
+                color: "orange"
+				image: 3,
+				description: "A state-of-the-art library that is a laboratory for teaching innovation and a hub for undergraduate research, experiential learning and academic and career advising",
+				link: {
+					href: "#",
+					label: "More on the Library"
+				}
+			},
+			{
+                title: "Our Expanding Departments",
+                color: "blue"
+				image: 6,
+				description: "The English program at Kenyon is one of the College's proudest traditions and remains one of our most popular majors. It has fostered some of the 20th and 21st centuries most acclaimed writers."
+			}
+		]
+	} %}
+#}
+
+<!-- timeline Block -->
+<section class="timeline_block">
+
+	<div class="fs-row">
+
+		<div class="fs-cell">
+	
+			{% if title %}
+				<header class="timeline_block_header">
+					<h2 class="timeline_block_title">{{title}}</h2>
+					{% if heading %}<span class="timeline_block_heading">{{heading}}</span>{% endif %}
+					{% if subheading %}<span class="timeline_block_subheading">{{subheading}}</span>{% endif %}
+				</header>
+			{% endif %}
+
+			<div class="timeline_items">
+				{% for item in items %}
+					<div class="timeline_row{% if item.color %} theme_{{item.color}}{% endif %}">
+						<div class="timeline_row_inner">
+							{% if item.image %}
+							<figure class="timeline_figure">
+								{% include par ~ "picture.twig" with {
+									class: "timeline",
+									fallback: img.wide.med,
+									image: item.image,
+									itemprop: "",
+									sources: {
+										"740px": img.wide.med,
+										"0px": img.wide.sml
+									}
+								} %}
+							</figure>
+							{% endif %}
+							<div class="timeline_wrapper js-timeline-content">
+								<header class="timeline_header">
+									<h3 class="timeline_title">{{item.title}}</h3>
+								</header>
+								<div class="timeline_body">
+									<div class="timeline_description">
+										<p>{{item.description}}</p>
+									</div>
+								</div>
+								{% if item.link %}
+									<footer class="timeline_footer">
+										{{site.button("timeline", item.link.label, item.link.href)}}
+									</footer>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				<div class="timeline_divider"></div>
+			</div>
+
+			
+
+		</div>
+
+	</div>
+
+</section>
+<!-- END: timeline Block -->

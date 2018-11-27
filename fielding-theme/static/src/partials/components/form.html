@@ -1,0 +1,90 @@
+<form action="#" method="GET" class="base_form margined_md">
+	<!-- 	Form Heading -->
+	<fieldset class="form_fieldset">
+		<legend>
+			<h2 class="heading_2">Form Styles</h2>
+		</legend>
+		<!-- 	Text Input (showing Error) -->
+		<div class="input_wrap">
+	        <label for="name">Name <span class="required" title="This field is required">*</span></label>
+	        <input type="text" id="name" required="required" class="required error"/>
+	        <span class="required">This field is required</span>
+        </div>
+        <!-- 	Textarea -->
+        <div class="input_wrap">
+	        <label for="name">Comment</label>
+	       <textarea id="textarea" rows="5"></textarea>
+        </div>
+	</fieldset>
+	<!-- 	Title/Text -->
+	<fieldset class="form_fieldset">
+		<legend>
+			<h3 class="heading_3">Section Title</h3>
+			<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+			<!-- 	Checkboxes -->
+			<h5 class="heading_5">Checkboxes</h5>
+		</legend>
+		<input type="checkbox" value="1" id="checkbox-1" name="checkbox-1">
+		<label for="checkbox-1">Option 1</label>
+
+		<input type="checkbox" value="2" id="checkbox-2" name="checkbox-2">
+		<label for="checkbox-2">Option 2</label>
+
+		<input type="checkbox" value="3" id="checkbox-3" name="checkbox-3">
+		<label for="checkbox-3">Option 3</label>
+
+		<input type="checkbox" value="4" id="checkbox-4" name="checkbox-4">
+		<label for="checkbox-4">Option 4</label>
+	</fieldset>
+	<!-- 	Dropdown -->
+	<fieldset class="form_fieldset">
+		<div class="fs-row">
+			<div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
+				<label for="dropdown">Drop Down</label>
+				<select id="dropdown" class="js-dropdown" data-dropdown-options='{"theme": "base_dropdown gray_dropdown", "label": "Option 1"}'>
+					<option value="1">All Categories</option>
+					<option value="2">Alumni</option>
+					<option value="3">Infosessions</option>
+				</select>
+			</div>
+		</div>
+	</fieldset>
+	<!-- 	Dropdown - Upload File -->
+<!--
+	<fieldset class="form_fieldset">
+		<div class="fs-row">
+			<div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
+				<label for="dropdown_upload">Upload File</label>
+				<select id="dropdown_upload" class="js-dropdown" data-dropdown-options='{"theme": "base_dropdown gray_dropdown arrow_dropdown", "label": "Choose File"}'>
+					<option value="1">One.jpg</option>
+					<option value="2">Two.jpg</option>
+					<option value="3">Three.jpg</option>
+				</select>
+			</div>
+				<div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
+					<span class="none">No file chosen</span>
+				</div>
+			</div>
+	</fieldset>
+-->
+	<!-- 	Text Inputs w/ Label below -->
+	<fieldset class="form_fieldset">
+		<legend>
+			<h5 class="heading_5">Name</h5>
+		</legend>
+		<div class="fs-row label_small">
+			<div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
+				<div class="input_wrap">
+			        <input type="text" id="name"/>
+			        <label for="name">First</label>
+			    </div>
+			</div>
+			<div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
+			    <div class="input_wrap">
+			        <input type="text" id="name"/>
+			        <label for="name">Last</label>
+			    </div>
+			</div>
+		</div>
+	</fieldset>
+</form>

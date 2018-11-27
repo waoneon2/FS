@@ -1,0 +1,190 @@
+/* ==========================================================================
+	Sidebar Text (and Image) Callouts
+============================================================================= */
+
+	.sidebar {
+		clear: right;
+	}
+
+	.sidebar_callout_wrap {
+		transform: translate3d(0, 0, 0);
+		
+		img {
+			.border_radius;
+			.relative;
+			
+			z-index: 1;
+			
+			width: 100%;
+		}
+	}
+
+	.sidebar_callout {
+		.relative;
+		.text_center;
+		
+		padding: 30px 40px;
+		
+		border-radius: 4px;
+		overflow: hidden;
+		
+		@media @min_lg {
+			padding: 30px 20px;
+		}
+		
+		&:before {
+			.absolute;
+			.block;
+			
+			top: -80%;
+			left: -25%;
+			
+			height: 150%;
+			width: 150%;
+			
+			content: "";
+		}
+	}
+	
+	.sidebar_img {
+		margin-top: -5px;
+	}
+	
+	//background colors (gradients)
+	
+	.sidebar_gray {
+		background: #738998;
+		
+		&:before {
+			background-image: radial-gradient(100% 82%, #ABBEC9 0%, #738998 62%);
+		}
+	}
+	
+	.sidebar_purple {
+		background: #3B1D42;
+		
+		&:before {
+			background-image: radial-gradient(100% 82%, #6D3E77 0%, #3B1D42 62%);
+		}
+	}
+	
+	.sidebar_orange {
+		background: @orange;
+		
+		&:before {
+			background-image: radial-gradient(100% 82%, #DFB172 0%, @orange 62%);
+		}
+	}
+	
+	.sidebar_teal {
+		background: @teal;
+		
+		&:before {
+			background-image: radial-gradient(100% 82%, #43C0C1 0%, @teal 62%);
+		}
+	}
+	
+	.sidebar_red {
+		background: @red;
+		
+		&:before {
+			background-image: radial-gradient(100% 82%, #B62551 0%, @red 62%);
+		}
+	}
+	
+	.sidebar_content {
+		.relative;
+		
+		.heading_dashed {
+			margin-bottom: 0;
+			
+			letter-spacing: 2px;
+		}
+		
+		p {
+			.font_size(18);
+			.line_height(24,18);
+			color: fade(#F7F8F6, 70);
+		}
+		
+		.btn_transparent_arrow {
+			.color_white_true;
+			
+			padding: 16px 24px 15px;
+			
+			border-color: fade(@white_true, 40);
+			
+			&:after {
+				.icon_arrow_white;
+			}
+		}
+	}
+	
+	//social media callout
+	
+	.sidebar_gray_light {
+		background: #EEEEEC;
+		
+		padding: 30px 20px;
+		
+		//overflow: visible;
+				
+		@media @min_lg @and_max_xl {
+			padding: 30px 10px;
+		}
+		
+		&:before {
+			content: none;
+		}
+		
+		.heading_dashed {
+			.color_red;
+			
+			letter-spacing: 4px;
+			
+			&:before,
+			&:after {
+				border-top-color: #BDBDBC;
+			}
+		}
+		
+		.social_nav .menu {
+			margin: 25px 0 0 0;
+			
+			column-count: initial;
+			
+			overflow: hidden;
+			
+			.menu-item {
+				margin: 0 15px;
+				padding: 10px 0;
+				
+				box-shadow: 0 -1px 0 #BDBDBC;
+				line-height: 37px;
+				
+				float: left;
+				width: 100%;
+				
+				@media @min_sm {
+					width: 40%;	
+				}
+				
+				@media @min_lg @and_max_xl {
+					margin: 0 5px;
+					width: 44%;
+				}
+			}	
+		}
+	}
+	
+	//align left when in sidebar component (different from footer)
+	
+	.sidebar_content .social_nav .menu .menu-item {
+		a {
+			text-align: left;
+		}
+	}
+	
+
+	
+

@@ -1,0 +1,274 @@
+/* ==========================================================================
+	Secondary Navigation Common
+============================================================================= */
+
+.secondary_nav {
+
+	&.secondary_nav_lg {
+
+		margin-top: 4px;
+
+		@media #{$max_lg} {
+			display: none;
+		}
+	}
+}
+
+.secondary_nav_header {}
+
+.secondary_nav_title {
+	@include visually_hide;
+}
+
+// Home Pillar Nav
+// =============================================================================
+
+.home_pillar_nav {
+	width: 100%;
+	display: none;
+
+	position: fixed;
+
+	background: rgba($true_black, 0.4);
+	padding: 16px 0 22px;
+	transition: transform 0.375s ease;
+	will-change: transform;
+	z-index: 5;
+
+	.page_layout_home & {
+		
+		@media #{$min_lg} {
+			display: block;
+		}
+	}
+
+	.full-nav & {
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+.home_pillar_nav_inner {
+	width: 100%;
+	display: flex;
+
+	justify-content: flex-end;
+}
+
+
+// Seconadry Links
+// =============================================================================
+
+.secondary_nav_list {
+	display: flex;
+	   
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	.mobile_sidebar & {
+		display: block;
+		padding-bottom: 30px;
+	}
+
+	.home_pillar_nav & {
+		justify-content: flex-end;
+	}
+}
+
+.secondary_nav_item {
+	margin-right: 20px;
+
+	@media #{$min_xl} {
+		margin-right: 30px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:nth-child(1),
+	&:nth-child(2),
+	&:nth-child(3) {
+
+		.home_pillar_nav & {
+			@include font_smoothing;
+		}
+	}
+
+	&:nth-last-child(1),
+	&:nth-last-child(2),
+	&:nth-last-child(3) {
+
+		.secondary_nav_link {
+			@include font_smoothing;
+
+			color: $purple;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;	
+
+			@media #{$min_lg} {
+				position: relative;
+
+				&:after {
+					width: 0px;
+					height: 2px;
+					display: block;
+
+					position: absolute;
+					left: 0;
+					bottom: -1px;
+
+					background: $royal;
+					content: '';
+					transition: width 0.325s ease;	
+
+					.home_pillar_nav & {
+						background: $white;
+					}
+				}
+			}
+		}
+	}
+
+	&:nth-last-child(4),
+	&:nth-last-child(5),
+	&:nth-last-child(6) {
+
+		.secondary_nav_link {
+
+			@media #{$min_lg} {
+				transition: color 0.325s ease;
+			}
+		}
+	}
+
+	.mobile_sidebar & {
+		width: 100%;
+		padding: 0 25px;
+
+		background: $purple;
+		
+		.secondary_nav_link {
+			color: $white;
+			font-weight: 300;
+			padding: 21px 0;
+			border-bottom: 1px solid rgba(242,242,243,0.12);
+		}
+
+		&:nth-of-type(3){
+
+			.secondary_nav_link {
+				border-bottom: none;
+			}
+		}
+
+		&:nth-last-child(1),
+		&:nth-last-child(2),
+		&:nth-last-child(3) {
+			background: $black;
+			margin-bottom: 11px;
+			opacity: 0;
+			text-align: center;
+			transition: opacity 0s;
+			
+			.secondary_nav_link {
+				@include font_smoothing();
+
+				display: block;
+				
+				background: $white;
+				color: $purple;
+				font-size: 14px;
+				font-weight: 700;
+				letter-spacing: 0px;
+				padding: 7px 0;
+				position: relative;
+			}
+
+			.no-js & {
+				opacity: 1;
+			}
+		}
+
+		&:nth-last-child(4),
+		&:nth-last-child(5),
+		&:nth-last-child(6) {
+			opacity: 0;
+			transition: opacity 0s;
+
+			.no-js & {
+				opacity: 1;
+			}
+		}
+
+		&:nth-last-child(3) {
+			margin-top: 30px;
+		}
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+		
+		&:nth-last-child(1),
+		&:nth-last-child(2),
+		&:nth-last-child(3) {
+			opacity: 1;
+			transition: opacity 0.5s ease;
+			transition-delay: 0.95s;
+		}
+
+		&:nth-last-child(4),
+		&:nth-last-child(5),
+		&:nth-last-child(6) {
+			opacity: 1;
+			transition: opacity 0.5s ease;
+			transition-delay: 0.45s;
+		}
+	}
+}
+
+.secondary_nav_link {
+	display: block;
+
+	color: $black;
+	font-size: 16px;
+
+	.mobile_sidebar & {
+
+		@media #{$min_md} {
+			width: 720px;
+			display: block;
+
+			margin: 0 auto;
+		}
+	}
+
+	.home_pillar_nav & {
+		color: $white !important;
+	}
+
+	&:focus,
+	&:hover {
+
+		@media #{$min_lg} {
+
+			.secondary_nav_item:nth-last-child(1) &,
+			.secondary_nav_item:nth-last-child(2) &,
+			.secondary_nav_item:nth-last-child(3) & {
+				
+				&:after {
+					width: 100%;
+				}
+			}
+
+			.secondary_nav_item:nth-last-child(4) &,
+			.secondary_nav_item:nth-last-child(5) &,
+			.secondary_nav_item:nth-last-child(6) & {
+				color: $purple;
+			}
+		}
+
+	}
+}
+
+.secondary_nav_link_label {}

@@ -1,0 +1,113 @@
+/* ==========================================================================
+	Logo
+============================================================================= */
+
+.logo {
+	margin: 0;
+}
+
+.logo_header {
+	width: 101px;
+	height: 45px;
+
+	@media #{$min_sm} {
+		width: 150px;
+		height: 67px;
+	}
+
+	@media #{$min_md} {
+		width: 202px;
+		height: 90px;
+	}
+
+	.icon_logo {
+
+		@media #{$min_sm} {
+			width: 150px;
+			height: 67px;
+		}
+		
+		@media #{$min_md} {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.logo_footer {
+	width: 225px;
+	height: 52.85px;
+	margin: 0 auto 20px;
+
+	@media #{$min_md} {
+		width: 298px;
+		height: 70px;
+		margin: 0;
+	}
+
+	.icon_logo_footer {
+		width: 225px;
+		height: 55.85px;
+
+		@media #{$min_md} {
+			width: 298px;
+			height: 70px;
+		}
+		
+	}
+}
+
+.logo_link {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: transparent;
+	display: inline-block;
+	overflow: hidden;
+	user-select: none;
+	white-space: nowrap;
+
+	.logo_header & {
+		width: 100%;
+		height: 100%;
+	}
+
+	.logo_footer & {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.logo_link_label {
+
+	.logo_icon & {
+		@include visually_hide;
+	}
+}
+
+.logo_link_icon {
+	display: block;
+
+	.logo_header & {
+
+		@media #{$min_sm} {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.logo_footer & {
+		width: 100%;
+		height: 100%;
+	}
+
+
+}
+
+.logo_print {
+	display: none;
+
+	@media print {
+		display: block;
+	}
+}

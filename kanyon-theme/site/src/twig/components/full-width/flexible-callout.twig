@@ -1,0 +1,55 @@
+{#
+	{{site.anchor("Flexible Callout")}}
+	{% include "../components/flexible-callout.twig" with {
+		theme: "",
+		background: 1,
+		meta: "Label",
+		title: "Lorem ipsum dolor sit amet",
+		description: "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.",
+		links: [
+			{
+				href: "#",
+				name: "Learn More"
+			}
+		]
+	} %}
+#}
+
+<!-- Flex Callout -->
+<section class="flex_callout{% if theme %} theme_{{theme}}{% endif %}">
+	<div class="fs-row">
+		<div class="fs-cell fs-lg-4"> 
+			<div class="flex_callout_wrapper">
+				<header class="flex_callout_header">
+					<span class="flex_callout_meta">{{meta}}</span>
+					<h3 class="flex_callout_title">{{title}}</h3>
+				</header>
+				<div class="flex_callout_body">
+					<div class="flex_callout_description">
+						<p>{{description}}</p>
+					</div>
+				</div>
+				{% if links %}
+				<footer class="flex_callout_links">
+					{% for link in links %}
+					{{site.button("flex_callout", link.name, link.href)}}
+					{% endfor %}
+				</footer>
+				{% endif %}
+			</div>
+		</div>
+		{% if background %}
+			{% include par ~ "background.twig" with {
+				class: "flex_callout",
+				sources: {
+					"0px": img.square.xsml,
+					"500px": img.full.sml,
+					"740px": img.wide.med,
+					"980px": img.full.lrg
+				},
+				image: background
+			} %}
+		{% endif %}
+	</div>
+</section>
+<!-- END: Flex Callout -->

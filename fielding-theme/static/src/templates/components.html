@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Components"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Page Header (no Image)</h5>
+					</div>
+				</div>
+
+				@@include('../partials/_page-header.html', {
+					"class": "",
+					"heading": "Mentoring &amp; Advising",
+					"page_header": "Our accomplished faculty and staff helps tailor your Fielding experience to your personalized interests and career goals."
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Page Header w/ Image</h5>
+					</div>
+				</div>
+
+				@@include('../partials/_page-header-image.html', {
+					"heading": "Mentoring &amp; Advising",
+					"page_header": "Our accomplished faculty and staff helps tailor your Fielding experience to your personalized interests and career goals."
+				})
+
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">People Feature</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_teal",
+					"name": "Melody Statler",
+					"description": "is studying gamer subculture, social media, and micro-aggression effects on LGBT gamers.",
+					"image": "5",
+					"alt": "",
+					"label": "Her Passions",
+					"caption": "are to unify gamers and general society, and to see the end of marginalization between groups. Fielding has enabled the alignment of her passions: gaming and research psychology.",
+					"button": "Hear from Melody",
+					"title": "Hear from Melody",
+					"media": "@@include('people-feature-video.html')"
+				})
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_orange",
+					"name": "Melody Statler",
+					"description": "is studying gamer subculture, social media, and micro-aggression effects on LGBT gamers.",
+					"image": "5",
+					"alt": "",
+					"label": "Her Passions",
+					"caption": "are to unify gamers and general society, and to see the end of marginalization between groups. Fielding has enabled the alignment of her passions: gaming and research psychology.",
+					"button": "Hear from Melody",
+					"title": "Hear from Melody",
+					"media": "@@include('people-feature-video.html')"
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Introduction</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/introduction.html', {
+					"margin": "margined_lg",
+					"label": "40+ Years of Distributed Learning",
+					"title": "We are an engaging community of lifelong learners",
+					"description": "Fielding Graduate University is community-based, nonprofit, distributed, and focused on helping you reach your academic goals.",
+					"button": "Request Information"
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Featured Story</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/featured-story.html', {
+					"margin": "margined_lg_bottom",
+					"title": "Jean-Pierre Isbouts to Reveal True Story of Walt Disney at Winter Session",
+					"image": "10",
+					"alt": ""
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Feature Callout</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/feature-callout.html', {
+					"image": "4",
+					"title": "PhD Human and Organizational Systems",
+					"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+					"button1": "@@include('feature-callout-button-1.html')",
+					"button2": "@@include('feature-callout-button-2.html')",
+					"spotlight": "@@include('feature-callout-spotlight.html')"
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Feature Callout - No carousel</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/feature-callout.html', {
+					"image": "5",
+					"title": "PhD Human and Organizational Systems",
+					"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+					"button1": "@@include('feature-callout-button-1.html')",
+					"button2": "@@include('feature-callout-button-2.html')",
+					"spotlight": ""
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Feature Callout - No carousel or buttons</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/feature-callout.html', {
+					"image": "6",
+					"title": "PhD Human and Organizational Systems",
+					"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+					"button1": "",
+					"button2": "",
+					"spotlight": ""
+				})
+
+				<div class="fs-row">
+					<div class="fs-cell">
+						<h5 class="heading_5">Featured Events</h5>
+					</div>
+				</div>
+
+				@@include('../partials/components/featured-events.html', {
+					"breadcrumb": "@@include('breadcrumb/breadcrumb-page-sub.html')",
+					"heading": "Event Calendar",
+					"page_header": ""
+				})
+
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+							<h5 class="heading_5">Sub Navigation</h5>
+							@@include('../partials/components/sub-navigation.html')
+
+							<h5 class="heading_5">Contact Info</h5>
+							@@include('../partials/components/contact-info.html')
+
+							<h5 class="heading_5">Sidebar Text and Image Callout</h5>
+							@@include('../partials/components/sidebar-text-image-callout.html')
+
+							<h5 class="heading_5">Sidebar Text Callout</h5>
+							@@include('../partials/components/sidebar-text-callout.html')
+
+							<h5 class="heading_5">Sidebar Social Media Callout</h5>
+							@@include('../partials/components/sidebar-social-media-callouts.html')
+
+							<h5 class="heading_5">Sidebar Event Listing</h5>
+							@@include('../partials/components/sidebar-event-listing.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							<h5 class="heading_5">Content Styling</h5>
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h2>Our Faculty</h2>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely. At the same time, our faculty represent a unique diversity of disciplines, ethnicity, cultures, professions, and academic interests. That's important, because at Fielding, you are in the driver's seat.</p>
+								<div class="block_right">
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source media="(min-width: 980px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<source media="(min-width: 740px)" srcset="http://spacehold.it/740x555/fielding/3.jpg">
+										<source media="(min-width: 500px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<!--[if IE 9]></video><![endif]-->
+										<img src="http://spacehold.it/500x375/fielding/3.jpg" alt="" draggable="false">
+									</picture>
+									<div class="content_image_caption">Your Graduate Program Advisor works in partnership with your program.</div>
+								</div>
+								<p>Matching your research to your career goals is a major part of what we do. We believe that you have  many valuable things to contribute to your learning process, so what we try to accomplish in our programs is to define that sweet spot, that unique intersection between your professional expertise and academic interests, and the unique theoretical knowledge of our professors. We are dedicated to finding that intersection and nurturing your doctoral competency to make it a reality.</p>
+								<h2>Student Advising</h2>
+								<p>As a student at Fielding, you may need additional advice in order to continue progressing smoothly through your program. Your administrative resource for answering questions about the program is your Graduate Program Advisor. Among other topics, your Graduate Program Advisor can provide you with resources (or support) for the following:</p>
+
+								<h5 class="heading_5">Lists</h5>
+
+								<ul>
+									<li>Student program planning/scheduling to meet degree and tuition milestones</li>
+									<li>Policies and procedures</li>
+									<li>Program requirements</li>
+									<li>Academic progress requirements and reviews</li>
+									<li>Taking time off from your Fielding program</li>
+									<li>Services for students with disabilities</li>
+								</ul>
+
+								<ol>
+									<li>Student program planning/scheduling to meet degree and tuition milestones</li>
+									<li>Policies and procedures</li>
+									<li>Program requirements</li>
+									<li>Academic progress requirements and reviews</li>
+									<li>Taking time off from your Fielding program</li>
+									<li>Services for students with disabilities</li>
+								</ol>
+
+							</div><!-- END: typography -->
+
+							<h5 class="heading_5">Related Links</h5>
+
+							<!-- Related Links Component -->
+							@@include('../partials/components/related-links.html')
+							<!-- END: Related Links Component -->
+
+							<h5 class="heading_5">Table</h5>
+
+							<div class="typography">
+								<h3>Additional Contact Information</h3>
+								<!-- Table -->
+								<table>
+									<thead>
+										<tr>
+											<th>Department</th>
+											<th>Phone Number</th>
+											<th>Email Address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- END: Table -->
+							</div>
+							<!-- END: Typography -->
+
+							<h5 class="heading_5">In Content Callout</h5>
+							<!-- In Content Callout Component -->
+							@@include('../partials/components/in-content-callout.html')
+							<!-- END: In Content Callout Component -->
+
+							<h5 class="heading_5">Video Embed</h5>
+							<!-- In Content Video Embed Component -->
+							@@include('../partials/components/in-content-video-embed.html')
+							<!-- END: In Content Video Embed Component -->
+
+							<h5 class="heading_5">In Content Event List</h5>
+							@@include('../partials/components/short-in-content-event-listing.html')
+
+							<h5 class="heading_5">In Content News List</h5>
+							@@include('../partials/components/short-in-content-news-list.html')
+
+							<h5 class="heading_5">In Content Event List w/ Dropdown and Pagination</h5>
+							@@include('../partials/components/in-content-event-list.html')
+
+							<h5 class="heading_5">In Content News List w/ Dropdown and Pagination</h5>
+							@@include('../partials/components/in-content-news-list.html')
+
+							<h5 class="heading_5">Form Styles</h5>
+							@@include('../partials/components/form.html')
+
+							<h5 class="heading_5">Testimonial Single</h5>
+							@@include('../partials/components/testimonial-single.html')
+
+							<h5 class="heading_5">Spotlight Single</h5>
+							@@include('../partials/components/spotlight-single.html')
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Full Width 2x Callout</h5>
+							</div>
+						</div>
+						@@include('../partials/components/full-width-2x-callout.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Testimonials</h5>
+							</div>
+						</div>
+						@@include('../partials/components/testimonials.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Media Gallery</h5>
+							</div>
+						</div>
+						@@include('../partials/components/media-gallery.html', {
+							"margin": "",
+							"heading": "Infosessions 2015"
+						})
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Full Width Callouts</h5>
+							</div>
+						</div>
+
+						@@include('../partials/components/full-width-callout.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Facts &amp; Stats</h5>
+							</div>
+						</div>
+						@@include('../partials/components/facts-stats.html', {
+							"margin": "margined_lg",
+							"label": "FUSCE ELEMENTUM FRINGILLA LECTUS QUIS SOLLICITUDIN",
+							"title": "We are an engaging community of lifelong learners",
+							"description": "Suspendisse imperdiet fringilla consectetur. Curabitur eu est id est mattis tincidunt vitae eu elit. Nunc tempus tellus enim, ut pellentesque sem tincidunt quis."
+						})
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Directory Header</h5>
+							</div>
+						</div>
+
+						@@include('../partials/components/directory-header.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h5 class="heading_5">Directory Controls</h5>
+							</div>
+						</div>
+
+						@@include('../partials/components/directory-page-controls.html')
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

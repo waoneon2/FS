@@ -1,0 +1,98 @@
+{#
+	{{site.anchor("Topic Row")}}
+	{% include "../components/topic-row.twig" with {
+		title: "Campaign Impact",
+		heading: "Learning Experiences That Challenge Students to Go Deeper.",
+		subheading: "Explore How Your Support Transforms our Community.",
+		items: [          
+			{
+				title: "Here Comes the Sun",
+				image: 1,
+				description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch your eye.",
+				tags: "Enhance \ The West Quad",
+				links: [
+					{
+						href: "#",
+						name: "Read The Story"
+					}
+				]								
+			},
+			{
+				title: "Breaking Down Barriers",
+				image: 6,
+				description: "Kenyon has been selected as one of 24 schools nationwide to participdate in the Hower Hughes Medical Institute (HHMI) Inclusive Excellence initiative, aimed at helping colleges and universities recruit and advance students in the natural sciences.",
+				tags: "Extend \ Financial Aid \ Sciences",
+				links: [
+					{
+						href: "#",
+						name: "Read The Story"
+					}
+				]
+			}
+		]
+	} %}
+#}
+
+<!-- Topic Block -->
+<div class="topic_block{% if theme %} theme_{{theme}}{% endif %}">
+	
+	<div class="fs-row">
+		<div class="fs-cell fs-lg-12">
+
+			{% if title %}
+			<header class="topic_block_header">
+				<h2 class="topic_block_title">{{title}}</h2>
+				{% if heading %}<p class="topic_block_heading">{{heading}}</p>{% endif %}
+				{% if subheading %}<p class="topic_block_subheading">{{subheading}}</p>{% endif %}
+				<div class="topic_header_button large">
+					{{site.button("topic_block_header", "View All Stories", "#")}}
+				</div>
+			</header>
+			{% endif %}
+			<div class="topic_items">
+				{% for item in items %}
+					<article class="topic_row">
+						<div class="topic_row_inner">
+							{% if item.image %}
+							<div class="topic_media">
+								<figure class="topic_figure">
+									{% include par ~ "picture.twig" with {
+										class: "topic",
+										fallback: img.full.med,
+										image: item.image,
+										itemprop: "",
+										sources: {
+											"740px": img.full.med,
+											"0px": img.full.sml
+										}
+									} %}
+								</figure>
+							</div>
+							{% endif %}
+							<div class="topic_wrapper">
+								<header class="topic_header">
+									<span class="topic_tags">{{item.tags}}</span>
+									<h3 class="topic_title">{{item.title}}</h3>
+								</header>
+								<div class="topic_body">
+									<div class="topic_description">
+										<p>{{item.description}}</p>
+									</div>
+								</div>
+								{% if item.links %}
+								<footer class="topic_links">
+									{% for link in item.links %}
+									{{site.button("topic", link.name, link.href, "chevron_right")}}
+									{% endfor %}
+								</footer>
+								{% endif %}
+							</div>
+						</div>
+					</article>
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>	
+</div>
+<!-- END: Topic Block -->

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Content Blocks &amp; Callouts"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+
+							<nav class="subnavigation_wrap">
+								<h2 class="subnavigation_handle fs-lg-hide">Additional Navigation</h2>
+								<div class="subnavigation js-navigation fs-navigation-element fs-navigation-toggle-nav fs-navigation__1 fs-light" data-navigation-handle=".subnavigation_handle" data-navigation-options="{&quot;labels&quot;:{&quot;open&quot;:&quot;Close&quot;,&quot;closed&quot;:&quot;Additional Navigation&quot;}}">
+								<ul id="menu-main-navigation-2" class="menu">
+									<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-41 current_page_item menu-item-48">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/home.html">Home</a>
+									</li>
+
+									<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item menu-item-has-children menu-item-51">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/style-guide.html">Style Guide </a>
+										<ul class="sub-menu">
+											<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/colors-fonts.html" rel="page">Colors and Fonts</a>
+											</li>
+											<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-115 menu-item-117">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/basic-page-content.html" rel="page">Basic Page Content</a>
+											</li>
+											<li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118 current-menu-item">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/content-blocks-callouts.html" rel="page">Content Blocks and Callouts</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								</div>
+							</nav>
+
+							<h2 class="heading_2">Contact Info</h2>
+							@@include('../partials/components/contact-info.html')
+
+							<h2 class="heading_2">Sidebar Text and Image Callout</h2>
+							@@include('../partials/components/sidebar-text-image-callout.html')
+
+							<h2 class="heading_2">Sidebar Text Callout</h2>
+							@@include('../partials/components/sidebar-text-callout.html')
+
+							<h2 class="heading_2">Sidebar Social Media Callout</h2>
+							@@include('../partials/components/sidebar-social-media-callouts.html')
+
+							<h2 class="heading_2">Sidebar Event Listing</h2>
+							@@include('../partials/components/sidebar-event-listing.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h2>Content Styling</h2>
+								<p>Main content goes here. The most important items for the user should be prioritized on the page. Callouts and content blocks add variety to a page, but pages that are completely or mostly page content work just fine. In cases where the user is looking for very specific information, less visually crowded pages can, in fact, be better.</p>
+								<div class="block_right">
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source media="(min-width: 980px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<source media="(min-width: 740px)" srcset="http://spacehold.it/740x555/fielding/3.jpg">
+										<source media="(min-width: 500px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<!--[if IE 9]></video><![endif]-->
+										<img src="http://spacehold.it/500x375/fielding/3.jpg" alt="" draggable="false">
+									</picture>
+									<div class="content_image_caption">Your Graduate Program Advisor works in partnership with your program.</div>
+								</div>
+								<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+							</div><!-- END: typography -->
+
+							<h2 class="heading_2">Related Links</h2>
+
+							<!-- Related Links Component -->
+							@@include('../partials/components/related-links.html')
+							<!-- END: Related Links Component -->
+
+							<h2 class="heading_2">In Content Callout</h2>
+							<!-- In Content Callout Component -->
+							@@include('../partials/components/in-content-callout.html')
+							<!-- END: In Content Callout Component -->
+
+							<h2 class="heading_2">Video Embed</h2>
+							<!-- In Content Video Embed Component -->
+							@@include('../partials/components/in-content-video-embed.html')
+							<!-- END: In Content Video Embed Component -->
+
+							<h2 class="heading_2">In Content Event List</h2>
+							@@include('../partials/components/short-in-content-event-listing.html')
+
+							<h2 class="heading_2">In Content News List</h2>
+							@@include('../partials/components/short-in-content-news-list.html')
+
+							<h2 class="heading_2">In Content Event List w/ Dropdown and Pagination</h2>
+							@@include('../partials/components/in-content-event-list.html')
+
+							<h2 class="heading_2">In Content News List w/ Dropdown and Pagination</h2>
+							@@include('../partials/components/in-content-news-list.html')
+
+							<h2 class="heading_2">Form Styles</h2>
+							@@include('../partials/components/form.html')
+
+							<h2 class="heading_2">Testimonial Single</h2>
+							@@include('../partials/components/testimonial-single.html')
+
+							<h2 class="heading_2">Spotlight Single</h2>
+							@@include('../partials/components/spotlight-single.html')
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h2 class="heading_2">Full Width 2x Callout</h2>
+							</div>
+						</div>
+						@@include('../partials/components/full-width-2x-callout.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h2 class="heading_2">Testimonials</h2>
+							</div>
+						</div>
+						@@include('../partials/components/testimonials.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h2 class="heading_2">Media Gallery</h2>
+							</div>
+						</div>
+						@@include('../partials/components/media-gallery.html', {
+							"margin": "",
+							"heading": "Infosessions 2015"
+						})
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h2 class="heading_2">Full Width Callouts</h2>
+							</div>
+						</div>
+
+						@@include('../partials/components/full-width-callout.html')
+
+						<div class="fs-row">
+							<div class="fs-cell">
+								<h2 class="heading_2">Facts &amp; Stats</h2>
+							</div>
+						</div>
+						@@include('../partials/components/facts-stats.html', {
+							"margin": "margined_lg",
+							"label": "FUSCE ELEMENTUM FRINGILLA LECTUS QUIS SOLLICITUDIN",
+							"title": "We are an engaging community of lifelong learners",
+							"description": "Suspendisse imperdiet fringilla consectetur. Curabitur eu est id est mattis tincidunt vitae eu elit. Nunc tempus tellus enim, ut pellentesque sem tincidunt quis."
+						})
+
+
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

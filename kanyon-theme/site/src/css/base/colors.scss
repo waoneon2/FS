@@ -1,0 +1,81 @@
+/* ==========================================================================
+	Colors
+============================================================================= */
+	
+$purple: #4B2E84;
+$royal: #78639E;
+$lavender: #A798C0;
+$orange: #FF5E00;
+$green: #78BE20;
+$blue: #00AFD7;
+$yellow: #FFD900;
+$true_black: #000000;
+$black: #222;
+$gray: #A7A9AC;
+$light_gray: #CDCDCD;
+$snow: #F2F2F3;
+$white: #ffffff;
+
+$theme_colors: (
+	(black, $black)
+);
+
+$gray_10: #EAEAEA;
+$gray_20: #CCCCCC;
+$gray_30: #B2B2B2;
+$gray_40: #999999;
+$gray_50: #808080;
+$gray_60: #666666;
+$gray_70: #4D4D4D;
+$gray_80: #333333;
+$gray_90: #222222;
+
+
+// Themes
+// =============================================================================
+
+@mixin theme_custom {
+
+	@each $label, $color in $theme_colors {
+
+		.theme_#{$label} & {}
+	}
+}
+
+@mixin theme(
+	$list: $theme_colors,
+	$style: "color"
+) {
+
+	@each $label, $color in $list {
+
+		.theme_#{$label} & {
+			@if($style == "color") {
+				color: $color;
+			} @else if($style == "background") {
+				background: $color;
+			} @else if($style == "border") {
+				border-color: $color;
+			}
+		}
+	}
+}
+
+@mixin theme_direct(
+	$list: $theme_colors,
+	$style: "color"
+) {
+
+	@each $label, $color in $list {
+
+		&.theme_#{$label} {
+			@if($style == "color") {
+				color: $color;
+			} @else if($style == "background") {
+				background: $color;
+			} @else if($style == "border") {
+				border-color: $color;
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaImage: "/images/temp/social-wide.jpg",
+		metaImageWidth: "1220",
+		metaImageHeight: "686",
+		metaCard: "summary_large_image",
+		title: "Here Comes the Sun",
+		layout: "news_detail"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+
+    {% include feat ~ "news-detail-header.twig" with {
+        title: "Here Comes the Sun",
+        theme: "green",
+        tags: "<a href='#'>Enhance</a> The West Quad",
+        description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch you eye.",
+        image: 9,
+        caption: "Curabitur blandit tempus portitor. Maecenas sed diam eget risus varius."
+    } %}
+
+{% endblock %}
+
+{% block typography %}
+
+    <p>Installations on the Village Inn and, most recently, on the Village Market are advancing Kenyon in its goal of achieving carbon neutrality — all while helping students learn the ins and outs of the solar power industry.</p>
+
+    <p>The solar power installations were designed and implemented by students in <strong>“Solar Power Systems: Science, Policy and Practicum,”</strong> a physics course co-taught by Assistant Professor of Physics and Scientific Computing Eric Holdener and veteran solar power consultant Jerry Kelly ’96. The course teaches students about the process of proposing, designing and installing a solar power project, while also raising public awareness of the viability of renewable energy.</p>
+
+    <p>“It’s a good gateway to be introduced to the solar industry,” said Lufeng May Chen ’20, from Shanghai, China, one of 16 students who took the course during the fall 2017 semester.</p>
+
+    <h3>About the Class</h3>
+
+    <p>The class attracts students from all majors and across all class years. Holdener and Kelly guide students through the basic physics of electricity and photovoltaics, as well as basic electrical circuitry. They incorporate fieldwork throughout the semester, traveling with the students to visit Knox County residents who already own solar installations. Students also learn from guest speakers in the solar industry — including Zach Sawicki ’16, a political science major who took the original version of the course and now works for a renewable energy development company in nearby Columbus.</p>
+
+    <p>“We give the class exposure to people who have gotten into this field by any number of routes, and we show them how it can be done,” Holdener said.</p>
+
+    <p>“A lot of the new hires in most solar companies in the U.S. now are coming in with little technical knowledge of solar,” Kelly added. “Companies are spending a lot of money and effort to train them. This class gets the students over that initial learning curve of knowing what the technology is, knowing what it can and can’t do, how systems are best located and how they’re constructed. We think it will give them an advantage if they pursue a career in renewable energy.”</p>
+
+    <figure class="quote">
+        <blockquote class="quote_content">
+            <p>We give the class exposure to people who have gotten into this field by any number of routes, and we show them how it can be done.</p>
+        </blockquote>
+        <figcaption class="quote_caption">- Eric Holdener, Assistant Professor of Physics &amp; Scientific Computing</figcaption>
+    </figure>
+
+    <p>Students also learn about different financial aspects of the renewable energy field and the factors that people typically weigh when considering whether to install solar panels. For Frances Matthews ’18, an economics major from Bracknell, England, the class provided an opportunity to apply lessons from her economics classes and help her classmates analyze the costs and benefits of solar installations.</p>
+
+    <blockquote>
+        <p>We give the class exposure to people who have gotten into this field by any number of routes, and we show them how it can be done.</p>
+    </blockquote>
+
+    <p>“Analyzing the business side and cost structures in solar has helped demonstrate the complexities of the industry"</p>
+
+    <h3>The Results</h3>
+
+    <p>At the end of the semester, students pitch ideas for future solar installations on Kenyon’s campus to Chief Business Officer Mark Kohlman. To develop their proposals, students conduct site evaluations, measuring a site’s available unshaded space as well as its typical electricity usage. They create a preliminary design for their proposed installation and discuss design challenges, including any factors that may increase the cost of the project. The course culminates in a “flip-the-switch” ceremony, when the students officially power up the solar installation proposed and designed by their predecessors in the class.</p>
+
+    <p>Enrollment in the course is one of many ways to participate in Kenyon’s green initiatives. “Kenyon is a great place to come if you want more of a hands-on experience in sustainability,” Matthews said. “There’s sustainable agriculture, you can get involved at the BFEC and there’s a living cemetery down the road. There are so many ways to get hands-on with the environment because we are fortunate enough to be surrounded by the environment and the countryside.”</p>
+
+{% endblock %}
+
+{% block in_content_callouts %}
+{% endblock %}
+
+{% block full_width_callouts %}
+
+    {% include full ~ "flexible-callout.twig" with {
+        theme: "dark",
+        background: 8,
+        meta: "Enhance",
+        title: "<strong>Updating Our Campus</strong> For a Better Experience",
+        description: "Creating more accessibility for all students, leading innovation in education, expanding our libraries - Enhancing our campus is about more than just the aesthetics.",
+        links: [
+            {
+                href: "#",
+                name: "Learn More"
+            }
+        ]
+    } %}
+
+{% endblock %}
+
+
+

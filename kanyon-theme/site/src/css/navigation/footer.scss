@@ -1,0 +1,173 @@
+/* ==========================================================================
+	Footer Navigation
+============================================================================= */
+
+.footer_nav_social {
+
+	@media #{$min_md} {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media #{$min_xl} {
+		margin-top: 10px;
+	}
+
+}
+
+.footer_nav {
+
+	@media #{$min_md} {
+		display: inline-block;
+		margin-top: 10px;
+		max-width: 462px;
+	}
+
+	@media #{$min_lg} {
+		max-width: 652px;
+		margin-top: 16px;
+	}
+
+	@media #{$min_xl} {
+		max-width: 100%;
+	}
+
+}
+
+.footer_nav_header {}
+
+.footer_nav_title {
+	@include visually_hide;
+}
+
+
+// Footer Links
+// =============================================================================
+
+.footer_nav_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+	@media #{$min_md} {
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+}
+
+.footer_nav_item {
+
+	&:last-child{
+
+		.footer_nav_link {
+			margin-bottom: 0;
+		}
+	}
+
+	@media #{$min_md} {
+		margin-right: 15px;
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+}
+
+.footer_nav_link {
+	@include font_smoothing();
+	display: inline-block;
+
+	position: relative;
+
+	color: $white;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+	text-align: center;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		
+		margin-bottom: 0;
+		text-align: right;
+	}
+
+	@media #{$min_lg} {
+		font-size: 16px;
+	}
+
+	&:after {
+		width: 0px;
+		height: 2px;
+		display: block;
+
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+
+		background: $white;
+		content: '';
+		transition: width 0.25s ease;
+		will-change: transform;
+	}
+
+	&:focus,
+	&:hover {
+
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+.footer_nav_link_label {}
+
+.footer_copyright_social {
+	
+	@media #{$min_md} {
+		width: 243px;
+		display: flex;
+	}
+
+	@media #{$min_lg} {
+		width: 287px;
+	}
+}
+
+.footer_copyright {
+	text-align: center;
+
+	p{
+		@include font_smoothing;
+		display: inline-block;
+
+		color: $white;
+		font-weight: 400;
+
+		@media #{$max_md} {
+			margin-bottom: 0;
+		}
+
+		@media #{$min_md} {
+			margin-top: 10px;
+		}
+
+		@media #{$min_lg} {
+			margin-top: 16px;
+		}
+	}
+
+	@media #{$min_md} {
+		margin-left: 20px;
+	}
+
+	@media #{$max_md} {
+		font-size: 14px;
+	}
+}

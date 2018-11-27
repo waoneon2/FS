@@ -1,0 +1,89 @@
+/* ==========================================================================
+	Full Width Callout
+============================================================================= */
+	
+	.full_width_wrap {
+		.relative;
+		
+		overflow: hidden;
+		
+		.people_feature_theme {
+			padding: 40px 0;
+			
+			@media @min_md {
+				padding: 80px 0;
+			}
+		}
+		
+		p {
+			.body_text();
+			color: fade(@gray_pale, 70);
+			.line_height(30,18);
+		}
+		
+		.heading_5 {
+			color: fade(@white_true, 70);
+			margin-top: 20px;
+			
+			@media @min_sm @and_max_lg {
+				margin-top: 0;
+			}
+		}
+		
+		.heading_3 {
+			.color_gray_pale;
+			
+			margin-bottom: 15px;
+		}
+		
+		.btn_transparent_arrow_white {
+			.no-touchevents &:hover {
+				.color_white_true;
+				border: 1px solid @white_true;
+				background: fade(@black, 80);
+			}
+		}
+		
+		img {
+			width: 100%;
+		}
+		
+		.people_feature_theme {
+			opacity: 1;
+			visibility: visible;
+		}
+		
+		.fs-row .image_wrapper {
+			
+			@media @min_sm @and_max_lg {
+				float: right;
+			}
+			
+			@media @min_lg {
+				padding-right: 50px;
+			}
+		}
+		
+		&:nth-child(even) {
+			
+			.fs-row .image_wrapper {
+				
+				@media @min_lg {
+					float: right;
+					padding-left: 50px;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	
+	.full_width {
+		.relative;
+	}
+	
+	.text_area {
+		
+		@media @min_sm @and_max_lg {
+			padding-right: 30px;
+		}
+	}	

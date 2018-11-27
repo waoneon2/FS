@@ -1,0 +1,35 @@
+{#
+	{% include par ~ "menu-button.twig" with {
+		menu: "categories",
+        items: [
+            {
+				name: "Extend",
+				href: "#"
+			},
+			{
+				name: "Enrich",
+				href: "#"
+			},
+			{
+				name: "Endow",
+				href: "#"
+            }
+        ]
+	} %}
+#}
+
+<div class="js-menu menu">
+	<button class="js-menu-trigger menu_trigger" data-menu-opens="{{menu}}">
+		<span class="menu_trigger_label"><span class="lavender">Filter By</span> Category</span>
+		<span class="menu_trigger_icon" aria-hidden="true">{{site.icon("caret_down")}}</span>
+	</button>
+	<div class="js-menu-panel menu_panel" id="{{menu}}">
+		<ul class="menu_panel_list">
+			{% for item in items %}
+			<li class="js-menu-item menu_panel_item">
+				<a class="js-menu-link menu_panel_link" href="{{item.href}}">{{item.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

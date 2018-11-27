@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>marker_inactive</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="-17.5888672%" fx="50%" fy="-17.5888672%" r="100%" id="radialGradient-1">
+            <stop stop-color="#B62451" offset="0%"></stop>
+            <stop stop-color="#7F1028" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="marker_inactive" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval-16" stroke="#CBCBCB" fill-opacity="0.8" fill="#FFFFFF" cx="8" cy="8" r="8"></circle>
+            <circle id="Oval-16" fill="url(#radialGradient-1)" cx="8" cy="8" r="5"></circle>
+        </g>
+    </g>
+</svg>

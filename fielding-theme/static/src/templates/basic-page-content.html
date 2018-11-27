@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Basic Page Content"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+
+											<nav class="subnavigation_wrap">
+								<h2 class="subnavigation_handle fs-lg-hide">Additional Navigation</h2>
+								<div class="subnavigation js-navigation fs-navigation-element fs-navigation-toggle-nav fs-navigation__1 fs-light" data-navigation-handle=".subnavigation_handle" data-navigation-options="{&quot;labels&quot;:{&quot;open&quot;:&quot;Close&quot;,&quot;closed&quot;:&quot;Additional Navigation&quot;}}">
+								<ul id="menu-main-navigation-2" class="menu">
+									<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-41 current_page_item menu-item-48">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/home.html">Home</a>
+									</li>
+
+									<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item menu-item-has-children menu-item-51">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/style-guide.html">Style Guide </a>
+										<ul class="sub-menu">
+											<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/colors-fonts.html" rel="page">Colors and Fonts</a>
+											</li>
+											<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-115 menu-item-117 current-menu-item">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/basic-page-content.html" rel="page">Basic Page Content</a>
+											</li>
+											<li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/content-blocks-callouts.html" rel="page">Content Blocks and Callouts</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								</div>
+							</nav>
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h1>Basic Page Content</h1>
+								<div class="typography">
+									<blockquote>
+										<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</blockquote>
+
+									<h2>H2: Secondary Header</h2>
+									<p>The above title is created by selecting
+										<strong>Heading 2</strong> from the format dropdown in the WYSIWYG. The Sub Title Header provides an easy way to break your page up into Sub Sections.</p>
+									<h3>H3: Tertiary Header</h3>
+									<p>
+										<img src="//spacehold.it/300x200" class="block_right" alt="">
+										The above title is created by selecting
+										<strong>Heading 3</strong> from the format dropdown in the WYSIWYG. The Third Level Header is used to separate sub sections with a clear sense of hierarchy within a Sub Section.
+									</p>
+									<h4>H4: Quaternary Header</h4>
+									<p>The above title is created by selecting
+										<strong>Heading 4</strong> from the format dropdown in the WYSIWYG. The Fourth Level Header provides yet another level to help break a page up into easily digested sections.</p>
+									<h2>List Styles</h2>
+									<h3>Unordered List</h3>
+									<ul>
+										<li>This is an unordered list item.</li>
+										<li>
+											This is a second item.
+											<ul>
+												<li>This is a second level unordered list item.</li>
+												<li>This is a second item.</li>
+												<li>This is a third item.</li>
+												<li>
+													<a href="http://www.google.com">This is a list item that links back to this page.</a>
+												</li>
+											</ul>
+										</li>
+										<li>This is a third item.</li>
+										<li>
+											<a href="http://www.google.com">This is a list item that links back to this page.</a>
+										</li>
+									</ul>
+									<h3>Ordered List</h3>
+									<ol>
+										<li>This is an ordered list item.</li>
+										<li>
+											This is a second item.
+											<ol>
+												<li>This is a second level ordered list item.</li>
+												<li>This is a second item.</li>
+												<li>This is a third item.</li>
+												<li>
+													<a href="http://www.google.com">This is a list item that links back to this page.</a>
+												</li>
+											</ol>
+										</li>
+										<li>This is a third item.</li>
+										<li>
+											<a href="http://www.google.com">This is a list item that links back to this page.</a>
+										</li>
+									</ol>
+									<h2>Paragraph Styles</h2>
+
+									<div class="block_right">
+									<picture>
+										<!--[if IE 9]><video style="display: none;"><![endif]-->
+										<source media="(min-width: 980px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<source media="(min-width: 740px)" srcset="http://spacehold.it/740x555/fielding/3.jpg">
+										<source media="(min-width: 500px)" srcset="http://spacehold.it/500x375/fielding/3.jpg">
+										<!--[if IE 9]></video><![endif]-->
+										<img src="http://spacehold.it/500x375/fielding/3.jpg" alt="" draggable="false">
+									</picture>
+									<div class="content_image_caption">This is an image caption</div>
+								</div>
+									<p>Lorem ipsum dolor sit amet, velit jugis dignissim scisco typicus, feugait abico, vel in. Brevitas persto quidne feugait lucidus
+										<strong>this is bold copy</strong> premo opes saluto. Vindico interdico ingenium macto hendrerit facilisi os typicus accumsan dignissim velit feugait adipiscing pagus autem. Proprius letalis exerci nisl facilisi, pala
+										<em>this is italic copy</em>. Sit, blandit magna haero hos, pala minim. Enim tincidunt conventio macto abico delenit refoveo si nobis, quibus typicus rusticus. Gravis odio nutus ludus, inhibeo, importunus, nisl tamen nunc gemino, distineo in feugait ex. Accumsan nobis commodo consequat pagus ulciscor dolore.</p>
+									<p>Dolor nostrud usitas facilisi commoveo paratus ille facilisi autem dolus eligo iaceo augue exputo. Mauris camur paulatim sagaciter defui typicus suscipit. Praesent roto ut multo quibus inhibeo autem, ne nimis torqueo ventosus vicis, nonummy ut.</p>
+
+									<h2 class="table_header">Tabular Data</h2>
+									<table>
+									<thead>
+										<tr>
+											<th>Department</th>
+											<th>Phone Number</th>
+											<th>Email Address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+										<tr>
+											<td>School of Educational Leadership for Change</td>
+											<td>805.898.4065</td>
+											<td><a href="mailto:ELCadvisor@fielding.edu">ELCadvisor@fielding.edu</a></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div><!-- END: typography -->
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+						<div class="fs-row">
+							<div class="fs-cell">
+
+							</div>
+						</div>
+					</div>
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

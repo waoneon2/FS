@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Home"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_teal",
+					"name": "Melody Statler",
+					"description": "is studying gamer subculture, social media, and micro-aggression effects on LGBT gamers.",
+					"image": "5",
+					"alt": "",
+					"label": "Her Passions",
+					"caption": "are to unify gamers and general society, and to see the end of marginalization between groups. Fielding has enabled the alignment of her passions: gaming and research psychology.",
+					"button": "Hear from Melody",
+					"title": "Hear from Melody",
+					"media": "@@include('people-feature-video.html')"
+				})
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_purple",
+					"name": "Pamela Kennebrew",
+					"description": "is examining the socio-structural causes of economic insecurity in African American women over 55 years of age.",
+					"image": "6",
+					"alt": "",
+					"label": "Her Impact",
+					"caption": "is helping empower older women to draw on their internal strength and leverage past experiences to create a more powerful future.",
+					"button": "Explore Pamela's Research",
+					"title": "Research Paper",
+					"media": "@@include('people-feature-text.html')"
+				})
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_gray",
+					"name": "Melody Statler",
+					"description": "is studying gamer subculture, social media, and micro-aggression effects on LGBT gamers.",
+					"image": "9",
+					"alt": "",
+					"label": "Her Passions",
+					"caption": "are to unify gamers and general society, and to see the end of marginalization between groups. Fielding has enabled the alignment of her passions: gaming and research psychology.",
+					"button": "Hear from Melody",
+					"title": "Hear from Melody",
+					"media": "@@include('people-feature-video.html')"
+				})
+
+				@@include('../partials/components/people-feature.html', {
+					"margin": "",
+					"theme": "theme_red",
+					"name": "Pamela Kennebrew",
+					"description": "is examining the socio-structural causes of economic insecurity in African American women over 55 years of age.",
+					"image": "3",
+					"alt": "",
+					"label": "Her Impact",
+					"caption": "is helping empower older women to draw on their internal strength and leverage past experiences to create a more powerful future.",
+					"button": "Explore Pamela's Research",
+					"title": "Research Paper",
+					"media": "@@include('people-feature-text.html')"
+				})
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

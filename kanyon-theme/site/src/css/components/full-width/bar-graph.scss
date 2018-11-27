@@ -1,0 +1,330 @@
+/* ==========================================================================
+   Bar Graph
+============================================================================= */
+
+.bar_graph {
+	position: relative;
+
+	color: $black;
+	padding: 0 0 80px;
+
+	&:first-child {
+		padding-top: 40px;
+	}
+
+	&:before {
+		height: 100%;
+		width: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -2;
+
+		content: "";
+	}
+
+	&.theme_dark {
+		background: $black;
+		color: $white;
+		padding: 60px 0 80px;
+
+		@media #{$min_md} {
+			padding: 90px 0 110px;
+		}
+	}
+
+	&.theme_gray {
+		background: $snow;
+	}
+
+	.page_layout_home & {
+		z-index: 2;
+	}
+}
+
+.bar_graph_container {
+	position: relative;
+
+	border-top: 4px solid $snow;
+	padding-top: 46px;
+
+	.bar_graph.theme_dark & {
+		border-top: none;
+		padding-top: 0;
+	}
+}
+
+.bar_graph + .bar_graph {
+
+	.bar_graph_container {
+		border-top: none;
+	}
+}
+
+.bar_graph_heading {
+	@include h6;
+	margin-bottom: 5px;
+	margin-top: 0;
+
+	.bar_graph.theme_dark & {
+		margin-bottom: 5px;
+
+		@media #{$min_md} {
+			margin-bottom: 21px;
+		}
+	}
+}
+
+.bar_graph_title {
+	@include h2;
+	margin-bottom: 10px;
+	margin-top: 0;
+
+	@media #{$min_md} {
+		margin-bottom: 2px;
+	}
+}
+
+.bar_graph_summary {
+	width: 100%;
+
+	@media #{$min_md} {
+		width: 65%;
+	}
+
+	@media #{$min_lg} {
+		width: 70%;
+	}
+}
+
+.bar_graph_description {
+	margin-top: 0px;
+
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.bar_graph_description_text {
+	@include body_text;
+	margin-top: 53px;
+}
+
+.bar_graph_button {
+	width: 100%;
+	margin-top: 32px;
+	
+	@media #{$min_md} {
+		width: 35%;
+
+		margin-top: 10px;
+		text-align: right;
+	}
+
+	@media #{$min_lg} {
+		width: 30%;
+	}
+}
+
+.bar_graph_button_link {
+	@include button_purple;
+	display: inline-block;
+
+	.bar_graph.color_purple & {
+		@include button_purple;
+	}
+
+	.bar_graph.color_orange & {
+		@include button_orange;
+	}
+
+	.bar_graph.color_blue & {
+		@include button_blue;
+	}
+
+	.bar_graph.color_green & {
+		@include button_green;
+	}
+
+	.bar_graph.color_yellow & {
+		@include button_yellow;
+	}
+
+	.bar_graph.theme_dark & {
+
+		&:hover {
+			background: $white;
+			color: $black;
+		}
+	}
+
+	@mixin button_purple() {
+	@include button;
+	@include button_fill($purple, $true_black, $white, $white);
+}
+}
+
+.bar_graph_inner {
+
+	&.has_summary {
+
+	}
+
+	@media #{$min_md} {
+		display: flex;
+	}
+}
+
+.bar_graph_summary_label {
+	@include h3;
+}
+
+.bar_graph_nominator {
+	@include font_smoothing;
+	position: absolute;
+	top: 0;
+	left: 35px;
+
+	color: $gray;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.bar_graph_fullwidth {
+	background: $white url('../images/bargraph_bg.png') repeat-x;
+	background-size: auto 100%;
+	border: 4px solid $white;
+	border-radius: 100px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+	margin-top: 40px;
+	overflow: hidden;
+
+	.bar_graph.theme_dark & {
+		margin-top: 40px;
+
+		@media #{$min_md} {
+			margin-top: 70px;
+		}
+	}
+}
+
+.bar_graph_value {
+	height: 60px;
+	width: 0;
+
+	position: relative;
+
+	background: $purple;
+	border-top-left-radius: 60px;
+	border-bottom-left-radius: 60px;
+	transition: width 1.5s;
+	vertical-align: top;
+
+	.bar_graph.color_purple & {
+		background: $purple;
+	}
+
+	.bar_graph.color_orange & {
+		background: $orange;
+	}
+
+	.bar_graph.color_blue & {
+		background: $blue;
+	}
+
+	.bar_graph.color_green & {
+		background: $green;
+	}
+
+	.bar_graph.color_yellow & {
+		background: $yellow;
+	}
+
+	@media #{$min_sm} {
+		height: 100px;
+
+		border-top-left-radius: 100px;
+		border-bottom-left-radius: 100px;
+	}
+}
+
+.bar_graph_value_label {
+	@include h2;
+	position: absolute;
+	top: 50%;
+	right: 18px;
+
+	color: $white;
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 1;
+	opacity: 0;
+	padding: 0 10px;
+	transform: translate(0, -50%);
+	transition: opacity .5s .65s;
+
+	.evaluated & {
+		opacity: 1;
+	}
+
+	.bar_graph.color_yellow & {
+		color: $black;
+	}
+
+	&.small_value {
+		right: auto;
+		left: 100%;
+
+		background: $white;
+		background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 64%, rgba(255,255,255,0) 100%);
+		padding: 22px 100px 22px 20px;
+		transition: opacity 0.5s 0.125s;
+
+		@media #{$min_sm} {
+			padding-top: 38px;
+			padding-bottom: 38px;
+		}
+
+		.bar_graph.color_purple & {
+			color: $purple
+		}
+	
+		.bar_graph.color_orange & {
+			color: $orange;
+		}
+	
+		.bar_graph.color_blue & {
+			color: $blue;
+		}
+	
+		.bar_graph.color_green & {
+			color: $green;
+		}
+
+		.bar_graph.color_yellow & {
+			color: $black;
+		}
+	}
+
+	@media #{$min_sm} {
+		font-size: 26px;
+	}
+}
+
+.bar_graph_labels {
+	height: 26px;
+	position: relative;
+	margin-top: 12px;
+}
+
+.bar_graph_denominator {
+	@include font_smoothing;
+	position: absolute;
+	top: 0;
+	right: 15px;
+
+	color: $gray;
+	font-size: 20px;
+	font-weight: 900;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Event Calendar"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb w/ Image behind -->
+
+				<div class="fs-row breadcrumb_wrap">
+					<div class="fs-cell breadcrumb_overlay">
+						@@include('../partials/breadcrumb/page-events.html')
+					</div>
+				</div>
+
+				@@include('../partials/components/featured-events.html')
+
+				<!-- Page Header -->
+
+				@@include('../partials/_page-header.html', {
+					"class": "heading_red",
+					"heading": "Event Calendar",
+					"page_header": ""
+				})
+				<!-- END: Page Header -->
+
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+							@@include('../partials/components/sidebar-text-image-callout.html')
+							@@include('../partials/components/contact-info.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							@@include('../partials/components/in-content-event-list.html')
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+
+							</div><!-- END: typography -->
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

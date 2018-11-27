@@ -1,0 +1,176 @@
+/* ==========================================================================
+	Homepage - Program Finder
+============================================================================= */
+
+	.program_wrap {
+		.relative;
+		
+		.media_carousel_label,
+		.media_carousel_heading,
+		.larger {
+			padding: 0;
+			
+			@media @min_md {
+				.text_center;
+			}
+		}
+		
+		.media_carousel_label {
+			.color_red;
+		}
+	}
+	
+	.larger {
+			.color_gray_dark;
+			.font_size(16);
+			.line_height(37,20);
+			
+			margin: 8px 0 20px 0;
+			
+			@media @min_md {
+				.font_size(20);
+			}
+		}
+	
+	.program_carousel {
+		margin-top: 37px;
+		
+		@media @min_sm {
+			margin-top: 50px;
+		}
+		
+		.fs-carousel-controls {
+			margin-top: 50px;
+		}
+		
+		.fs-carousel-page {
+			
+			@media @min_sm {
+				display: none;
+			}
+		}
+		
+		.fs-carousel-pagination {
+			&:before,
+			&:after {
+				
+				@media @min_sm {
+					width: 400px;
+				}
+			}
+			
+			&:before {
+				
+				@media @min_sm {
+					margin-right: 140px;
+				}
+			}	
+			
+			&:after {
+				
+				@media @min_sm {
+					margin-left: 140px;
+				}
+			}	
+		}
+		
+		.fs-carousel-pagination-wrap {
+			margin-top: 11px;
+		}
+		
+		.fs-carousel-canister {
+			overflow: visible;
+		}
+		
+		.fs-carousel-item {
+			opacity: 0.5;
+			transition:
+				opacity 0.5s;
+				
+			&.fs-carousel-visible {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.program_box_wrap {
+		max-width: 375px !important;
+		
+		margin-right: 23px;
+	}
+	
+	.program_box {
+		background: @white_true;
+		
+		padding: 32px 26px;
+		
+		box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.10);
+		
+		@media @min_sm {
+			padding: 36px 41px;
+		}
+		
+		.heading_3 {
+			.garamond;
+			.font_size(24);
+			
+			margin: 10px 0 5px 0;
+			
+			@media @min_sm {
+				.font_size(26);
+			}
+		}
+		
+		a {
+			.block;
+			.color_red;
+			
+			padding: 20px 0;
+			
+			border-bottom: 1px solid fade(@gray,20);
+			
+			&:last-child {
+				border-bottom: none;
+			}
+			
+			.no-touchevents &:hover {
+				.color_gray_dark;
+			}
+		}
+	}
+	
+	.carousel_link {
+		.avenir_black;
+		.block;
+		.color_red;
+		&:extend(.icon_only_after all);
+		.text_center;
+		.uppercase;
+		
+		letter-spacing: 2.0px;
+		
+		@media @min_sm {
+			.center();
+			
+			top: auto;
+			bottom: 0;
+			
+			display: inline-block;
+		}
+		
+		&:after {
+			.relative;
+			&:extend(.icon_paper); 
+		
+			top: 6px;
+			left: 10px;
+		}
+		
+		.no-touchevents &:hover {
+			.color_black;
+			
+			&:after {
+				.icon_paper_red;
+			}
+		}
+	}

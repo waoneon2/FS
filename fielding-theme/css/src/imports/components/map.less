@@ -1,0 +1,349 @@
+/* ==========================================================================
+	Map
+============================================================================= */
+
+	.map_wrap {
+		.text_center;
+
+		.media_carousel_label {
+			.color_red;
+		}
+
+		p {
+			.body_text();
+		}
+	}
+
+	.map_container {
+		.relative;
+	}
+
+	.alumni_map {
+		.relative;
+	}
+
+	.alumni_map_text {
+		&:extend(.body_text all);
+
+		margin: 0;
+	}
+
+	.alumni_map_container {
+		width: 100%;
+		height: 300px;
+
+		margin-bottom: 50px;
+
+		@media @min_sm {
+			height: 400px;
+		}
+
+		@media @min_md {
+			height: 600px;
+		}
+
+		@media @min_lg @and_max_xl @and_min_height_lg {
+			height: 800px;
+		}
+
+		@media @min_xl @and_min_height_xl {
+			height: 900px;
+		}
+	}
+
+	/* Info Window */
+
+	.alumni_map_details_container {
+		.color_white_true;
+		.border_radius;
+		.text_center;
+		.absolute;
+
+		width: 95%;
+		max-width: 400px;
+
+		left: 0;
+		right: 0;
+		z-index: 1;
+
+		background: @red;
+		margin: -80px auto 0;
+		opacity: 0;
+		transition: margin (@base_transition_duration * 2) ease,
+					opacity (@base_transition_duration * 2) ease,
+					visibility (@base_transition_duration * 2) ease;
+		visibility: hidden;
+
+		@media @min_md {
+			.absolute;
+
+			top: 0;
+
+			margin: 125px 50px auto auto;
+			transition: opacity (@base_transition_duration * 2) ease,
+						visibility (@base_transition_duration * 2) ease;
+		}
+
+		@media @min_lg {
+			margin: 125px 30px auto auto;
+		}
+
+		@media @min_lg @and_max_xl @and_min_height_lg {
+			margin: 200px 30px auto auto;
+		}
+
+		@media @min_xl {
+			margin: 125px 150px auto auto;
+		}
+
+		@media @min_xl @and_min_height_xl {
+			margin: 250px 150px auto auto;
+		}
+
+		&.on {
+			opacity: 1;
+			visibility: visible;
+
+			@media @max_sm {
+				margin: -110px auto 50px;
+			}
+
+			@media @min_sm @and_max_md {
+				margin: -150px auto 50px;
+			}
+		}
+	}
+
+	.alumni_map_details {
+		.relative;
+
+		height: 100%;
+	}
+
+	.alumni_map_details_wrap {
+		.relative;
+		.border_radius;
+
+		height: 100%;
+
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.20);
+		overflow: hidden;
+
+		&:before {
+			.absolute;
+			.block;
+
+			top: -80%;
+			left: -25%;
+
+			height: 150%;
+			width: 150%;
+
+			background-image: radial-gradient(50% 82%, #B62551 0%, #7F1028 62%);
+			content: "";
+		}
+	}
+
+	.alumni_map_details_content {
+		.relative;
+
+		// height: 100%;
+
+		padding: 25px 25px 0 25px;
+	}
+
+	.alumni_map_details_close {
+		.icon_only_before;
+		.absolute;
+		.size(50);
+
+		top: 0;
+		right: 0;
+		z-index: 3;
+
+		background: fade(@black_true,15);
+		outline: none;
+
+		&:before {
+			.icon_x;
+		}
+		
+		.no-touchevents &:hover {
+			background: fade(@black_true,50);
+		}
+	}
+
+	.alumni_map_details_content_footer {
+		.triangle_right(@width: 16, @height: 15, @margin-top: 5, @transition: transform, @color: @red);
+
+		width: 100%;
+
+		border-radius: 0px 0px 3px 3px;
+		background: @white_true;
+		padding: 25px 0;
+
+		&:after {
+			top: -7px;
+			left: 0;
+			right: 0;
+
+			margin: 0 auto;
+			transform: rotate(90deg);
+		}
+	}
+
+	.alumni_map_details_figure {
+		.size(100, 100);
+		.absolute;
+
+		top: -50px;
+		right: 0;
+		left: 0;
+		z-index: 2;
+
+		margin: 0 auto;
+
+		@media @min_md {
+			.size(150, 150);
+
+			top: -75px;
+		}
+
+		@media @min_xl {
+			.size(200, 200);
+
+			top: -100px;
+		}
+
+		img {
+			width: 100%;
+
+			border-radius: 50%;
+			box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+		}
+	}
+
+	.alumni_map_details_name {
+		.garamond;
+		.font_size(25);
+
+		margin: 50px 0 5px 0;
+
+		@media @min_md {
+			margin-top: 75px;
+		}
+
+		@media @min_xl {
+			margin-top: 100px;
+		}
+	}
+
+	.alumni_map_details_location {
+		.font_size(18);
+
+		margin: 5px 0 5px 0;
+	}
+
+	.alumni_map_details_title {
+		.font_size(18);
+		color: fade(@gray_pale, 70);
+
+		margin-bottom: 33px;
+
+		&:before {
+			.block;
+
+			width: 80px;
+
+			margin: 22px auto 15px;
+
+			border-top: 1px solid fade(@white_true,17);
+			content: "";
+		}
+	}
+
+	.alumni_map_details_degree {
+		.avenir_black;
+		.color_red;
+
+		margin: 0 0 5px 0;
+	}
+
+	.alumni_map_details_text {
+		.color_black_true;
+
+		margin: 0;
+	}
+
+	.add_wrap {
+		.border_radius;
+		.text_center;
+
+		width: 100%;
+
+		background: @white_true;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+		margin: 30px 0;
+		padding: 22px;
+
+		@media @min_lg {
+			.absolute;
+			.size(353,302);
+
+			bottom: 30px;
+			left: 30px;
+
+			margin: 0;
+		}
+
+		.heading_dashed {
+			.color_red;
+			.text_center;
+			.line_height(25,16);
+
+			margin: 17px 0;
+
+			padding: 0 50px;
+
+			&:before,
+			&:after {
+				top: 20px;
+
+				width: 8%;
+
+				border-color: fade(@gray,52);
+			}
+
+			&:before {
+				left: 2%
+			}
+
+			&:after {
+				right: 2%;
+			}
+		}
+
+		p {
+			.text_center;
+			.font_size(18);
+			.line_height(24,18);
+			color: fade(@black_true,70);
+
+			margin-top: 0;
+		}
+
+		.btn_gray {
+			width: 75%;
+
+			margin: 0 auto;
+
+			border: none;
+			float: none;
+
+			&:after {
+				.icon_arrow_red;
+
+				top: 20px;
+			}
+		}
+	}

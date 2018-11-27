@@ -1,0 +1,101 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaImage: "/images/temp/social-wide.jpg",
+		metaImageWidth: "1220",
+		metaImageHeight: "686",
+		metaCard: "summary_large_image",
+		title: "Campaign Stories",
+		theme: "purple",
+		layout: "news_listing"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+
+	{% include feat ~ "news-listing-header.twig" with {
+		title: "Campaign Stories",
+		theme: "purple",
+		image: 12,
+		featured: {
+			image: 7,
+			meta: "<a href='#'>Enhance</a> The West Quad",
+			title: "Here Comes the Sun",
+			description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch your eye.",
+			link: {
+				href: "#",
+				label: "Read The Story"
+			}
+		}
+	} %}
+
+{% endblock %}
+
+{% block typography %}
+{% endblock %}
+
+{% block in_content_callouts %}
+{% endblock %}
+
+{% block full_width_callouts %}
+
+	{% include full ~ "stories-listing.twig" with {
+		items: [
+			{
+				image: 9,
+				tags: "<a href='#'>Enrich</a>",
+				title: "A Legal Mind",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 6,
+				tags: "<a href='#'>Enrich</a>  Volunteers",
+				title: "How to Land Your Congressional Dream Job",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 11,
+				tags: "<a href='#'>Enhance</a>",
+				title: "An Activists Journey",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 5,
+				tags: "",
+				title: "Welcome Class of 2022",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 1,
+				tags: "<a href='#'>Endow</a> Diversity",
+				title: "Roll Call",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 8,
+				tags: "",
+				title: "Our Trustees Shape the Future",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			},
+			{
+				image: 7,
+				tags: "<a href=''>Enrich</a>",
+				title: "Extra Credit",
+				excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+				link: "#"
+			}
+		]
+		
+	} %}
+
+{% endblock %}
+
+
+

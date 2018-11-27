@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Alumni Landing"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb w/ Image behind -->
+
+				<div class="fs-row breadcrumb_wrap">
+					<div class="fs-cell breadcrumb_overlay">
+						@@include('../partials/breadcrumb/page-alumni.html')
+					</div>
+				</div>
+
+
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								@@include('../partials/components/form.html')
+
+							</div>
+
+						</div><!-- END: Left Content Area -->
+
+
+
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+
+
+
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

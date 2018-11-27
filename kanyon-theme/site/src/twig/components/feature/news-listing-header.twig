@@ -1,0 +1,91 @@
+{#
+	{{site.anchor("News Listing Header")}}
+	{% include feat ~ "news-listing-header.twig" with {
+        title: "Campaign Stories",
+        theme: "purple",
+        image: 5,
+        featured: {
+            image: 7,
+            meta: "Enhance \ The West Quad",
+            title: "Here Comes the Sun",
+            description: "Travel down Middle Path in the heart of Gambier on a sunny day, and a glistening array of solar panels might catch your eye.",
+            link: {
+                href: "#",
+                label: "Read The Story"
+            }
+        }
+	} %}
+#}
+
+<div class="news_header">
+
+    <div class="news_header_media{% if image %} js-background{% endif %}{% if theme %} theme_{{theme}}{% endif %}"{% if image %} data-background-options='{"source":{"0px":"//images.fastspot.com/{{vars.images}}/{{img.portraitClassic.sml}}/{{image}}","740px":"//images.fastspot.com/{{vars.images}}/{{img.full.med}}/{{image}}","980px":"//images.fastspot.com/{{vars.images}}/{{img.ultrawide.lrg}}/{{image}}","1220px":"//images.fastspot.com/{{vars.images}}/{{img.ultrawide.xlrg}}/{{image}}"},"alt":"Campaign Stories"}'{% endif %}>
+
+        <div class="news_header_content">
+
+            <div class="fs-row">
+                <div class="fs-cell fs-lg-10 fs-lg-push-1"> 
+                    <header class="news_header_header">
+                        <h1 class="news_header_heading">{{title}}</h1>
+                        <div class="news_header_filter">
+                            {% include par ~ "menu-button.twig" with {
+                                menu: "categories",
+                                items: [
+                                    {
+                                        name: "View All Stories",
+                                        href: "#"
+                                    },
+                                    {
+                                        name: "Extend",
+                                        href: "#"
+                                    },
+                                    {
+                                        name: "Enrich",
+                                        href: "#"
+                                    },
+                                    {
+                                        name: "Endow",
+                                        href: "#"
+                                    }
+                                ]
+                            } %}
+                        </div>
+                    </header>
+                </div>
+            </div>  
+
+        </div>
+
+    </div>
+
+    <div class="fs-row">
+        <div class="fs-cell fs-lg-12">
+
+            <div class="featured_news">
+                <div class="featured_news_inner">
+                    {% if featured.image %}
+                        <div class="featured_news_image js-background" data-background-options='{"source":{"0px":"//images.fastspot.com/{{vars.images}}/{{img.square.sml}}/{{featured.image}}", "500px":"//images.fastspot.com/{{vars.images}}/{{img.full.med}}/{{featured.image}}", "740px":"//images.fastspot.com/{{vars.images}}/{{img.full.lrg}}/{{featured.image}}", "980px":"//images.fastspot.com/{{vars.images}}/{{img.square.med}}/{{featured.image}}"},"alt":"{{featured.title}}"}'></div>
+                    {% endif %}
+                    <div class="featured_news_wrapper">
+                        <header class="featured_news_header">
+                            <span class="featured_news_meta">{{featured.meta}}</span>
+                            <h3 class="featured_news_title">{{featured.title}}</h3>
+                        </header>
+                        <div class="featured_news_body">
+                            <div class="featured_news_description">
+                                <p>{{featured.description}}</p>
+                            </div>
+                        </div>
+                        {% if featured.link %}
+                            <footer class="featured_news_footer">
+                                {{site.button("featured_news", featured.link.label, featured.link.href)}}
+                            </footer>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

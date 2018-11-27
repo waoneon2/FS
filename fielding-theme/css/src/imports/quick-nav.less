@@ -1,0 +1,191 @@
+.quick_nav_wrap {
+	padding: 0 20px;
+
+	@media @min_lg {
+		position: absolute;
+		top: 7px;
+		right: 0;
+
+		padding: 0;
+	}
+
+	@media @min_xl {
+		transition:
+			top .35s,
+			right .35s;
+	}
+
+	.pin-header & {
+
+		@media @min_xl {
+			top: 17px;
+			right: 425px;
+		}
+	}
+}
+
+.quick_nav {}
+
+.quick_nav_list { 
+
+	.menu {}
+
+	.menu-item {
+		position: relative;
+
+		line-height: 1;
+
+		@media @min_lg {
+			display: inline-block;
+		}
+
+		&:last-child {
+
+			a {
+
+				@media @min_lg {
+					padding-right: 0;
+				}
+			}
+		}
+
+		> span,
+		> a {
+			.avenir;
+	
+			color: #000;
+			cursor: pointer;
+			display: block;
+			font-size: 13px;
+			letter-spacing: 2px;
+			padding: 10px 0;
+			text-transform: uppercase;
+			transition: color .25s;
+	
+			@media @min_lg {
+				padding: 10px;
+			}
+	
+			@media @min_xl {
+				padding: 10px 14px;
+				transition: 
+					font-size .35s,
+					padding .35s;
+			}
+	
+			&:hover,
+			&:focus {
+				color: #7F1028;
+			}
+
+			.pin-header & {
+
+				@media @min_xl {
+					.font_size(11);
+
+					padding: 10px 8px;
+				}
+			}
+		}
+
+		ul {
+			display: none;
+			list-style: none;
+			padding: 0 0 8px;
+
+			@media @min_lg {
+				width: 345px;
+
+				position: absolute;
+				top: 100%;
+				left: 0;
+				z-index: 40;
+
+				background: #E4E5E3;
+				border-radius: 4px;
+				display: block;
+				opacity: 0;
+				padding: 15px 40px;
+				visibility: hidden;
+				transition:
+					opacity .25s,
+					visibility .25s;
+			}
+
+			li {
+				margin-bottom: 0;
+
+				@media @min_lg {
+					border-bottom: 1px solid #D4D4D2;
+				}
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+
+			a {
+				.avenir;
+				.font_size(16);
+				.line_height(20, 16);
+
+				color: #7F1028;
+				display: block;
+				padding: 8px 20px;
+				transition: color .25s;
+
+				@media @min_lg {
+					padding: 24px 0;
+				}
+
+				&:focus,
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+
+		&.fs-swap-active {
+
+			ul {
+				display: block;
+			}
+		}
+	}
+
+	.has-dropdown {
+
+		&:hover,
+		&:focus {
+
+			> a {
+				color: #7F1028;
+			}
+
+			ul {
+
+				@media @min_lg {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		> span,
+		> a {
+
+			&:after {
+				position: relative;
+				top: 1px;
+
+				border: 6px solid transparent;
+				border-top-color: #7F1028;
+				content: "";
+				display: inline-block;
+				margin-left: 4px;
+				vertical-align: middle;
+				transform: scaleX(.85);
+			}
+		}
+	}
+}

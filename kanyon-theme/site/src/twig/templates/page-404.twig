@@ -1,0 +1,35 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaCard: "summary",
+		title: "Page Not Found",
+		intro: "",
+		layout: "404"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+
+	{% include full ~ "cover-callout.twig" with {
+		background: 7,
+		heading: "Wrong Direction",
+		text: "This is unfortunately not the correct path to the information you are trying to find. Let us help send you in the right direction!",
+		links: [
+			{
+				href: "#",
+				name: "Contact Us"
+			},
+			{
+				href: "#",
+				name: "Accessibility"
+			},
+			{
+				href: "#",
+				name: "About The Campaign"
+			}
+		]
+	} %}
+
+{% endblock %}
+

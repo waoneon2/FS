@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Centers &amp; Initiatives"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb w/ Image behind -->
+
+				<div class="fs-row breadcrumb_wrap">
+					<div class="fs-cell breadcrumb_overlay">
+						@@include('../partials/breadcrumb/page-centers-initiatives.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+				@@include('../partials/components/feature-callout.html', {
+					"image": "4",
+					"title": "PhD Human and Organizational Systems",
+					"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+					"button1": "@@include('feature-callout-button-1.html')",
+					"button2": "@@include('feature-callout-button-2.html')",
+					"spotlight": "@@include('feature-callout-spotlight.html')"
+				})
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+							@@include('../partials/components/sub-navigation.html')
+							@@include('../partials/components/contact-info.html')
+							@@include('../partials/components/sidebar-text-callout.html')
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h2>Frontiers in Research</h2>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely. At the same time, our faculty represent a unique diversity of disciplines, ethnicity, cultures, professions, and academic interests. That's important, because at Fielding, you are in the driver's seat.</p>
+							</div><!-- END: typography -->
+
+							@@include('../partials/components/related-links.html')
+
+							<div class="typography">
+
+								<h2>Professional Development</h2>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely. At the same time, our faculty represent a unique diversity of disciplines, ethnicity, cultures, professions, and academic interests. That's important, because at Fielding, you are in the driver's seat.</p>
+
+								<h2>Organizational Consulting</h2>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely. At the same time, our faculty represent a unique diversity of disciplines, ethnicity, cultures, professions, and academic interests. That's important, because at Fielding, you are in the driver's seat.</p>
+							</div><!-- END: typography -->
+
+
+							@@include('../partials/components/in-content-callout.html')
+
+							<div class="typography">
+
+								<h3>Our Fellows</h3>
+								<p>Our faculty is made up of some of the world’s finest minds. They are senior scholar-practitioners who excel in academia as well as their professions and practices. Many have taught at other leading universities and have been published widely.</p>
+							</div><!-- END: typography -->
+
+							@@include('../partials/components/spotlight-single.html')
+
+							<div class="typography">
+								<h3>In Their Words</h3>
+							</div><!-- END: typography -->
+
+							@@include('../partials/components/testimonial-single.html')
+
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+						@@include('../partials/components/full-width-callout.html')
+
+						@@include('../partials/components/facts-stats.html', {
+							"margin": "margined_lg",
+							"label": "FUSCE ELEMENTUM FRINGILLA LECTUS QUIS SOLLICITUDIN",
+							"title": "We are an engaging community of lifelong learners",
+							"description": "Suspendisse imperdiet fringilla consectetur. Curabitur eu est id est mattis tincidunt vitae eu elit. Nunc tempus tellus enim, ut pellentesque sem tincidunt quis."
+						})
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

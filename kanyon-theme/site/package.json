@@ -1,0 +1,343 @@
+{
+  "name": "kenyon-campaign",
+  "version": "1.0.0",
+  "description": "Kenyon College 2018 Campaign",
+  "author": "Fastspot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fastspot/KenyonCampaign"
+  },
+  "urls": [
+    {
+      "name": "trello",
+      "url": "https://trello.com/b/TkN4nIa3/kenyon-campaign"
+    },
+    {
+      "name": "invision",
+      "url": "https://projects.invisionapp.com/d/main#/projects/prototypes/14302300"
+    },
+    {
+      "name": "dev",
+      "url": "kenyon-campaign.dev.fastspot.com"
+    }
+  ],
+  "vars": {
+    "namespace": "kc",
+    "name": "Kenyon Campaign",
+    "images": "kenyon-campaign",
+    "domain": "kenyon-campaign.dev.fastspot.com",
+    "description": "Kenyon College 2018 Campaign",
+    "schemaType": "CollegeOrUniversity",
+    "twitter": "KenyonCollege",
+    "color": "#4B2E84",
+    "idBoardTrello": "5b474a3aeaf5e37d5ecf2c22"
+  },
+  "devDependencies": {
+    "async": "2.6.0",
+    "autoprefixer": "8.1.0",
+    "browser-sync": "2.23.6",
+    "del": "3.0.0",
+    "formstone": "1.4.3",
+    "globby": "8.0.1",
+    "gulp": "4.0.0",
+    "gulp-concat-multi": "1.0.1",
+    "gulp-cssnano": "2.1.2",
+    "gulp-folder-index": "0.0.3",
+    "gulp-html-beautify": "1.0.1",
+    "gulp-if": "2.0.2",
+    "gulp-imagemin": "4.1.0",
+    "gulp-jshint": "2.1.0",
+    "gulp-newer": "1.4.0",
+    "gulp-postcss": "7.0.1",
+    "gulp-real-favicon": "0.2.2",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "3.1.0",
+    "gulp-sass-glob": "1.0.8",
+    "gulp-svg-sprite": "1.3.7",
+    "gulp-twig": "1.2.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-util": "3.0.8",
+    "install": "0.10.4",
+    "jquery": "3.3.1",
+    "jshint": "2.9.5",
+    "jshint-stylish": "2.2.1",
+    "markdown": "0.5.0",
+    "node-trello": "1.3.0",
+    "normalize.css": "8.0.0",
+    "pa11y": "4.13.2",
+    "path": "0.12.7",
+    "postcss-pxtorem": "4.0.1",
+    "postcss-unmq": "1.0.2",
+    "require-reload": "0.2.2",
+    "what-input": "5.0.5",
+    "yargs": "11.0.0"
+  },
+  "css": [
+    "src/css/site.scss",
+    "src/css/guidebook.scss",
+    "src/css/tinymce.scss"
+  ],
+  "js": {
+    "site.js": [
+      "src/js/vendor/modernizr-custom.js",
+      "src/js/vendor/slick.js",
+      "node_modules/formstone/dist/js/core.js",
+      "node_modules/formstone/dist/js/mediaquery.js",
+      "node_modules/formstone/dist/js/analytics.js",
+      "node_modules/formstone/dist/js/background.js",
+      "node_modules/formstone/dist/js/carousel.js",
+      "node_modules/formstone/dist/js/checkbox.js",
+      "node_modules/formstone/dist/js/checkpoint.js",
+      "node_modules/formstone/dist/js/cookie.js",
+      "node_modules/formstone/dist/js/dropdown.js",
+      "node_modules/formstone/dist/js/equalize.js",
+      "node_modules/formstone/dist/js/lightbox.js",
+      "node_modules/formstone/dist/js/navigation.js",
+      "node_modules/formstone/dist/js/pagination.js",
+      "node_modules/formstone/dist/js/sticky.js",
+      "node_modules/formstone/dist/js/swap.js",
+      "node_modules/formstone/dist/js/touch.js",
+      "node_modules/formstone/dist/js/transition.js",
+      "node_modules/formstone/dist/js/viewer.js",
+      "node_modules/what-input/dist/what-input.js",
+      "src/js/site.js",
+      "src/js/modules/**/*.js",
+      "!src/js/modules/module.js"
+    ]
+  },
+  "img": {
+    "ultrawide": {
+      "xxsml": "300x129",
+      "xsml": "500x214",
+      "sml": "740x317",
+      "med": "980x420",
+      "lrg": "1220x523",
+      "xlrg": "1440x617"
+    },
+    "wide": {
+      "xxsml": "300x169",
+      "xsml": "500x282",
+      "sml": "740x416",
+      "med": "980x552",
+      "lrg": "1220x686",
+      "xlrg": "1440x810"
+    },
+    "full": {
+      "xxsml": "300x225",
+      "xsml": "500x375",
+      "sml": "740x555",
+      "med": "980x735",
+      "lrg": "1220x915",
+      "xlrg": "1440x1080"
+    },
+    "square": {
+      "thumb": "100x100",
+      "xxsml": "300x300",
+      "xsml": "500x500",
+      "sml": "740x740",
+      "med": "980x980"
+    },
+    "classic": {
+      "xxsml": "300x200",
+      "xsml": "500x334",
+      "sml": "740x494",
+      "med": "980x654",
+      "lrg": "1220x814",
+      "xlrg": "1440x960"
+    },
+    "portraitFull": {
+      "xxsml": "225x300",
+      "xsml": "375x500",
+      "sml": "555x740",
+      "med": "735x980",
+      "lrg": "915x1220",
+      "xlrg": "1080x1440"
+    },
+    "portraitClassic": {
+      "xxsml": "200x300",
+      "xsml": "334x500",
+      "sml": "494x740",
+      "med": "654x980",
+      "lrg": "814x1220",
+      "xlrg": "960x1440"
+    }
+  },
+  "links": {
+    "mainNav": [
+      {
+        "name": "Extend"
+      },
+      {
+        "name": "Enhance",
+        "children": [
+          "Library",
+          "English Cottage",
+          "Interdisciplinary Academic Building",
+          "Admissions Center",
+          "The Village"
+        ]
+      },
+      {
+        "name": "Enrich"
+      }
+    ],
+    "secondaryNav": [
+      {
+        "modifier": "",
+        "name": "About the Campaign",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "name": "Ways to Give",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "name": "Stories",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "name": "Get Involved",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "name": "Attend An Event",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "name": "Donate",
+        "children": ""
+      }
+    ],
+    "footerNav": [
+      "Contact Us",
+      "Accessibility",
+      "For Campaign Volunteers"
+    ],
+    "socialNav": [
+      {
+        "modifier": "",
+        "icon": "twitter",
+        "name": "Twitter",
+        "href": "//twitter.com/KenyonCollege"
+      },
+      {
+        "modifier": "",
+        "icon": "youtube",
+        "name": "Youtube",
+        "href": "//www.youtube.com/user/KenyonCollegeVideo"
+      },
+      {
+        "modifier": "",
+        "icon": "facebook",
+        "name": "Facebook",
+        "href": "//www.facebook.com/kenyoncollege"
+      },
+      {
+        "modifier": "",
+        "icon": "instagram",
+        "name": "Instagram",
+        "href": "//www.instagram.com/kenyoncollege/"
+      }
+    ],
+    "subNav": [
+      {
+        "modifier": "",
+        "href": "../",
+        "name": "Sitemap",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "href": "dev-feature.html",
+        "name": "Page Feature Components",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "href": "dev-full-width.html",
+        "name": "Full Width Components",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "href": "dev-in-content.html",
+        "name": "In Content Components",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "href": "dev-sidebar.html",
+        "name": "Sidebar Components",
+        "children": ""
+      },
+      {
+        "modifier": "",
+        "href": "dev-html.html",
+        "name": "HTML Elements",
+        "children": ""
+      }
+    ],
+    "guidebook": [
+      {
+        "name": "content strategy",
+        "href": "fs-content-strategy.html"
+      },
+      {
+        "name": "visual styles",
+        "href": "fs-visual-styles.html"
+      },
+      {
+        "name": "components",
+        "href": "fs-components.html"
+      },
+      {
+        "name": "templates",
+        "href": "fs-templates.html"
+      }
+    ]
+  },
+  "colors": {
+    "primary": {
+      "purple": "#4B2E84",
+      "royal": "#78639E",
+      "lavender": "#A798C0",
+      "orange": "#FF5E00",
+      "green": "#78BE20",
+      "blue": "#00AFD7",
+      "yellow": "#FFD900",
+      "true_black": "#000000",
+      "black": "#222222",
+      "gray": "#A7A9AC",
+      "light_gray": "#CDCDCD",
+      "snow": "#F2F2F3",
+      "white": "#FFFFFF"
+    },
+    "secondary": {}
+  },
+  "fontsService": "google",
+  "fonts": [
+    {
+      "name": "Source Sans Pro",
+      "reference": "Source Sans Pro",
+      "weights": [
+        {
+          "value": "light"
+        },
+        {
+          "value": "normal"
+        },
+        {
+          "value": "bold"
+        },
+        {
+          "value": "black"
+        }
+      ]
+    }
+  ]
+}

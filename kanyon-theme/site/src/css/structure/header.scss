@@ -1,0 +1,144 @@
+/* ==========================================================================
+	Header
+============================================================================= */
+
+.header {
+	width: 100%;
+
+	backface-visibility: hidden;
+
+	.page_layout_home & {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: 4;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	@media #{$min_lg} {
+		padding-bottom: 0;
+	}
+}
+
+.header_ribbon {
+	position: relative;
+
+	background: $white;
+	box-shadow: 0px 3px 8px -2px rgba(0,0,0,0.065);
+	padding-top: 20px;
+
+	@media #{$max_lg} {
+		padding-bottom: 20px;
+	}
+
+	.page_layout_home & {
+
+		@media #{$min_lg} {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+			transition: transform 0.5s, opacity 0.5s;
+		}
+	}
+
+	.page_layout_home.full-nav & {
+		opacity: 1;
+		transform: translate3d(0,0%,0);
+	}
+}
+
+.header_ribbon_inner {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.header_navigation {
+	display: none;
+
+	@media #{$min_md} {
+		display: block;
+	}
+}
+
+.header_group {
+	width: 25px;
+	height: 21px;
+
+	position: absolute;
+	top: 50%;
+	right: 0;
+	
+	margin-top: -11px;
+
+	.mobile_sidebar_handle {
+		width: 25px;
+		height: 21px;
+
+		display: block;
+
+		position: relative;
+
+		span {
+			width: 100%;
+			height: 3px;
+			
+			position: absolute;
+			left: 0;
+
+			background: $black;
+			transition: transform 0.25s ease, opacity 0.25s ease;
+
+			&:nth-of-type(1) {
+				top: 0;
+			}
+
+			&:nth-of-type(2) {
+				top: 9px;
+			}
+
+			&:nth-of-type(3) {
+				top: 9px;
+			}
+
+			&:nth-of-type(4) {
+				bottom: 0;
+			}
+		}
+
+		&.fs-swap-active {
+
+			span {
+				&:nth-of-type(1) {
+					transform: translate(0, 9px);
+					opacity: 0;
+				}
+
+				&:nth-of-type(2) {
+					transform: rotate(45deg);
+					transition-delay: 0.25s;
+				}
+
+				&:nth-of-type(3) {
+					transform: rotate(-45deg);
+					transition-delay: 0.25s;
+				}
+
+				&:nth-of-type(4) {
+					transform: translate(0, -9px);
+					opacity: 0;
+				}
+			}
+
+		}
+	}
+
+	@media #{$min_lg} {
+		display: none;
+	}
+
+}

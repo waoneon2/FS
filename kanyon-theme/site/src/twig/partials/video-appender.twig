@@ -1,0 +1,15 @@
+{% if service == "youtube" %}
+	{% set href = "//www.youtube.com/watch?v=" ~ id %}
+{% elseif service == "vimeo" %}
+	{% set href = "//vimeo.com/" ~ id %}
+{% endif %}
+
+<figure class="video_item_figure">
+	{{site.image("video_item", img.wide.sml, image)}}
+	<a class="js-video-appender video_item_trigger" href="{{href}}" data-video-id="{{id}}" data-video-service="{{service}}">
+		<span class="video_item_trigger_hint">
+			<span class="video_item_hint_icon">{{site.icon("play")}}</span>
+			<span class="video_item_hint_label">Watch the Video</span>
+		</span>
+	</a>
+</figure>

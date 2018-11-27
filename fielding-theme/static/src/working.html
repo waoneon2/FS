@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('partials/_head.html', {
+		"title": "Master Sub"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Page Content -->
+				<section class="page_content_area">
+
+					@@include('partials/components/feature-callout.html', {
+						"image": "4",
+						"title": "PhD Human and Organizational Systems",
+						"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+						"button1": "@@include('feature-callout-button-1.html')",
+						"button2": "@@include('feature-callout-button-2.html')",
+						"spotlight": "@@include('feature-callout-spotlight.html')"
+					})
+
+					@@include('partials/components/feature-callout.html', {
+						"image": "5",
+						"title": "PhD Human and Organizational Systems",
+						"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+						"button1": "@@include('feature-callout-button-1.html')",
+						"button2": "@@include('feature-callout-button-2.html')",
+						"spotlight": ""
+					})
+
+					@@include('partials/components/feature-callout.html', {
+						"image": "6",
+						"title": "PhD Human and Organizational Systems",
+						"description": "Develop the knowledge and competencies to help organizations, communities, and businesses develop the structure, behavior, and leadership that will allow them to thrive.",
+						"button1": "",
+						"button2": "",
+						"spotlight": ""
+					})
+
+
+					<div class="fs-row">
+
+						<!-- Left Content Area -->
+						<div class="fs-cell page_content">
+
+						</div>
+						<!-- END: Left Content Area -->
+
+					</div>
+					<!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+
+					</div>
+					<!-- END: Full Width Components -->
+
+				</section>
+				<!-- END: Page Content -->
+
+			</main>
+			<!-- END: page -->
+
+			<!-- Footer -->
+			@@include('partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('partials/_mobile-navigation.html')
+
+		@@include('partials/_footer-js.html')
+
+	</body>
+
+</html>

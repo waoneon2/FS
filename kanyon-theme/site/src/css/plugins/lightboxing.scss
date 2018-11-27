@@ -1,0 +1,153 @@
+.fs-lightboxing {
+	height: 100%;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 400;
+
+	background: rgba($black, .75);
+	transition: opacity .15s;
+
+	&.hidden {
+		opacity: 0;
+	}
+}
+
+.fs-lightboxing-close {
+	height: 60px;
+	width: 95px;
+	display: flex;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 40;
+
+	background: $white;
+	justify-content: space-between;
+	padding: 14px 15px;
+	transition: background-color 0.25s ease;
+
+	&:hover {
+		background: $black;
+
+		.fs-lightboxing-close-icon .icon_close {
+			fill: $white;
+		}
+
+		.fs-lightboxing-close-label {
+			color: $white;
+		}
+	}
+}
+
+.fs-lightboxing-close-icon {
+	position: relative;
+	top: 4px;
+
+	.icon_close {
+		width: 12px;
+		height: 12px;
+
+		fill: $black;
+		transition: fill 0.25s ease;
+	}
+}
+
+.fs-lightboxing-close-label {
+	@include h6;
+	@include font_smoothing;
+
+	color: $black;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	transition: color 0.25s ease;
+}
+
+.fs-lightboxing-figure {
+	height: 100%;
+	
+	&:before {
+		height: 80px;
+		width: 80px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 400;
+
+		animation: load 2s infinite;
+		content: "";
+
+		@at-root @keyframes load {
+
+		}
+	}
+}
+
+.fs-lightboxing-object {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 20;
+
+	display: block;
+	margin: 0 auto;
+	transition: 
+		opacity .15s,
+		transform .15s;
+
+	.loading & {
+		opacity: 0;
+	}
+
+	&:not(.fs-lightboxing-iframe-youtube) {
+		transform: 
+			translate(-50%, -50%)
+			scale(1);
+	}
+
+	.loading &:not(.fs-lightboxing-iframe-youtube),
+	.hidden .fs-lightboxing-figure:not(.loading) &:not(.fs-lightboxing-iframe-youtube) {
+		transform: 
+			translate(-50%, -50%)
+			scale(.85);
+	}
+}
+
+.fs-lightboxing-iframe-wrapper {
+	width: 70%;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	padding-bottom: calc(56.25% * 0.7);
+	transform: 
+		translate(-50%, -50%)
+		scale(1);
+	transition: transform .15s;
+
+	.loading &,
+	.hidden .fs-lightboxing-figure:not(.loading) & {
+		transform: 
+			translate(-50%, -50%)
+			scale(.85);
+	}
+}
+
+.fs-lightboxing-iframe {
+	height: 100%;
+	width: 100%;
+
+	&-youtube {
+		top: 0;
+		left: 0;
+	}
+}
+
+.fs-lightboxing-image {
+	max-height: 100%;
+	max-width: 100%;
+}

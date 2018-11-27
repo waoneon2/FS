@@ -1,0 +1,83 @@
+{#
+	{{site.anchor("Stories Listing")}}
+	{% include full ~ "stories-listing.twig" with {
+        items: [
+            {
+                image: 9,
+                tags: "",
+                title: "A legal Mind",
+                excerpt: "The culture shock of coming to Kenyon from her large urban high school only deepened the interest of Elizabeth Cheever '14 in the role diversity should play in American schools.",
+                link: "#"
+            }
+        ]
+        
+	} %}
+#}
+
+<div class="stories_listing">
+
+    <div class="fs-row">
+        <div class="fs-cell fs-lg-10 fs-lg-push-1">
+
+            <ul class="stories_listing_inner">
+
+                {% for item in items %}
+
+                    <li class="stories_listing_item js-stories-item">
+
+                        <article class="story_item_article" itemscope="itemscope" itemtype="http://schema.org/NewsArticle">
+
+                            <a class="story_item_image_link" href="{{item.link}}">
+                                <figure class="story_figure">
+                                    {% include par ~ "picture.twig" with {
+                                        class: "media",
+                                        fallback: img.wide.med,
+                                        image: item.image,
+                                        itemprop: "",
+                                        sources: {
+                                            "500px": img.wide.med,
+                                            "0px": img.wide.sml
+                                        }
+                                    } %}
+                                </figure>
+                            </a>
+
+                            <div class="story_listing_item_inner">
+
+                                <header class="story_header">
+                                    <span class="story_tags">{{item.tags}}</span>
+                                    <h3 class="story_title" itemprop="headline">
+                                        <a class="story_title_link" href="{{item.link}}">{{item.title}}</a>
+                                    </h3>
+                                </header>
+
+                                <div class="story_body">
+                                    <div class="story_description" itemprop="description">
+                                        <p>{{item.excerpt}}</p>
+                                    </div>
+                                </div>
+                                
+                                <footer class="story_footer">
+                                    <a class="story_link" href="{{item.link}}" aria-label="{{item.title}}" itemprop="url">
+                                        <span class="news_item_link_label">Read The Story</span>
+                                    </a>
+                                </footer>
+
+                            </div>
+
+                        </article>
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+            {% include par ~ "pagination.twig" with {
+                pages: 6
+            } %}
+
+        </div>
+    </div>
+        
+</div>

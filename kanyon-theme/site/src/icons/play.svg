@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="20px" viewBox="0 0 30 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Play Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage-–-RD-4-+-Mobes--✅" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile---Feature-Expanded" transform="translate(-18.000000, -529.000000)">
+            <g id="Feature---Expanded" transform="translate(-3.000000, 0.000000)">
+                <g id="Video-Button" transform="translate(0.000000, 216.000000)">
+                    <g id="Play-Icon" transform="translate(21.000000, 313.000000)">
+                        <polygon id="Rectangle-4" fill="#000000" points="0 0 20.9736466 0 29.2066667 20 8.09636367 20"></polygon>
+                        <path d="M11.8018852,13.3913862 C11.7775136,13.3913862 11.742697,13.3844228 11.7183254,13.3670146 C11.6765455,13.342643 11.6521739,13.2938997 11.6521739,13.2416749 L11.6521739,6.41066266 C11.6521739,6.35843779 11.6765455,6.30969459 11.7183254,6.28532298 C11.7670686,6.25398807 11.8158118,6.25398807 11.8680367,6.27835967 L18.6990489,9.69386578 C18.7512738,9.71823739 18.7826087,9.76698059 18.7826087,9.82616877 C18.7826087,9.88535695 18.7512738,9.93410016 18.6990489,9.95847176 L11.8680367,13.3739779 C11.8436651,13.3844228 11.8262568,13.3913862 11.8018852,13.3913862 Z" id="play" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

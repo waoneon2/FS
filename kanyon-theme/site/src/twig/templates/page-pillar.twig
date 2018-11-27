@@ -1,0 +1,177 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		metaImage: "/images/temp/social-wide.jpg",
+		metaImageWidth: "1220",
+		metaImageHeight: "686",
+		metaCard: "summary_large_image",
+		title: "Pillar",
+		layout: "pillar"
+	} %}
+{% endblock %}
+
+{% block page_feature %} 
+
+    {% include full ~ "pillar-header.twig" with {
+        title: "Enhance Our Path",
+        description: "Adapt our campus to an ever-expanding intellectual frontier.",
+        image: 2,
+        link: {
+            href: "#",
+            label: "Explore This Initiative",
+            icon: "arrow_down"
+        }
+    } %}
+
+{% endblock %}
+
+{% block typography %}
+
+	<h2>Where Your Gift Will Make a Difference</h2>
+    <p>OEtiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Initiative</th>
+                <th>Goal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Library and parking garage</td>
+                <td>$45 million</td>
+            </tr>
+            <tr>
+                <td>Academic facilities</td>
+                <td>$12 million</td>
+            </tr>
+            <tr>
+                <td>Admissions center</td>
+                <td>$10 million</td>
+            </tr>
+            <tr>
+                <td>Residential experience</td>
+                <td>$10 million</td>
+            </tr>
+            <tr>
+                <td>Community engagement</td>
+                <td>$3 million</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>$80 million</strong</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block in_content_callouts %}
+{% endblock %}
+
+{% block full_width_callouts %}
+
+    {% include full ~ "timeline.twig" with {
+        title: "The Timeline",
+        heading: "From New Buildings to Updated Technology & Services...",
+        subheading: "We Are Creating Spaces Designed for Innovation",
+        items: [
+            {
+                title: "The West Quad",
+                color: "green",
+                image: 1,
+                description: "The West Quad enables us to make major strides toward a more accessible Kenyon campus. We estimate that when all of the West Quad projects are complete 90% of classrooms will be accessible, up from 71 percent currently; 100 percent of classrooms with 20 - 99-seat capacity will be accessible."
+            },
+            {
+                title: "A Modern Library",
+                color: "orange",
+                image: 3,
+                description: "A state-of-the-art library that is a laboratory for teaching innovation and a hub for undergraduate research, experiential learning and academic and career advising",
+                link: {
+                    href: "#",
+                    label: "More on the Library"
+                }
+            },
+            {
+                title: "Our Expanding Departments",
+                color: "blue",
+                image: 6,
+                description: "The English program at Kenyon is one of the College's proudest traditions and remains one of our most popular majors. It has fostered some of the 20th and 21st centuries most acclaimed writers."
+            }
+        ]
+    } %}
+
+	{% include full ~ "facts-stats.twig" with {
+        heading: "Facts and Stats",
+		subheading: "The Numbers That Really Matter",
+		theme: "dark",
+        items: [
+            {
+                image: "",
+                infoglyph: "",
+                infonumber: "70%",
+                theme: "green",
+                text: "Our Goal for participation from the Kenyon alumni community. <strong>Over 1200</strong> people have supported the campaign so far.",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "blue",
+                text: "<strong>75 scholars</strong> received a $4,000 stipend to conduct research with faculty members in the natural science, social sciences, and humanities over the summer of 2017."
+            },
+            {
+                image: 5,
+                infoglyph: "",
+                theme: "purple",
+                text: "<strong>Financial aid is the fastest growing item in Kenyon's budget.</strong>",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "orange",
+                text: "Almost all Kenyon classrooms will be accessible when the West Quad and associated work is complete."
+            }
+        ]
+	} %}
+
+	{% include full ~ "media-gallery.twig" with {
+        title: "Changes on Campus",
+        subheading: "And the People who Made Them Happen",
+		items: [
+			{
+                image: 12,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            },
+            {
+                image: 8,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae.",
+                video: {
+                    service: "youtube",
+                    id: "UZBrLtuS4ZU"
+                }
+            },
+            {
+                image: 4,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            },
+            {
+                image: 9,
+                caption: "The accumsan felis ut dui tempor, eu consectetur dolor vaolupat. Sed dapibus enim at congue ultricies. Vestibolum ante ipsum preimis in faucuibus orci luctus et ultricies posueru cubilia Curae."
+            }
+		]
+	} %}
+
+{% endblock %}
+
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+	@@include('../partials/_head.html', {
+		"title": "Style Guide"
+	})
+
+	<body class="fs-grid">
+
+		<!-- Skip-to-Content Link -->
+		<a href="#page" id="skip_to_content" class="skip_link">Skip to Main Content</a>
+
+		<div class="page_wrapper js-navigation_push">
+
+			<!-- Header -->
+			@@include('../partials/_header.html')
+
+			<!-- Page : Main Content -->
+			<main id="page" class="page_main" tabindex="-1">
+
+				<!-- Breadcrumb -->
+				<div class="fs-row">
+					<div class="fs-cell">
+						@@include('../partials/breadcrumb/page-master.html')
+					</div>
+				</div>
+
+				<!-- Page Header -->
+
+				<!-- END: Page Header -->
+
+				<!-- Page Content -->
+				<div class="page_content_area">
+					<div class="fs-row">
+
+						<!-- Right Sidebar Navigation -->
+						<aside class="fs-cell fs-cell-right fs-lg-3">
+
+							<nav class="subnavigation_wrap">
+								<h2 class="subnavigation_handle fs-lg-hide">Additional Navigation</h2>
+								<div class="subnavigation js-navigation fs-navigation-element fs-navigation-toggle-nav fs-navigation__1 fs-light" data-navigation-handle=".subnavigation_handle" data-navigation-options="{&quot;labels&quot;:{&quot;open&quot;:&quot;Close&quot;,&quot;closed&quot;:&quot;Additional Navigation&quot;}}">
+								<ul id="menu-main-navigation-2" class="menu">
+									<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-41 current_page_item menu-item-48">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/home.html">Home</a>
+									</li>
+
+									<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item menu-item-has-children menu-item-51">
+										<a rel="page" href="http://dev.fastspot.com/clients/fielding-static/static/templates/style-guide.html">Style Guide </a>
+										<ul class="sub-menu">
+											<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/colors-fonts.html" rel="page">Colors and Fonts</a>
+											</li>
+											<li class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-115 menu-item-117">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/basic-page-content.html" rel="page">Basic Page Content</a>
+											</li>
+											<li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118">
+												<a href="http://dev.fastspot.com/clients/fielding-static/static/templates/content-blocks-callouts.html" rel="page">Content Blocks and Callouts</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								</div>
+							</nav>
+						</aside>
+
+						<!-- Left Content Area -->
+						<div class="fs-cell fs-lg-8 page_content">
+
+
+							<!-- WYSIWYG Content -->
+							<div class="typography">
+
+								<h1>Style Guide</h1>
+
+								<p>Guidelines for organizing a well-structured page</p>
+								<h3 class="heading_3">General Content Organization Guidelines</h3>
+
+								<p>The following content outlines the best practices for using the CMS page editor. Under no circumstances should you copy and paste content from a word processor or existing internet page directly to the Pages WYSIWYG editor. When content is directly pasted from word processors or an internet page, the copy may retain its existing styling which will make it look different than the rest of the Website. To paste content from a word processor or internet page click the clipboard icon in the WYSIWYG editor and follow the onscreen instructions.</p>
+
+									<h3>Sample Content Outlines</h3>
+									<p>Let&#8217;s go over a simple way to organize your content on the page:</p>
+									<ul>
+										<li>
+											Page header (Header 1)
+											<ul>
+												<li>Intro blurb</li>
+											</ul>
+										</li>
+										<li>
+											Section header (Header 2)
+											<ul>
+												<li>
+													Description paragraph, images, list, table, or block quote
+													<ul>
+														<li>
+															Subsection (Header 3)
+															<ul>
+																<li>Description paragraph, images, list, table, or block quote</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											Section header (Header 2)
+											<ul>
+												<li>Description paragraph, images, list, table, or block quote</li>
+											</ul>
+										</li>
+									</ul>
+									<p>The page header is the title to your page. This is also referred to as Header 1. Because it is used as the title, there can only be one Header 1 per page.</p>
+									<p>The page is then broken down into sections, with titles for each of those sections. The titles to these sections are called headings. Headings start with the most general and overarching title, Heading 1 (h1), and go down to the most specific, Heading 4 (h4). Again, there can only be one h1, but you can have as many of the others as you like. When writing titles and subtitles, keep in mind that they should be a clear and concise summation of the content that follows.</p>
+									<p>Headings should always follow a clear order. Say, for example, you have a page called &#8220;Facts &amp; Figures&#8221; that is broken into three sections called &#8220;The Academic Program,&#8221; &#8220;The People,&#8221; and &#8220;The Place.&#8221; And &#8220;The People&#8221; is broken into three subsections called &#8220;Students,&#8221; &#8220;Student Honors Earned,&#8221; and &#8220;Faculty.&#8221; Your page should be organized like this:</p>
+									<ul>
+										<li>
+											h1: Facts &amp; Figures
+											<ul>
+												<li>h2: The Academic Program</li>
+												<li>
+													h2: The People
+													<ul>
+														<li>h3: Students</li>
+														<li>h3: Student Honors Earned</li>
+														<li>h3: Faculty</li>
+													</ul>
+												</li>
+												<li>h2: The Place</li>
+											</ul>
+										</li>
+									</ul>
+									<p>As you&#8217;ll notice, any subsection that sits under a Heading 2 is a Heading 3. Let&#8217;s say we add two subsections to each Heading 3 item. The page would then look like this:</p>
+									<ul>
+										<li>
+											h1: Facts &amp; Figures
+											<ul>
+												<li>h2: The Academic Program</li>
+												<li>
+													h2: The People
+													<ul>
+														<li>
+															h3: Students
+															<ul>
+																<li>h4: Subsection</li>
+																<li>h4: Subsection</li>
+															</ul>
+														</li>
+														<li>
+															h3: Student Honors Earned
+															<ul>
+																<li>h4: Subsection</li>
+																<li>h4: Subsection</li>
+															</ul>
+														</li>
+														<li>
+															h3: Faculty
+															<ul>
+																<li>h4: Subsection</li>
+																<li>h4: Subsection</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>h2: The Place</li>
+											</ul>
+										</li>
+									</ul>
+							</div><!-- END: typography -->
+						</div><!-- END: Left Content Area -->
+					</div><!-- END: Row -->
+
+					<!-- Full Width Components -->
+					<div class="full_width_components">
+						<div class="fs-row">
+							<div class="fs-cell">
+
+							</div>
+						</div>
+					</div>
+
+				</div><!-- END: Page Content -->
+
+			</main><!-- END: page -->
+
+			<!-- Footer -->
+			@@include('../partials/_footer.html')
+
+		</div> <!-- END: page_wrapper -->
+
+		@@include('../partials/_mobile-navigation.html')
+
+		@@include('../partials/_footer-js.html')
+	</body>
+</html>

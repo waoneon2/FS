@@ -1,0 +1,147 @@
+/* ==========================================================================
+	Page
+============================================================================= */
+
+	.skip_link {
+		.block;
+		.heading_5;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 100;
+
+		background-color: @gray_dark;
+		color: @white_true;
+		padding: 10px;
+		text-align: center;
+		transform: translateY(-100%);
+
+		&:focus {
+			outline: none;
+			transform: translateY(0);
+		}
+
+		.no-csstransforms & {
+			top: -100%;
+
+			&:focus {
+				top: 0;
+			}
+		}
+	}
+
+	.page_wrapper {
+
+		@media @min_lg {
+			padding-top: 200px;
+		}
+	}
+
+	.page_main {
+		.relative;
+
+		padding-top: 90px;
+
+/*
+		@media @min_sm {
+			padding-top: 120px;
+		}
+*/
+
+		@media @min_lg {
+			.relative;
+
+			clear: both;
+			padding: 0;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		.admin-bar & {
+
+			@media screen and (min-width: 600px) {
+				padding-top: 136px;
+			}
+
+			@media screen and (min-width: 785px) {
+				padding-top: 122px;
+			}
+
+			@media @min_lg {
+				padding: 0;
+			}
+		}
+	}
+
+	.page_header {
+		padding: 30px 0;
+
+		@media @min_md {
+			padding: 50px 0 30px;
+		}
+
+		@media @min_lg {
+			padding: 0 0 10px;
+		}
+	}
+
+	.page_content {
+
+	}
+
+	.full_width_components {
+
+	}
+
+/* ==========================================================================
+	Style Guide
+============================================================================= */
+
+	.color_block {
+		.relative;
+		.color_white_true;
+
+	    padding-top: 100%;
+
+	    &.slim {
+		    padding-top: 50%;
+	    }
+
+	    .content {
+			.absolute;
+
+			left: 0;
+		    top: 0;
+		    z-index: 1;
+
+		    padding: 15px;
+		}
+
+		&.color_gray {
+			.color_gray_medium;
+		}
+
+		&.red_gradient {
+			background: linear-gradient(to bottom, #b62551 0%,#7f1028 100%);
+		}
+
+		&.gray_gradient {
+			background: linear-gradient(to bottom, #ABBEC9 0%,#738998 100%);
+		}
+
+		&.teal_gradient {
+			background: linear-gradient(to bottom, #43C0C1 0%,#269596 100%);
+		}
+
+		&.orange_gradient {
+			background: linear-gradient(to bottom, #DFB172 0%,#F09920 100%);
+		}
+
+		&.purple_gradient {
+			background: linear-gradient(to bottom, #6D3E77 0%,#3B1D42 100%);
+		}
+	}

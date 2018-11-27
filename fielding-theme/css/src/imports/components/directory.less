@@ -1,0 +1,247 @@
+/* ==========================================================================
+	Directory
+============================================================================= */
+
+	//header
+
+	.directory_header_wrap {
+		overflow: hidden;
+
+		.people_feature_theme {
+			opacity: 1;
+			visibility: visible;
+
+			&:before {
+				height: 160%;
+			}
+		}
+	}
+
+	.directory_header {
+		.relative;
+
+		.heading_1 {
+
+			@media @min_lg {
+				padding: 65px 0 0 0;
+			}
+		}
+	}
+
+	//alphabet
+
+	.directory_controls {
+		.margined;
+
+		ul {
+			.clearfix;
+
+			margin-bottom: 0;
+			padding: 0;
+		}
+
+		li {
+			margin: 0;
+
+			float: left;
+			list-style: none;
+
+			&.directory_controls_all {
+				margin-right: 30px;
+
+				@media @min_lg {
+					margin-right: 60px;
+				}
+
+				span {
+					letter-spacing: 3.0px;
+				}
+
+				&:after {
+					.block;
+					.relative;
+
+					top: -45px;
+					left: 70px;
+
+					height: 35px;
+					width: 1px;
+
+					border-left: 2px solid @gray_light;
+					content: "";
+
+					@media @min_lg {
+						top: -51px;
+						left: 103px;
+					}
+				}
+			}
+		}
+
+		a {
+			.block;
+
+			border-bottom: 4px solid transparent;
+
+			.no-touchevents &:hover {
+				border-bottom: 4px solid #7ECFD0;
+
+				span {
+					color: #7ECFD0;
+				}
+			}
+
+			&.active {
+				border-bottom: 4px solid #7ECFD0;
+
+				span {
+					color: #7ECFD0;
+				}
+			}
+		}
+
+		span {
+			.avenir_black;
+			.block;
+			.color_teal;
+			.uppercase;
+			.font_size(22);
+
+			margin: 0 4px;
+
+			&.disabled {
+				color: #E3E3E3;
+			}
+
+			@media @min_lg {
+				.font_size(27);
+
+				margin: 0 6px;
+			}
+
+			@media @min_xl {
+				.font_size(30);
+
+				margin: 0 9px;
+			}
+		}
+	}
+
+
+
+	.directory_search {
+
+		.search_wrap {
+			.relative;
+
+			top: 0;
+
+			width: 100%;
+
+			margin: 25px 0 0 0;
+			padding: 0;
+
+			@media @min_lg {
+				margin: 0;
+			}
+
+			.search_input {
+				width: 100%;
+				word-wrap: break-word;
+				padding: 15px 52px 17px 29px;
+			}
+		}
+	}
+
+	//filter dropdown
+
+	.directory_dropdown {
+		margin-top: 25px;
+
+		@media @min_md {
+			margin: 0;
+		}
+	}
+
+	//directory listings
+
+	.directory_listing_wrap {
+		.margined_md;
+
+		h2 {
+			&:extend(.heading_2);
+			.color_red;
+			margin: 0;
+		}
+
+		h5 {
+			&:extend(.heading_5);
+
+			margin-bottom: 8px;
+
+			@media @min_lg {
+				margin-bottom: 25px;
+			}
+		}
+
+		p {
+			.font_size(16);
+			color: fade(@black, 70);
+
+			margin-top: 0;
+		}
+	}
+
+	//wrap for individual listing
+
+	.directory_listing {
+		.clearfix;
+
+		padding: 20px;
+
+		&:nth-child(odd) {
+			background: @white_true;
+		}
+
+		@media @min_md {
+			padding: 30px 20px 30px 50px;
+		}
+
+		.ico_phone {
+			&:before {
+				.icon_phone_small;
+
+				top: 0;
+			}
+		}
+
+		.dark_link {
+			margin-left: 24px;
+
+			@media @min_sm @and_max_lg {
+				margin-left: 0;
+			}
+		}
+	}
+
+	//email link with mail icon
+
+	.ico_mail {
+		&:extend(.icon_only_before all);
+		&:extend(.icon_left);
+
+		.color_red;
+
+		text-decoration: underline;
+		word-wrap: break-word;
+
+		.no-touchevents &:hover {
+			.color_gray_dark;
+		}
+
+		&:before {
+			.icon_envelope;
+
+			margin-right: 11px;
+		}
+	}

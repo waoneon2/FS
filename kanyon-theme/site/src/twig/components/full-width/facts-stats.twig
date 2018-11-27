@@ -1,0 +1,102 @@
+{#
+	{{site.anchor("Facts and Stats")}}
+	{% include full ~ "facts-stats.twig" with {
+        heading: "Facts and Stats",
+        subheading: "The Numbers That Really Matter",
+        items: [
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "green",
+                text: "Our Goal for participation from the Kenyon alumni community. <strong>Over 1200</strong> people have supported the campaign so far.",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "blue",
+                text: "<strong>75 scholars</strong> received a $4,000 stipend to conduct research with faculty members in the natural science, social sciences, and humanities over the summer of 2017."
+            },
+            {
+                image: 5,
+                infoglyph: "",
+                theme: "purple",
+                text: "Financial aid is the fastest growing item in Kenyon's budget.",
+                link: {
+                    href: "#",
+                    label: "Give Now"
+                }
+            },
+            {
+                image: "",
+                infoglyph: "chart.png",
+                theme: "orange",
+                text: "Almost all Kenyon classrooms will be accessible when the West Quad and associated work is complete."
+            }
+        ]
+	} %}
+#}
+
+<section class="facts_stats js-facts-stats{% if theme %} theme_{{theme}}{% endif %}">
+
+    <div class="fs-row">
+        <div class="fs-cell fs-lg-12">  
+
+            <header class="facts_stats_header">
+                <h3 class="facts_stats_heading">{{heading}}</h3>
+                {% if subheading %}
+                    <span class="facts_stats_subheading">{{subheading}}</span>
+                {% endif %}
+                {% if items %}
+                    <div class="facts_stats_nav">
+                        <span class="nav_prev"></span>
+                        <span class="nav_next"></span>
+                    </div>
+                {% endif %}
+            </header>
+
+            <div class="facts_stats_inner">
+                <div class="facts_stats_display js-facts-stats-display">
+                    {% for item in items %}
+                        <div class="fact_stat_display_item{% if item.theme %} theme_{{item.theme}}{% endif %}{% if item.image %} has_image js-background{% endif %}"{% if item.image %} data-background-options='{"source": "https://images.fastspot.com/kenyon-campaign/12/full-med/"}'{% endif %}>
+                            {% if item.infoglyph %}
+                                <div class="display_item_image">
+                                    <img src="../../images/{{item.infoglyph}}" alt="{{item.text}}" />
+                                </div>
+                            {% endif %}
+                            {% if item.infonumber %}
+                                <div class="display_item_image">
+                                    <span class="display_item_infonumber">{{item.infonumber}}</span>
+                                </div>
+                            {% endif %}
+                            <div class="display_item_content">
+                                <p class="display_item_text">{{item.text}}</p>
+                                {% if item.link %}
+                                    {{site.button("display_item", item.link.label, item.link.href)}}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="facts_stats_items js-facts-stats-items">
+                    {% for item in items %}
+                        <div class="fact_stat_item{% if item.image %} has_image{% endif %}{% if item.theme %} theme_{{item.theme}}{% endif %}">
+                            <div class="fact_stat_item_content">
+                                <p class="fact_stat_item_text">{{item.text}}</p>
+                                {% if item.link %}
+                                    {{site.button("fact_stat_item", item.link.label, item.link.href)}}
+                                {% endif %}
+                            </div>
+                        </div>   
+                    {% endfor %}         
+                </div>
+            </div>
+
+        </div>  
+    </div>
+
+</section>
