@@ -1,0 +1,58 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Fulbright U.S. Scholar Grants Awarded to Trinity Faculty",
+		layout: "default",
+		theme: "image",
+		image: 6
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+{% endblock %}
+
+{% block page_header_body %}
+	{% include feat ~ "news-detail.twig" with {
+		label: "Academics",
+		date: "Apr 30",
+		author: "Author",
+		source: "Source",
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block typography %}
+	<p class="intro">Three Trinity College faculty members have been awarded 2018-19 Fulbright U.S. Scholar Grants to conduct research internationally.</p>
+	<p>Kent D. Dunlap, Charles A. Dana Research Professor of Biology, will travel to Portugal to pursue collaborative research on brain cell production; Professor of Computer Science Peter A. Yoon will teach computer science in Ethiopia, realizing a long-standing goal to honor the Ethiopian soldiers who protected his family during the Korean War; and Visiting Assistant Professor of Religious Studies Justin Fifield will study caregiving practices in Buddhist monasteries of Sri Lanka.</p>
+	<h3>About the Recipients</h3>
+	<h4>Kent D. Dunlap, Professor of Biology</h4>
+	<figure class="block_right">
+		{{site.image("test", img.portraitFull.xxsml, 1)}}
+		<figcaption>Professor Kent D. Dunlap</figcaption>
+	</figure>
+	<p>Dunlap plans to investigate how social interactions enhance the recovery from injury in fish. This project stems from a 15-year interest Dunlap has had in the birth of brain cells during adulthood. “My interest in this research was originally sparked by a Trinity student. This student came to me and wanted to study cell death in the brain. It made me think about the opposite: cell birth and the production of new cells in the brain. I’ve been studying it ever since, and now I have the chance to pursue a new branch of this research in Portugal,” Dunlap said.</p>
+	<p>This award is the second time that Dunlap has received a Fulbright grant. In 2009, he traveled to Uruguay to study brain cell production on a Fulbright U.S. Scholar Grant. “Through that international experience, I formed connections with scientists all over the world, and that was how I made contact with my future Fulbright collaborator in Portugal,” Dunlap said. With this previous research to look back on, Dunlap is eager to begin his next project in Lisbon at the Gulbenkian Institute, which promotes interdisciplinary research in the life sciences. Dunlap will also help organize the 14th International Congress of Neuroethology that will be held in Lisbon in 2020. “An added benefit of traveling and doing this research is to learn new techniques and bring them back to my Trinity students,” Dunlap said. Dunlap received his B.A. at Macalester College and his Ph.D. at the University of Washington, Seattle.</p>
+	<h4>Peter A. Yoon, Professor of Computer Science</h4>
+	<figure class="block_right">
+		{{site.image("test", img.portraitFull.xxsml, 2)}}
+		<figcaption>Professor Peter A. Yoon</figcaption>
+	</figure>
+	<p>Yoon will travel to Ethiopia to research and teach scientific computing and high-performance computing. “I have been teaching computer science at Trinity since 2000, and have had the privilege of working with students from all over the world. In particular, students from Ethiopia made a long-lasting impression on me,” Yoon said. “I am deeply indebted to Ethiopia. Between June 1951 and April 1954, Emperor of the Kingdom of Ethiopia Haile Selassie sent over 3,000 Ethiopian soldiers to serve as part of the United Nations forces in the Korean War. Many were wounded or killed in battle as they were trying to fend off the North Korean Communists. I was born in Korea a decade after the conflict, but, ever since I learned about the Ethiopian involvement in the war, I have been looking for an opportunity to give back to the country that helped protect the current generation of my family,” Yoon said.</p>
+	<p>In Yoon’s grant proposal, he wrote, “One of the most pressing issues of higher-education in Ethiopia today [is] a shortage of qualified faculty in computing at colleges and universities.” With the Fulbright grant, Yoon will work to address this issue in collaboration with hosts at the School of Electrical and Computer Engineering at Jimma University to help build that institution’s graduate program in computer science. Yoon earned his B.S. at North Carolina State University, his M.S. at Purdue University, and his Ph.D. at Pennsylvania State University.</p>
+	<h4>Peter A. Yoon, Professor of Computer Science</h4>
+	<figure class="block_right">
+		{{site.image("test", img.portraitFull.xxsml, 1)}}
+		<figcaption>Assistant Professor Justin Fifield</figcaption>
+	</figure>
+	<p>Fifield (right) plans to conduct a qualitative research project on caregiving—caring for the sick, disabled, and elderly—within Buddhist monasteries in Sri Lanka. “This project extends the work of my dissertation on Buddhist monastic ethics with a specific case study in a contemporary context,” Fifield wrote in his proposal. “The Fulbright grant will enable me to develop as an early-career academic and build interdisciplinary connections between religious studies and medical anthropology.” Through participant observation at several monasteries and concomitant research on the Sri Lankan health-care system, Fifield will examine the increasingly urgent issue of providing care for elderly monks in an era of modernization and social change. Fifield will also offer formal lectures on Buddhist anthropology and methodology of religious studies at the Postgraduate Institute of Pali and Buddhist Studies at the University of Kelaniya.</p>
+	<h3>About the Grants</h3>
+	<p>The Fulbright U.S. Scholar Grants are highly competitive and emphasize the notability of the work by Dunlap, Yoon, and Fifield. Timothy J. Cresswell, Trinity College dean of the faculty and vice president for academic affairs, said, “The awards are prestigious and they reflect well on the college as well as the scholars involved. Perhaps more importantly, the grants are specifically designed for scholars who are engaging with the world beyond the U.S.A. – so these three awards are evidence of the global engagement that is central to Trinity’s mission.”</p>
+	<p>The Fulbright Program, the flagship international educational exchange program sponsored by the U.S. government, is designed to increase mutual understanding between the people of the United States and the people of other countries. The Fulbright Program offers grants to study, teach and conduct research for U.S. citizens to go abroad and for non-U.S. citizens to come to the United States. The primary source of funding is an annual appropriation by the U.S. Congress to the U.S. Department of State’s Bureau of Educational and Cultural Affairs (ECA).</p>
+	<p>A Trinity student also was recently awarded a Fulbright grant. Alicia Abbaspour ’18 has received an English Teaching Assistantship (ETA) through the Fulbright U.S. Student Program and will travel to Malaysia for 10 months to teach English to secondary school students. </p>
+{% endblock %}
+
+{% block in_content_callouts %}
+{% endblock %}

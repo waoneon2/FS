@@ -1,0 +1,43 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Well, we took a shot…",
+		intro: "But we can’t seem to find the page you are looking for. It has either moved or no longer exists. Let us help you find what you need!",
+		layout: "default",
+		theme: "image",
+		cover: true,
+		image: 1
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block page_header_append %}
+	{% include "../partials/google-cse.twig" %}
+	
+	{% include full ~ "basic-list.twig" with {
+		items: [
+			{
+				name: "Find Programs",
+				href: "page-home.html?query=programs"
+			},
+			{
+				name: "Find People",
+				href: "page-home.html?query=people"
+			},
+			{
+				name: "News Listing",
+				href: "#"
+			},
+			{
+				name: "Events listing",
+				href: "#"
+			}
+		]
+	} %}
+{% endblock %}
+
+{% block full_width_callouts %}
+{% endblock %}

@@ -1,0 +1,56 @@
+/* ==========================================================================
+	Symbols
+============================================================================= */
+
+.icon {
+	display: block;
+	stroke: inherit;
+	fill: currentColor;
+	transition: fill $base_speed;
+
+	@media print {
+		display: none;
+	}
+
+	$icons: (
+		(arrow_right, 16, 11),
+		(arrow_left, 16, 11),
+		(back, 14, 14),
+		(bell, 19, 25),
+		(caret_down, 7, 5),
+		(chevron_left, 20, 20),
+		(chevron_right, 20, 20),
+		(clock, 12, 12),
+		(close, 16, 16),
+		(email, 14, 14),
+		(expand, 5, 13),
+		(facebook, 19, 19),
+		(flickr, 19, 9),
+		(forward, 22, 18),
+		(grid, 15, 15),
+		(home, 12, 12),
+		(instagram, 19, 19),
+		(link, 18, 18),
+		(linkedin, 19, 19),
+		(logo, 159, 34),
+		(marker, 9, 14),
+		(menu, 30, 20),
+		(pause, 12, 12),
+		(phone, 15, 15),
+		(play, 12, 12),
+		(printer, 14, 14),
+		(quote, 14, 10),
+		(search, 14, 15),
+		(stretcher, 20, 20),
+		(twitter, 19, 16),
+		(youtube, 19, 14)
+	);
+
+	@each $label, $w, $h in $icons {
+
+		&_#{$label} {
+			height: $h#{px};
+			width: $w#{px};
+		}
+	}
+}

@@ -1,0 +1,12 @@
+/*
+	Theme Name:	  Trinity College - Main
+	Description:  Main site theme — do not use for sub-sites.
+	Author:		  Fastspot
+	Author URI:	  https://www.fastspot.com
+*/
+button.gsc-search-button-v2, button.gsc-search-button-v2:hover, button.gsc-search-button-v2:focus {
+    border-color: #666666;
+    background-color: #CECECE;
+    background-image: none;
+    filter: none;
+}

@@ -1,0 +1,49 @@
+<div class="topic_block">
+	<div class="topic_items">
+		{% for item in items %}
+		<article class="topic_item">
+			<div class="topic_item_inner">
+				{% if item.image %}
+				<figure class="topic_figure">
+					{% if item.link %}
+					<a class="{% if item.video %}js-lightbox {% endif %}topic_figure_link" href="{% if item.video %}{{item.video}}{% else %}#{% endif %}">
+					{% endif %}
+						{{site.image("topic", img.classic.xsml, item.image)}}
+						{% if item.video %}
+							<span class="topic_video_button">
+								<span class="topic_video_button_icon">{{site.icon("play")}}</span>
+							</span>
+						{% endif %}
+					{% if item.link %}
+					</a>
+					{% endif %}
+				</figure>
+				{% endif %}
+				<div class="topic_wrapper">
+					<header class="topic_header">
+						<h2 class="topic_title">
+							{% if item.link %}
+							<a class="topic_title_link" href="#">
+							{% endif %}
+								{{item.title}}
+							{% if item.link %}
+							</a>
+							{% endif %}
+						</h2>
+					</header>
+					<div class="topic_body">
+						<div class="topic_caption">
+							<p>{{item.caption}}</p>
+						</div>
+					</div>
+					{% if item.link %}
+					<footer class="topic_footer">
+						{{site.button("topic", item.link.name, item.link.href, "arrow_right")}}
+					</footer>
+					{% endif %}
+				</div>
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+</div>

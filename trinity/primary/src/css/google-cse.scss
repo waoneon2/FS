@@ -1,0 +1,375 @@
+/* ==========================================================================
+	Google CSE
+============================================================================= */
+
+.site_search_results {
+	position: relative;
+	z-index: 8;
+
+	.full_width_callouts & {
+		background: #fff;
+	}
+
+	// Entire Search Module
+	// ===========================================================================
+
+	.gsc-control-cse {
+		background: none;
+		border: 0 !important;
+		font-family: inherit;
+		font-size: inherit;
+		padding: 0 !important;
+	}
+
+
+	// Search Box Area
+	// ===========================================================================
+
+	.gsc-search-box {
+		position: relative;
+
+		font-size: inherit;
+		margin-bottom: 0;
+
+		#gs_tti50 {
+			padding: 0;
+
+			+ .gsib_b {
+				display: none;
+			}
+		}
+
+		td.gsc-input {
+			width: 100%;
+
+			padding-right: 0;
+		}
+
+		.gsc-input-box {
+			height: auto;
+
+			border: 0;
+			box-shadow: none;
+		}
+
+			input.gsc-input {
+				@include body_text;
+
+				height: auto !important;
+				width: 100%;
+
+				background-color: transparent !important;
+				background-position: 20px 50% !important;
+				border: 1px solid rgba(#766F67, .26) !important;
+				box-shadow: -10px 10px 0 0 $blue;
+				font-size: inherit;
+				margin: 0 !important;
+				padding: 16px 80px 16px 20px !important;
+
+				@media #{$min_md} {
+					padding: 21px 80px 20px 20px !important;
+				}
+			}
+
+		td.gsc-search-button {
+			height: 100%;
+			width: 80px;
+
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAmCAYAAACh1knUAAAABGdBTUEAALGPC/xhBQAABSdJREFUWAm9V1tsVFUUXftOO5VSaYlJJTqGR7T8CJHY6ZOQmuAjREIMUuBLxfiIP2poadWf+dDWQuuHiRrlRw2JiiHGNEK0JRZbxvQVkRiNaHhXLUWebaGd9h7X7Tw699wz03ZIPcnMPXvttffZ55x99j1XMJtWGloENVINW5VBsBoKRTGzcYi6Dkgff2FYdhu6W36djUudIzrgkkteK4IdeYPYk4DKdelSCSLtUOod9LUcSkUx4eZAtoT8OH29njN/nUY5JsOZMfkGfuxAuPnCzFyup4e0tn4xxiIHGUSZRzdXQOQCLGsbund/P5OpO5Bg7RIo+zsarUprKHKZgV7jdvk5lzv5tFLzZRSWPIaePZ2pOckrUhXKwvBwF52WGg1Eeonv5QwPcYbnE5z1dfkMqQxq4hm628z8yEro4h0RJ6HXoXfPsTikP6dXpGTnW7CnckLjyBBn9DJn9Jmm8IqltffBtj81bqvgZ6wpCuKjFyJeQ8A3BZbXrcKk2sf+dGCOQnCSQaxDT3PaZZ3y4fwNhC+h6NFPEIkspfRAAo92lmDw0hg5Rl/RvY1M1nj22cmDnKyHGMQpzWF6sSM0gWUlz3IWX3uISu3CIzULPTgBC5W77mIQ2w3KF9HVdNaAzwx9WT2JBdnPkXjRRVZYhCvY5sJigoWI2sB+tlspx9HbvN+NzVHqbBzi1r7tsbLBpPY2i1le4YEtvO/BMgHE/zHNxtymqhjOCdUaAzEULl/2EY2XmdjT+C9X5SfNOAcjN1ZqGHNEcIcblHGEG353Y7ckHfdYW5P36phzatz5IVxKEaUTb0G+4bG1WbG05myNuzwrlu0t+30aL3NRWYaXpniKGrdG/amNkoNzffH7hqbKQBR7tcfKkis6xhURb/231XqdmJHsFC+FB922YqMw15M3TrJ2u4mUlHreg2UCXAYrrOc+cwytoVHdnYV8HwsXX9XJTan7EawxFp5kWtq+c72E4qvD0z73IAQstDdd5ap8YVC2oLzec8wMPDNkD3/IbbnHpRS5iQX+fS4sJkRPjCWNPLI3XQSlFiMycRglNctd+ExCKGShuPYDbq/hnSLvobPhb5OL6DF1Xt+BygiNH9ZI+ZzVUwisPcvX9y+azisG61fgxA0uvdrqVcoZFPi24+RRreRHmZIwcGrHqZ52OqlKYMkd52KjrHfhtw8j3HImodoYysU/I0HAfprYVga+IKFL7lhZvC42fZsMJfenA3HQqlAeRq630dlMF+eLzKthHn3HnnmQ7s4aG06klbe8TamqtruCnu4Y5w3rACLjnCFWxFyYHrkEC2I/92RM7Ci2EnvbFP4KHzFRzE6UEpTWvsovuwYaGUq0ydWsMMUV2cS7TqvONgcSZzknRuEVJvEOQnlxOO1TWKmVco69mS+884s/iJ7GE8l+0gcSZ1aFCjA6vIEDVDAvypkfy6m6nfIki+Eg31d/cKZdfLby27efxbCaOlNtinmU35BjleLobn5mRNvsAomz5/IM1jbzY21nShORr5i8m+PJ674CpLTKQLEsWMfV6khpqdQTLJbOB/5Um78VcdxX1BQign5uUyA6nP7PN7FPNqJ7z8H5DcQZt6ymFBP4gbWG38nGdgV+q9hdR4y8WwTPhwcQqBji6Xs8hafbeHEMzH8gzugD4X7cXel8hq4xBiMSmL9k1UdcmPcSj32/DkdldW3+cyR55IqdSxGRHiZvYTLMD/36/2dr4qOe+/Eq8+UAj3URVyfAGjLI/pss+bv/A14WeFTXMi7tAAAAAElFTkSuQmCC') no-repeat 50% 50% / 17px 19px;
+		}
+
+			button.gsc-search-button {
+				height: 100%;
+				min-width: 100%;
+				width: auto;
+
+				border: 0;
+				border-radius: 0;
+				color: transparent;
+				cursor: pointer;
+				font-size: inherit;
+				font-weight: normal;
+				margin-top: 0;
+				margin-left: 0;
+				opacity: 0;
+				padding: 10px;
+			}
+
+		td.gsc-clear-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+			div.gsc-clear-button {
+				background: none;
+				display: block;
+				margin: 0;
+				padding-left: 0;
+				text-align: center;
+			}
+	}
+
+
+	// Tabs
+	// ===========================================================================
+
+	.gsc-tabsArea {
+		border-bottom: 0;
+		display: none;
+		margin: 0;
+
+		.gsc-tabHeader {
+			border: 0;
+			color: inherit;
+			margin: 0;
+			padding: 4px;
+		}
+
+		.gsc-tabhInactive {}
+
+		.gsc-tabhActive {}
+	}
+
+
+	// Refinements
+	// ===========================================================================
+
+	.gsc-refinementsArea {
+		border-bottom: 0;
+		display: none;
+		margin-bottom: 0;
+		padding: 0;
+
+		.gsc-refinementHeader {
+			margin: 0;
+			padding: 4px;
+		}
+
+		.gsc-refinementhInactive {}
+
+		.gsc-refinementhActive {}
+	}
+
+
+	// Above Wrapper Area
+	// ===========================================================================
+
+	.gsc-above-wrapper-area {
+		border-bottom: 1px solid rgba(#766F67, .25);
+		padding: 45px 0 35px;
+
+		.gsc-result-info {
+			@include h6;
+
+			color: $dark;
+			font-size: inherit;
+			margin: 0;
+			padding: 0;
+		}
+
+		.gsc-orderby-container {
+			display: none;
+		}
+	}
+
+
+	// Ads
+	// ===========================================================================
+
+	.gsc-adBlock {
+		height: auto !important;
+		
+		border-bottom: 1px solid rgba(#766F67, .25);
+		margin-bottom: 0;
+		padding: 30px 0;
+
+		@media #{$min_md} {
+			padding: 40px 0;
+		}
+	}
+
+
+	// Results
+	// ===========================================================================
+
+	.gsc-results {
+		width: 100%;
+
+		padding-bottom: 0;
+
+		.gsc-result {
+
+			&:not(.gsc-imageResult) {
+				background: none;
+				border: 0;
+				border-bottom: 1px solid rgba(#766F67, .25);
+				margin-bottom: 0;
+				padding: 30px 0;
+
+				@media #{$min_md} {
+					padding: 40px 0;
+				}
+			}
+		}
+
+			.gsc-table-result {
+				font-family: inherit;
+				font-size: inherit;
+				padding-left: 0;
+			}
+
+				.gsc-thumbnail {
+					display: none;
+					padding: 0 20px 0 0;
+
+					.gs-image-box {
+						height: auto;
+						width: 80px;
+
+						padding: 0;
+					}
+
+					img.gs-image {
+						max-height: 100% !important;
+						max-width: 100%;
+						width: 100%;
+
+						border: 0;
+					}
+				}
+
+				.gsc-table-cell-snippet-close {
+					padding: 0;
+				}
+
+				.gsc-thumbnail-inside {
+					padding-left: 0;
+				}
+
+					div.gs-title {
+						height: auto;
+
+						color: inherit;
+						font-size: inherit;
+						margin-bottom: 13px;
+						text-decoration: none;
+
+						b {
+							background: rgba(#2AC6CA, .2);
+						}
+					}
+
+						a.gs-title {
+							@include h4;
+
+							height: inherit;
+
+							color: inherit !important;
+							text-decoration: inherit;
+
+							&:focus,
+							&:hover {}
+
+							b {
+								color: inherit !important;
+								font-size: inherit;
+								text-decoration: inherit;
+							}
+						}
+
+				.gs-snippet {
+					@include body_text;
+
+					margin-bottom: 10px;
+
+					@media #{$min_md} {
+						font-size: 20px;
+						line-height: (32 / 20);	
+					}
+
+					b {
+						@include u(700);
+						
+						background: rgba(#2AC6CA, .2);
+					}
+				}
+
+				.gsc-url-top {
+					@include h6;
+
+					color: $blue;
+					padding-left: 0;
+				}
+
+				.gs-visibleUrl {
+					color: inherit;
+					padding-bottom: 20px;
+
+					b {
+						background: rgba(#2AC6CA, .2);
+						font-weight: inherit;
+					}
+				}
+	}
+
+
+	// Cursor Box
+	// ===========================================================================
+
+	.gsc-expansionArea {
+
+		.gsc-cursor-box {
+			margin-bottom: 0;
+			padding: 20px 0;
+			text-align: center;
+
+			.gsc-cursor-page {
+				@include u(500);
+
+				background: none;
+				color: #766F67;
+				display: inline-block;
+				font-size: 14px;
+				margin-right: 5px;
+				padding: 15px 5px;
+				text-decoration: none;
+				transition: 
+					background .25s,	
+					color .25s;
+
+				@media #{$min_md} {
+					font-size: 18px;
+				}
+
+				&:focus,
+				&:hover {
+					color: $blue;
+					text-decoration: none;
+				}
+			}
+
+			.gsc-cursor-current-page {
+				box-shadow: inset 0 -5px 0 0 $blue;
+				color: #000;
+
+				@media #{$min_md} {
+					box-shadow: inset 0 -10px 0 0 $blue;
+				}
+			}
+		}
+	}
+
+
+	// Branding
+	// ===========================================================================
+
+	div.gcsc-branding {
+		padding-bottom: 20px;
+		pointer-events: none;
+	}
+}

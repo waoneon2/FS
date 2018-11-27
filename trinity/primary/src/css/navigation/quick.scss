@@ -1,0 +1,172 @@
+/* ==========================================================================
+	Quick Navigation Common
+============================================================================= */
+
+.quick_nav_wrapper {
+	
+	@media #{$min_lg} {
+		display: flex;
+	}
+}
+
+.quick_nav {}
+
+.quick_nav_header {
+	align-items: center;
+	display: flex;
+
+	@media #{$min_lg} {
+		margin-right: 15px;
+	}
+
+	&:before,
+	&:after {
+		height: 1px;
+
+		flex: auto;
+
+		background: $yellow;
+		content: "";
+
+		@media #{$min_lg} {
+			display: none;
+		}
+	}
+
+	&:before {
+		margin-right: 12px;
+	}
+
+	&:after {
+		margin-left: 12px;
+	}
+}
+
+.quick_nav_title {
+	@include u(500);
+
+	color: #EAE5DF;
+	font-size: 12px;
+	letter-spacing: 2.3px;
+	margin: 0;
+	text-transform: uppercase;
+
+	@media #{$min_xl} {
+		font-size: 16px;
+	}
+}
+
+
+// Seconadry Links
+// =============================================================================
+
+.quick_nav_list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.quick_nav_item {}
+
+.quick_nav_link {
+	@include u(500);
+
+	position: relative;
+	z-index: 2;
+	
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	line-height: (24 / 14);
+	overflow: hidden;
+	padding: 13px 0;
+	transition: color .25s;
+	
+	@media #{$min_lg} {
+		padding: 18px 15px;
+	}
+
+	@media #{$min_xl} {
+		font-size: 18px;
+		line-height: (24 / 18);
+	}
+
+	&:before {
+		
+		@media #{$min_lg} {
+			height: calc(100% - 20px);
+			width: 100%;
+
+			position: absolute;
+			top: 10px;
+			left: 0;
+			z-index: -2;
+
+			background: $blue;
+			content: "";
+			transform: scale(0);
+			transition:
+				box-shadow .25s,
+				transform .25s;
+		}
+
+		.is-ie & {
+
+			@media #{$min_lg} {
+				display: none;
+			}
+		}
+	}
+
+	&:focus,
+	&:hover {
+		color: rgba(#fff, .6);
+
+		@media #{$min_lg} {
+			color: #fff;
+		}
+
+		.is-ie & {
+
+			@media #{$min_lg} {
+				color: rgba(#fff, .6);
+			}
+		}
+
+		&:before {
+
+			@media #{$min_lg} {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.quick_nav_link_label {
+	position: relative;
+
+	&:after {
+		height: 1px;
+		width: 100%;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		background: rgba($yellow, .6);
+		content: "";
+		transform: scaleX(0);
+		transition: transform .25s;
+
+		@media #{$min_lg} {
+			display: none;
+		}
+	}
+
+	.quick_nav_link:focus &,
+	.quick_nav_link:hover & {
+
+		&:after {
+			transform: scaleX(1);
+		}
+	}
+}

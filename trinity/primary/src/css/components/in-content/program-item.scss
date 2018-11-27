@@ -1,0 +1,108 @@
+.program {
+	margin-bottom: 25px;
+}
+
+.program_image {
+	width: 100%;
+
+	display: block;
+}
+
+.program_body {
+	background: #F5F7F9;
+	padding: 16px 20px 28px;
+
+	@media #{$min_md} {
+		padding: 36px 40px 40px;
+	}
+}
+
+.program_header {
+	margin-bottom: 14px;
+
+	@media #{$min_md} {
+		margin-bottom: 34px;
+	}
+}
+
+.program_title {
+	@include h4;
+
+	color: $dark;
+	margin: 0 0 3px;
+
+	@media #{$min_md} {
+		margin-bottom: 15px;
+	}
+}
+
+.program_title_link {
+	color: inherit;
+	display: block;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
+}
+
+.program_title_link_label {
+	display: inline;
+	margin-right: -10px;
+}
+
+.program_title_link_icon {
+	position: relative;
+	left: 12px;
+
+	display: inline-block;
+	
+	@media #{$min_md} {
+		top: -2px;
+	}
+}
+
+.program_details {
+	font-size: 11px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 14px;
+		letter-spacing: 2.2px;
+	}
+}
+
+.program_label {
+	@include u(300);
+
+	margin-right: 5px;
+}
+
+.program_degrees {}
+
+.program_degree {
+	@include u(700);
+}
+
+.program_caption {
+	@include label_text;
+
+	margin-bottom: 30px;
+	
+	p {
+		margin: 0;
+	}
+}
+
+.program_link {
+	@include button_plain;
+
+	display: none;
+
+	@media #{$min_md} {
+		display: inline-block;
+		margin-top: 5px;
+	}
+}

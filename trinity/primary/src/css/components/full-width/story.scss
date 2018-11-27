@@ -1,0 +1,284 @@
+.story {
+	position: relative;
+
+	background: #000;
+	padding: 30px 0 50px 0;
+
+	@media #{$min_md} {
+		padding: 70px 0;
+	}
+
+	@media #{$min_xl} {
+		padding: 100px 0;
+	}
+}
+
+.story_background {
+	@include cover;
+
+	@media print {
+		display: none;
+	}
+
+	&:before {
+		@include cover
+
+		z-index: 2;
+
+		background: rgba(#000, .5);
+		content: "";
+	}
+}
+
+.story_inner {
+	position: relative;
+	z-index: 4;
+
+	color: #fff;
+
+	@media #{$min_md} {
+		align-items: center;
+		display: flex;
+	}
+}
+
+
+/* ==========================================================================
+	Story Quote
+============================================================================= */
+
+.story_quote {
+	margin: 20px 0 50px;
+
+	@media #{$min_md} {
+		width: 40%;
+
+		padding-right: 40px;
+	}
+
+	@media #{$min_xl} {
+		width: 50%;
+		
+		padding-right: 0;
+	}
+}
+
+.story_quote_inner {
+
+	@media #{$min_xl} {
+		max-width: 380px;
+	}
+}
+
+.story_quote_icon {
+	color: $frog;
+	display: inline-block;
+	margin-bottom: 10px;
+
+	@media #{$min_md} {
+		margin-bottom: 22px;
+		transform-origin: left top;
+		transform: scale(1.5);
+	}
+}
+
+.story_quote_body {
+	@include u(700);
+
+	font-size: 18px;
+	line-height: (28 / 18);
+
+	@media #{$min_md} {
+		font-size: 20px;
+		line-height: (30 / 20);
+	}
+
+	@media #{$min_lg} {
+		font-size: 24px;
+		line-height: (38 / 24);
+	}
+
+	@media #{$min_xl} {
+		font-size: 28px;
+		line-height: (44 / 28);
+	}
+	
+	p {
+		margin: 0;
+	}
+}
+
+.story_quote_cite {
+	display: block;
+	font-size: 14px;
+	font-style: normal;
+	letter-spacing: 1.5px;
+	margin-top: 23px;
+	text-transform: uppercase;
+
+	@media #{$min_lg} {
+		font-size: 16px;
+	}
+}
+
+.story_quote_cite_name {
+	@include u(300);
+
+	&:before {
+		content: "—";
+		margin-right: 7px;
+	}
+}
+
+.story_quote_cite_label {
+	@include u(700);
+}
+
+
+/* ==========================================================================
+	Story Detail
+============================================================================= */
+
+.story_detail {
+	border-left: 10px solid $frog;
+	padding: 20px 0 20px 25px;
+
+	@media #{$min_md} {
+		width: 60%;
+	}
+
+	@media #{$min_lg} {
+		padding-left: 50px;
+	}
+
+	@media #{$min_xl} {
+		width: 50%;
+	}
+}
+
+.story_detail_header {}
+
+.story_detail_label {
+	@include u(500);
+
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-bottom: 3px;
+	opacity: .85;
+	text-transform: uppercase;
+
+	@media #{$min_lg} {
+		font-size: 18px;
+	}
+}
+
+.story_detail_title {
+	@include h2;
+	@include m(700);
+
+	margin: 0 0 10px;
+
+	@media #{$min_lg} {
+		margin-bottom: 20px;
+	}
+}
+
+.story_detail_caption {
+	@include u(300);
+
+	font-size: 20px;
+	line-height: (32 / 20);
+
+	@media #{$min_xl} {
+		font-size: 24px;
+		line-height: (40 / 24);	
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.story_detail_footer {
+	margin-top: 20px;
+
+	@media #{$min_lg} {
+		margin-top: 37px;
+	}
+}
+
+.story_detail_link {
+	@include button_inline;
+	@include button_fill(
+		$b: #fff,
+		$b2: $frog,
+		$lc: $dark,
+		$ic: $dark,
+		$h: true,
+		$hc: $dark,
+		$hic: $dark
+	);
+	
+	@media #{$min_xl} {
+		margin-right: 30px;
+	}
+}
+
+.story_detail_video {
+	display: block;
+	margin-top: 20px;
+
+	@media #{$min_xl} {
+		display: inline-block;
+		margin-top: 0;
+		vertical-align: middle;
+	}
+}
+
+.story_detail_video_button {
+	height: 40px;
+	width: 40px;
+
+	position: relative;
+
+	background: $blue;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	margin-right: 10px;
+	vertical-align: middle;
+	transition: transform .25s;
+
+	.story_detail_video:focus &,
+	.story_detail_video:hover & {
+		transform: scale(1.25);
+	}
+}
+
+.story_detail_video_button_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin-left: 1px;
+	transform: translate(-50%, -50%);
+}
+
+.story_detail_video_label {
+	@include u(500);
+
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	letter-spacing: 2.2px;
+	line-height: (20 / 14);
+	vertical-align: middle;
+	text-transform: uppercase;
+	transition: transform .25s;
+
+	.story_detail_video:focus &,
+	.story_detail_video:hover & {
+		transform: translate(5px, 0);
+	}
+}

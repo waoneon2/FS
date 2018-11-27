@@ -1,0 +1,124 @@
+/* ==========================================================================
+	Utility Navigation Common
+============================================================================= */
+
+.utility_nav {
+
+	&_sm {
+		margin-top: 30px;
+		padding-left: 10px;
+
+		@media #{$min_lg} {
+			display: none;
+		}
+	}
+
+	&_lg {
+		display: none;
+
+		@media #{$min_lg} {
+			display: block;
+			margin-right: 30px;
+		}
+	}
+}
+
+.utility_nav_header {}
+
+.utility_nav_title {
+	@include visually_hide;
+}
+
+
+// Seconadry Links
+// =============================================================================
+
+.utility_nav_list {
+
+	@media #{$min_lg} {
+		white-space: nowrap;	
+	}
+}
+
+.utility_nav_item {
+
+	@media #{$min_lg} {
+		display: inline-block;
+		vertical-align: top;	
+	}
+}
+
+.utility_nav_link {
+	@include u(500);
+
+	position: relative;
+
+	display: block;
+
+	@media #{$max_lg} {
+		background: #fff;
+		box-shadow: -10px 10px 0 0 $blue;
+		color: #000;
+		cursor: pointer;
+		font-size: 13px;
+		letter-spacing: 2px;
+		line-height: (20 / 14);
+		margin-bottom: 30px;
+		padding: 16px 20px;
+		text-transform: uppercase;
+		transition: background .25s;
+	}
+
+	@media #{$min_lg} {
+		@include u(500);
+
+		color: $navy;
+		font-size: 16px;
+		letter-spacing: 2px;
+		padding: 16px 24px;
+		text-transform: uppercase;
+		transition: 
+			background .25s,	
+			color .25s;
+	}
+
+	&:after {
+
+		@media #{$min_lg} {
+			height: 100%;
+			width: 100%;
+	
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -2;
+	
+			background: $blue;
+			content: "";
+			pointer-events: none;
+			transition: transform .25s;
+			transform: scale(0);
+		}
+	}
+
+	&:focus,
+	&:hover {
+
+		@media #{$max_lg} {
+			background: #F5F7F9;
+		}
+
+		@media #{$min_lg} {
+			color: #fff;
+		}
+
+		&:after {
+
+			@media #{$min_lg} {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.utility_nav_link_label {}

@@ -1,0 +1,37 @@
+/* ==========================================================================
+	Fonts
+============================================================================= */
+
+@mixin font-face($name, $list) {
+
+	@each $file, $weight, $style in $list {
+		@font-face {
+			font-family: $name;
+			src: url("../fonts/#{$file}.otf");
+			font-weight: $weight;
+
+			@if $style {
+				font-style: $style;
+			}
+		}
+	}
+}
+
+@mixin u($weight: null) {
+	font-weight: 400;
+
+	@if $weight == 300 {
+		font-family: "Unit Offc W01 Light", sans-serif;
+	} @elseif $weight == 400 {
+		font-family: "Unit Offc W01 Regular", sans-serif;
+	} @elseif $weight == 500 {
+		font-family: "Unit Offc W01 Medium", sans-serif;
+	} @elseif $weight == 700 {
+		font-family: "Unit Offc W01 Bold", sans-serif;
+	}
+}
+
+@mixin m($weight: null) {
+	font-family: "Meta Serif W01 Bold";
+	font-weight: 400;
+}

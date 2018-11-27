@@ -1,0 +1,50 @@
+
+/* ==========================================================================
+	wordpress fix css
+============================================================================= */
+body.logged-in header,
+body.logged-in .alert,
+body.logged-in .media_gallery_body.fs-swap-active,
+body.logged-in .spotlight_takeover_items {
+	top:32px;
+}
+body.logged-in .spotlight_takeover_item_close {
+    bottom: calc(100% - 32px);
+}
+@media screen and (max-width: 979px){
+	body.logged-in .spotlight_takeover_item_close {
+	    bottom: 100%;
+	}
+}
+.logged-in .spotlight_takeover_items {
+	height: calc(100% - 32px);
+}
+body.logged-in .mobile_sidebar {
+	top: 113px;
+}
+.breadcrumb_item .breadcrumb_name_label {
+    color: inherit;
+}
+#spotlight_takeover_content_js {
+	display: none;
+}
+
+@media screen and (max-width: 739px){
+	body.logged-in .spotlight_takeover_item {
+		top: 106px;
+	}
+}
+@media  (min-width:739px) and (max-width:979px) {
+	body.logged-in .spotlight_takeover_item {
+		top: 114px;
+	}
+}
+
+@media screen and (max-width: 783px){
+	body.logged-in header,
+	body.logged-in .alert,
+	body.logged-in .media_gallery_body.fs-swap-active,
+	body.logged-in .spotlight_takeover_items {
+		top:46px;
+	}
+}

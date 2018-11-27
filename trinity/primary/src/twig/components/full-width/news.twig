@@ -1,0 +1,53 @@
+<div class="news">
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="news_inner">
+				<div class="news_items">
+					{% for item in items %}
+						<article class="news_item{% if item.image %} layout_image{% else %} layout_no_image{% endif %}">
+							{% if item.image %}
+								<figure class="news_item_figure">
+									<a class="news_item_figure_link" href="#">
+										{{site.image("news_item", img.full.xsml, item.image)}}
+									</a>
+								</figure>
+							{% endif %}
+							<div class="news_item_body">
+								<div class="news_item_body_inner">
+									<header class="news_item_header">
+										<div class="news_item_details">
+											{% if item.label %}
+												<span class="news_item_detail">
+													<span class="news_item_label">{{item.label}}</span>
+												</span>
+											{% endif %}
+											{% if item.date %}
+												<span class="news_item_detail">
+													<span class="news_item_date">posted <time class="news_item_time">{{item.date}}</time></span>
+												</span>
+											{% endif %}
+											{% if item.author %}
+												<span class="news_item_detail news_item_detail_author">
+													<span class="news_item_author">by <strong class="news_item_author_name">{{item.author}}{% if item.source %}, {% endif %}</strong></span>
+												</span>
+											{% endif %}
+											{% if item.source %}
+												<span class="news_item_detail">
+													<a class="news_item_source" href="#">{{item.source}}</a>
+												</span>
+											{% endif %}
+										</div>
+										<h3 class="news_item_title">
+											{{site.button("news_item_title", item.title, "#", "arrow_right")}}
+										</h3>
+									</header>
+									<div class="news_item_caption">{{item.caption}}</div>
+								</div>
+							</div>
+						</article>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

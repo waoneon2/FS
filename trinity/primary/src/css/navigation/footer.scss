@@ -1,0 +1,76 @@
+/* ==========================================================================
+	Footer Navigation
+============================================================================= */
+
+.footer_nav {
+
+	@media #{$min_lg} {
+		padding-right: 100px;
+	}
+
+	@media #{$min_xl} {
+		padding-right: 140px;
+	}
+}
+
+.footer_nav_header {}
+
+.footer_nav_title {
+	@include visually_hide;
+}
+
+
+// Footer Links
+// =============================================================================
+
+.footer_nav_list {
+	
+	@media #{$min_sm} {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@media #{$min_lg} {
+		justify-content: space-between;
+	}
+}
+
+.footer_nav_item {
+
+	@media #{$min_sm} {
+		width: 50%;
+	}
+
+	@media #{$min_lg} {
+		width: auto;
+	}
+}
+
+.footer_nav_link {
+	@include u(400);
+
+	color: $navy;
+	display: block;
+	font-size: 12px;
+	letter-spacing: 1.8px;
+	line-height: (20 / 12);
+	padding: 8px 0 7px;
+	text-transform: uppercase;
+	transition: color .25s;
+
+	@media #{$min_lg} {
+		padding: 21px 0;
+	}
+
+	@media #{$min_xl} {
+		font-size: 16px;
+		padding: 18px 0;
+	}
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
+}
+
+.footer_nav_link_label {}

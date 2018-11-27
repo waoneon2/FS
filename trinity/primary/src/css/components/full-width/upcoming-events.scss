@@ -1,0 +1,63 @@
+.upcoming_events {
+	@include padded_xl;
+
+	background: #F5F7F9;
+}
+
+.upcoming_events_inner {}
+
+.upcoming_events_header {
+	margin-bottom: 20px;
+
+	@media #{$min_xl} {
+		margin-bottom: 44px;
+	}
+}
+
+.upcoming_events_link {
+	@include button_plain;
+
+	@media #{$max_md} {
+		padding: 3px 0;
+	}
+}
+
+.upcoming_events_title {
+	@include m(700);
+
+	font-size: 22px;
+	line-height: (32 / 22);
+	margin: 0;
+
+	@media #{$min_md} {
+		font-size: 26px;
+		line-height: (38 / 26);
+	}
+
+	@media #{$min_xl} {
+		font-size: 34px;
+		line-height: (48 / 34);
+	}
+}
+
+.upcoming_events_items {
+
+	@media #{$min_md} {
+		margin: 0 -30px;
+	}
+
+	@media #{$min_lg} {
+		margin: 0 -60px;
+	}
+
+	@media #{$min_xl} {
+		margin: 0 -90px;
+	}
+
+	.lwcw {
+
+		@media #{$min_md} {
+			display: flex;
+		}
+	}
+}

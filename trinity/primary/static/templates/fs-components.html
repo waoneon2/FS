@@ -1,0 +1,834 @@
+
+	
+<!DOCTYPE html>
+<html lang="en" class="guidebook">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Components | Trinity College</title>
+		<meta name="description" content="">
+		<link rel="stylesheet" href="../../css/site.css">
+		<link rel="stylesheet" href="../../css/guidebook.css">
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+			</head>
+	<body class="fs-grid">
+		<figure style="display: none;">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 20 14" id="arrow_left" xmlns="http://www.w3.org/2000/svg"><path d="M6.872 1.18a.66.66 0 0 1 .907 0 .585.585 0 0 1 0 .852l-4.6 4.361h15.177c.354 0 .644.267.644.602 0 .336-.29.611-.644.611H3.18l4.599 4.353a.595.595 0 0 1 0 .86.66.66 0 0 1-.907 0L1.184 7.427a.585.585 0 0 1 0-.852L6.872 1.18z" fill-rule="nonzero" stroke="#1573DD" stroke-width=".5"/></symbol><symbol viewBox="0 0 17 12" id="arrow_right" xmlns="http://www.w3.org/2000/svg"><path d="M11.107 1.15a.55.55 0 0 0-.756 0 .487.487 0 0 0 0 .71l3.833 3.634H1.537c-.295 0-.537.223-.537.502 0 .28.242.51.537.51h12.647l-3.833 3.627a.496.496 0 0 0 0 .717c.212.2.544.2.756 0l4.74-4.495a.487.487 0 0 0 0-.71l-4.74-4.495z" fill-rule="nonzero" stroke-width=".5"/></symbol><symbol viewBox="0 0 24 24" id="back" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.059V6.5a1.001 1.001 0 0 0-1.707-.708L4 12l6.293 6.207a.997.997 0 0 0 1.414 0A.999.999 0 0 0 12 17.5v-2.489c2.75.068 5.755.566 8 3.989v-1c0-4.633-3.5-8.443-8-8.941z"/></symbol><symbol viewBox="0 0 19 25" id="bell" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><path d="M6.61 21.984v.02c0 1.635 1.298 2.96 2.899 2.96 1.6 0 2.898-1.325 2.898-2.96v-.02H6.61zM18.763 18.285l-2.609-3.913V9.489c0-3.292-2.296-6.036-5.342-6.655V1.331C10.812.596 10.23 0 9.51 0S8.206.596 8.206 1.33v1.504C5.16 3.453 2.863 6.197 2.863 9.49v4.882L.255 18.285a1.37 1.37 0 0 0-.076 1.386c.229.441.677.717 1.165.717h16.33c.488 0 .936-.276 1.165-.717.228-.44.199-.974-.076-1.386z"/></g></symbol><symbol viewBox="0 0 7 5" id="caret_down" xmlns="http://www.w3.org/2000/svg"><path d="M.516 0h5.968a.5.5 0 0 1 .402.797L3.902 4.835a.5.5 0 0 1-.804 0L.114.797A.5.5 0 0 1 .516 0z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 7 6" id="caret_up" xmlns="http://www.w3.org/2000/svg"><path d="M.516 5.038h5.968a.5.5 0 0 0 .402-.797L3.902.203a.5.5 0 0 0-.804 0L.114 4.24a.5.5 0 0 0 .402.797z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 20 20" id="chevron_left" xmlns="http://www.w3.org/2000/svg"><path d="M12.141 13.418c.268.271.268.709 0 .978s-.701.272-.969 0l-3.83-3.908a.697.697 0 0 1 0-.979l3.83-3.908c.267-.27.701-.27.969 0s.268.709 0 .978L9 10l3.141 3.418z"/></symbol><symbol viewBox="0 0 20 20" id="chevron_right" xmlns="http://www.w3.org/2000/svg"><path d="M11 10L7.859 6.58a.695.695 0 0 1 0-.978.68.68 0 0 1 .969 0l3.83 3.908a.697.697 0 0 1 0 .979l-3.83 3.908c-.267.272-.701.27-.969 0s-.268-.707 0-.978L11 10z"/></symbol><symbol viewBox="0 0 14 14" id="clock" xmlns="http://www.w3.org/2000/svg"><path d="M7 0c3.876 0 7 3.124 7 7s-3.124 7-7 7-7-3.124-7-7 3.124-7 7-7zm3.097 10.097l.827-.827-2.858-2.851L7 1.75H5.831V7c0 .294.116.602.342.827.068.062.13.11.198.164l3.726 2.106z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 24 24" id="close" xmlns="http://www.w3.org/2000/svg"><path d="M12 11.114l9.567-9.568c.402-.267.75-.255 1.043.039.294.293.304.638.031 1.035l-9.567 9.567 9.546 9.546a.747.747 0 0 1-.01 1.057.756.756 0 0 1-1.064.017L12 13.261l-9.546 9.546a.747.747 0 0 1-1.057-.01.756.756 0 0 1-.017-1.064l9.546-9.546L1.36 2.62c-.268-.402-.255-.75.038-1.043.294-.293.639-.304 1.036-.03L12 11.113z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 14 11" id="email" xmlns="http://www.w3.org/2000/svg"><path d="M7 6.125L0 .875C0 .39.39 0 .875 0h12.25c.485 0 .875.39.875.875l-7 5.25zm0 1.572l7-5.25v7.178c0 .485-.39.875-.875.875H.875A.872.872 0 0 1 0 9.625V2.447l7 5.25z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 5 13" id="expand" xmlns="http://www.w3.org/2000/svg"><path d="M.474 8.491h3.485a.5.5 0 0 1 .417.775l-1.742 2.645a.5.5 0 0 1-.835 0L.056 9.266a.5.5 0 0 1 .418-.775zm0-4.8a.5.5 0 0 1-.418-.775L1.8.27a.5.5 0 0 1 .835 0l1.742 2.645a.5.5 0 0 1-.417.775H.474z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 24 24" id="facebook" xmlns="http://www.w3.org/2000/svg"><path d="M20.766 0H3.234A3.234 3.234 0 0 0 0 3.234v17.532A3.234 3.234 0 0 0 3.234 24h8.647l.014-8.576H9.667a.526.526 0 0 1-.525-.524l-.011-2.765a.526.526 0 0 1 .526-.527h2.224V8.937c0-3.1 1.893-4.788 4.658-4.788h2.27c.29 0 .525.235.525.525v2.331c0 .29-.235.526-.525.526h-1.393c-1.504 0-1.795.715-1.795 1.764v2.313h3.305c.315 0 .559.275.522.587l-.328 2.765a.526.526 0 0 1-.522.464h-2.962L15.62 24h5.145A3.234 3.234 0 0 0 24 20.766V3.234A3.234 3.234 0 0 0 20.766 0z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 24 11" id="flickr" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><ellipse cx="5.673" cy="5.49" rx="5.673" ry="5.455"/><ellipse cx="18.306" cy="5.49" rx="5.673" ry="5.455"/></g></symbol><symbol viewBox="0 0 23 18" id="forward" xmlns="http://www.w3.org/2000/svg"><path d="M15.625 14.05l2.84-1.943v3.052A2.86 2.86 0 0 1 15.626 18H2.84A2.86 2.86 0 0 1 0 15.16V3.795A2.86 2.86 0 0 1 2.84.955h8.046v1.154c-1.709.266-3.151.81-4.36 1.687H2.84v11.363h12.784v-1.11zm6.891-7.813c.133.11.211.233.211.4 0 .155-.078.31-.21.388l-9 6.159a.41.41 0 0 1-.256.077.395.395 0 0 1-.21-.055.452.452 0 0 1-.267-.422v-3.34c-5.782.133-7.158 2.164-7.18 2.164a.432.432 0 0 1-.4.233h-.1a.497.497 0 0 1-.365-.444c0-.11-.19-3.007 1.886-5.182 1.398-1.498 3.473-2.32 6.159-2.397V.478c0-.19.1-.345.266-.422.134-.078.344-.078.466.022l9 6.159z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 50 33" id="fs_logo" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M49.207 0H.794A.797.797 0 0 0 0 .8v4.4c0 .221.178.4.397.4h6.746V14h24.326c.29 0 .674-.338.674-.707V9.114A.792.792 0 0 0 31.4 8.4h-9.178V5.6H38.89v4c0 .221.177.4.397.4h9.92A.797.797 0 0 0 50 9.2V.8c0-.442-.355-.8-.793-.8M42.597 18.57c-1.636-.353-7.9-.872-10.595-.872l-6.482-.053c-.72 0-3.131-.132-3.454-.637L7.09 17c-.048.228-.1.75-.1 1 0 1.932 2.15 4.435 6.618 5.716 2.67.749 9.363 1.445 11.593 1.445l8.211.061c.462 0 2.218-.026 2.218 1.272s-1.756 1.277-2.218 1.277H23.115c-.315 0-4.826-.086-5.444-1.927-.006-.016-.014-.033-.019-.05a.39.39 0 0 0-.35-.223H7.034a.394.394 0 0 0-.394.394v5.905c0 .218.176.394.394.394h9.868a.393.393 0 0 0 .391-.384l.102-1.723c2.08.925 5.429 1.87 8.589 1.87h7.847c4.145 0 16.079-.926 16.079-7.562 0-4.386-5.73-5.553-7.313-5.895z"/></g></symbol><symbol viewBox="0 0 15 15" id="grid" xmlns="http://www.w3.org/2000/svg"><path d="M0 .315C0 .139.14 0 .315 0h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H.315A.313.313 0 0 1 0 3.435V.315zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H5.94a.313.313 0 0 1-.315-.315V.315zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315h-3.12a.313.313 0 0 1-.315-.315V.315zM0 5.94c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H.315A.313.313 0 0 1 0 9.06V5.94zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H5.94a.313.313 0 0 1-.315-.315V5.94zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315h-3.12a.313.313 0 0 1-.315-.315V5.94zM0 11.565c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H.315A.313.313 0 0 1 0 14.685v-3.12zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315H5.94a.313.313 0 0 1-.315-.315v-3.12zm5.625 0c0-.176.14-.315.315-.315h3.12c.176 0 .315.14.315.315v3.12c0 .176-.14.315-.315.315h-3.12a.313.313 0 0 1-.315-.315v-3.12z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 12 12" id="home" xmlns="http://www.w3.org/2000/svg"><path d="M11.989 6.102a.265.265 0 0 1-.24.152H10.5v5.494a.25.25 0 0 1-.252.252H7.752a.25.25 0 0 1-.252-.252V7.502h-3v4.246a.25.25 0 0 1-.252.252H1.75a.25.25 0 0 1-.252-.252V6.254H.251c-.1 0-.199-.059-.24-.152A.306.306 0 0 1 .07 5.82L5.818.075c.1-.1.264-.1.364 0L11.93 5.82c.07.082.082.181.059.28z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 24 24" id="instagram" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><path d="M16.82 0H7.138A7.145 7.145 0 0 0 0 7.137v9.684a7.145 7.145 0 0 0 7.137 7.137h9.684a7.145 7.145 0 0 0 7.137-7.137V7.137C23.958 3.202 20.756 0 16.821 0zm4.728 16.82a4.727 4.727 0 0 1-4.727 4.728H7.137A4.727 4.727 0 0 1 2.41 16.82V7.137A4.727 4.727 0 0 1 7.137 2.41h9.684a4.727 4.727 0 0 1 4.727 4.727v9.684z"/><path d="M11.979 5.783a6.203 6.203 0 0 0-6.196 6.196 6.203 6.203 0 0 0 6.196 6.196 6.203 6.203 0 0 0 6.196-6.196 6.203 6.203 0 0 0-6.196-6.196zm0 9.982a3.786 3.786 0 1 1 0-7.572 3.786 3.786 0 0 1 0 7.572z"/><circle cx="18.187" cy="5.829" r="1.485"/></g></symbol><symbol viewBox="0 0 18 18" id="link" xmlns="http://www.w3.org/2000/svg"><path d="M16.506 8.003l-2.633 2.44a5.617 5.617 0 0 0-.383-2.676l1.376-1.3a2.44 2.44 0 0 0 .793-1.782c0-.65-.264-1.291-.793-1.78a2.816 2.816 0 0 0-1.922-.735c-.692 0-1.385.244-1.922.734L8.107 5.58c-.529.507-.802 1.157-.802 1.807 0 .65.264 1.291.802 1.781.236.22.355.498.355.768s-.119.54-.355.752c-.22.21-.52.312-.82.312-.292 0-.593-.101-.82-.312C5.492 9.768 5 8.568 5 7.37c0-1.199.492-2.398 1.467-3.31l2.897-2.676A5.234 5.234 0 0 1 12.926 0c1.293 0 2.587.464 3.58 1.384.993.92 1.494 2.12 1.494 3.318 0 1.19-.501 2.38-1.494 3.301zm-4.972 5.934l-2.913 2.697C7.638 17.544 6.345 18 5.043 18c-1.292 0-2.585-.455-3.568-1.366C.492 15.724 0 14.527 0 13.33c0-1.205.492-2.402 1.475-3.312l2.658-2.453a5.7 5.7 0 0 0 .382 2.697l-1.374 1.273a2.423 2.423 0 0 0-.792 1.778c0 .65.264 1.29.792 1.779.528.489 1.22.733 1.92.733.693 0 1.393-.244 1.921-.733l2.886-2.672c.547-.489.81-1.138.81-1.779 0-.649-.263-1.29-.81-1.778a1.042 1.042 0 0 1-.336-.776c0-.278.109-.556.336-.767.228-.21.528-.32.838-.32.3 0 .6.11.828.32.984.92 1.466 2.116 1.466 3.313a4.478 4.478 0 0 1-1.466 3.304z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 24 24" id="linkedin" xmlns="http://www.w3.org/2000/svg"><path d="M21.829 0H2.171A2.171 2.171 0 0 0 0 2.171v19.658C0 23.028.972 24 2.171 24h19.658C23.028 24 24 23.028 24 21.829V2.17A2.171 2.171 0 0 0 21.829 0zM7.427 20.723a.632.632 0 0 1-.632.632h-2.69a.632.632 0 0 1-.631-.632V9.45c0-.349.283-.631.631-.631h2.69c.349 0 .632.282.632.631v11.274zM5.45 7.755a2.555 2.555 0 1 1 0-5.11 2.555 2.555 0 0 1 0 5.11zm16.031 13.02c0 .32-.26.58-.58.58h-2.887a.58.58 0 0 1-.58-.58v-5.289c0-.789.23-3.457-2.062-3.457-1.779 0-2.14 1.826-2.212 2.646v6.1c0 .32-.26.58-.58.58H9.787a.58.58 0 0 1-.58-.58V9.398c0-.321.26-.581.58-.581h2.791c.321 0 .581.26.581.58v.984c.66-.99 1.64-1.754 3.727-1.754 4.62 0 4.594 4.318 4.594 6.69v5.456z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 229 48" id="logo" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M17.338 25.094c0 2.117.69 2.862 3.028 2.862h1.418v.745H9.71v-.745h1.418c2.338 0 3.028-.745 3.028-2.862V5.728h-6.67c-1.532 0-2.222.901-2.797 4.351H4l.613-6.35h.728c.039.235.192.391.422.47.23.079.498.118.767.118h18.435c.536 0 1.111-.118 1.188-.589h.728l.613 6.351h-.69c-.574-3.45-1.264-4.351-2.797-4.351h-6.669v19.366"/><path d="M31.058 25.84c0 1.606.575 2.116 2.491 2.116h1.457v.745h-9.084v-.745c1.955-.039 2.568-.863 2.568-2.94v-9.057l-2.568-.94v-.666l4.37-1.568h.766v4.154h.077c1.916-3.214 2.376-3.959 3.64-3.959.46 0 .576.04 1.304.353.383.157 1.073.314 1.993.588l-.92 2.353a6.955 6.955 0 0 1-2.031-.628c-.422-.196-.882-.392-1.342-.392-.69 0-1.112.47-1.494 1.02-.499.705-.92 1.372-1.227 1.96v7.605M43.399 3.728c.92 0 1.686.667 1.686 1.49s-.766 1.49-1.686 1.49c-.92 0-1.648-.667-1.648-1.49s.728-1.49 1.648-1.49zm1.571 21.993c0 1.372.728 2.235 2.76 2.235v.745H39.22v-.745c2.338 0 3.181-.784 3.181-2.862v-7.88c0-1.528-.191-1.725-1.188-1.92l-1.801-.354v-.627l4.982-1.764h.575V25.72zM54.552 25.29c0 2.156.498 2.666 2.568 2.666v.745h-7.704v-.745c1.686 0 2.568-.941 2.568-2.47v-8.232c0-1.45-.153-1.725-1.15-1.921l-1.303-.275v-.627l4.407-1.646h.614v3.057c2.568-1.646 4.714-3.097 6.592-3.097 2.606 0 4.1 1.96 4.1 5.88 0 5.215-.267 6.234-.305 7.763-.039 1.058.574 1.568 2.146 1.568h.842v.745h-8.24v-.745c1.112-.039 1.763-.314 2.185-.745.728-.745.805-3.607.805-8.82 0-3.137-1.495-4.117-3.028-4.117-1.226 0-3.104 1.098-5.097 2.51v8.506M73.216 3.728c.92 0 1.687.667 1.687 1.49s-.767 1.49-1.687 1.49-1.648-.667-1.648-1.49.728-1.49 1.648-1.49zm1.571 21.993c0 1.372.729 2.235 2.76 2.235v.745h-8.509v-.745c2.338 0 3.182-.784 3.182-2.862v-7.88c0-1.528-.192-1.725-1.189-1.92l-1.8-.354v-.627l4.981-1.764h.575V25.72zM88.93 13.177l-.613 1.724h-4.868v9.135c0 2.47 1.725 3.293 2.53 3.293.843 0 1.61-.667 2.338-1.96l.613.588c-.92 2.038-2.414 3.214-4.178 3.214-2.261 0-3.87-1.92-3.87-4.547V14.9h-1.764v-.627c1.495-.745 2.798-2.548 3.68-4.978h.651v3.88h5.481M103.379 17.528c1.15-2.98.421-3.568-1.84-3.646v-.705h6.362v.705c-1.571.196-2.453 1.294-3.18 3.136L98.204 33.64c-1.15 2.901-2.032 4.195-3.374 4.195-.92 0-1.57-.588-1.57-1.372 0-1.607 2.222-1.215 3.18-2.195.422-.431.997-1.45 1.303-2.235l1.15-2.94-5.94-12.898c-.728-1.607-1.419-2.274-3.028-2.313v-.705h7.704v.705c-2.339.039-2.606.745-1.84 2.392l4.33 9.565 3.259-8.311M136.876 10.746c-1.265-3.646-4.561-6.038-8.739-6.038-6.4 0-10.386 4.744-10.386 11.33 0 7.096 4.982 12.31 10.808 12.31 3.028 0 6.746-1.059 9.352-5.802h.728c-.498 1.764-1.533 4.195-2.453 5.723-2.453-.352-4.14 1.06-8.662 1.06-7.78 0-13.376-5.254-13.376-12.507 0-7.605 5.749-13.094 13.76-13.094 4.828 0 6.899 1.569 8.086 1.569.422 0 .613-.118.69-.236h.575l.345 5.685h-.728M148.412 28.23c2.261 0 4.829-2.351 4.829-6.272 0-4.47-2.683-8.272-5.902-8.272-2.53 0-4.868 2.666-4.868 6.037 0 4.744 2.644 8.507 5.94 8.507zm-.537-15.485c4.676 0 8.24 3.568 8.24 8.233 0 4.626-3.564 8.193-8.125 8.193-4.753 0-8.394-3.528-8.394-8.115 0-5.41 4.293-8.31 8.28-8.31zM162.822 25.604c0 1.607.728 2.352 2.223 2.352h.651v.745h-8.623v-.745c2.453 0 3.181-.745 3.181-2.627V6.394c0-1.097-.115-1.45-1.188-1.568l-1.725-.196v-.666l4.906-1.608h.575v23.248M172.882 25.604c0 1.607.728 2.352 2.223 2.352h.652v.745h-8.624v-.745c2.453 0 3.181-.745 3.181-2.627V6.394c0-1.097-.115-1.45-1.188-1.568L167.4 4.63v-.666l4.906-1.608h.575v23.248M187.752 17.724c-.421-2.548-1.954-4.234-3.794-4.234-1.265 0-3.181.588-4.063 4.234h7.857zm-7.972 1.02c-.077.587-.153 1.136-.153 1.646 0 4.077 2.798 6.821 5.826 6.821 1.916 0 3.41-.784 4.868-2.548l.42.47c-1.61 2.078-4.024 4.038-6.821 4.038-3.757 0-6.67-3.489-6.67-8.036 0-4.156 2.722-8.39 7.398-8.39 5.174 0 5.059 3.803 6.324 5.097v.901H179.78zM200.054 13.49c-1.456 0-3.717.823-3.717 4.469 0 2.313 1.15 5.41 4.062 5.41 2.223 0 3.68-1.882 3.68-4.587 0-3.371-1.687-5.292-4.025-5.292zm1.074 23.248c3.257 0 6.323-2.196 6.323-4.666 0-1.45-1.188-2.195-2.568-2.312-.996-.118-5.825-.158-6.937-.314-1.073 1.294-2.491 1.843-2.491 3.371 0 1.843 2.53 3.92 5.673 3.92zm8.7-20.347c-.575-.039-2.377-.196-3.833-.47.23.431.652 1.254.652 2.508 0 2.902-2.453 5.685-6.708 5.685-.728 0-1.073-.078-1.763-.314-.613.667-2.337 1.099-2.337 2 0 .98 1.648 1.372 5.48 1.411 4.331.04 5.826.235 6.975 1.411.92.941 1.15 1.921 1.15 2.745 0 2.548-3.372 6.468-10.463 6.468-3.986 0-5.902-1.804-5.902-3.724 0-2.274 2.338-2.627 4.1-4.822-2.069-.196-3.64-1.53-3.64-2.784 0-1.803 2.568-1.881 3.909-2.9-2.338-.941-3.68-2.627-3.68-4.862 0-3.371 2.952-5.998 6.746-5.998 1.764 0 3.258.55 4.293 1.568 1.724 0 3.335-.196 5.02-.392v2.47zM221.67 17.724c-.421-2.548-1.954-4.234-3.794-4.234-1.265 0-3.182.588-4.063 4.234h7.857zm-7.972 1.02c-.077.587-.153 1.136-.153 1.646 0 4.077 2.798 6.821 5.826 6.821 1.916 0 3.41-.784 4.867-2.548l.422.47c-1.61 2.078-4.024 4.038-6.822 4.038-3.757 0-6.67-3.489-6.67-8.036 0-4.156 2.722-8.39 7.398-8.39 5.174 0 5.059 3.803 6.324 5.097v.901h-11.192zM31.15 38.787V37.41c0-.6-.058-.753-.874-.8V36.4h2.576v.211c-.782.047-.874.188-.874.8v3.093c0 .66.16.753.874.8v.212h-2.576v-.212c.701-.047.874-.14.874-.8v-1.423h-2.633v1.423c0 .66.16.753.874.8v.212h-2.576v-.212c.7-.047.874-.14.874-.8v-3.093c0-.659-.162-.753-.874-.8V36.4h2.576v.211c-.702.047-.874.13-.874.8v1.376h2.633M37.33 38.975h1.415l-.69-1.917-.724 1.917zm1.266-2.74l1.575 4.375c.196.564.23.659.828.694v.212h-2.403v-.212c.39-.012.782-.024.782-.353 0-.176-.08-.423-.161-.647l-.357-.988h-1.656l-.264.682c-.08.212-.219.565-.219.86 0 .364.38.399.794.446v.212h-1.978v-.212c.587-.117.656-.317.92-.988l1.426-3.74-.115-.342h.828zM45.34 39.08h.517c.61 0 1.22-.281 1.22-1.246 0-.988-.725-1.258-1.231-1.258-.195 0-.391.012-.506.023v2.482zm0 1.39c0 .693.069.834.563.834h.334v.212h-2.541v-.212h.184c.563 0 .632-.235.632-.682v-3.33c0-.128 0-.316-.092-.434-.092-.13-.16-.13-.736-.164v-.212c.483-.047 1.208-.141 2.024-.141 1.012 0 2.231.235 2.231 1.47 0 .964-.724 1.223-1.092 1.352.218.2.287.271.7 1.176.369.812.587.976 1.013 1.048v.211c-.794-.036-1.276-.223-1.76-1-.126-.2-.62-1.129-.724-1.305h-.736v1.176zM51.319 36.223h.16c.058.082.104.13.173.152.07.025.138.025.23.025h3.358c.31 0 .368-.036.426-.177h.16l.092 1.317h-.183c-.161-.74-.265-.846-.794-.846h-.955v3.869c0 .67.08.694.944.741v.212h-2.714v-.212c.862-.035.943-.07.943-.694v-3.916h-1.035c-.449 0-.483.023-.713.846h-.196l.104-1.317M62.725 36.4v1.034h-.207c-.08-.552-.127-.6-.184-.658-.057-.059-.23-.106-.552-.106h-1.15v2h1.265c.414 0 .61-.107.62-.553h.208v1.434h-.207c-.034-.529-.15-.623-.575-.623h-1.31v1.812c0 .447 0 .505.758.564v.212h-2.242v-.212c.598-.059.655-.153.655-.611v-3.364c0-.588-.046-.647-.655-.718V36.4h3.576M68.416 36.4c-1.184 0-1.828 1.164-1.828 2.399 0 1.293.31 1.81.632 2.14.345.353.76.518 1.208.518.874 0 1.863-.67 1.863-2.552 0-1.812-.886-2.505-1.875-2.505zm.035-.2c1.322 0 2.737.882 2.737 2.693 0 1.976-1.484 2.764-2.749 2.764-1.253 0-2.748-.788-2.748-2.764 0-1.811 1.483-2.693 2.76-2.693zM76.016 39.08h.518c.609 0 1.218-.281 1.218-1.246 0-.988-.724-1.258-1.23-1.258-.195 0-.39.012-.506.023v2.482zm0 1.39c0 .693.07.834.564.834h.333v.212h-2.541v-.212h.184c.563 0 .632-.235.632-.682v-3.33c0-.128 0-.316-.092-.434-.092-.13-.16-.13-.735-.164v-.212c.482-.047 1.207-.141 2.023-.141 1.012 0 2.231.235 2.231 1.47 0 .964-.725 1.223-1.093 1.352.219.2.288.271.702 1.176.368.812.586.976 1.012 1.048v.211c-.794-.036-1.277-.223-1.76-1-.126-.2-.62-1.129-.724-1.305h-.736v1.176zM83.88 40.716c0 .212 0 .317.035.4.08.14.506.153.679.153 2.046 0 2.357-1.565 2.357-2.388 0-.517-.127-1.588-1.116-2.035-.574-.258-1.31-.247-1.954-.235v4.105zm-1.724.588c.77-.035.896-.106.896-.764v-3.117c0-.612-.068-.718-.896-.73v-.211a24.191 24.191 0 0 1 2.507-.141c.655 0 3.185.13 3.185 2.54 0 1.517-1.185 2.306-1.909 2.47-.587.13-1.208.165-1.771.165h-2.012v-.212zM105.462 37.74h-.172c-.219-.435-.667-1.282-1.805-1.282-1.174 0-1.921 1.2-1.921 2.6 0 1.576.977 2.376 1.805 2.376 1.127 0 1.794-.848 2.047-1.177h.196c-.173.483-.276.694-.645 1.305a3.115 3.115 0 0 0-.655 0c-.666.06-.793.072-.988.072-1.68 0-2.668-1.106-2.668-2.624 0-1.752 1.448-2.799 2.76-2.799.873 0 1.31.412 1.574.412.138 0 .185-.047.242-.106h.184l.046 1.223M111.556 36.4c-1.185 0-1.829 1.164-1.829 2.399 0 1.293.31 1.81.633 2.14.345.353.759.518 1.207.518.874 0 1.863-.67 1.863-2.552 0-1.812-.886-2.505-1.874-2.505zm.035-.2c1.321 0 2.736.882 2.736 2.693 0 1.976-1.483 2.764-2.748 2.764-1.254 0-2.748-.788-2.748-2.764 0-1.811 1.483-2.693 2.76-2.693zM118.914 36.4l3.38 3.834v-2.941c0-.317 0-.623-.379-.658a7.276 7.276 0 0 0-.494-.024V36.4h2.058v.211c-.748-.023-.816.2-.816.682v4.258h-.276l-3.714-4.222v3.14c0 .788.138.823.954.835v.212h-2.139v-.212c.736.024.817-.188.817-.682V37.33c0-.67-.323-.694-.805-.718V36.4h1.414M127.986 36.4l3.38 3.834v-2.941c0-.317 0-.623-.379-.658a7.29 7.29 0 0 0-.494-.024V36.4h2.059v.211c-.748-.023-.817.2-.817.682v4.258h-.276l-3.715-4.222v3.14c0 .788.138.823.955.835v.212h-2.138v-.212c.736.024.816-.188.816-.682V37.33c0-.67-.322-.694-.805-.718V36.4h1.414M137.127 38.775h1.241c.414 0 .552 0 .598-.635h.23v1.588h-.23c-.023-.647-.115-.694-.678-.694h-1.161v1.682c0 .506.023.506.517.506h.874c.518 0 .782-.07 1-.953h.22l-.104 1.247h-4.151v-.2c.735.023.816-.2.816-.682v-3.341c0-.6-.173-.694-.816-.682V36.4h3.932l.046 1.117h-.207c-.127-.776-.31-.859-.874-.859h-1.253v2.117M147.958 37.74h-.172c-.219-.435-.667-1.282-1.805-1.282-1.173 0-1.921 1.2-1.921 2.6 0 1.576.977 2.376 1.806 2.376 1.126 0 1.793-.848 2.046-1.177h.196c-.173.483-.276.694-.645 1.305a3.115 3.115 0 0 0-.655 0c-.666.06-.793.072-.988.072-1.68 0-2.668-1.106-2.668-2.624 0-1.752 1.448-2.799 2.76-2.799.873 0 1.31.412 1.574.412.138 0 .185-.047.242-.106h.184l.046 1.223M151.488 36.223h.16c.058.082.104.13.173.152.069.025.138.025.23.025h3.357c.311 0 .369-.036.426-.177h.161l.092 1.317h-.184c-.16-.74-.264-.846-.794-.846h-.954v3.869c0 .67.08.694.943.741v.212h-2.714v-.212c.863-.035.943-.07.943-.694v-3.916h-1.035c-.448 0-.483.023-.712.846h-.196l.104-1.317M161.768 36.611c-.828.035-.828.165-.828.882v2.917c0 .753.16.847.874.894v.212h-2.53v-.212c.713-.024.84-.117.84-.918v-2.881c0-.753-.162-.847-.874-.894V36.4h2.518v.211M170.161 37.74h-.172c-.218-.435-.667-1.282-1.806-1.282-1.172 0-1.92 1.2-1.92 2.6 0 1.576.978 2.376 1.805 2.376 1.128 0 1.794-.848 2.047-1.177h.196c-.173.483-.276.694-.644 1.305a3.115 3.115 0 0 0-.656 0c-.667.06-.793.072-.988.072-1.68 0-2.668-1.106-2.668-2.624 0-1.752 1.449-2.799 2.76-2.799.873 0 1.31.412 1.575.412.138 0 .184-.047.241-.106h.184l.046 1.223M176.163 36.4v.211c-.759.035-.874.2-.874.8v2.14c0 .377 0 .788.16 1.094.127.247.484.635 1.278.635.47 0 1.195-.129 1.46-.81.126-.307.126-.825.126-1.166v-1.74c0-.8 0-.93-.885-.953V36.4h2.058v.211c-.76-.023-.828.2-.828.682v2.118c0 .353 0 .94-.207 1.364-.357.74-1.287.917-1.874.917-.437 0-1.472-.07-1.932-.917-.173-.318-.173-.8-.173-1.082v-2.306c0-.623-.01-.729-.85-.776V36.4h2.54M182.716 36.223h.161c.058.082.104.13.173.152a.677.677 0 0 0 .23.025h3.357c.31 0 .369-.036.426-.177h.161l.092 1.317h-.184c-.161-.74-.265-.846-.794-.846h-.954v3.869c0 .67.08.694.943.741v.212h-2.714v-.212c.862-.035.943-.07.943-.694v-3.916h-1.035c-.448 0-.483.023-.712.846h-.196l.103-1.317"/></g></symbol><symbol viewBox="0 0 10 15" id="marker" xmlns="http://www.w3.org/2000/svg"><path d="M5 0c2.76 0 5 2.241 5 5.002 0 .887-.249 1.736-.644 2.447l-4.078 7.397A.35.35 0 0 1 5 15a.32.32 0 0 1-.278-.154L.644 7.45A4.84 4.84 0 0 1 0 5.002 5.003 5.003 0 0 1 5 0zm0 6.877c1.04 0 1.874-.835 1.874-1.875A1.864 1.864 0 0 0 5 3.127c-1.04 0-1.874.828-1.874 1.875 0 1.04.834 1.875 1.874 1.875z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 38 25" id="menu" xmlns="http://www.w3.org/2000/svg"><path d="M11.278 2.049A6.49 6.49 0 0 0 9.696 14.93a6.348 6.348 0 0 0 3.56-.576l3.17 4.09c.252.312.611.5.963.544a1.444 1.444 0 0 0 1.315-2.324l-3.199-4.069a6.355 6.355 0 0 0 1.42-3.316 6.49 6.49 0 0 0-5.647-7.231zM9.96 12.784a4.334 4.334 0 0 1-3.765-4.821 4.334 4.334 0 0 1 4.819-3.767 4.334 4.334 0 0 1 3.765 4.82 4.334 4.334 0 0 1-4.82 3.768zM21.2 3.516H34v2.679H21.2V3.516zm5.072 5.892h7.729v2.678h-7.729V9.408zM22.891 15.3h11.11v2.678H22.89V15.3z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 12 12" id="pause" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h4v12H0V0zm8 0h4v12H8V0z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 15 15" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M15 1.789c0 .036 0 .073-.015.124C14.13 8.731 8.717 14.13 1.913 14.985 1.862 15 1.825 15 1.79 15c-.037 0-.088 0-.118-.015a.371.371 0 0 1-.175-.175l-1.48-3.713a.339.339 0 0 1 .161-.403l4.094-2.05c.125-.067.264-.03.366.058l1.992 2.014a12.599 12.599 0 0 0 4.065-4.087L8.702 4.637c-.088-.102-.125-.241-.059-.366l2.05-4.094a.339.339 0 0 1 .404-.16l3.713 1.479c.066.036.139.102.153.175.022.03.037.081.037.118z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 13 13" id="play" xmlns="http://www.w3.org/2000/svg"><path d="M12.826 6.178l-12 6v-12z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 14 14" id="printer" xmlns="http://www.w3.org/2000/svg"><path d="M14 13.125c0 .485-.39.875-.875.875H.875A.872.872 0 0 1 0 13.125v-7c0-.485.39-.875.875-.875h1.456v2.919h9.338V5.25h1.456c.485 0 .875.39.875.875v7zm-1.75-1.75a.872.872 0 0 0-.875-.875.872.872 0 0 0-.875.875c0 .485.39.875.875.875s.875-.39.875-.875zM3.5 7V.294C3.5.13 3.63 0 3.794 0h6.412c.164 0 .294.13.294.294V7h-7z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 39 28" id="quote" xmlns="http://www.w3.org/2000/svg"><path d="M.327 17.425c0-8.792 5.363-14.92 15.732-17.05l2.681 3.552c-6.167 1.776-9.117 3.996-9.117 6.926 0 2.043 1.073 2.665 3.307 3.553 2.056.888 4.29 2.486 4.29 6.127 0 3.996-3.217 7.282-7.865 7.282-5.274 0-9.028-4.351-9.028-10.39zm20.022 0c0-8.792 5.363-14.92 15.732-17.05l2.682 3.552c-6.079 1.776-9.118 3.996-9.118 6.926 0 2.043 1.073 2.665 3.307 3.553 2.056.888 4.38 2.486 4.38 6.127 0 3.996-3.307 7.282-7.955 7.282-5.274 0-9.028-4.351-9.028-10.39z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 17 19" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M8.227.052c4.025.494 6.895 4.12 6.407 8.094a7.036 7.036 0 0 1-1.602 3.704l3.63 4.553a1.599 1.599 0 0 1-.278 2.269c-.352.27-.78.38-1.206.327a1.699 1.699 0 0 1-1.092-.61l-3.598-4.577a7.258 7.258 0 0 1-4.029.637C2.434 13.955-.435 10.33.053 6.355.54 2.381 4.203-.442 8.227.052zm-1.47 12c2.677.33 5.125-1.559 5.45-4.202.324-2.643-1.595-5.067-4.272-5.396-2.677-.329-5.125 1.56-5.45 4.203-.324 2.643 1.595 5.067 4.272 5.395z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 29 30" id="stretcher" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero" stroke="#0F0F11"><path d="M8.246 28.613a.502.502 0 0 0 .507-.507.506.506 0 0 0-.502-.502H3.11l8.48-8.48a.505.505 0 1 0-.714-.715l-8.48 8.48.004-5.135a.515.515 0 0 0-.507-.507.502.502 0 0 0-.507.507v6.357c0 .274.228.502.502.502h6.357zM20.884 1.258a.502.502 0 0 0-.507.507c0 .274.228.502.501.502h5.14l-8.48 8.48a.505.505 0 1 0 .715.715l8.48-8.48-.005 5.134a.515.515 0 0 0 .507.507.502.502 0 0 0 .507-.507V1.76a.506.506 0 0 0-.502-.502h-6.356z"/></g></symbol><symbol viewBox="0 0 24 20" id="twitter" xmlns="http://www.w3.org/2000/svg"><path d="M23.618 2.327a9.492 9.492 0 0 1-1.654.559A5.17 5.17 0 0 0 23.325.713a.27.27 0 0 0-.395-.316 9.54 9.54 0 0 1-2.53 1.047.67.67 0 0 1-.601-.15A5.169 5.169 0 0 0 16.375 0c-.546 0-1.098.085-1.639.254a5.018 5.018 0 0 0-3.378 3.618 5.54 5.54 0 0 0-.123 1.909.192.192 0 0 1-.208.21C7.355 5.647 4.043 3.875 1.702.998a.27.27 0 0 0-.443.035A5.187 5.187 0 0 0 .558 3.64c0 1.405.564 2.73 1.542 3.695a4.632 4.632 0 0 1-1.18-.458.27.27 0 0 0-.402.234 5.19 5.19 0 0 0 3.022 4.781 4.624 4.624 0 0 1-.982-.082.27.27 0 0 0-.308.35 5.189 5.189 0 0 0 4.096 3.533A9.536 9.536 0 0 1 .998 17.32H.4c-.185 0-.34.12-.387.299a.41.41 0 0 0 .196.453A14.182 14.182 0 0 0 7.345 20c2.193 0 4.245-.436 6.098-1.296a13.469 13.469 0 0 0 4.462-3.35 14.691 14.691 0 0 0 2.732-4.584c.608-1.626.93-3.36.93-5.017v-.08c-.001-.265.12-.515.329-.686a10.239 10.239 0 0 0 2.057-2.262c.15-.226-.087-.508-.335-.398z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 24 17" id="youtube" xmlns="http://www.w3.org/2000/svg"><path d="M18.974.02h-14A4.976 4.976 0 0 0 0 4.998v7.004a4.976 4.976 0 0 0 4.974 4.978h14a4.976 4.976 0 0 0 4.974-4.978V4.998A4.976 4.976 0 0 0 18.974.02zm-3.363 8.82l-6.549 3.126a.263.263 0 0 1-.376-.237V5.282c0-.196.207-.323.382-.234l6.548 3.32a.263.263 0 0 1-.005.473z" fill-rule="nonzero"/></symbol></svg>		</figure>
+		<header class="gb_page_header">
+			<div class="gb_page_ribbon">
+				<div class="fs-row">
+					<div class="fs-cell">
+						<div class="gb_ribbon_group">
+							<a class="gb_ribbon_link" href="./fs-style-guide.html">Trinity College Style Guide</a>
+							<div class="gb_ribbon_aside">
+								
+
+<nav class="gb_main_nav" aria-label="" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<div class="gb_main_nav_list" role="navigation">
+				<div class="gb_main_nav_item">
+			<a class="gb_main_nav_link" href="fs-content-strategy.html" itemprop="url">
+								<span class="gb_main_nav_link_label" itemprop="name">content strategy</span>
+			</a>
+					</div>
+				<div class="gb_main_nav_item">
+			<a class="gb_main_nav_link" href="fs-visual-styles.html" itemprop="url">
+								<span class="gb_main_nav_link_label" itemprop="name">visual styles</span>
+			</a>
+					</div>
+				<div class="gb_main_nav_item">
+			<a class="gb_main_nav_link active" href="fs-components.html" itemprop="url">
+								<span class="gb_main_nav_link_label" itemprop="name">components</span>
+			</a>
+					</div>
+				<div class="gb_main_nav_item">
+			<a class="gb_main_nav_link" href="fs-templates.html" itemprop="url">
+								<span class="gb_main_nav_link_label" itemprop="name">templates</span>
+			</a>
+					</div>
+			</div>
+</nav>
+								<a class="gb_ribbon_logo" href="https://www.fastspot.com/"><svg class="icon icon_fs_logo">
+	<use xlink:href="../../images/icons.svg#fs_logo"></use>
+</svg>
+</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="gb_jump_ribbon">
+				<div class="fs-row">
+					<div class="fs-cell">
+						<nav class="gb_jump_nav"></nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="gb_page_content">
+			<div class="fs-row">
+				<header class="fs-cell gb_page_details">
+															<h4 class="gb_page_title fs-lg-10 fs-xl-8">
+						<span class="gb_page_title_label">Components</span>
+												<button class="gb_trello_formatter">
+							<span class="gb_trello_format gb_trello_format_indicator"></span>
+							<span class="gb_trello_format gb_trello_format_grid"></span>
+							<span class="gb_trello_format gb_trello_format_list"></span>
+						</button>
+											</h4>
+															<p class="gb_page_caption fs-lg-10 fs-xl-8">Here’s your new site’s suite of editable components: select a component to learn more about how and when to use it most effectively.</p>
+															<img class="gb_page_image" src="../../images/components.svg" />
+									</header>
+				<div class="fs-cell content_cell">
+						<div class="gb_trello_wrapper">
+			<div class="gb_trello_list">
+							<div class="gb_trello_section gb_section" id="Feature">
+					<h2 class="gb_trello_section_title" id="trelloList[Feature]">
+						<span class="gb_trello_section_label">Feature</span>
+					</h2>
+					<p class="gb_trello_section_caption fs-lg-10 fs-xl-8">These components are your strongest and boldest, often used in specific circumstances such as your homepage or on landing pages.</p>
+					<div class="gb_trello_section_body">
+						<div class="gb_topics" data-section="">
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0316f0ae12b8475dca0" href="#trello_5ae0e0316f0ae12b8475dca0">
+									<h3 class="gb_topic_title">Main Feature/Brand Statement</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0316f0ae12b8475dca0/300x200/b730e24b9aeedd50b432ef711c6cd07c/Feature.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e5724ef4bab2e9c62075" href="#trello_5ae0e5724ef4bab2e9c62075">
+									<h3 class="gb_topic_title">Video Card</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e5724ef4bab2e9c62075/300x231/f7e8ae9309b3f96de630ded7ee751d9e/Video_Card.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0333c07a2c94c965864" href="#trello_5ae0e0333c07a2c94c965864">
+									<h3 class="gb_topic_title">Academic Major/Program Preview</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0333c07a2c94c965864/300x200/d85aa1d5f707e8a033ed06c8534b2839/Program_Preview.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e56bb8a461de5f192204" href="#trello_5ae0e56bb8a461de5f192204">
+									<h3 class="gb_topic_title">Testimonial/Story Card</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e56bb8a461de5f192204/300x365/fbc16ad3ed31f86d67f73c5f68570467/Story_Card.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e5660cb093c82c82d72b" href="#trello_5ae0e5660cb093c82c82d72b">
+									<h3 class="gb_topic_title">Academic Program Card</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e5660cb093c82c82d72b/300x352/e378f882425a770eb3faab1b0799bba9/Program_Card.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e035d02fd7445deff806" href="#trello_5ae0e035d02fd7445deff806">
+									<h3 class="gb_topic_title">Profile (People, Places, Pride) Preview</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e035d02fd7445deff806/300x200/3100388ed6e333b4dfd29690f08c7c66/People_Preview.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e02e99d6f48f25e1da64" href="#trello_5ae0e02e99d6f48f25e1da64">
+									<h3 class="gb_topic_title">Emergency Alert</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e02e99d6f48f25e1da64/300x705/c526e2e0e97fd61e83be224cd48c0f09/Master_Sub_-_Image.jpg" />
+								</a>
+													</div>
+					</div>
+				</div>
+							<div class="gb_trello_section gb_section" id="Full-Width">
+					<h2 class="gb_trello_section_title" id="trelloList[Full-Width]">
+						<span class="gb_trello_section_label">Full-Width</span>
+					</h2>
+					<p class="gb_trello_section_caption fs-lg-10 fs-xl-8">These components use 100% of your grid horizontally and should be used primarily to make a strong impression in cases you don’t need sub-navigation.</p>
+					<div class="gb_trello_section_body">
+						<div class="gb_topics" data-section="">
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0caa6f4408c7eefdaac" href="#trello_5ae0e0caa6f4408c7eefdaac">
+									<h3 class="gb_topic_title">Story</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0caa6f4408c7eefdaac/300x125/75dba330cbfadb56679c4a93974b8509/Story_-_Simple.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e03c06400d250e4e8172" href="#trello_5ae0e03c06400d250e4e8172">
+									<h3 class="gb_topic_title">Important Now</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e03c06400d250e4e8172/300x227/8cbf35c9b99d47c67caa8f36c571eb46/Important_Now.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5af499e009dccb82c92d74fc" href="#trello_5af499e009dccb82c92d74fc">
+									<h3 class="gb_topic_title">Pull Quote</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5af499e009dccb82c92d74fc/300x124/268d62d574e5b8747a23bdb6c6ad5e06/pullquote.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0cc8002014e9a7f7b8d" href="#trello_5ae0e0cc8002014e9a7f7b8d">
+									<h3 class="gb_topic_title">Media Gallery</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0cc8002014e9a7f7b8d/300x138/e173b087e211ad2bfac48bc139220119/Media_Gallery.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0379d9ab002bc1faee5" href="#trello_5ae0e0379d9ab002bc1faee5">
+									<h3 class="gb_topic_title">News Preview</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0379d9ab002bc1faee5/300x180/514ed795197282269915a8b437a67044/News_Events.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e03a431173cf42caa6f8" href="#trello_5ae0e03a431173cf42caa6f8">
+									<h3 class="gb_topic_title">Event Preview</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e03a431173cf42caa6f8/300x180/043e225cddb6d68c7c097cd95b235e66/News_Events.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e04188ba3eb26593099c" href="#trello_5ae0e04188ba3eb26593099c">
+									<h3 class="gb_topic_title">News Metadata</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e04188ba3eb26593099c/300x851/d2fd8e32c23c244c1c7db7aa92b2960d/News_Listing.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e1fb9693c71f5149f3ff" href="#trello_5ae0e1fb9693c71f5149f3ff">
+									<h3 class="gb_topic_title">Contact Information</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e1fb9693c71f5149f3ff/300x73/2dc7b6ff6d9ffe195e4fafa9a8e5dd8b/Contact_Information.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0d7e45f50a7e642727c" href="#trello_5ae0e0d7e45f50a7e642727c">
+									<h3 class="gb_topic_title">Testimonial</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0d7e45f50a7e642727c/300x170/94aa0887d0e6e740fe1dc4d78c875e16/Testimonial_-_Image.png" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0d541da07c295bc5905" href="#trello_5ae0e0d541da07c295bc5905">
+									<h3 class="gb_topic_title">Facts & Stats</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0d541da07c295bc5905/300x117/5e09e10afe2d914724299488662b088b/Stat_-_Image.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e03fd8f200a0f5fed8c2" href="#trello_5ae0e03fd8f200a0f5fed8c2">
+									<h3 class="gb_topic_title">Topic Row</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e03fd8f200a0f5fed8c2/300x94/997159db5c9b7c4c7e25e0c609711d60/Topic_Row.jpg" />
+								</a>
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5ae0e0ced626aeebb00fea13" href="#trello_5ae0e0ced626aeebb00fea13">
+									<h3 class="gb_topic_title">Link List</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5ae0e0ced626aeebb00fea13/300x105/850cd4148dbbe9efe6b977b575efce28/Link_List.jpg" />
+								</a>
+													</div>
+					</div>
+				</div>
+							<div class="gb_trello_section gb_section" id="In-Content">
+					<h2 class="gb_trello_section_title" id="trelloList[In-Content]">
+						<span class="gb_trello_section_label">In-Content</span>
+					</h2>
+					<p class="gb_trello_section_caption fs-lg-10 fs-xl-8">These components are paired with WYSIWYG content and provide emphasis higher up on the page.</p>
+					<div class="gb_trello_section_body">
+						<div class="gb_topics" data-section="">
+															<a class="gb_topic gb_topic_trello gb_topic_link trello_5af499db73b31b0224c7bf62" href="#trello_5af499db73b31b0224c7bf62">
+									<h3 class="gb_topic_title">Table Styles</h3>
+									<img class="gb_topic_image" src="https://trello-attachments.s3.amazonaws.com/5af499db73b31b0224c7bf62/300x181/ba5cf4fad26aa2973ac3ef9a6aa37e7c/Table_Style.jpg" />
+								</a>
+													</div>
+					</div>
+				</div>
+							<div class="gb_trello_section gb_section" id="Sidebar">
+					<h2 class="gb_trello_section_title" id="trelloList[Sidebar]">
+						<span class="gb_trello_section_label">Sidebar</span>
+					</h2>
+					<p class="gb_trello_section_caption fs-lg-10 fs-xl-8">These components are paired with your sub-navigation and can be used alongside WYSIWYG content.</p>
+					<div class="gb_trello_section_body">
+						<div class="gb_topics" data-section="">
+													</div>
+					</div>
+				</div>
+					</div>
+	</div>				</div>
+			</div>
+				<div class="gb_trello_details">
+																								
+																	<div class="gb_trello_detail" id="trello_5ae0e0316f0ae12b8475dca0">
+					<div class="gb_trello_detail_ribbon">
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e5724ef4bab2e9c62075" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Video Card</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Main Feature/Brand Statement</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e0316f0ae12b8475dca0/1200x800/b43bc8029af1fb9997510bb55de5bf51/Feature.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#main-feature-brand-statement" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e5724ef4bab2e9c62075">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0316f0ae12b8475dca0" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Main Feature/Brand Statement</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0333c07a2c94c965864" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Academic Major/Program Preview</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Video Card</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e5724ef4bab2e9c62075/fe401420c8a98aa6fd8d328720967706/Video_Card.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#video-card" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0333c07a2c94c965864">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e5724ef4bab2e9c62075" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Video Card</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e56bb8a461de5f192204" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Testimonial/Story Card</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Academic Major/Program Preview</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e0333c07a2c94c965864/1200x800/9243aa3b88a5ec9b76e9605661c2a0c4/Program_Preview.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#academic-major-program-preview" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e56bb8a461de5f192204">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0333c07a2c94c965864" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Academic Major/Program Preview</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e5660cb093c82c82d72b" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Academic Program Card</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Testimonial/Story Card</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e56bb8a461de5f192204/8fe8962acef08d58f0a17bdba18053fd/Story_Card.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#testimonial-story-card" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e5660cb093c82c82d72b">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e56bb8a461de5f192204" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Testimonial/Story Card</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e035d02fd7445deff806" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Profile (People, Places, Pride) Preview</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Academic Program Card</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e5660cb093c82c82d72b/5a2ee5735f100f1f79616ccd9cde4f8f/Program_Card.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#academic-program-card" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e035d02fd7445deff806">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e5660cb093c82c82d72b" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Academic Program Card</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e02e99d6f48f25e1da64" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Emergency Alert</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Profile (People, Places, Pride) Preview</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e035d02fd7445deff806/1200x800/082e077b5e537ac4eee01b5fe34c2a18/People_Preview.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#profile-(people,-places,-pride)-preview" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e02e99d6f48f25e1da64">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e035d02fd7445deff806" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Profile (People, Places, Pride) Preview</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0caa6f4408c7eefdaac" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Story</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Emergency Alert</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e02e99d6f48f25e1da64/1200x2821/5dd6a617e16cba42cb8a1d0b075fa56c/Master_Sub_-_Image.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-feature.html#emergency-alert" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																										
+																	<div class="gb_trello_detail" id="trello_5ae0e0caa6f4408c7eefdaac">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e02e99d6f48f25e1da64" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Emergency Alert</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e03c06400d250e4e8172" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Important Now</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Story</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e0caa6f4408c7eefdaac/1200x500/47c3f47438bb6c1ccfddc44dc3c373e5/Story_-_Simple.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#story" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e03c06400d250e4e8172">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0caa6f4408c7eefdaac" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Story</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5af499e009dccb82c92d74fc" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Pull Quote</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Important Now</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e03c06400d250e4e8172/1200x909/0b5c8d088519c0f4e7d5fafc0a7b09d7/Important_Now.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#important-now" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5af499e009dccb82c92d74fc">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e03c06400d250e4e8172" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Important Now</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0cc8002014e9a7f7b8d" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Media Gallery</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Pull Quote</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5af499e009dccb82c92d74fc/ad3cef9aa57ea476e470f0b2046fcbb8/pullquote.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#pull-quote" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0cc8002014e9a7f7b8d">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5af499e009dccb82c92d74fc" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Pull Quote</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0379d9ab002bc1faee5" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">News Preview</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Media Gallery</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e0cc8002014e9a7f7b8d/1200x551/89c7539523a087f1ea78ce65a14a0539/Media_Gallery.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#media-gallery" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0379d9ab002bc1faee5">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0cc8002014e9a7f7b8d" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Media Gallery</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e03a431173cf42caa6f8" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Event Preview</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">News Preview</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e0379d9ab002bc1faee5/1200x718/cfbd0efc3287fc3f8da23a493b88a329/News_Events.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#news-preview" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e03a431173cf42caa6f8">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0379d9ab002bc1faee5" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">News Preview</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e04188ba3eb26593099c" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">News Metadata</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Event Preview</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e03a431173cf42caa6f8/1200x718/f43f5906f459b0d8888b6c1e84c13c86/News_Events.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#event-preview" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e04188ba3eb26593099c">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e03a431173cf42caa6f8" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Event Preview</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e1fb9693c71f5149f3ff" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Contact Information</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">News Metadata</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e04188ba3eb26593099c/1200x3404/e7dd2d5a172fe33d5a2c8036f97e5eeb/News_Listing.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#news-metadata" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e1fb9693c71f5149f3ff">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e04188ba3eb26593099c" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">News Metadata</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0d7e45f50a7e642727c" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Testimonial</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Contact Information</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0e1fb9693c71f5149f3ff/1200x293/2582a17089379bafe107721386dcbb26/Contact_Information.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#contact-information" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0d7e45f50a7e642727c">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e1fb9693c71f5149f3ff" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Contact Information</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0d541da07c295bc5905" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Facts & Stats</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Testimonial</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e0d7e45f50a7e642727c/f5c749f1c428df0db34220056eb4cfb9/Testimonial_-_Image.png">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#testimonial" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0d541da07c295bc5905">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0d7e45f50a7e642727c" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Testimonial</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e03fd8f200a0f5fed8c2" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Topic Row</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Facts & Stats</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e0d541da07c295bc5905/42c25fad1672476782c999de31c5e205/Stat_-_Image.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#facts-and-stats" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e03fd8f200a0f5fed8c2">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0d541da07c295bc5905" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Facts & Stats</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5ae0e0ced626aeebb00fea13" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Link List</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Topic Row</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e03fd8f200a0f5fed8c2/061862d0971c55d4675a86269c088347/Topic_Row.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#topic-row" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																
+																	<div class="gb_trello_detail" id="trello_5ae0e0ced626aeebb00fea13">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e03fd8f200a0f5fed8c2" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Topic Row</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+													<a href="#trello_5af499db73b31b0224c7bf62" class="gb_trello_detail_pager gb_trello_detail_pager_next pager_active">Table Styles</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Link List</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5ae0e0ced626aeebb00fea13/3f92848ec72b22b523edac84040c7598/Link_List.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-full-width.html#link-list" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"><h2>How to use this</h2>
+
+<p>how to use it</p></div>
+						</div>
+					</div>
+				</div>
+																										
+																	<div class="gb_trello_detail" id="trello_5af499db73b31b0224c7bf62">
+					<div class="gb_trello_detail_ribbon">
+													<a href="#trello_5ae0e0ced626aeebb00fea13" class="gb_trello_detail_pager gb_trello_detail_pager_prev pager_active">Link List</a>
+												<a href="#" class="gb_trello_detail_close">View All Components</a>
+											</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<h1 class="gb_trello_detail_title">Table Styles</h1>
+						</div>
+					</div>
+					<div class="gb_trello_detail_section fs-row">
+						<div class="gb_trello_detail_inner fs-lg-10 fs-xl-8 gb_typography">
+							<div class="gb_trello_detail_cover" data-image="https://trello-attachments.s3.amazonaws.com/5ae0dfae5c8e164ea9ac47fd/5af499db73b31b0224c7bf62/c80adf0d0844935c22125f3abebd0b1f/Table_Style.jpg">
+							</div>
+							<a class="gb_trello_detail_live" href="dev-in-content.html#table-styles" target="_blank">See Component Live</a>
+							<div class="gb_trello_detail_content gb_typography"></div>
+						</div>
+					</div>
+				</div>
+											</div>		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="../../js/site.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.1.1/he.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.4/beautify.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.4/beautify-html.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/twig.min.js"></script>
+		<script>
+	var trelloFormatter;
+	var trelloHash;
+	var trelloDetails;
+
+	trelloInit();
+
+	function trelloInit() {
+		bindTrelloVars();
+		bindTrelloUI();
+		queryTrelloHash();
+		checkEmptySections();
+		beautifyMarkup();
+		parseMarkup();
+		highlightMarkup();
+	}
+
+	function bindTrelloVars() {
+		trelloFormatter = document.querySelector('.gb_trello_formatter');
+		trelloDetails = document.querySelectorAll('.gb_trello_detail');
+	}
+
+	function bindTrelloUI() {
+		window.addEventListener('hashchange', queryTrelloHash, false);
+
+		trelloFormatter.addEventListener('click', toggleTrelloFormat, false);
+	}
+
+	function queryTrelloHash() {
+		closeTrelloDetails();
+
+		if(window.location.hash) {
+			trelloHash = window.location.hash;
+			if(trelloHash.indexOf('trelloList') !== 1) {
+				openTrelloDetail();
+				openTrelloDetailHash(trelloHash);
+				loadTrelloDetailImage(trelloHash);
+			}
+		} else if(trelloHash !== undefined) {
+			closeTrelloDetail();
+			closeTrelloDetailHash(trelloHash);
+		}
+	}
+
+	function openTrelloDetail() {
+		document.body.classList.add('fs-navigation-lock');
+	}
+
+	function openTrelloDetailHash(hash) {
+		document.querySelector(hash).classList.add('fs-swap-active');
+	}
+
+	function loadTrelloDetailImage(hash) {
+		var cover = document.querySelector(hash + ' .gb_trello_detail_cover');
+
+		if(cover && !(cover.classList.contains('image-loaded'))) {
+			var image = document.createElement('img');
+			image.classList.add('gb_trello_detail_image');
+			image.setAttribute('src', cover.dataset.image);
+
+			cover.appendChild(image);
+			cover.classList.add('image-loaded');
+		}
+	}
+
+	function closeTrelloDetail() {
+		document.body.classList.remove('fs-navigation-lock');
+	}
+
+	function closeTrelloDetails() {
+		for(var i = 0; i < trelloDetails.length; i++) {
+			trelloDetails[i].classList.remove('fs-swap-active');
+		}
+	}
+
+	function closeTrelloDetailHash(hash) {
+		document.querySelector(hash).classList.remove('fs-swap-active');
+	}
+
+	function toggleTrelloFormat(e) {
+		var list = e.currentTarget.parentElement.parentElement.parentElement.parentElement;
+
+		if(list.classList.contains('trello_format_list')) {
+			list.classList.remove('trello_format_list');
+		} else {
+			list.classList.add('trello_format_list');
+		}
+	}
+
+	function checkEmptySections() {
+		var topicGroups = document.querySelectorAll('.gb_topics');
+
+		for(var i = 0; i < topicGroups.length; i++) {
+			if(topicGroups[i].firstElementChild === null) {
+				topicGroups[i].parentElement.parentElement.classList.add('empty');
+				topicGroups[i].parentElement.parentElement.innerHTML = '';
+			}
+		}
+	}
+
+	function beautifyMarkup() {
+		var trelloComponents = document.querySelectorAll('.gb_trello_detail_markup');
+
+		for(var i = 0; i < trelloComponents.length; i++) {
+			trelloComponents[i].innerHTML = html_beautify(trelloComponents[i].innerHTML, {
+				'indent_inner_html': false,
+				'indent_size': 2,
+				'indent_char': ' ',
+				'wrap_line_length': 75,
+				'brace_style': 'expand',
+				'preserve_newlines': true,
+				'max_preserve_newlines': 5,
+				'indent_handlebars': false,
+				'extra_liners': ['/html']
+			});
+		}
+	}
+
+	function parseMarkup() {
+		var trelloComponents = document.querySelectorAll('.gb_trello_detail_markup');
+
+		for(var i = 0; i < trelloComponents.length; i++) {
+			trelloComponents[i].innerHTML = he.encode(trelloComponents[i].innerHTML);
+		}
+	}
+
+	function highlightMarkup() {
+		hljs.initHighlightingOnLoad();
+	}
+</script>
+				<script>
+			var WWW_ROOT = "";
+			var STATIC_ROOT = "../../";
+		</script>
+		<script>
+			var jumps = document.querySelectorAll('h2[id]');
+			var jumpNav = document.querySelector('.gb_jump_nav');
+			var rocket = document.createElement('a');
+
+			for(var i = 0; i < jumps.length; i++) {
+				jumpNav.innerHTML += '<a class="gb_jump_nav_link" href="#' + jumps[i].getAttribute('id') + '"><span class="gb_jump_nav_link_label">' + jumps[i].textContent + '</span></a>';
+			}
+
+			rocket.setAttribute('href', '#');
+			rocket.classList.add('gb_jump_nav_rocket');
+			rocket.innerHTML = 'Back to Top';
+
+			jumpNav.appendChild(rocket);
+
+			var header = document.querySelector('.gb_page_header');
+			var pageRibbon = document.querySelector('.gb_page_ribbon');
+			var jumpRibbon = document.querySelector('.gb_jump_ribbon');
+
+			window.addEventListener('scroll', function() {
+				if(window.pageYOffset >= pageRibbon.clientHeight) {
+					header.classList.add('pinned');
+					header.style.paddingBottom = jumpRibbon.clientHeight + 'px';
+				} else {
+					header.classList.remove('pinned');
+					header.style.paddingBottom = 0;
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,148 @@
+/* ==========================================================================
+	Contact
+============================================================================= */
+
+.contact {
+	@include margined_lg_top;
+
+	@media #{$min_lg} {
+		align-items: flex-end;
+		display: flex;
+	}
+}
+
+.contact_header {
+	@include fake_padded;
+
+	background: $sea;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@media #{$min_lg} {
+		width: 36%;
+
+		padding-right: 40px;
+	}
+
+	@media #{$min_xl} {
+		padding-top: 92px;
+		padding-bottom: 91px;
+	}
+}
+
+.contact_header_inner {}
+
+.contact_label {
+	@include u(300);
+
+	display: block;
+	font-size: 15px;
+	letter-spacing: 1.5px;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.contact_name {
+	@include h2;
+	@include m(700);
+
+	margin: 0;
+}
+
+.contact_social {
+	margin: 22px -14px -20px;
+}
+
+
+/* ==========================================================================
+	Contact Body
+============================================================================= */
+
+.contact_body {
+	@include fake_padded;
+
+	background: #F5F7F9;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@media #{$min_lg} {
+		min-height: 220px;
+		width: 64%;
+
+		padding-left: 40px;
+	}
+
+	@media #{$min_xl} {
+		min-height: 300px;
+
+		padding-top: 73px;
+		padding-bottom: 86px;
+		padding-left: 110px;
+	}
+}
+
+.contact_details {
+
+	@media #{$min_md} {
+		display: flex;
+	}
+}
+
+.contact_details_group {
+
+	@media #{$min_md} {
+		width: 50%;
+	}
+}
+
+.contact_detail {
+	@include label_text;
+
+	position: relative;
+
+	color: $dark;
+	margin-bottom: 23px;
+
+	&_location {
+
+		@media #{$min_md} {
+			margin-bottom: 14px;	
+		}
+	}
+
+	&:last-child {
+
+		@media #{$min_md} {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.contact_detail_icon {
+	position: absolute;
+	top: 6px;
+	left: 0;
+
+	color: #766F67;
+
+	@media #{$min_md} {
+		top: 10px;
+	}
+}
+
+.contact_detail_label {
+	display: block;
+	margin-left: 28px;
+}
+
+.contact_detail_name {
+	@include u(500);
+
+	display: block;
+}
+
+.contact_detail_sublabel {}
+
+.contact_detail_link {
+	color: inherit;
+}

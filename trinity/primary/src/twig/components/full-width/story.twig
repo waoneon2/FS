@@ -1,0 +1,57 @@
+<div class="story">
+	{% include par ~ "background.twig" with {
+		class: "story",
+		image: image,
+		lazy: true,
+		lazyEdge: "100",
+		sources: {
+			"0px": img.square.sml,
+			"740px": img.ultrawide.med,
+			"980px": img.ultrawide.lrg
+		}
+	} %}
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-11 fs-xl-push-1">
+			<div class="story_inner">
+				{% if quote %}
+					<blockquote class="story_quote">
+						<div class="story_quote_inner">
+							<span class="story_quote_icon">{{site.icon("quote")}}</span>
+							<div class="story_quote_body">
+								<p>{{quote.content}}</p>
+							</div>
+							<cite class="story_quote_cite">
+								<span class="story_quote_cite_name">{{quote.name}}</span>
+								<span class="story_quote_cite_label">{{quote.label}}</span>
+							</cite>
+						</div>
+					</blockquote>
+				{% endif %}
+				{% if detail %}
+					<div class="story_detail">
+						<header class="story_detail_header">
+							<span class="story_detail_label">{{detail.label}}</span>
+							<h2 class="story_detail_title">{{detail.title}}</h2>
+						</header>
+						<div class="story_detail_caption">
+							{{detail.caption}}
+						</div>
+						<footer class="story_detail_footer">
+							{% if detail.link %}
+								{{site.button("story_detail", detail.link, "#", "arrow_right")}}
+							{% endif %}
+							{% if detail.video %}
+								<a class="js-lightbox story_detail_video" href="{{detail.video}}">
+									<span class="story_detail_video_button">
+										<span class="story_detail_video_button_icon">{{site.icon("play")}}</span>
+									</span>
+									<span class="story_detail_video_label">Watch the Video</span>
+								</a>
+							{% endif %}
+						</footer>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

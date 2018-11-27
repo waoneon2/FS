@@ -1,0 +1,189 @@
+/* ==========================================================================
+	stat
+============================================================================= */
+
+@mixin pair_theme_stat() {
+
+	@each $l, $c1, $c2, $t in $pair_theme_colors {
+		
+		&.theme_#{$l} {
+
+			&:before {
+				background: $c2;
+			}
+
+			&:after {
+				border-bottom-color: $c1;
+				border-left-color: $c1;
+			}
+
+			.stat_label {
+				color: $t;
+
+				&:after {
+					color: $c1;
+				}
+			}
+
+			.stat_body {
+				color: $t;
+			}
+		}
+	}
+}
+
+.stat {
+	@include pair_theme_stat;
+	@include margined_lg_top;
+	@include margined_xl_bottom;
+
+	position: relative;
+
+	margin: 0;
+
+	&:before {
+		height: calc(100% + 10px);
+		width: calc(100% - 10px);
+
+		position: absolute;
+		top: 0;
+		left: 10px;
+
+		content: "";
+
+		@media print {
+			background: none !important;
+		}
+
+		@media #{$min_md} {
+			height: calc(100% + 20px);
+			width: calc(100% - 20px);
+
+			left: 20px;
+		}
+	}
+
+	&:after {
+		height: 100%;
+		width: calc(100% - 10px);
+
+		position: absolute;
+		top: 20px;
+		left: 0;
+
+		border-bottom: 10px solid;
+		border-left: 10px solid;
+		content: "";
+		pointer-events: none;
+
+		@media #{$min_md} {
+			width: calc(100% - 20px);
+
+			top: 40px;
+
+			border-bottom-width: 20px;
+			border-left-width: 20px;
+		}
+	}
+
+	&.theme_image:before {
+		display: none;
+	}
+
+	&.theme_image:after {
+		border-color: $frog;
+	}
+}
+
+.stat_background {
+	@include cover;
+
+	height: calc(100% + 10px);
+
+	@media print {
+		display: none;
+	}
+
+	@media #{$min_md} {
+		height: calc(100% + 20px);
+	}
+
+	&:before {
+		height: calc(100% - 10px);
+		width: calc(100% - 20px);
+
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		z-index: 2;
+
+		background: rgba(#000, .6);
+		content: "";
+
+		@media #{$min_md} {
+			height: calc(100% - 20px);
+			width: calc(100% - 40px);
+
+			top: 20px;
+			left: 20px;
+		}
+	}
+}
+
+.stat_inner {
+	position: relative;
+	z-index: 4;
+
+	padding: 20px;
+}
+
+.stat_content {
+	padding: 20px 20px 0;
+
+	@media #{$min_md} {
+		padding: 40px 30px 20px;
+	}
+
+	@media #{$min_lg} {
+		padding: 45px 70px 27px;
+	}
+}
+
+.stat_label {
+	@include h1;
+	@include u(700);
+
+	display: inline-block;
+
+	&:after {
+		height: 8px;
+		width: 50px;
+
+		background: currentColor;
+		content: "";
+		display: block;
+		margin: 18px 0 20px;
+	}
+	
+	.theme_image & {
+		color: $frog;
+	}
+}
+
+.stat_body {
+	@include h3;
+	@include u(300);
+
+	@media #{$max_sm} {
+		font-size: 18px;
+		line-height: (26 / 18);
+	}
+	
+	.theme_image & {
+		color: #fff;
+	}
+
+	p {
+		margin: 0;
+	}
+}

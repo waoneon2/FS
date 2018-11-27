@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope="" itemtype="http://schema.org/WebPage">
+
+	{# Component Use #}
+	{% set feat = "../components/feature/" %}
+	{% set full = "../components/full-width/" %}
+	{% set inc = "../components/in-content/" %}
+	{% set side = "../components/sidebar/" %}
+	{% set par = "../../partials/" %}
+
+	{% set grid = true %}
+
+	{% block page %}
+		{% set page = {
+			title: "Page",
+			layout: "default"
+		} %}
+	{% endblock %}
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+
+		<title>{{page.title}} | {{vars.name}}</title>
+		<meta name="description" content="{{vars.description}}">
+
+		{% include "../partials/favicons.html" %}
+
+		<!-- G+ & Facebook -->
+		<meta property="og:title" content="{% if page.title %}{{page.title}}{% else %}{{vars.name}}{% endif %}">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="{% if page.metaImage %}{{page.metaImage}}{% else %}//{{vars.domain}}/images/og-image.jpg{% endif %}">
+		<meta property="og:image:width" content="{% if page.metaImageWidth %}{{page.metaImageWidth}}{% else %}1200{% endif %}">
+		<meta property="og:image:height" content="{% if page.metaImageHeight %}{{page.metaImageHeight}}{% else %}630{% endif %}">
+		<meta property="og:description" content="{% if page.intro %}{{page.intro}}{% else %}{{vars.description}}{% endif %}">
+		<meta property="og:site_name" content="{{vars.name}}">
+
+		{% if vars.twitter != "TwitterName" %}
+		<!-- Twitter -->
+		<meta name="twitter:card" content="{% if page.metaCard %}{{page.metaCard}}{% else %}summary{% endif %}">
+		<meta name="twitter:site" content="@{{vars.twitter}}">
+		<meta name="twitter:creator" content="@{{vars.twitter}}">
+		<meta name="twitter:url" content="//twitter.com/{{vars.twitter}}">
+		<meta name="twitter:title" content="{% if page.title %}{{page.title}}{% else %}{{vars.name}}{% endif %}">
+		<meta name="twitter:description" content="{% if page.intro %}{{page.intro}}{% else %}{{vars.description}}{% endif %}">
+		<meta name="twitter:image" content="{% if page.metaImage %}{{page.metaImage}}{% else %}//{{vars.domain}}/images/og-image.jpg{% endif %}">
+		{% endif %}
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+		{% if page.stylesheets %}
+		{% for styles in page.stylesheets %}
+		<link rel="stylesheet" href="{{styles}}">
+		{% endfor %}
+		{% endif %}
+
+		<link rel="stylesheet" href="../../css/site.css">
+
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-57MQD6L');</script>
+		<!-- End Google Tag Manager -->
+	</head>
+
+	<body class="preload fs-grid page_layout_{{page.layout}}{% if page.theme %} page_theme_{{page.theme}}{% endif %}{% if page.cover %} page_layout_cover{% endif %}">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57MQD6L"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		{% block activePage %}
+			{% set activePage = 0 %}
+		{% endblock %}
+
+		{% block sectionTitle %}
+			{% set sectionTitle = page.title %}
+		{% endblock %}
+
+		{% block mainNav %}
+			{% set mainNavAlias = links.mainNav %}
+		{% endblock %}
+
+		{% block breadcrumbNav %}
+			{% set breadcrumbNav = [
+				{
+					name: "Master Sub"
+				},
+				{
+					name: page.title|default("Page"),
+					children: [
+						"Not Page",
+						"Master Sub",
+						"Not Page"
+					]
+				}
+			] %}
+		{% endblock %}
+
+		{% block subNav %}
+			{% set subNavAlias = links.subNav %}
+		{% endblock %}
+
+		{% block secondaryNav %}
+			{% set secondaryNavAlias = links.secondaryNav %}
+		{% endblock %}
+
+		{% block utilityNav %}
+			{% set utilityNavAlias = links.utilityNav %}
+		{% endblock %}
+
+		{% block quickNav %}
+			{% set quickNavAlias = links.quickNav %}
+		{% endblock %}
+
+		{% block footerNav %}
+			{% set footerNavAlias = links.footerNav %}
+		{% endblock %}
+
+		{% block socialNav %}
+			{% set socialNavAlias = links.socialNav %}
+		{% endblock %}
+
+		{% include '../partials/update-notice.twig' %}
+
+		{% import '../partials/macros.twig' as site %}
+
+		<!-- Skip-to-Content Link -->
+		<a class="skip_link" id="skip_to_content" href="#main_content">Skip to Main Content</a>
+
+		{% if page.alert %}
+			{% include "../components/feature/alert.twig" with {
+				theme: page.alert.theme,
+				time: page.alert.time,
+				title: page.alert.title,
+				description: page.alert.description
+			} %}
+		{% endif %}
+
+		<!-- Page Wrapper -->
+		<div class="page_wrapper">
+			{% if page.layout != "style-guide" %}
+				<!-- Header -->
+				<header class="header" id="header" itemscope itemtype="http://schema.org/WPHeader">
+					<div class="header_ribbon">
+						<div class="fs-row">
+							<div class="fs-cell">
+								<div class="header_ribbon_inner">
+									{% include "../partials/logo.twig" with {
+										modifier: "header",
+										icon: "logo"
+									} %}
+									
+									<div class="header_group">
+										{% include "../partials/navigation/basic.twig" with {
+											class: "utility_nav",
+											modifier: "lg",
+											title: "Utility Navigation",
+											links: utilityNavAlias
+										} %}
+
+										{% include "../partials/handle.twig" with {
+											class: "mobile_sidebar",
+											modifier: "primary",
+											label: "Menu"
+										} %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% if page.layout != "home" %}
+					<div class="breadcrumb_nav_wrapper">
+						<div class="fs-row">
+							<div class="fs-cell fs-xl-10 fs-xl-push-1">
+								<div class="breadcrumb_nav_inner">
+									{% include "../partials/navigation/breadcrumb.twig" with {
+										icon: "home",
+										links: breadcrumbNav
+									} %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+				</header>
+				<!-- END: Header -->
+			{% endif %}
+
+			<!-- Page -->
+			<div class="page_inner">
+				<!-- Page Feature -->
+				<div class="page_feature">
+					{% block page_feature %}
+					{% endblock %}
+				</div>
+				<!-- END: Page Feature -->
+
+				{% if page.layout != "home" %}
+				<!-- Page Header -->
+				{% block page_header %}
+				<div class="page_header">
+					{% if page.image %}
+						{% include "../partials/background.twig" with {
+							class: "page",
+							image: page.image,
+							sources: {
+								"0px": img.full.sml,
+								"500px": img.wide.med,
+								"980px": img.wide.lrg,
+								"1220px": img.ultrawide.xlrg
+							}
+						} %}
+					{% endif %}
+					<div class="page_header_inner">
+						<div class="fs-row">
+							<!-- Main Content -->
+							<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-11 fs-xl-10 fs-xl-push-1{% endif %} content_wrapper">
+								<div class="page_header_body">
+									<a class="page_back" href="#">
+										<span class="page_back_icon">{{site.icon("back")}}</span>
+										<span class="page_back_label">Back to Master Sub</span>
+									</a>
+
+									{% if page.title %}
+									<h1 class="page_title">{{page.title}}</h1>
+									{% endif %}
+
+									{% if page.intro %}
+									<p class="page_intro">{{page.intro}}</p>
+									{% endif %}
+
+									{% block subNav_block %}
+										{% include "../partials/navigation/sub.twig" with {
+											title: sectionTitle,
+											links: subNavAlias
+										} %}
+									{% endblock %}
+
+									{% block page_header_body %}
+									{% endblock %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% block page_header_append %}
+					{% endblock %}
+				</div>
+				{% endblock %}
+				<!-- END: Page Header -->
+				{% endif %}
+
+				<!-- Page Content -->
+				<div class="page_content">
+					{% if page.layout != "home" %}
+						<div class="fs-row">
+							<!-- Main Content -->
+							<div class="fs-cell{% if page.layout == "default" or page.layout == "style-guide" %} fs-lg-11 fs-xl-9 fs-xl-push-1{% endif %} content_wrapper">
+								<main class="main_content" id="main_content" itemprop="mainContentOfPage">
+									<!-- WYSIWYG - wrap all WYSIWYG text areas in `.typography` -->
+									<div class="typography">
+										{% block typography %}
+										{% endblock %}
+									</div>
+									<!-- END: WYSIWYG -->
+
+									{% block after_typography %}
+									{% endblock %}
+
+									<!-- In Content Callouts -->
+									<div class="in_content_callouts">
+										{% block in_content_callouts %}
+										{% endblock %}
+									</div>
+									<!-- END: In Content Callouts -->
+								</main>
+							</div>
+							<!-- END: Main Content -->
+						</div>
+					{% endif %}
+
+					<!-- Full Width Callouts -->
+					<div class="full_width_callouts">
+						{% block full_width_callouts %}
+						{% endblock %}
+					</div>
+					<!-- END: Full Width Callouts -->
+				</div>
+				<!-- END: Page Content -->
+			</div>
+			<!-- END: Page -->
+
+			{% if page.layout != "style-guide" %}
+			<!-- Footer -->
+			<footer class="footer" id="footer" itemscope itemtype="http://schema.org/WPFooter">
+				<div class="footer_ribbon">
+					<div class="fs-row">
+						<div class="fs-cell">
+							<div class="footer_ribbon_inner">
+								<div class="footer_ribbon_group">
+									{% include "../partials/logo.twig" with {
+										modifier: "footer",
+										icon: "logo"
+									} %}
+
+									<div class="footer_ribbon_mini_group">
+										{% include "../partials/address.twig" with {
+											name: "Trinity College",
+											street: "300 Summit Street, ",
+											city: "Hartford",
+											state: "CT",
+											zip: "06106",
+											tel: "(860) 297-2000"
+										} %}
+									</div>
+								</div>
+
+								<div class="footer_ribbon_group">
+									{% include "../partials/navigation/social.twig" with {
+										modifier: "base",
+										title: "Social Navigation",
+										links: socialNavAlias
+									} %}
+
+									<div class="quick_nav_wrapper">
+										<header class="quick_nav_header">
+											<h2 class="quick_nav_title">Information For</h2>
+										</header>
+										{% include "../partials/navigation/basic.twig" with {
+											class: "quick_nav",
+											links: quickNavAlias
+										} %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer_sole">
+					<div class="fs-row">
+						<div class="fs-cell">
+							<div class="footer_sole_inner">
+								{% include "../partials/navigation/basic.twig" with {
+									class: "footer_nav",
+									title: "Footer Navigation",
+									links: footerNavAlias
+								} %}
+								<p class="footer_copyright">©2018</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- END: Footer -->
+			{% endif %}
+		</div>
+		<!-- END: page_wrapper -->
+
+		<div class="js-mobile-sidebar mobile_sidebar" id="mobile_sidebar" tabindex="-1">
+			{% include "../partials/search.twig" with {
+				modifier: "sm",
+				placeholder: "Search by keyword",
+				buttonText: "Submit Search Query"
+			} %}
+
+			{% include "../partials/navigation/main.twig" with {
+				modifier: "sm",
+				title: "Mobile Site Navigation",
+				links: mainNavAlias,
+				active: activePage,
+				icon: "caret_down"
+			} %}
+
+			{% include "../partials/navigation/basic.twig" with {
+				class: "secondary_nav",
+				modifier: "sm",
+				title: "Mobile Secondary Navigation",
+				links: secondaryNavAlias
+			} %}
+
+			{% include "../partials/navigation/basic.twig" with {
+				class: "utility_nav",
+				modifier: "sm",
+				title: "Utility Navigation",
+				links: utilityNavAlias
+			} %}
+		</div>
+
+		<script>
+			var WWW_ROOT = "";
+			var STATIC_ROOT = "../../";
+		</script>
+		<script src="../../js/site.js"></script>
+
+		{% if page.scripts %}
+		{% for script in page.scripts %}
+		{{script}}
+		{% endfor %}
+		{% endif %}
+
+		{% if grid %}
+		<!-- Grid Bookmarklet -->
+		<script>
+			(function(){if(typeof FSGridBookmarklet==='undefined'){document.body.appendChild(document.createElement('script')).src='//formstone.it/js/bookmarklet/grid.js';}else{FSGridBookmarklet();}} )();
+		</script>
+		{% endif %}
+	</body>
+</html>

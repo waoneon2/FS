@@ -1,0 +1,47 @@
+<div class="quote_item">
+	<figure class="quote_item_figure{% if video %} theme_video{% endif %}">
+		{% include par ~ "picture.twig" with {
+			class: "quote_item",
+			image: 1,
+			sources: {
+				"740px": img.wide.med,
+				"0px": img.wide.sml
+			}
+		} %}
+		{% if content %}
+			<span class="quote_item_mark">
+				<span class="quote_item_mark_icon">{{site.icon("quote")}}</span>
+			</span>
+			<figcaption class="quote_item_figcaption">
+				<div class="quote_item_figcaption_inner">
+					<span class="quote_item_mini_mark">{{site.icon("quote")}}</span>
+					<div class="quote_item_content">{{content}}</div>
+					<div class="quote_item_mini_details">
+						<span class="quote_item_mini_label">{{title}}</span>
+						<span class="quote_item_mini_year">{{year}}</span>
+					</div>
+				</div>
+			</figcaption>
+		{% elseif video %}
+			<button class="quote_item_video" title="play video" data-url="https://www.youtube.com/embed/Oz3mm3tPKfg">
+				<span class="quote_item_video_hint">
+					<span class="quote_item_video_hint_icon_bubble">
+						<span class="quote_item_video_hint_icon">{{site.icon("play")}}</span>
+					</span>
+					<span class="quote_item_video_hint_label">Watch the Video</span>
+				</span>
+			</button>
+		{% endif %}
+	</figure>
+	<div class="quote_item_body">
+		<header class="quote_item_header">
+			<h3 class="quote_item_title">{{title}}</h3>
+			<div class="quote_item_details">
+				<span class="quote_item_label">{{cite}}</span>
+				<span class="quote_item_year">{{year}}</span>
+			</div>
+		</header>
+		<div class="quote_item_caption">{{caption}}</div>
+		{{site.button("quote_item", "Read the Story", "#", "arrow_right")}}
+	</div>
+</div>

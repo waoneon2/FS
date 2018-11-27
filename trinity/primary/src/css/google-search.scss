@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Google Search Results
+============================================================================= */
+
+.search_field_block {
+	position: relative;
+	top: 25px;
+	z-index: 4;
+
+	margin-top: -25px;
+
+	@media #{$min_md} {
+		top: 40px;
+
+		margin-top: -40px;
+	}
+}
+
+.search_field_inner {}
+
+
+/* Results
+============================================================================= */
+
+.search_results_block {
+	position: relative;
+
+	background: #fff;
+
+	.gsc-control-cse  {
+		border: 0 !important;
+		padding: 0 !important;
+	}
+
+	.gsc-results-wrapper-visible {
+		padding: 50px 0;
+	}
+}
+
+.search_results_inner {}
+
+.search_results_body {}
+
+
+/* Results
+============================================================================= */
+
+.search_results_count {
+	@include caption_text;
+
+	margin: 0;
+	padding: 20px 0;
+
+	@media #{$min_md} {
+		padding: 35px 0;
+	}
+}
+
+.search_results {}
+
+.search_result {
+	border-top: 1px solid rgba(#766F67, .25);
+	padding: 30px 0;
+
+	@media #{$min_md} {
+		padding: 43px 0 48px;
+	}
+}
+
+.search_result_title {
+	@include m(700);
+
+	color: $dark;
+	font-size: 22px;
+	line-height: (33 / 22);
+	margin: 0 0 5px;
+
+	@media #{$min_md} {
+		font-size: 28px;
+		line-height: (34 / 28);
+		margin-bottom: 15px;
+	}
+
+	strong {
+		background: rgba(#2AC6CA, .2);
+	}
+}
+
+.search_result_title_link {
+	color: inherit;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
+}
+
+.search_result_link {
+	@include h6;
+
+	color: $blue;
+	display: inline-block;
+	margin: 0 0 12px;
+	word-break: break-all;
+	transition: background .25s;
+
+	@media #{$max_md} {
+		font-size: 14px;
+	}
+
+	@media #{$min_md} {
+		margin-bottom: 22px;
+	}
+
+	&:focus,
+	&:hover {
+		background: rgba(#2AC6CA, .2);
+	}
+}
+
+.search_result_caption {
+	@include label_text;
+
+	p {
+		margin: 0;
+	}
+
+	strong {
+		background: rgba(#2AC6CA, .2);
+	}
+}

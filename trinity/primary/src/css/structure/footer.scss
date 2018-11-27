@@ -1,0 +1,187 @@
+/* ==========================================================================
+	Footer
+============================================================================= */
+
+.footer {
+	position: relative;
+	text-align: center;
+	
+	@media print {
+		display: none;
+	}
+}
+
+.footer_ribbon {
+	background: $navy;
+	padding: 40px 0 38px;
+
+	@media #{$min_lg} {
+		padding: 60px 0 62px;
+	}
+}
+
+.footer_ribbon_inner {
+	max-width: 320px;
+
+	margin: 0 auto;
+
+	@media #{$min_md} #{$and_max_lg} {
+		max-width: inherit;
+
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media #{$min_lg} {
+		max-width: 100%;
+	}
+}
+
+.footer_ribbon_group {
+
+	@media #{$min_md} #{$and_max_lg} {
+		width: 300px;
+	}
+
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&:first-child {
+
+		@media #{$min_lg} {
+			border-bottom: 2px solid $yellow;
+			padding-bottom: 24px;
+		}
+	}
+
+	&:last-child {
+
+		@media #{$min_lg} {
+			padding-top: 12px;
+		}
+	}
+}
+
+.footer_ribbon_mini_group {
+
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+	}
+}
+
+.footer_sole {
+	background: #fff;
+	padding: 13px 0;
+}
+
+.footer_sole_inner {
+	position: relative;
+}
+
+.footer_copyright {
+	@include u(400);
+
+	color: rgba($dark, .65);
+	font-size: 12px;
+	letter-spacing: 1.8px;
+	line-height: (20 / 12);
+	margin: 0;
+	padding: 8px 0 7px;
+
+	@media #{$min_sm} {
+		width: 50%;
+
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	@media #{$min_lg} {
+		width: auto;
+		
+		padding: 21px 0;
+	}
+
+	@media #{$min_xl} {
+		font-size: 16px;
+		padding: 18px 0;
+	}
+}
+
+// Address
+// =============================================================================
+
+.footer_address {
+	@include u(500);
+
+	color: #fff;
+	font-size: 16px;
+	line-height: (26 / 16);
+	margin-bottom: 7px;
+
+	@media #{$min_md} {
+		margin-bottom: 0;
+	}
+
+	@media #{$min_xl} {
+		font-size: 18px;
+		line-height: (24 / 18);
+	}
+}
+
+.footer_address_link {
+	color: inherit;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: rgba(#fff, .6);
+	}
+}
+
+.footer_address_name {
+	@include visually_hide;
+}
+
+.footer_address_street {}
+
+.footer_address_city {}
+
+.footer_address_state {}
+
+.footer_address_zip {}
+
+.footer_address_email {}
+
+.footer_address_phone {
+	color: inherit;
+	display: block;
+	margin-top: 8px;
+
+	@media #{$min_lg} {
+		display: inline-block;
+		margin-top: 0;
+	}
+
+	&:before {
+		
+		@media #{$min_lg} {
+			color: $yellow;
+			content: "•";
+			display: inline-block;
+			margin: 0 10px;
+		}
+
+		@media #{$min_xl} {
+			margin: 0 20px;
+		}
+	}
+}
+
+.footer_address_icon {}
+
+.footer_address_label {}

@@ -1,0 +1,582 @@
+/* ==========================================================================
+	Type Base
+============================================================================= */
+
+@mixin h1() {
+	@include u(300);
+
+	font-size: 32px;
+	line-height: (42 / 32);
+
+	@media #{$min_md} {
+		font-size: 45px;
+		line-height: (63 / 45);
+	}
+
+	@media #{$min_lg} {
+		font-size: 60px;
+		line-height: (80 / 60);
+	}
+
+	@media #{$min_xl} {
+		font-size: 70px;
+		line-height: (80 / 70);
+	}
+}
+
+@mixin h2() {
+	@include m(700);
+
+	font-size: 22px;
+	line-height: (33 / 22);
+
+	@media #{$min_md} {
+		font-size: 34px;
+		line-height: (48 / 34);
+	}
+}
+
+@mixin h3() {
+	@include u(700);
+
+	font-size: 22px;
+	line-height: (33 / 22);
+
+	@media #{$min_md} {
+		font-size: 32px;
+		line-height: (46 / 32);
+	}
+}
+
+@mixin h4() {
+	@include u(700);
+
+	font-size: 20px;
+	line-height: (28 / 20);
+
+	@media #{$min_md} {
+		font-size: 28px;
+		line-height: (38 / 28);
+	}
+}
+
+@mixin h5() {
+	@include m(700);
+
+	font-size: 18px;
+	line-height: (26 / 18);
+
+	@media #{$min_md} {
+		font-size: 24px;
+		line-height: (34 / 24);
+	}
+}
+
+@mixin h6() {
+	@include u(500);
+
+	font-size: 12px;
+	letter-spacing: 1.2px;
+	line-height: (20 / 12);
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 16px;
+		line-height: (24 / 16);
+	}
+}
+
+@mixin intro_text() {
+	@include u(300);
+
+	font-size: 22px;
+	line-height: (38 / 22);	
+
+	@media #{$min_lg} {
+		font-size: 32px;
+		line-height: (48 / 32);
+	}
+}
+
+@mixin body_text() {
+	@include u(300);
+
+	font-size: 18px;
+	line-height: (30 / 18);
+
+	@media #{$min_md} {
+		font-size: 22px;
+		line-height: (38 / 22);	
+	}
+}
+
+@mixin label_text() {
+	@include u(300);
+
+	font-size: 16px;
+	line-height: (26 / 16);
+
+	@media #{$min_md} {
+		font-size: 20px;
+		line-height: (32 / 20);	
+	}
+}
+
+@mixin caption_text() {
+	@include u(300);
+
+	font-size: 14px;
+	line-height: (22 / 14);
+}
+
+a {
+	text-decoration: none;
+
+	&[href^=tel] {
+		color: inherit;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+
+// Typography
+// =============================================================================
+
+.typography {
+	@include body_text;
+
+	color: $dark;
+
+	a {
+		border-bottom: 1px solid $blue;
+		color: $blue;
+		transition:
+			border .25s,
+			color .25s,
+			background .25s;
+
+		&:focus,
+		&:hover {
+			background: $blue;
+			border-bottom-color: $blue;
+			color: #fff;
+		}
+	}
+
+	p {
+		margin: 40px 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+
+		+ * {
+			margin-top: 0;
+		}
+	}
+
+	h1 {
+		@include h1;
+
+		margin: 47px 0 28px;
+	}
+
+	h2 {
+		@include h2;
+
+		margin: 47px 0 20px;
+	}
+
+	h3 {
+		@include h3;
+
+		margin: 47px 0 20px;
+	}
+
+	h4 {
+		@include h4;
+
+		color: $navy;
+		margin: 38px 0 10px;
+	}
+
+	h5 {
+		@include h5;
+
+		margin: 41px 0 13px;
+	}
+
+	h6 {
+		@include h6;
+
+		margin: 43px 0 10px;
+	}
+
+	.intro {
+		@include intro_text;
+	}
+
+	@at-root body:not(.theme_news) .typography .intro {
+		margin-top: 0;
+	}
+	
+	.copy {
+		@include body_text;
+	}
+
+	.label {
+		@include label_text;
+	}
+
+	.caption {
+		@include caption_text;
+	}
+}
+
+
+// WYSIWYG Images
+// =============================================================================
+
+.typography {
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+
+	.block_left,
+	.block_right,
+	.block_center,
+	.alignleft,
+	.alignright,
+	.aligncenter,
+	.alignnone {
+		width: auto;
+
+		display: table;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		table-layout: fixed;
+
+		@media #{$min_sm} {
+			margin-top: 10px;
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		figcaption {
+			@include caption_text;
+
+			border-bottom: 1px solid $navy;
+			caption-side: bottom;
+			display: table-caption;
+			padding: 16px 0;
+		}
+
+		+ * {
+
+			@media #{$min_sm} {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.block_left,
+	.block_right,
+	.alignleft,
+	.alignright	{
+		max-width: 50%;
+
+		@media #{$max_sm} {
+			max-width: 100%;
+
+			float: none;
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	.block_left,
+	.alignleft {
+
+		@media #{$min_sm} {
+			float: left;
+			margin-right: 40px;
+		}
+	}
+
+	.block_right,
+	.alignright {
+
+		@media #{$min_sm} {
+			float: right;
+			margin-left: 40px;
+		}
+	}
+
+	.block_center,
+	.aligncenter {
+		text-align: center;
+
+		img {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+
+
+// Blockquote
+// =============================================================================
+
+.typography {
+
+	blockquote {
+		@include u(700);
+
+		font-size: 20px;
+		line-height: (32 / 20);
+		margin-right: 0;
+		margin-left: 0;
+
+		@media #{$min_md} {
+			font-size: 28px;
+			line-height: (46 / 28);
+		}
+
+		&:not(.quote_content) {
+			@include margined_md;
+
+			border-left: 5px solid $frog;
+			padding: 30px 0 10px 10px;
+	
+			@media #{$min_sm} {
+				border-left-width: 10px;
+				padding: 50px 0 20px 20px;
+			}
+	
+			@media #{$min_md} {
+				padding: 78px 0 57px 40px;
+			}
+		}
+
+		p {
+			margin: 0;
+
+			&:first-child {
+				position: relative;
+				
+				&:before {
+					height: 15px;
+					width: 20px;
+
+					position: absolute;
+					top: -20px;
+					left: 0;
+
+					background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAeCAYAAABaKIzgAAAAAXNSR0IArs4c6QAABRBJREFUWAmlWH1oVWUYf55z7u7SUpcJIWUfFhVkllZQKoHu4zqN7ENCchQEJiJZ2ypz/+z+IbWMbdU0iChMQxjTAouW86rEGmQgQaOyWVgWLKP+2Ea7uu2+T7/3sPd4zrnnnPvh4O59nt/z8f7e7/c9TGX+PSIt147ThRQpWkMs9xMnV2b4jXNlpiMR4RS9tFSRqidBTuEzGbvjGZOPjVBsWSsv14lMNQtRLRK68cz81QqevSrNaVVsLu1XI9vnME1tVqKeR77rvbFs0cYMdx7QmFuR1yFMrpPm9UqkFS1fFGZ3MItbjnHH65F2j0ETJDXRKkybQPAqj8kV0fiRJPPdX3D77wWJOkMs2XdF6HE3Q5TANMlM96IXBqNcNI5G1+dE3sd4Xxfn59iYTxyzOlYl4hxrpal6XLLdIHlNnB9a/jd6ZR9zovso74okmZa09bUa3Z1TaktcPm1Dg0/i30cVVHlQ65FEQXKNEjoEAldox7A/EBzCb2cVzerusdITYT4GA8lEvxrbTyQbDJZXMmojOmSz1dbH7ae89tCh1yTRi59iPia9zq7MnLWYdyynWXuweKZcPELQK7pWmntQPhHholfLDwmmZ49w57dhPnlEU9IyPyfZwajhxpAMI2mq0Dz0VlYjTS+Kkk4v5pOZDib55oZe3nbRh3sUyyM7exlI7o0iiTlzoVSSKdl+J/JF7wRMx+fygxviSGqOPqJ11LweSeu85L0yC3eV0pM6dkomu9AD4fMccxLDvbmHn8x56wmTfURBsinMyWBiUY+Riykx5EtAcmWM73eYk7/E2F2TS7ROmpZhsj/gWkIEm+SvEDgSEhXfcCyQ4cjggMElqhRFbxvTQUz2TYH4SPU5ea+CWQocEnxjZIKAwSWKo+yhgC1PzeGMzwMjgF/pzH2YSjMjzA6MEVxULY2r43yMzSH6qKSrMAx3GTCqRMXralTj5zXy6sIoH4NbpAo23PEV/gR77Av18k6liQ0rHaLjNLYYrXN7N8zRYCC7luTiUHWuaT8uFjcYPFgqxfcEsVBdZIZS6q1JOXsWB81WfYKF+TnkhFTsWR4MBFkbR2GDyORpJG8I2rXOrOaF4VEYcs5XSnb3y8gpLOwFQb/pXrRKIuom0b0hsg/b0NMu5gpcZk5ajDvGQL284rubmh692s1fqqAvz0Kdzv3SH1vlV4vXMA0XTKgp32k2TZT+Kz5NvicSz8UZFLy6XVZOPG82pqTxVlPb9NDzvwYou1RqSSD28nJipBSxm9MhapH9c6CS0lWm23xBQkM+vQxFEd1hwhyiy+nK73F9GzVgeSX7Nne2uL+8PJeiWImb0yHqvByFey+5lC4JyZ/eqBlU2YdlNunFSpWxs/9hYqbnKJFt2XsMWE6JETnhjTvMr53HtdB573jxUmSbrOPG3yV6hN/sR2V9xlBSiZ5LUOXHwZgKi3fiTRX7lgrGGB1cBvBuOm10l6gDcHITEo8YY7Eleu7tL7ntt6B/L7f/iCOqNYgX1NFwm/1XRB9R55MM0+qSFhbz0RXW7B1RlWe4vY2Ju6LsQRwdpUByS/CR5yOqgzLc8Y3NyWUgezKYxKvDntMEbuHb1xZ6ieIb0jY8eraid8e8OYIycg7jurmujzs/yLMFAaPrjwUDNPowbulP4ZRYiv0XZ6/oV+I5DHUfWYkPM7zrJ+NfTKm/umQpi8sMPQb/hbi66PvAP/gNCsvhmTRn72ecHg/L9T9E9MwiSEsN/QAAAABJRU5ErkJggg==') no-repeat 0 0 / contain;
+					content: "";
+
+					@media #{$min_sm} {
+						top: -35px;
+					}
+				}
+			}
+		}
+	}
+
+	.quote {
+		@include margined_md;
+
+		border-left: 5px solid $frog;
+		padding: 30px 0 10px 10px;
+
+		@media #{$min_sm} {
+			border-left-width: 10px;
+			padding: 50px 0 20px 20px;
+		}
+
+		@media #{$min_md} {
+			padding: 78px 0 57px 40px;
+		}
+	}
+
+	.quote_content {
+		margin: 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.quote_caption {
+		@include h6;
+
+		color: #766F67;
+		margin-top: 20px;
+
+		&:before {
+			content: "—";
+			margin-right: 2px;
+		}
+	}
+
+	.quote_caption_name {}
+
+	.quote_caption_title {}
+}
+
+
+// Lists
+// =============================================================================
+
+.typography {
+
+	ol,
+	ul {
+		list-style: none;
+
+		li {
+			margin: 10px 0;
+		}
+	}
+
+	ol {
+		counter-reset: li;
+
+		> li {
+
+			&:before {
+				@include u(700);
+
+				color: $blue;
+				content: counter(li) ". ";
+				counter-increment: li;
+
+				@at-root ol[type="A"] li:before {
+					content: counter(li, upper-latin) ". ";
+				}
+
+				@at-root ol[type="a"] li:before {
+					content: counter(li, lower-latin) ". ";
+				}
+			}
+		}
+	}
+
+	ul {
+
+		li {
+
+			&:before {
+				width: 6px;
+				height: 6px;
+
+				background: $blue;
+				border-radius: 50%;
+				content: "";
+				display: block;
+				float: left;
+				margin: 11px 0 0 -15px;
+
+				@media #{$min_md} {
+					height: 8px;
+					width: 8px;
+
+					margin: 15px 0 0 -25px;
+				}
+			}
+		}
+	}
+}
+
+
+// Tables
+// =============================================================================
+
+.typography {
+
+	table {
+		width: 100%;
+
+		border-collapse: collapse;
+
+		tbody {
+
+			tr {
+				border-bottom: 1px solid #BAB7B3;
+			}
+
+			td:first-child {
+				box-shadow: inset 1px 0 0 0 #BAB7B3;
+			}
+
+			td:last-child {
+				box-shadow: inset -1px 0 0 0 #BAB7B3;
+			}
+		}
+
+		tr {
+
+			&:nth-child(odd) {
+				background: #F5F7F9;
+			}
+		}
+
+		th,
+		td {}
+
+		th {
+			@include h6;
+
+			background: $navy;
+			color: #fff;
+			padding: 18px 25px;
+			text-align: left;
+		}
+
+		td {
+			@include label_text;
+
+			padding: 9px 25px;
+		}
+	}
+}
+
+// 1. Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+.table_wrapper {
+	@include margined_md;
+
+	min-height: 0.01%; // 1
+}
+
+.table_wrapper_overflow {
+	position: relative;
+
+	border: 1px solid #ccc;
+
+	&:after {
+		@include gradient_right(rgba(#000, 0), rgba(#000, 0.1));
+
+		width: 20px;
+		height: 100%;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		content: "";
+	}
+}
+
+.table_wrapper_inner {
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}

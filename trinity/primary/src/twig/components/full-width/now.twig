@@ -1,0 +1,44 @@
+<div class="now{% if theme %} theme_{{theme}}{% endif %}">
+	<header class="now_header">
+		<div class="fs-row">
+			<div class="fs-cell">
+				<div class="now_header_inner">
+					<span class="now_label">{{label}}</span>
+					<h2 class="now_title">{{title}}</h2>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="now_inner">
+		<div class="fs-row">
+			<div class="fs-cell">
+				<div class="js-carousel now_items" data-carousel-options='{
+					"theme": "base_theme",
+					"controls": false,
+					"contained": false,
+					"maxWidth": "979px"
+				}'>
+					{% for item in items %}
+						<div class="now_item theme_{{item.theme}}">
+							<figure class="now_item_figure">
+								{% include par ~ "picture.twig" with {
+									class: "now_item",
+									image: item.image,
+									sources: {
+										"1220px": img.square.med,
+										"980px": img.portraitFull.med,
+										"0px": img.wide.sml
+									}
+								} %}
+							</figure>
+							<a class="now_body" href="#">
+								<div class="now_caption">{{item.caption}}</div>
+								<span class="now_icon">{{site.icon("arrow_right")}}</span>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

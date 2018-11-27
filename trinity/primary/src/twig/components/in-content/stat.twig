@@ -1,0 +1,22 @@
+<div class="stat{% if theme %} theme_{{theme}}{% elseif background %} theme_image{% endif %}">
+	{% if background %}
+		{% include par ~ "background.twig" with {
+			class: "stat",
+			image: background,
+			sources: {
+				"0px": img.portraitFull.sml,
+				"500px": img.wide.sml,
+				"980px": img.classic.med,
+				"1360px": img.wide.med
+			}
+		} %}
+	{% endif %}
+	<div class="stat_inner">
+		<div class="stat_content">
+			<span class="stat_label">{{label}}</span>
+			<div class="stat_body">
+				<p>{{caption}}</p>
+			</div>
+		</div>
+	</div>
+</div>

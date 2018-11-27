@@ -1,0 +1,22 @@
+// Mixins
+// =============================================================================
+
+@mixin simple_link() {
+	color: inherit;
+	display: block;
+	transition: color .25s;
+
+	&:focus,
+	&:hover {
+		color: $blue;
+	}
+
+	[class*="label"] {
+		display: inline;
+	}
+
+	[class*="icon"] {
+		color: $blue;
+		display: inline-block;
+	}
+}

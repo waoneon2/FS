@@ -1,0 +1,108 @@
+{#
+	{{site.anchor("Gallery")}}
+	{% include inc ~ "gallery.twig" with {
+		theme: "",
+		title: "Media Gallery",
+		items: [
+			{
+				video: "//www.youtube.com/watch?v=XPjQhvjQbSM",
+				symbol: "",
+				image: 1,
+				caption: "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. <a href='#'>Phasellus viverra</a> nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."
+			},
+			{
+				video: "",
+				symbol: "",
+				image: 2,
+				caption: ""
+			}
+		]
+	} %}
+#}
+
+<div class="media_gallery">
+	<div class="fs-row">
+		<div class="fs-cell">
+			<div class="js-swap media_gallery_inner" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
+				{% include par ~ "background.twig" with {
+					class: "media_gallery",
+					image: image,
+					sources: {
+						"0px": img.square.sml,
+						"500px": img.wide.sml,
+						"740px": img.classic.med,
+						"980px": img.wide.lrg,
+						"1220px": img.ultrawide.lrg
+					}
+				} %}
+				<header class="media_gallery_header">
+					<button class="js-swap media_gallery_trigger" title="open gallery" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
+						<span class="media_gallery_trigger_icon">{{site.icon("stretcher")}}</span>
+					</button>
+					<div class="media_gallery_details">
+						<span class="media_gallery_label">Explore the Gallery</span>
+						<h2 class="media_gallery_title">{{title}}</h2>
+					</div>
+					<div class="media_gallery_count">
+						<span class="media_gallery_count_icon">{{site.icon("grid")}}</span>
+						<span class="media_gallery_count_label">{{items|length}}</span>
+					</div>
+				</header>
+			</div>
+			<div class="media_gallery_body">
+				<button class="js-swap media_gallery_close" title="open gallery" data-swap-target=".media_gallery_body" data-swap-group="media_gallery" data-swap-linked="media_gallery">
+					<span class="media_gallery_close_icon">{{site.icon("close")}}</span>
+				</button>
+				<div class="media_gallery_body_inner">
+					<div class="media_gallery_body_contents">
+						<div class="media_gallery_body_header">
+							<div class="media_gallery_body_details">
+								<span class="media_gallery_body_label">{{label}}</span>
+								<h3 class="media_gallery_body_title">{{title}}</h3>
+							</div>
+							<div class="media_gallery_item_stickers" aria-hidden="true">
+								{% for item in items %}
+									<div class="media_gallery_item_sticker">
+										<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>
+										<div class="media_gallery_item_caption">
+											<p>{{item.caption}}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="media_gallery_items">
+							{% for item in items %}
+								<div class="media_gallery_item">
+									<figure class="media_gallery_item_figure">
+										{% if item.portrait %}
+											{{site.image("media_gallery_item", img.portraitFull.sml, item.image)}}
+										{% else %}
+											{{site.image("media_gallery_item", img.classic.sml, item.image)}}
+										{% endif %}
+										{% if item.video %}
+											<button class="video_item_video" title="play video" data-url="https://www.youtube.com/embed/Oz3mm3tPKfg">
+												<span class="video_item_video_hint">
+													<span class="video_item_video_hint_icon_bubble">
+														<span class="video_item_video_hint_icon">{{site.icon("play")}}</span>
+													</span>
+													<span class="video_item_video_hint_label">Watch the Video</span>
+												</span>
+											</button>
+										{% endif %}
+									</figure>
+									<div class="media_gallery_item_details">
+										<span class="media_gallery_item_count">{{loop.index}} / {{loop.length}}</span>
+										<div class="media_gallery_item_caption">
+											<p>{{item.caption}}</p>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

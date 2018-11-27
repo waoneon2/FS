@@ -1,0 +1,355 @@
+/* ==========================================================================
+	Quote Item
+============================================================================= */
+
+@mixin theme_quote_item() {
+
+	@each $l, $c in $theme_colors {
+		
+		.theme_#{$l} & {
+
+			.quote_item_figcaption {
+
+				&:before {
+
+					@media #{$min_md} {
+						box-shadow: inset 10px -10px 0 0 $c;
+					}
+				}
+			}
+
+			.quote_item_mark {
+				box-shadow: -7px 7px 0 0 $c;
+
+				@media #{$min_md} {
+					box-shadow: -10px 10px 0 0 $c;
+				}
+			}
+
+			.quote_item_mini_mark {
+				color: $c;
+			}
+		}
+	}
+}
+
+.quote_item {
+	@include theme_quote_item;
+
+	margin-bottom: 25px;
+}
+
+.quote_item_figure {
+	position: relative;
+
+	@media print {
+		display: none;
+	}
+
+	&.theme_video {
+
+		&:before {
+			@include cover;
+
+			background: 
+				linear-gradient(
+					to top,
+						rgba(#000, .75),
+						rgba(#000, 0) 35%
+				);
+			content: "";
+		}
+	}
+}
+
+.quote_item_image {
+	width: 100%;
+
+	display: block;
+}
+
+.quote_item_figcaption {
+	height: calc(100% - 10px);
+	width: calc(100% - 20px);
+
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+
+	align-items: center;
+	display: flex;
+	opacity: 0;
+	padding: 30px;
+	transform: scale(0);
+	transform-origin: left bottom;
+	transition: 
+		opacity .35s,
+		transform .35s;
+
+	&:before {
+		@include cover;
+
+		content: '';
+		margin-top: 10px;
+		margin-left: -10px;
+	}
+
+	.quote_item_figure:focus &,
+	.quote_item_figure:hover & {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.quote_item_figcaption_inner {}
+
+.quote_item_mark {
+	height: 33px;
+	width: 33px;
+
+	position: absolute;
+	bottom: 0;
+	left: 7px;
+
+	background: #fff;
+	color: $dark;
+	transition:
+		height .35s,
+		width .35s,
+		background .35s;
+
+	@media #{$min_md} {
+		height: 50px;
+		width: 50px;
+
+		left: 10px;
+	}
+
+	.quote_item_figure:focus &,
+	.quote_item_figure:hover & {
+		height: calc(100% - 10px);
+		width: calc(100% - 17px);
+
+		background: rgba($dark, .75);
+
+		@media #{$min_md} {
+			width: calc(100% - 20px);
+		}
+	}
+}
+
+.quote_item_mark_icon {
+	position: absolute;
+	bottom: 11px;
+	left: 10px;
+	transition: opacity .15s;
+
+	@media #{$min_md} {
+		bottom: 20px;
+		left: 17px;
+
+		transform: scale(1.5);
+	}
+
+	.quote_item_figure:focus &,
+	.quote_item_figure:hover & {
+		opacity: 0;
+	}
+}
+
+.quote_item_mini_mark {
+	display: inline-block;
+	margin-bottom: 5px;
+	
+	@media #{$min_md} {
+		margin-bottom: 10px;
+		transform: scale(1.5);
+		transform-origin: left top;	
+	}
+}
+
+.quote_item_content {
+	@include u(700);
+
+	color: #fff;
+	font-size: 20px;
+	line-height: (28 / 20);
+	margin-bottom: 15px;
+
+	@media #{$min_md} {
+		font-size: 24px;
+		line-height: (36 / 24);
+		margin-bottom: 25px;
+	}
+}
+
+.quote_item_mini_details {
+	@include u(500);
+
+	color: #EAE5DF;
+	font-size: 12px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 14px;
+	}
+
+	&:before {
+		content: "—";
+		display: inline-block;
+		margin-right: 2px;
+	}
+}
+
+.quote_item_mini_label {}
+
+.quote_item_mini_year {}
+
+.quote_item_video {
+	@include cover;
+}
+
+.quote_item_video_hint {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+
+	@media #{$min_md} {
+		bottom: 30px;
+		left: 30px;
+	}
+}
+
+.quote_item_video_hint_icon_bubble {
+	height: 30px;
+	width: 30px;
+
+	position: relative;
+
+	background: rgba($blue, .5);
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: middle;
+	transition: 
+		background .25s,
+		transform .25s;
+
+	@media #{$min_md} {
+		height: 40px;
+		width: 40px;
+
+		margin-right: 10px;
+	}
+
+	.quote_item_video:focus &,
+	.quote_item_video:hover & {
+		background: $blue;
+		transform: scale(1.25);
+	}
+}
+
+.quote_item_video_hint_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin-left: 1px;
+	transform: 
+		translate(-50%, -50%)
+		scale(.85);
+
+	@media #{$min_md} {
+		transform: translate(-50%, -50%);
+	}
+}
+
+.quote_item_video_hint_label {
+	@include u(500);
+
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	letter-spacing: 1px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	transition: transform .25s;
+	
+	@media #{$min_md} {
+		font-size: 15px;
+		letter-spacing: 1.8px;
+	}
+
+	.quote_item_video:focus &,
+	.quote_item_video:hover & {
+		transform: translate(5px, 0);
+	}
+}
+
+
+
+/* ==========================================================================
+	Quote Body
+============================================================================= */
+
+.quote_item_body {
+	background: #F5F7F9;
+	padding: 18px 20px 28px;
+
+	@media #{$min_md} {
+		padding: 35px 40px 38px;
+	}
+}
+
+.quote_item_header {
+	margin-bottom: 16px;
+
+	@media #{$min_md} {
+		margin-bottom: 29px;
+	}
+}
+
+.quote_item_title {
+	@include h4;
+
+	color: $dark;
+	margin: 0 0 7px;
+
+	@media #{$min_md} {
+		margin-bottom: 16px;
+	}
+}
+
+.quote_item_details {
+	font-size: 11px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 14px;
+	}
+}
+
+.quote_item_label {
+	@include u(300);
+}
+
+.quote_item_year {
+	@include u(700);
+}
+
+.quote_item_caption {
+	@include label_text;
+
+	p {
+		margin: 0;
+	}
+}
+
+.quote_item_link {
+	@include button_plain;
+
+	margin-top: 5px;
+}

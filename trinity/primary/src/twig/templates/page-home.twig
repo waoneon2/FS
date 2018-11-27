@@ -1,0 +1,217 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Home",
+		layout: "home"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+	{% include feat ~ "spotlight.twig" with {
+		title: "Trinity is an incredible<br>place with amazing people.<br>Let us show you.",
+		poster: 8,
+		video: "https://www.youtube.com/watch?v=Ib674A1yMtg",
+		items: [
+			{
+				image: 5,
+				theme: "sea",
+				label: "Programs",
+				title: "See what you can learn at Trinity.",
+				takeover: {
+					image: 5,
+					filters: [
+						"View All Programs",
+						"Social Sciences",
+						"Visual & Performing Arts",
+						"Natural Sciences",
+						"Language & Culture",
+						"Computer Science & Math",
+						"Engineering",
+						"Humanities"
+					],
+					programs: [
+						{
+							image: 1,
+							title: "Art History",
+							degrees: ["BA", "Minor"],
+							caption: "Small enough to offer students individual attention, this major is also worldly enough to endow them with a breadth of knowledge essential to a career in art and architectural history and their related fields."
+						},
+						{
+							image: 2,
+							title: "Biology",
+							degrees: ["BS", "MS", "Minor"],
+							caption: "What we encounter in biology are the continuing consequences of events that began billions of years ago, yielding simple living forms. From this genesis evolved the many forms of life we recognize today."
+						},
+						{
+							image: 1,
+							title: "Chemistry",
+							degrees: ["BS", "MS", "Minor"],
+							caption: "Explore an interdisciplinary in nature and deal with the composition, properties, and interactions of substances."
+						},
+						{
+							image: 2,
+							title: "English",
+							degrees: ["BA"],
+							caption: "In the English Department at Trinity College, faculty and students collaborate closely together as they explore a wide range of literary forms, genres, and media from an equally wide range of periods and cultures."
+						},
+						{
+							image: 1,
+							title: "Neuroscience",
+							degrees: ["BS", "MA"],
+							caption: "Neuroscience is a broad, multidisciplinary field concerned with the nervous system & its components & functional activities—including behavior & consciousness."
+						}
+					]
+				}
+			},
+			{
+				image: 6,
+				theme: "orange",
+				label: "People",
+				title: "Individually, Incredible.Together, Trinity.",
+				takeover: {
+					image: 6,
+					quotes: [
+						{
+							image: 1,
+							title: "Michael Acosta",
+							content: "Coffee has the opportunity to do a lot of good. Hartford has a lot of positive momentum.",
+							cite: "Economics",
+							year: "‘13",
+							caption: "Having walked around the Frog Hollow neighborhood during his time at Trinity Michael wanted to see what kind of impact he could make in the community. Story and Soil is a celebration of Hartford, the community, good food and good coffee."
+						},
+						{
+							image: 2,
+							video: "#",
+							title: "John Rose",
+							cite: "College Organist & Director of chapel music",
+							caption: "John Rose reflects on his 40-year career at Trinity. John will retire from the College in December."
+						},
+						{
+							image: 1,
+							title: "Tracy Keza",
+							content: "Coffee has the opportunity to do a lot of good. Hartford has a lot of positive momentum.",
+							cite: "Studio Arts & Sociology",
+							year: "'17",
+							caption: "With her striking photography exhibit, “Hijabs & Hoodies,” MasterCard Foundation Scholar Tracy explores the stereotyping of African-Americans and Muslims by looking at how clothing can be perceived as a threat."
+						}
+					]
+				}
+			},
+			{
+				image: 7,
+				theme: "frog",
+				label: "Places",
+				title: "Campus, Hartford & the World Beyond.",
+				takeover: {
+					image: 7,
+					links: [
+						"Visit Campus",
+						"About Hartford, CT"
+					],
+					videos: [
+						{
+							image: 1,
+							url: "#",
+							title: "Trinity College from Above"
+						}
+					],
+					quotes: [
+						{
+							image: 2,
+							title: "Summer at Sea",
+							caption: "The Sea Semester takes 24 students on a five-week sailing voyage to the Phoenix Islands, aboard the SSV Robert C. Seamans, to conduct research on this largely under-studied region."
+						},
+						{
+							image: 1,
+							title: "Volunteering at the Wadsworth Museum",
+							caption: "J-Start students spent #MLK Day volunteering at Martin Luther King, Jr. Community Day at the Wadsworth Museum. Trinity’s newest students are getting involved with their new home city of Hartford."
+						}
+					]
+				}
+			},
+			{
+				image: 8,
+				theme: "yellow",
+				label: "Pride",
+				title: "We have a lot to be proud of.",
+				takeover: {
+					image: 8,
+					quotes: [
+						{
+							image: 1,
+							title: "Exploring Experiences of Women in Caribbean, Europe, and North America",
+							caption: "Janet L. Bauer has received a Fulbright Global Scholar grant—an award designed to support multicountry, transregional projects—for her research project on The Social Geographies of Islam in Diaspora: Race, Gender, Generation, and Place."
+						},
+						{
+							image: 2,
+							title: "Bantams in Benin",
+							caption: "Led by Tim Landry, Associate Professor of Anthropology, 13 students are spending January break exploring Benin’s history, culture, and religious practices in the J-Term course “West Africa Abroad.”"
+						},
+						{
+							image: 1,
+							title: "Another Great Homecoming Weekend",
+							caption: "Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur."
+						}
+					]
+				}
+			}
+		]
+	} %}
+{% endblock %}
+
+{% block full_width_callouts %}
+	{% include full ~ "now.twig" with {
+		label: "Important Now",
+		title: "Explore the Possibilities & Make Trinity a Part of Your <em>Summer</em>",
+		items: [
+			{
+				theme: "orange",
+				image: 1,
+				caption: "<strong>Study Away</strong> to learn a new language or subject, experience a new culture, or all of the above."
+			},
+			{
+				theme: "sea",
+				image: 2,
+				caption: "<strong>Summer Housing</strong> offers more than just a place to live, but a new community full of activity."
+			},
+			{
+				theme: "frog",
+				image: 1,
+				caption: "<strong>Summer Institutes</strong> are small, focused courses that integrate time in the classroom within the field"
+			},
+			{
+				theme: "bee",
+				image: 2,
+				caption: "<strong>Summer Sessions</strong> are for exploring new topics, and sharpening your skills quickly."
+			}
+		]
+	} %}
+
+	{% include full ~ "mix.twig" with {
+		news: {
+			heading: "Catch up on the latest.",
+			title: "Trinity Offering New Mediterranean Summer Study Away Option",
+			caption: "The one-credit course, “Pathways of Mediterranean Cultural Commerce: Barcelona and Sardinia,” will be offered from May 23 to June 15, 2018."
+		},
+		eventsHeading: "What's happening next.",
+		events: [
+			{
+				day: "14",
+				month: "Mar",
+				year: "2018",
+				title: "Trinity’s International Hip-Hop Festival",
+				location: "Hartford, CT",
+				time: "8 p.m. - 12 a.m."
+			},
+			{
+				day: "7-8",
+				month: "Apr",
+				year: "2018",
+				title: "25th Annual Robotics Competition",
+				location: "Ferris Athletic Center, Oosting Gymnasium",
+				time: "9 p.m. - 2 p.m."
+			}
+		]
+	} %}
+{% endblock %}

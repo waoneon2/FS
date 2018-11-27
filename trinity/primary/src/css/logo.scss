@@ -1,0 +1,72 @@
+/* ==========================================================================
+	Logo
+============================================================================= */
+
+.logo {
+	margin: 0;
+
+	&_footer {
+		margin-bottom: 17px;
+
+		@media #{$min_lg} {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.logo_link {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	color: transparent;
+	display: block;
+	overflow: hidden;
+	user-select: none;
+	white-space: nowrap;
+}
+
+.logo_link_label {
+
+	.logo_icon & {
+		@include visually_hide;
+	}
+}
+
+.logo_link_icon {
+	display: inline-block;
+	vertical-align: top;
+
+	.logo_footer & {
+		color: #fff;
+	}
+}
+
+.icon_logo {
+
+	.logo_header & {
+		color: $navy;
+
+		@media #{$min_md} {
+			height: 48px;
+			width: 229px;
+		}
+	}
+
+	.logo_footer & {
+		height: 59px;
+		width: 279px;
+
+		@media #{$min_lg} {
+			height: 61px;
+			width: 290px;
+		}
+	}
+}
+
+.logo_print {
+	display: none;
+
+	@media print {
+		display: block;
+	}
+}

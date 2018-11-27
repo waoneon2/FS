@@ -1,0 +1,438 @@
+/* ==========================================================================
+	Forms
+============================================================================= */
+
+.form-builder {
+
+	h2 {
+		@include h2;
+	}
+
+	h5 {
+		margin-bottom: 18px;
+	}
+
+	p {
+		@include body_text;
+	}
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+// Elements
+// =============================================================================
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {}
+
+@mixin label($theme: null) {
+	@include u(300);
+
+	color: $dark;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin-top: 13px;
+	text-transform: uppercase;
+}
+
+@mixin input($theme: null) {
+	@include label_text;
+
+	appearance: none;
+	border: 1px solid rgba(#766F67, .5);
+	border-radius: 0;
+	box-shadow: 0 0 0 0 $yellow;
+	color: $dark;
+	padding: 11px 20px;
+	transition: box-shadow .25s;
+
+	@media #{$min_md} {
+		padding: 13px 25px;
+	}
+}
+
+.form-builder {
+		
+	label:not(.fs-checkbox-label):not(.form_builder_sublabel) {
+		@include label;
+		
+		display: block;
+	}
+
+	.form_builder_sublabel {
+		@include h6;
+	}
+
+	input:not([type="checkbox"]):not([type="radio"]),
+	textarea {
+		@include input;
+
+		width: 100%;
+
+		&:focus,
+		&:hover {
+			box-shadow: -10px 10px 0 0 $yellow;
+		}
+	}
+
+	input {
+
+		&[type="submit"] {}
+	}
+
+	input::-ms-clear {
+		width: 0;
+		height: 0;
+	}
+
+	textarea {
+		display: block;
+		min-height: 220px;
+		resize: vertical;
+	}
+
+	select {
+		@include u(500);
+
+		height: 50px;
+		width: calc(100% - 10px);
+
+		appearance: none;
+		background: $blue url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAAAXNSR0IArs4c6QAAANtJREFUOBGtlM8KQUEUh10i2VhIFrLhSWQpW3aew1bZirdRdrK7eQ42FDsbxnfK6JppGtfMqV9nzp/fN7fb7SYFQinVJaWoIXVg3PFPi2+I5HogUNurXyyeeoZixAZIom+R15GgbSD5iL/5geoDzRY6/Ql/4OtrlpUZDpAs5Y25BTMbEBc5qTv2SybHqmUJ7X+En9lrWxBXg+UOunjgT+ZDF8PZxzTygJdOs28AeOWAp/TLPr9zjrmCDgb8Si2/gbAA0kO3DHwcRsy4gU6QfN/rTDvOEWgtDimA8gJAYCZMqIuFHQAAAABJRU5ErkJggg==') no-repeat calc(100% - 20px) 50% / 11px 7px;
+		border: 0;
+		border-radius: 0;
+		box-shadow: -10px 10px 0 0 $navy;
+		color: #fff;
+		cursor: pointer;
+		font-size: 11px;
+		letter-spacing: 2.2px;
+		margin-left: 10px;
+		padding: 19px 20px;
+		text-transform: uppercase;
+
+		@media #{$min_md} {
+			font-size: 13px;
+			padding: 18px 20px;
+		}
+	}
+}
+
+.typography {
+
+	input,
+	textarea,
+	label,
+	select {
+		@include focus_outline_none;
+	}
+}
+
+
+// Custom Elements
+// =============================================================================
+
+.form-builder {
+
+	.input_wrapper,
+	.textarea_wrapper,
+	.choices_wrapper {
+		margin-bottom: 30px;
+	}
+}
+
+.form_column_flex {
+	display: flex;
+
+	> * {
+		margin-right: 16px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.form_column_auto {
+
+	> * {
+		display: inline-block;
+		margin-right: 16px;
+	}
+}
+
+.form_column_2 {
+
+	@media #{$min_md} {
+		@include columns(2, 20px);
+	}
+}
+
+
+// Gravity Forms
+// =============================================================================
+
+#main_content {
+
+	.gform_wrapper {
+
+		.gform_body {
+
+			.top_label .gfield_label {
+				@include h5;
+			}
+
+			.field_sublabel_below .ginput_complex.ginput_container label,
+			.field_sublabel_below div[class*=gfield_time_].ginput_container label {
+				@include h6;
+				@include u(300);
+
+				margin: 12px 0 22px;
+			}
+
+			ul.gform_fields li.gfield {
+				margin: 40px 0;
+			}
+
+			.top_label div.ginput_container {
+				margin-top: 14px;
+			}
+
+			input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+				border: 1px solid rgba(#766F67, .5);
+				box-shadow: 0 0 0 0 $yellow;
+				padding: 11px 20px;
+				transition: box-shadow .25s;
+
+				@media #{$min_md} {
+					padding: 16px 20px 15px;
+				}
+
+				&:focus,
+				&:hover {
+					box-shadow: -6px 6px 0 0 $yellow;
+					outline: 0;
+				}
+
+				&.datepicker {
+					box-shadow: 0 0 0 0 $navy;
+
+					&:focus,
+					&:hover {
+						box-shadow: -6px 6px 0 0 $navy;
+					}
+				}
+			}
+
+			ul.gform_fields li.gfield select:not([multiple]) {
+				appearance: none;
+				background-color: #fff;
+				background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAABGdBTUEAALGPC/xhBQAAAU9JREFUOBFjFCu+u/4/A0MAAxUAIyPjGqb/jIyCVDALYsT//xJM7IysqYwMDF8oNRRkBhsTWxLTk27Z2wyMjJmUGggyA2QWE8igVz1KS5gYGeaTayhIL8gMkH6wgSAGMw9nDtCW6yA2SQCoB6wXqgnodQQQL7+r+/8v46n///9zIERxs4Cx+oOR+b/Zy07lyzBVcBeCBCASjAUwScI0YwGyYSD1KC6EGSBacm8Vw///oTA+VpqRcfXrHqUwdDkUF8IkeZn/pwK9cx/GR6dBciA16OIgPlYXgiQkiu+a/mVgOApksoL4SOA3MwOD9Yte5dNIYnAmVheCZEEaGBkZKuAqoQyQGC7DQEpwuhAkCYxtRrHSe5sZ/jN4g/hA1VtfdSv5Ar0MzP7YAU4XgpSDNLLycCYA6YdAm+9A2TgNw24FFtHQVf+ZVSb9Z8ciRXshAMwRVMfBcQQHAAAAAElFTkSuQmCC');
+				background-size: 10px 7px;
+				background-position: calc(100% - 20px) 50%;
+				background-repeat: no-repeat;
+				border: 1px solid rgba(#766F67, .5);
+				border-radius: 0;
+				box-shadow: -6px 6px 0 0 $navy;
+				cursor: pointer;
+				margin: 0;
+				padding: 16px 20px 15px;
+
+				@media #{$min_md} {
+					padding: 12px 20px 11px;
+				}
+			}
+
+			ul.gfield_checkbox li label {
+				margin-top: 0;
+				margin-left: 8px;
+			}
+
+			ul.gfield_radio li label {
+				margin-top: 0;
+				margin-left: 12px;
+			}
+
+			.gfield_checkbox li input, 
+			.gfield_checkbox li input[type=checkbox], 
+			.gfield_radio li input[type=radio] {
+				margin-top: 0 !important;
+			}
+		}
+
+		.gform_footer {
+			padding: 20px 0 40px;
+		}
+
+		.gform_footer input.button, 
+		.gform_footer input[type=submit], 
+		.gform_page_footer input.button, 
+		.gform_page_footer input[type=submit] {
+			@include u(500);
+
+			background: $blue;
+			border: 0;
+			box-shadow: -6px 6px 0 0 $navy;
+			color: #fff;
+			cursor: pointer;
+			font-size: 13px;
+			letter-spacing: 2px;
+			line-height: (20 / 14);
+			padding: 16px 20px;
+			text-transform: uppercase;
+			transition:
+				background .25s,
+				color .25s;
+
+			&:focus,
+			&:hover {
+				background: $navy;
+				box-shadow: -6px 6px 0 0 $blue;
+			}
+		}
+	}
+}
+
+.gform_wrapper .gfield_time_ampm, 
+.gform_wrapper .gfield_time_hour {
+
+	@media screen and (min-width: 321px) {
+		max-width: calc(8rem + .5rem) !important;
+	}
+}
+
+.gform_wrapper .gform_body .gfield .gfield_time_hour input, 
+.gform_wrapper .gform_body .gfield .gfield_time_minute input {
+	width: calc(100% - 1rem) !important;
+}
+
+.gform_wrapper .gfield_time_hour, 
+.gform_wrapper .gfield_time_minute {
+
+	@media screen and (min-width: 321px) {
+		max-width: 6rem !important;
+	}
+}
+
+.gform_wrapper .gform_body .gfield .gfield_time_ampm select {
+	max-width: 6rem !important;
+	min-width: 100%;
+	width: 100%;
+}
+
+.gform_wrapper ul li:after, 
+.gform_wrapper ul li:before {
+	display: none;
+}
+
+#ui-datepicker-div {
+	@include u(500);
+
+	box-shadow: 0 0 0 6px $navy;
+	font: inherit;
+	margin-top: 12px;
+
+	.ui-datepicker-header {
+		background: $navy;
+		box-shadow: none;
+		color: #fff;
+		text-shadow: none;
+	}
+
+	.ui-datepicker-prev,
+	.ui-datepicker-next {
+		display: none;
+	}
+
+	.ui-datepicker-title select {
+		@include u(500);
+
+		width: 100%;
+
+		appearance: none;
+		background-color: $blue;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAABGdBTUEAALGPC/xhBQAAALVJREFUOBGtz8EJgzAUxvG0F+2l9Oi94gDdRQT3EgQX6KEblK4gncUOkP6fNBAxxlgT+DB5ee9HVFrrB4m17kel1IXEWtmBp13RenLeqQ7M30YDtIzwz+XkQYDNDrSZYHIAS0j/ByozyQz8oTmXwwZUenMnZoo0VBvAysx5v4BtANp6EfsSLCVvDyp3qT2zumegIB8HKrViFXA1MFg7wNrVG1wD7Cy0Cx5cagQ7kRd5yn6pz9S/i0UZlpKAgD8AAAAASUVORK5CYII=');
+		background-repeat: no-repeat;
+		background-position: calc(100% - 20px) 50%;
+		background-size: 10px 7px;
+		border: 0;
+		border-bottom: 1px solid $navy;
+		border-radius: 0;
+		color: #fff;
+		display: block;
+		font-size: 13px;
+		letter-spacing: 1.6px;
+		margin: 0;
+		padding: 14px 20px;
+		text-transform: uppercase;
+	}
+
+	.ui-datepicker-calendar {
+		background: #fff;
+	}
+
+	&.ui-datepicker thead {
+		background: #F5F7F9;
+		border: 0;
+	}
+
+	&.ui-datepicker th {
+		@include u(500);
+
+		color: #766F67;
+		font-size: 13px;
+		padding: 11px 0;
+		text-shadow: none;
+	}
+
+	&.ui-datepicker tbody tr {
+		border: 0;
+	}
+
+	&.ui-datepicker tbody td {
+		@include u(500);
+
+		border: 0;
+		box-shadow: none;
+		font-size: 13px;
+		letter-spacing: 1.6px;
+	}
+
+	td.ui-datepicker-unselectable.ui-state-disabled {
+		background: none;
+	}
+
+	.ui-datepicker-calendar .ui-state-default {
+		background: none;
+		box-shadow: none;
+		color: $blue;
+	}
+
+	.ui-datepicker-calendar .ui-state-active {
+		position: relative;
+		z-index: 2;
+
+		border: 0;
+		color: #000;
+
+		&:before {
+			height: 20px;
+			width: 20px;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: -2;
+
+			background: $yellow;
+			border-radius: 50%;
+			content: "";
+			transform: translate(-50%, -50%);
+		}
+	}
+}

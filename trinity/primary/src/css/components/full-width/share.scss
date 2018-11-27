@@ -1,0 +1,88 @@
+.share {
+	@include padded_xl_bottom;
+	
+	margin-top: 20px;
+}
+
+.share_inner {
+	border-top: 2px solid rgba(#766F67, .25);
+	padding-top: 10px;
+}
+
+.share_label {
+	@include u(500);
+
+	color: $dark;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	letter-spacing: .5px;
+	margin-right: 5px;
+	text-transform: uppercase;
+
+	@media #{$min_sm} {
+		font-size: 16px;
+		letter-spacing: 1.15px;
+		margin-right: 15px;
+	}
+}
+
+.share_tools {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.share_link {
+	position: relative;
+
+	color: $blue;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 6px;
+	vertical-align: middle;
+
+	@media #{$min_sm} {
+		padding: 10px;
+	}
+
+	&:before {
+		height: 40px;
+		width: 40px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		background: $yellow;
+		border-radius: 50%;
+		content: "";
+		pointer-events: none;
+		transform:
+			translate(-50%, -50%)
+			scale(0);
+	}
+
+	&:focus,
+	&:hover {
+		
+		&:before {
+			animation: bubble-poppy 1s forwards;
+		}
+	}
+}
+
+@keyframes bubble-poppy {
+
+	100% {
+		opacity: 0;
+		transform:
+			translate(-50%, -50%)
+			scale(1);
+	}
+}
+
+.share_link_label {
+	@include visually_hide;
+}
+
+.share_link_icon {}

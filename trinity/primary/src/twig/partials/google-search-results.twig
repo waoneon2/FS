@@ -1,0 +1,26 @@
+<section class="search_results_block">
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="search_results_inner">
+				{% if items %}
+				<div class="search_results_body">
+					<p class="search_results_count">About 73,400,000 results (0.60 seconds)</p>
+					<div class="search_results">
+						{% for item in items %}
+						<div class="search_result">
+							<h2 class="search_result_title">
+								<a class="search_result_title_link" href="{{item.link}}">{{item.title}}</a>
+							</h2>
+							<a class="search_result_link" href="{{item.link}}">{{item.link}}</a>
+							<div class="search_result_caption">
+								<p>{{item.caption}}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

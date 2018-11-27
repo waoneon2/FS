@@ -1,0 +1,161 @@
+/* ==========================================================================
+	Dropdowns
+============================================================================= */
+
+.fs-dropdown-wrapper {
+	position: relative;
+}
+
+.fs-dropdown {}
+
+.fs-dropdown-selected {
+	@include u(500);
+
+	background: $navy;
+	border: 0;
+	color: #fff;
+	font-size: 11px;
+	letter-spacing: 2.2px;
+	padding: 19px 20px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 13px;
+		padding: 18px 20px;
+	}
+
+	&:after {
+		height: 7px;
+		width: 11px;
+
+		position: absolute;
+		top: 50%;
+		right: 20px;
+
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAAAXNSR0IArs4c6QAAANtJREFUOBGtlM8KQUEUh10i2VhIFrLhSWQpW3aew1bZirdRdrK7eQ42FDsbxnfK6JppGtfMqV9nzp/fN7fb7SYFQinVJaWoIXVg3PFPi2+I5HogUNurXyyeeoZixAZIom+R15GgbSD5iL/5geoDzRY6/Ql/4OtrlpUZDpAs5Y25BTMbEBc5qTv2SybHqmUJ7X+En9lrWxBXg+UOunjgT+ZDF8PZxzTygJdOs28AeOWAp/TLPr9zjrmCDgb8Si2/gbAA0kO3DHwcRsy4gU6QfN/rTDvOEWgtDimA8gJAYCZMqIuFHQAAAABJRU5ErkJggg==') no-repeat 50% 50% / contain;
+		content: "";
+		transform: 
+			translate(0, -50%)
+			scaleY(1);
+		transition: transform .25s;
+
+		@media #{$min_md} {
+			right: 30px;
+		}
+	}
+
+	.fs-dropdown:focus &,
+	.fs-dropdown:hover & {}
+
+	.fs-dropdown-open & {
+
+		&:after {
+			transform: 
+				translate(0, -50%)
+				scaleY(-1);
+		}
+	}
+}
+
+.fs-dropdown-options {
+	left: -10px;
+
+	background: $blue;
+	border: 0;
+	padding: 18px 0;
+}
+
+.fs-dropdown-item {
+	@include u(500);
+
+	background: none;
+	color: #fff;
+	font-size: 11px;
+	letter-spacing: 2.2px;
+	padding: 10px 20px 10px 30px;
+	text-transform: uppercase;
+
+	@media #{$min_md} {
+		font-size: 13px;
+	}
+
+	&:focus,
+	&:hover {}
+
+	&.fs-dropdown-item_selected {}
+}
+
+
+// Checkboxes & Radios
+// =============================================================================
+
+.fs-checkbox {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.fs-checkbox-marker {
+	float: none;
+
+	border: 2px solid $navy;
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: middle;
+
+	.fs-checkbox-checked & {}
+}
+
+.fs-checkbox-flag {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	box-shadow: 
+		inset 0 0 0 0 #fff,
+		inset 0 0 0 0 $blue;
+	transition:
+		background .25s,
+		box-shadow .25s;
+
+	&:before {
+		height: 8px;
+		width: 5px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		border-color: #fff;
+		margin: -1px 0 0;
+		transform:
+			translate(-50%, -50%)
+			rotate(45deg)
+			scale(0);
+
+		.fs-checkbox-checked & {
+			transform:
+				translate(-50%, -50%)
+				rotate(45deg)
+				scale(1);
+		}
+	}
+
+	.fs-checkbox-checked & {
+		box-shadow: 
+			inset 0 0 0 2px #fff,
+			inset 0 0 0 10px $blue;
+	}
+
+	.fs-checkbox-radio & {
+		height: 8px;
+		width: 8px;
+
+		background: $blue;
+		box-shadow: none;
+	}
+}
+
+.fs-checkbox-label {
+	display: inline-block;
+	vertical-align: middle;
+}

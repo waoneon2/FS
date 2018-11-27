@@ -1,0 +1,17 @@
+<div class="share">
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="share_inner">
+				<span class="share_label">Share This Page</span>
+				<div class="share_tools">
+					{% for item in items %}
+						<a class="share_link" href="#">
+							<span class="share_link_label">{{item}}</span>
+							<span class="share_link_icon">{{site.icon(item)}}</span>
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

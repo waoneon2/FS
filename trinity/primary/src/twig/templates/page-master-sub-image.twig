@@ -1,0 +1,96 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Life On Campus",
+		layout: "default",
+		theme: "image",
+		image: 5,
+		alert: {
+			time: "2:00pm",
+			title: "Campus Closed — Tuesday, April 8",
+			description: "Due to inclement weather, all of campus will be closed on Tuesday, April 8, 2018. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo."
+		}
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+{% endblock %}
+
+{% block typography %}
+	<p class="intro">We are a small college and proud of it. No matter where you go on our campus, it will feel familiar. We have just over 2,000 undergraduates, and over 90% of them live on campus, so friendly faces are never far away.</p>
+	<p>Though we’re close-knit, this campus also has room for students to pursue diverse interests. We have over <a href="">140 student clubs and organizations</a>, all spearheaded by students like you. We have music festivals, movies, concerts, lectures, parties, student government meetings, a cappella practice, mock trials, art shows, and almost every type of athletic event you can imagine. And when you leave campus, Hartford has farmers’ markets, shopping, concerts, theater shows, food, music, an incredible science center, and the oldest public art museum in the country.</p>
+	<h3>Support for Every Student</h3>
+	<p>Though students take the lead on our campus, you’ll also have a strong network of support. We have resources to help you navigate whatever challenges you face.</p>
+{% endblock %}
+
+{% block in_content_callouts %}
+	{% include inc ~ "topic-row.twig" with {
+		items: [
+			{
+				image: 1,
+				title: "A Community of Diversity",
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis tincidunt.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			},
+			{
+				image: 2,
+				title: "Student Clubs & Involvement",
+				caption: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas cursus eleifend tristique. Integer ullamcorper tincidunt metus, nec sodales neque ornare eu.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			}
+		]
+	} %}
+
+	{% include inc ~ "linked-list.twig" with {
+		icon: "link",
+		title: "Campus Life Resources",
+		items: [
+			"Housing & Dining",
+			"Community-Based Housing",
+			"Greek Life",
+			"Health & Wellness",
+			"Safety & Support",
+			"Recreation & Fitness",
+			"Spiritual & Religious Life",
+			"Offices"
+		]
+	} %}
+{% endblock %}
+
+{% block full_width_callouts %}
+	{% include full ~ "gallery.twig" with {
+		label: "Explore the Gallery",
+		title: "A Community & Life as Vibrant as You Are",
+		items: [
+			{
+				image: 1,
+				video: true,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis."
+			},
+			{
+				image: 2,
+				portrait: true,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus."
+			},
+			{
+				image: 1,
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis."
+			}
+		]
+	} %}
+
+	{% include full ~ "share.twig" with {
+		items: [
+			"facebook",
+			"twitter",
+			"forward"
+		]
+	} %}
+{% endblock %}

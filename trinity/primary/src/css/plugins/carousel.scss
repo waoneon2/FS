@@ -1,0 +1,142 @@
+/* ==========================================================================
+	Carousel
+============================================================================= */
+
+.fs-carousel-canister {
+	flex-wrap: wrap;
+
+	@media print {
+		width: 100% !important;
+
+		display: block !important;
+		transform: none !important;
+	}
+}
+
+.fs-carousel-item {
+
+	@media print {
+		height: auto !important;
+		width: 100% !important;
+	}
+
+	&.fs-carousel-visible {}
+}
+
+
+/* ==========================================================================
+	 Controls
+============================================================================= */
+
+.fs-carousel-controls {
+
+	@media print {
+		display: none !important;
+	}
+}
+
+.fs-carousel-control {
+	position: relative;
+
+	cursor: default;
+	pointer-events: none;
+
+	&.fs-carousel-visible {
+		cursor: pointer;
+		pointer-events: auto;
+	}
+
+	&.fs-carousel-control_previous {}
+
+	&.fs-carousel-control_next {}
+
+	&:focus,
+	&:hover {}
+}
+
+.fs-carousel-control-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+}
+
+
+/* ==========================================================================
+	 Pagination
+============================================================================= */
+
+.fs-carousel-pagination {
+	margin-left: -5px;
+
+	@media print {
+		display: none !important;
+	}
+}
+
+.fs-carousel-page {
+	height: 22px;
+	width: 22px;
+
+	position: relative;
+
+	color: transparent;
+	display: inline-block;
+	overflow: hidden;
+
+	&:before {
+		height: 12px;
+		width: 12px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		border: 1.5px solid rgba(#000, .2);
+		border-radius: 50%;
+		content: "";
+		transform: translate(-50%, -50%);
+	}
+
+	&:after {
+		height: 6px;
+		width: 6px;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		background: $blue;
+		border-radius: 50%;
+		content: "";
+		transform: 
+			translate(-50%, -50%)
+			scale(0);
+		transition: transform .25s;
+	}
+
+	&.fs-carousel-active {
+
+		&:after {
+			transform: 
+				translate(-50%, -50%)
+				scale(1);
+		}
+	}
+}
+
+
+/* Pagination Themes
+============================================================================= */
+
+.theme {
+
+	.fs-carousel-pagination {}
+
+	.fs-carousel-page {
+
+		&.fs-carousel-active {}
+	}
+}

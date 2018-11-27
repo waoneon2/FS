@@ -1,0 +1,164 @@
+/* ==========================================================================
+	Alert
+============================================================================= */
+
+.alert {
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+
+	background: $yellow;
+	display: none;
+	padding: 15px 0;
+
+	@media #{$min_xl} {
+		padding: 15px 0 28px;
+	}
+
+	&.show_alert {
+		display: block;
+	}
+}
+
+.alert_body {
+	padding-right: 25px;
+
+	@media #{$min_md} {
+		padding: 0 30px;
+	}
+
+	@media #{$min_xl} {
+		padding-right: 0;
+		padding-left: 50px;
+	}
+}
+
+.alert_close {
+	height: 30px;
+	width: 30px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	background: $navy;
+	color: #fff;
+	transition: transform .25s;
+	transform-origin: right top;
+	
+	@media #{$min_xl} {
+		height: 60px;
+		width: 60px;
+	}
+
+	&:focus,
+	&:hover {
+		transform: scale(1.25);
+	}
+}
+
+.alert_close_label {
+	@include visually_hide;
+}
+
+.alert_close_icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: 
+		translate(-50%, -50%)
+		scale(1);
+
+	@media #{$min_xl} {
+		transform: 
+			translate(-50%, -50%)
+			scale(1.5);
+	}
+}
+
+.alert_content {}
+
+.alert_header {}
+
+.alert_time {}
+
+.alert_time_item {}
+
+.alert_title {
+	@include h4;
+
+	position: relative;
+	
+	margin: 0;
+
+	@media #{$min_lg} {
+		margin-bottom: 7px;
+	}
+}
+
+.alert_title_link {
+	color: inherit;
+	transition: color .25s;
+}
+
+.alert_title_icon {
+	display: none;
+
+	@media #{$min_md} {
+		position: absolute;
+		top: 13px;
+		left: -30px;
+
+		color: $navy;
+		display: block;
+		transform-origin: left center;
+	}
+
+	@media #{$min_xl} {
+		left: -50px;
+	}
+}
+
+.alert_title_label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.alert_description {
+	display: none;
+
+	@media #{$min_lg} {
+		@include u(300);
+
+		display: block;
+		font-size: 16px;
+		line-height: (26 / 16);
+		margin-bottom: 3px;
+	}
+
+	@media #{$min_xl} {
+		font-size: 20px;
+		line-height: (36 / 20);
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.alert_footer {}
+
+.alert_link {
+	@include button_plain(
+		$c: $dark,
+		$ic: $dark
+	);
+}
+
+.alert_link_label {}
+
+.alert_link_icon {}

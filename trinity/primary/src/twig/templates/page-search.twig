@@ -1,0 +1,19 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Search Results",
+		layout: "default",
+		theme: "default page_theme_sky"
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block page_header_append %}
+	{% include "../partials/google-cse.twig" %}
+{% endblock %}
+
+{% block full_width_callouts %}
+{% endblock %}

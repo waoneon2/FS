@@ -1,0 +1,69 @@
+{#
+	{{site.anchor("Contact Card")}}
+	{% include side ~ "contact-card.twig" with {
+		theme: "",
+		title: "",
+		name: "",
+		caption: "",
+		phone: "",
+		fax: "",
+		email: "",
+		external: ""
+	} %}
+#}
+
+<div class="contact">
+	<header class="contact_header">
+		<div class="contact_header_inner">
+			<span class="contact_label">{{label}}</span>
+			<h2 class="contact_name">{{name}}</h2>
+			<nav class="contact_social">
+				{% include "../../partials/navigation/social.twig" with {
+					modifier: "contact",
+					links: social
+				} %}
+			</nav>
+		</div>
+	</header>
+	<div class="contact_body">
+		<div class="contact_details">
+			<div class="contact_details_group">
+				{% if location %}
+					<div class="contact_detail contact_detail_location">
+						<span class="contact_detail_icon">{{site.icon("marker")}}</span>
+						<div class="contact_detail_label">
+							<span class="contact_detail_name">{{location.name}}</span>
+							<span class="contact_detail_sublabel">{{location.address}}</span>
+						</div>
+					</div>
+				{% endif %}
+				{% if time %}
+					<div class="contact_detail">
+						<span class="contact_detail_icon">{{site.icon("clock")}}</span>
+						<span class="contact_detail_label">{{time}}</span>
+					</div>
+				{% endif %}
+			</div>
+			<div class="contact_details_group">
+				{% if email %}
+					<div class="contact_detail">
+						<span class="contact_detail_icon">{{site.icon("email")}}</span>
+						<a class="contact_detail_label contact_detail_link" href="mailto:{{email}}">{{email}}</a>
+					</div>
+				{% endif %}
+				{% if phone %}
+					<div class="contact_detail">
+						<span class="contact_detail_icon">{{site.icon("phone")}}</span>
+						<a class="contact_detail_label" href="tel:{{phone}}">{{phone}}</a>
+					</div>
+				{% endif %}
+				{% if fax %}
+					<div class="contact_detail">
+						<span class="contact_detail_icon">{{site.icon("printer")}}</span>
+						<a class="contact_detail_label" href="tel:{{fax}}">{{fax}}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

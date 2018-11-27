@@ -1,0 +1,30 @@
+<div class="filter">
+	<div class="fs-row">
+		<div class="fs-cell fs-xl-10 fs-all-justify-center">
+			<div class="filter_inner">
+				<div class="input_wrapper filter_search_input_wrapper">
+					<input class="input_field filter_search_input_field" type="search" id="filter_search" placeholder="Search by keyword" />
+					<label class="input_label filter_search_input_label">Search by keyword</label>
+					<button class="input_submit filter_search_input_submit" type="submit" value="Submit Search" />
+				</div>
+				<div class="filter_options_wrapper">
+					<button class="js-swap filter_options_swap" data-swap-target=".filter_options">
+						<span class="filter_options_swap_label">View By Category</span>
+						<span class="filter_options_swap_icon">{{site.icon("caret_down")}}</span>
+					</button>
+					{% set options = [
+						"View All",
+						"Orcs",
+						"Cannons",
+						"Pokemans"
+					] %}
+					<div class="filter_options">
+						{% for option in options %}
+							<a class="filter_option" href="#" tabindex="0">{{option}}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

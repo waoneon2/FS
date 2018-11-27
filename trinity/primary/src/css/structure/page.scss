@@ -1,0 +1,302 @@
+/* ==========================================================================
+	Page
+============================================================================= */
+
+.page_wrapper {
+	width: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.page_inner {
+	flex-grow: 1;
+	padding-top: 60px;
+
+	@media print {
+		padding-top: 0;
+	}
+
+	@media #{$min_md} {
+		padding-top: 82px;
+	}
+
+	.page_theme_default & {
+		
+		@media #{$min_lg} {
+			padding-top: 142px;
+		}
+	}
+}
+
+.page_feature {}
+
+.page_content {
+	padding-top: 30px;
+	
+	> .fs-row {
+		@include clearfix;
+
+		display: block;
+	}
+}
+
+.aside_wrapper {
+
+	@media #{$min_lg} {
+		float: right;
+	}
+}
+
+.content_wrapper {
+
+	@media #{$min_lg} {
+		float: left;
+	}
+
+	.layout_full & {
+
+		@media #{$min_lg} {
+			float: none;
+		}
+	}
+}
+
+.main_content {
+	@include focus_outline_none;
+
+	display: block;
+}
+
+.page_header {
+	position: relative;
+
+	.page_theme_sky & {
+		background: #F5F7F9;
+	}
+}
+
+.page_background {
+	background: $navy;
+	padding-bottom: 75%;
+
+	@media print {
+		display: none;
+	}
+
+	@media #{$min_sm} {
+		padding-bottom: 56%;
+	}
+
+	@media #{$min_xl} {
+		padding-bottom: 43%;
+	}
+
+	&:before {
+		@include cover;
+
+		z-index: 2;
+
+		background:
+			linear-gradient(
+				to top,
+					rgba($dark, .65),
+					rgba($dark, .35) 50%,
+					rgba($dark, .35) 100%
+			);
+		content: "";
+
+		.page_layout_cover & {
+			background: rgba($dark, .55);
+		}
+	}
+
+	.page_layout_cover & {
+		@include cover;
+
+		position: fixed;
+
+		padding: 0;
+	}
+}
+
+.page_header_inner {
+	position: relative;
+	z-index: 4;
+
+	.page_theme_default & {
+		padding-top: 30px;
+
+		@media print {
+			padding-top: 0;
+		}
+
+		@media #{$min_xl} {
+			padding-top: 50px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.page_theme_image & {
+		width: 100%;
+		
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		@media print {
+			position: relative;
+		}
+
+		@media #{$min_xl} {
+			padding-bottom: 54px;
+		}
+	}
+
+	.page_layout_cover & {
+		position: relative;
+
+		padding-top: 30px;
+
+		@media #{$min_lg} {
+			padding-top: 90px;
+		}
+
+		@media #{$min_xl} {
+			padding-top: 110px;
+		}
+	}
+}
+
+.page_header_body {
+	position: relative;
+
+	@media #{$min_xl} {
+		padding-right: 280px + 40px;
+	}
+}
+
+.page_back {
+	display: block;
+	margin-bottom: 10px;
+
+	@media #{$min_lg} {
+		display: none;
+	}
+}
+
+.page_back_icon {
+	background: $blue;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-block;
+	margin-right: 5px;
+	padding: 5px;
+	vertical-align: middle;
+	transition: background .25s;
+
+	.page_theme_image & {
+		background: #fff;
+		color: $blue;
+	}
+	
+	.page_back:focus &,
+	.page_back:hover & {
+		background: $navy;
+
+		.page_theme_image & {
+			background: rgba(#fff, .7);
+		}
+	}
+}
+
+.page_back_label {
+	@include u(500);
+
+	color: $dark;
+	display: inline-block;
+	font-size: 13px;
+	letter-spacing: 2px;
+	line-height: (20 / 14);
+	text-transform: uppercase;
+	vertical-align: middle;
+	transition: color .25s;
+
+	.page_theme_image & {
+		color: #fff;
+	}
+
+	.page_back:focus &,
+	.page_back:hover & {
+		color: $navy;
+
+		.page_theme_image & {
+			color: rgba(#fff, .7);
+		}
+	}
+}
+
+.page_title {
+	@include h1;
+
+	margin: 0 0 20px;
+
+	@media #{$min_xl} {
+		margin-bottom: 0;
+	}
+
+	.page_theme_default & {
+		color: $dark;
+	}
+
+	.page_theme_image & {
+		color: #fff;
+	}
+}
+
+.page_intro {
+	@include intro_text;
+
+	.page_theme_default & {
+		margin: 0 0 30px;
+
+		@media #{$min_lg} {
+			margin: 30px 0 54px;
+		}
+
+		@media #{$min_xl} {
+			margin-bottom: 34px;
+		}
+	}
+
+	.page_theme_image & {
+		color: #fff;
+		margin: 0 0 30px;
+
+		@media #{$min_lg} {
+			margin: 30px 0 54px;
+		}
+
+		@media #{$min_xl} {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sidebar_wrapper {
+	clear: right;
+}
+
+
+/* ==========================================================================
+	Grid
+============================================================================= */
+
+.fs-grid .fs-row, 
+.fs_grid_row {
+
+	@media #{$min_xxl} {
+		width: 1340px;
+	}
+}

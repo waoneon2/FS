@@ -1,0 +1,107 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "English BA",
+		layout: "default",
+		theme: "default"
+	} %}
+{% endblock %}
+
+{% block page_feature %}
+{% endblock %}
+
+{% block typography %}
+	<p class="intro">In the English Department at Trinity College, faculty and students collaborate closely together as they explore a wide range of literary forms, genres, and media from an equally wide range of periods and cultures.</p>
+	<p>We are proud of our faculty members, who are actively publishing scholars and artists as well as dedicated teachers and mentors.  And we are equally proud of our students, who work hard alongside the faculty to discover meaning in literary texts and to express ideas, images, and arguments in well-honed, well-crafted writings of their own. Trinity English majors have become award-winning novelists, poets, and playwrights as well as lawyers, doctors, professors, editors, and marketing specialists.</p>
+{% endblock %}
+
+{% block in_content_callouts %}
+	{% include inc ~ "quote.twig" with {
+		theme: "yellow",
+		quote: "Being an English Major absolutely prepared me to be an English teacher. I teach several of the books I studied at Trinity and I look back fondly on my college class notes from time to time (especially now that I’m teaching World Literature and we’re starting the year with a novel I read with Okey Ndibe in an African Literature course).",
+		name: "Elyssa Michael",
+		label: "‘10"
+	} %}
+
+	{% include inc ~ "wysiwyg.twig" with {
+		content: "<h3>About the Program</h3><p>Here, you will be able to learn about our faculty, the requirements for our major and our concentrations in literary studies, creative writing, and film, our course offerings, our students, past and present, and the variety of opportunities and career paths available to English majors at Trinity.  The Web site also offers a view into the kind of community of students, scholars, artists, and teachers we are, as it outlines for you the range of readings, programs, activities, and events that enhance and augment our work in classrooms, seminars, and conferences throughout the academic year.</p>"
+	} %}
+
+	{% include inc ~ "topic-row.twig" with {
+		items: [
+			{
+				image: 1,
+				title: "Creative Writing & Literature Projects",
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis tincidunt.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			},
+			{
+				image: 2,
+				video: "https://player.vimeo.com/video/15091562?title=0&byline=0&portrait=0&autoplay=1&badge=0",
+				title: "Allan K. Smith Reading Series",
+				caption: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas cursus eleifend tristique. Integer ullamcorper tincidunt metus, nec sodales neque ornare eu.",
+				link: {
+					href: "#",
+					name: "Learn More"
+				}
+			}
+		]
+	} %}
+
+	{% include inc ~ "linked-list.twig" with {
+		icon: "link",
+		title: "Student Resources",
+		items: [
+			"Learning Goals",
+			"Course Descriptions",
+			"Major Reuirements",
+			"Faculty & Staff",
+			"Department News"
+		]
+	} %}
+
+	{% include inc ~ "stat.twig" with {
+		theme: "green",
+		label: "90%",
+		caption: "Percentage of English alumni find a job or attend graduate school within a year of graduation. "
+	} %}
+{% endblock %}
+
+{% block full_width_callouts %}
+	{% include full ~ "contact-card.twig" with {
+		label: "Get in Touch",
+		name: "English Department",
+		social: [
+      {
+        "modifier": "",
+        "icon": "facebook",
+        "name": "Facebook",
+        "href": "//www.facebook.com"
+      },
+      {
+        "modifier": "",
+        "icon": "twitter",
+        "name": "Twitter",
+        "href": "//www.twitter.com"
+      },
+      {
+        "modifier": "",
+        "icon": "linkedin",
+        "name": "Linkedin",
+        "href": "//www.linkedin.com"
+      }
+		],
+		location: {
+			name: "Mather Hall",
+			address: "300 Summit Street,<br>Hartford CT 06106"
+		},
+		time: "9 a.m. - 5 p.m.",
+		email: "english@trincoll.edu",
+		phone: "(860) 297-2000",
+		fax: "(860) 297-2345"
+	} %}
+{% endblock %}

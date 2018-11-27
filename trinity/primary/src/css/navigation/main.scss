@@ -1,0 +1,280 @@
+/* ==========================================================================
+	Main Navigation
+============================================================================= */
+
+.main_nav {
+	margin-bottom: 20px;
+
+	@media #{$min_md} {
+		margin-bottom: 29px;
+	}
+	
+	&.main_nav_lg {
+
+		@media #{$max_lg} {
+			display: none;
+		}
+	}
+}
+
+
+// Main Nav Links
+// =============================================================================
+
+.main_nav_list {}
+
+.main_nav_item {
+	position: relative;
+
+	&:before,
+	&:after {
+		width: 100%;
+
+		position: absolute;
+		top: 100%;
+		left: 0;
+
+		content: "";
+		transform-origin: left center;
+		transform: scaleX(0);
+		transition: transform .5s;
+	}
+
+	&:before {
+		height: 1px;
+
+		background: rgba(#fff, .3);
+	}
+
+	&:after {
+		height: 2px;
+
+		background: $yellow;
+	}
+
+	&:focus,
+	&:hover {
+		
+		&:after {
+			transform: scaleX(1);
+		}
+	}
+
+	@for $i from 1 through 7 {
+
+		.mobile_sidebar.fs-swap-active &:nth-child(#{$i}) {
+			
+			&:before {
+				transition: transform .75s .05s * $i + .05s;
+			}
+		}
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+
+		&:before {
+			transform: scaleX(1);
+		}
+	}
+
+	.main_nav_sm & {
+
+		&.fs-swap-enabled {
+
+			.main_nav_children {
+				display: none;
+			}
+		}
+
+		&.fs-swap-active {
+
+			.main_nav_children {
+				display: block;
+			}
+		}
+	}
+
+	.main_nav_lg & {
+
+		&.focused,
+		&:focus,
+		&:hover {
+
+			.main_nav_children {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.main_nav_item_wrapper {
+	position: relative;
+}
+
+.main_nav_link {
+	@include m(700);
+
+	width: calc(100% - 70px);
+
+	color: #fff;
+	display: block;
+	font-size: 22px;
+	overflow: hidden;
+	padding: 20px 0 25px;
+	vertical-align: top;
+
+	@media #{$min_md} {
+		font-size: 34px;
+		padding: 28px 0 33px;
+	}
+
+	.main_nav_item.focused &,
+	.main_nav_item:focus &,
+	.main_nav_item:hover & {}
+}
+
+.main_nav_link_label {
+	display: block;
+	transform: translate(-100%, 0);
+	transition: transform .5s;
+
+	@for $i from 1 through 7 {
+
+		.mobile_sidebar.fs-swap-active .main_nav_item:nth-child(#{$i}) & {
+			transition: transform .75s .05s * $i;
+		}	
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+		transform: translate(0, 0);
+	}
+}
+
+.main_nav_toggle {
+
+	.no-js & {
+		display: none;
+	}
+
+	.js & {
+		width: 70px;
+		height: 100%;
+
+		position: absolute;
+		top: 0;
+		right: -20px;
+
+		cursor: pointer;
+		transform: scale(0);
+		transform-origin: calc(100% - 25px) 35%;
+		transition: transform .5s;
+	}
+
+	.main_nav_lg & {
+		display: none;
+	}
+
+	@for $i from 1 through 7 {
+		
+		.mobile_sidebar.fs-swap-active .main_nav_item:nth-child(#{$i}) & {
+			transition: transform .75s .085s * $i;
+		}	
+	}
+
+	.mobile_sidebar.fs-swap-active & {
+		transform: scale(1);
+	}
+}
+
+.main_nav_toggle_label {
+	@include visually_hide;
+}
+
+.main_nav_toggle_icon {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+
+	color: $yellow;
+	pointer-events: none;
+	transform: 
+		translate(0, -50%)
+		rotateX(0);
+	transition: 
+		color .25s,	
+		transform .25s;
+
+	@media #{$min_md} {
+		transform-origin: right center;
+		transform: 
+			translate(0, -50%)
+			scale(1.5)
+			rotateX(0);
+	}
+
+	.main_nav_item:focus &,
+	.main_nav_item:hover & {
+		color: #fff;
+	}
+
+	.main_nav_item.fs-swap-active & {
+		transform: 
+			translate(0, -50%)
+			rotateX(180deg);
+
+		@media #{$min_md} {
+			transform: 
+				translate(0, -50%)
+				scale(1.5)
+				rotateX(180deg);
+		}
+	}
+}
+
+
+// Main Nav Children
+// =============================================================================
+
+.main_nav_children {
+	padding-bottom: 25px;
+
+	@media #{$min_md} {
+		padding-bottom: 35px;
+	}
+
+	.main_nav_lg & {
+		position: absolute;
+
+		display: block;
+		opacity: 0;
+		transition:
+			opacity $base_speed,
+			visibility $base_speed;
+		visibility: hidden;
+	}
+
+	.main_nav_item:last-child & {}
+}
+
+.main_nav_child_item {}
+
+.main_nav_child_link {
+	@include u(400);
+
+	color: #fff;
+	display: block;
+	font-size: 16px;
+	padding: 11px 20px;
+	transition: color .25s;
+
+	@media #{$min_md} {
+		font-size: 20px;
+		padding: 11px 20px 10px;
+	}
+
+	&:focus,
+	&:hover {
+		color: rgba(#fff, .7);
+	}
+}

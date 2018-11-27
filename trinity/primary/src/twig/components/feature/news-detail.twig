@@ -1,0 +1,26 @@
+<div class="news_item_details_block">
+	<div class="news_item_details_inner">
+		<div class="news_item_details">
+			{% if label %}
+				<span class="news_item_detail">
+					<span class="news_item_label">{{label}}</span>
+				</span>
+			{% endif %}
+			{% if date %}
+				<span class="news_item_detail">
+					<span class="news_item_date">posted <time class="news_item_time">{{date}}</time></span>
+				</span>
+			{% endif %}
+			{% if author %}
+				<span class="news_item_detail news_item_detail_author">
+					<span class="news_item_author">by <strong class="news_item_author_name">{{author}}{% if source %}, {% endif %}</strong></span>
+				</span>
+			{% endif %}
+			{% if source %}
+				<span class="news_item_detail">
+					<a class="news_item_source" href="#">{{source}}</a>
+				</span>
+			{% endif %}
+		</div>
+	</div>
+</div>

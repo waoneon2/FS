@@ -1,0 +1,26 @@
+<blockquote class="quote_card{% if theme %} theme_{{theme}}{% elseif background %} theme_image{% endif %}">
+	{% if background %}
+		{% include par ~ "background.twig" with {
+			class: "quote_card",
+			image: background,
+			sources: {
+				"0px": img.portraitFull.sml,
+				"500px": img.wide.sml,
+				"980px": img.classic.med,
+				"1360px": img.wide.med
+			}
+		} %}
+	{% endif %}
+	<div class="quote_card_inner">
+		<div class="quote_card_content">
+			<span class="quote_card_icon">{{site.icon("quote")}}</span>
+			<div class="quote_card_body">
+				<p>{{quote}}</p>
+			</div>
+			<cite class="quote_card_cite">
+				<span class="quote_card_cite_name">{{name}}</span>
+				<span class="quote_card_cite_label">{{label}}</span>
+			</cite>
+		</div>
+	</div>
+</blockquote>

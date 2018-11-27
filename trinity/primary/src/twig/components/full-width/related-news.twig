@@ -1,0 +1,65 @@
+<div class="related_news layout_{{items|length}}">
+	<div class="fs-row">
+		<div class="fs-cell">
+			<div class="related_news_inner">
+				<header class="related_news_header">
+					{{site.button("related_news", "View All News", "#", "arrow_right")}}
+					<h2 class="related_news_title">Related Articles</h2>
+				</header>
+				{% if items|length == 3 %}
+				<div class="js-carousel related_news_items" data-carousel-options='{
+					"contained": false,
+					"controls": false,
+					"matchHeight": true,
+					"show": {
+						"740px": 2,
+						"980px": 3
+					}
+				}'>
+				{% elseif items|length == 2 %}
+				<div class="js-carousel related_news_items" data-carousel-options='{
+					"contained": false,
+					"controls": false,
+					"matchHeight": true,
+					"show": {
+						"740px": 2
+					}
+				}'>
+				{% else %}
+				<div class="related_news_items">
+				{% endif %}
+					{% for item in items %}
+						<div class="related_news_item">
+							<article class="mix_news_item">
+								{% if items|length == 1 %}
+									<a class="related_news_item_background_link" href="#">
+										{% include par ~ "background.twig" with {
+											class: "related_news_item",
+											image: item.image,
+											sources: {
+												"0px": img.wide.xsml
+											}
+										} %}
+									</a>
+								{% endif %}
+								<figure class="mix_news_item_figure">
+									<a class="mix_news_item_figure_link" href="#">
+										{{site.image("mix_news_item", img.wide.xsml, item.image)}}
+									</a>
+								</figure>
+								<div class="mix_news_item_body">
+									<header class="mix_news_item_header">
+										<h3 class="mix_news_item_title">
+											{{site.button("mix_news_item_title", item.title, "#", "arrow_right")}}
+										</h3>
+									</header>
+									<div class="mix_news_item_caption">{{item.caption}}</div>
+								</div>
+							</article>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

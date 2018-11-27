@@ -1,0 +1,181 @@
+/* ==========================================================================
+	Lightbox
+============================================================================= */
+
+.fs-lightbox-overlay {
+	z-index: 400;
+}
+
+.fs-lightbox {
+	z-index: 800;
+
+	background: rgba(#000, .75);
+	outline: 0;
+	
+	.fs-lightbox-close {
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		top: auto;
+		right: -5px;
+		bottom: 100%;
+
+		color: #fff;
+		margin-bottom: 10px;
+		stroke: #fff;
+
+		@media #{$min_xl} {
+			top: -5px;
+			bottom: auto;
+			left: 100%;
+
+			margin-bottom: 0;
+			margin-left: 10px;
+		}
+
+		&:before,
+		&:after {
+			height: 2px;
+			width: 24px;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			background: #fff;
+			content: "";
+		}
+
+		&:before {
+			transform:
+				translate(-50%, -50%)
+				rotate(-45deg);
+		}
+
+		&:after {
+			transform:
+				translate(-50%, -50%)
+				rotate(45deg);
+		}
+
+		&:focus,
+		&:hover {}
+	}
+
+	.fs-lightbox-container {}
+
+	.fs-lightbox-content {}
+
+	.fs-lightbox-video_wrapper {
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+}
+
+
+// Tools & Controls
+// =============================================================================
+
+.fs-lightbox-tools {
+	width: 100% !important;
+
+	background: #333;
+}
+
+.fs-lightbox-controls {
+	width: 100%;
+}
+
+.fs-lightbox-control {
+
+	&:focus,
+	&:hover {}
+}
+
+.fs-lightbox-meta {}
+
+.fs-lightbox-meta_content {}
+
+.fs-lightbox-position {
+	margin: 0;
+}
+
+.fs-lightbox-position_current,
+.fs-lightbox-position_total {}
+
+.fs-lightbox-meta-divider {}
+
+.fs-lightbox-caption {
+	text-align: center;
+
+	.caption {
+		margin: 0;
+	}
+}
+
+
+// Mobile
+// =============================================================================
+
+.fs-lightbox-mobile {
+
+	.fs-lightbox-close {
+		top: 20px;
+		right: 20px;
+		bottom: auto;
+	}
+	
+	.fs-lightbox-video_wrapper {
+		position: absolute;
+		top: 50%;
+
+		margin-top: 0 !important;
+		transform: translate(0, -50%);
+	}
+
+	.fs-lightbox-content {
+		background-color: none;
+	}
+
+	.fs-lightbox-tools {
+		background-color: none;
+	}
+
+	.fs-lightbox-controls {
+		text-align: center;
+	}
+
+	.fs-lightbox-position,
+	.fs-lightbox-caption {
+
+		p {
+			color: #000;
+		}
+	}
+
+	&.fs-lightbox-touch {
+
+		.fs-lightbox-toggle {
+			display: none;
+		}
+
+		.fs-lightbox-meta {
+			height: auto !important;
+		
+			background: #fff;
+			color: #000;
+			padding: 20px;
+		}
+	}
+}
+
+.fs-viewer {
+
+	.fs-viewer-controls {
+		display: none;
+	}
+}
+
+
+// Viewer
+// =============================================================================

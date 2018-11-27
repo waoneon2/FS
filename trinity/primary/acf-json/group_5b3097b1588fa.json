@@ -1,0 +1,170 @@
+{
+    "key": "group_5b3097b1588fa",
+    "title": "Programs",
+    "fields": [
+        {
+            "key": "field_5b59383cfc23e",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "hidden",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b3097b7ed04e",
+            "label": "Degrees Offered",
+            "name": "degrees_offered",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "major": "Major",
+                "minor": "Minor",
+                "master": "Master's",
+                "ba-ma": "BA\/MA",
+                "bs-ma": "BS\/MA",
+                "gc": "Graduate Certificate",
+                "fgp": "First-Year Gateway Program",
+                "sap": "Special Academic Program",
+                "acr": "Academic Center\/Resource"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label"
+        },
+        {
+            "key": "field_5b309871ed04f",
+            "label": "Blurb",
+            "name": "blurb",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5b30988bed050",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "minimum dimensions 416 x 740px",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 740,
+            "min_height": 416,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5b3098a9ed051",
+            "label": "Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b3098c0ed052",
+            "label": "Keywords",
+            "name": "keywords",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5b500a04cc431",
+            "label": "Video URL",
+            "name": "video_url",
+            "type": "url",
+            "instructions": "YouTube or Vimeo URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "programs_post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1534987587
+}

@@ -1,0 +1,45 @@
+/* ==========================================================================
+	Header
+============================================================================= */
+
+.header {
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 400;
+
+	background: #fff;
+	box-shadow: 0 0 6px 0 rgba(#000, .2);
+	transform: translateZ(0);
+
+	@media print {
+		display: none;
+	}
+}
+
+.header_ribbon {
+	position: relative;
+	
+	padding: 14px 0 12px;
+
+	@media #{$min_md} {
+		padding: 19px 0 15px;
+	}
+}
+
+.header_ribbon_inner {}
+
+.header_group {
+	height: 100%;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+	}
+}

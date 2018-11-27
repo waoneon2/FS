@@ -1,0 +1,98 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "Student Life",
+		layout: "default",
+		theme: "image",
+		image: 3
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block typography %}
+	<p class="intro">We are a small college and proud of it. No matter where you go on our campus, it will feel familiar. We have just over 2,000 undergraduates, and over 90% of them live on campus, so friendly faces are never far away.</p>
+	<p>Though we’re close-knit, this campus also has room to pursue diverse interests. We have over 140 student clubs and organizations, all spearheaded by students like you. We have music festivals, movies, concerts, lectures, parties, student government meetings, a cappella practice, mock trials, art shows, and almost every type of athletic event you can imagine. And when you leave campus, Hartford has farmers’ markets, shopping, concerts, theater shows, food, music, an incredible science center, and the oldest public art museum in the country.</p>
+{% endblock %}
+
+{% block in_content_callouts %}
+	{% include inc ~ "topic-row.twig" with {
+		items: [
+			{
+				image: 1,
+				title: "Life on Campus",
+				caption: "Trinity offers a realm of possibility that ​awaits students in their four years on campus.  However, it is the student who seeks out and takes hold of these possibilities that contributes most to the community and receives the most personal satisfaction.",
+				link: {
+					href: "#",
+					name: "Around Campus"
+				}
+			},
+			{
+				image: 2,
+				title: "Life in Hartford",
+				caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra lorem et maximus tempus. Pellentesque vitae ultrices orci. Ut lobortis faucibus turpis quis tincidunt.",
+				link: {
+					href: "#",
+					name: "Explore the City"
+				}
+			},
+			{
+				image: 1,
+				title: "Life Around the World",
+				caption: "We stand in the city of Hartford, the capital of Connecticut. But our interest in cities reaches far beyond our hometown. We offer research opportunities, study abroad, community service, and internships to help you explore cities in ways educational, interesting, and profound.",
+				link: {
+					href: "#",
+					name: "Discover the Possibilities"
+				}
+			}
+		]
+	} %}
+{% endblock %}
+
+{% block full_width_callouts %}
+	{% include full ~ "story.twig" with {
+		image: 1,
+		quote: {
+			content: "Coffee has the opportunity to do a lot of good. Hartford has a lot of positive momentum.",
+			name: "Michael Acosta",
+			label: "‘13"
+		},
+		detail: {
+			label: "People",
+			title: "The Bantam Network",
+			caption: "<p>Though students take the lead on our campus, you’ll also have a strong network of support. We have resources to help you navigate whatever challenges you face, especially in your first year.</p>",
+			link: "For New Students",
+			video: "https://player.vimeo.com/video/15091562?autoplay=1&loop=1&mute=1&title=0&byline=0&portrait=0&badge=0"
+		}
+	} %}
+
+	{% include full ~ "now.twig" with {
+		theme: "sky",
+		label: "Important Now",
+		title: "Explore the Possibilities & Make Trinity a Part of Your <em>Summer</em>",
+		items: [
+			{
+				theme: "orange",
+				image: 1,
+				caption: "<strong>Study Away</strong> to learn a new language or subject, experience a new culture, or all of the above."
+			},
+			{
+				theme: "sea",
+				image: 2,
+				caption: "<strong>Summer Housing</strong> offers more than just a place to live, but a new community full of activity."
+			},
+			{
+				theme: "frog",
+				image: 1,
+				caption: "<strong>Summer Institutes</strong> are small, focused courses that integrate time in the classroom within the field"
+			},
+			{
+				theme: "bee",
+				image: 2,
+				caption: "<strong>Summer Sessions</strong> are for exploring new topics, and sharpening your skills quickly."
+			}
+		]
+	} %}
+{% endblock %}

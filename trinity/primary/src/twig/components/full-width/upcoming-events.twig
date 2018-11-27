@@ -1,0 +1,43 @@
+<div class="upcoming_events">
+	<div class="fs-row">
+		<div class="fs-cell">
+			<div class="upcoming_events_inner">
+				<header class="upcoming_events_header">
+					{{site.button("upcoming_events", "View All Events", "#", "arrow_right")}}
+					<h2 class="upcoming_events_title">What's Coming Up</h2>
+				</header>
+				<div class="upcoming_events_items">
+					<div class="lwcw">
+						{% for item in items %}
+							<div class="mix_event">
+								<time class="mix_event_date">
+									<span class="mix_event_day">{{item.day}}</span>
+									<span class="mix_event_month_year">{{item.month}} {{item.year}}</span>
+								</time>
+								<div class="mix_event_body">
+									<h3 class="mix_event_title">
+										{{site.button("mix_event_title", item.title, "#", "arrow_right")}}
+									</h3>
+									<div class="mix_event_details">
+										{% if item.location %}
+											<div class="mix_event_detail">
+												<span class="mix_event_detail_icon">{{site.icon("marker")}}</span>
+												<span class="mix_event_detail_label">{{item.location}}</span>
+											</div>
+										{% endif %}
+										{% if item.time %}
+											<div class="mix_event_detail">
+												<span class="mix_event_detail_icon">{{site.icon("clock")}}</span>
+												<time class="mix_event_detail_label">{{item.time}}</time>
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

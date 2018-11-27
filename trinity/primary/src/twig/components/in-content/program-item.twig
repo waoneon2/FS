@@ -1,0 +1,27 @@
+<article class="program">
+	{% include par ~ "picture.twig" with {
+			class: "program",
+			image: image,
+			sources: {
+				"740px": img.wide.med,
+				"0px": img.wide.sml
+			}
+		} %}
+	<div class="program_body">
+		<header class="program_header">
+			<h3 class="program_title">
+				{{site.button("program_title", title, "#", "arrow_right")}}
+			</h3>
+			<div class="program_details">
+				{# <span class="program_label">Degree(s) Offered</span> #}
+				<span class="program_degrees">
+					{% for degree in degrees %}
+						<span class="program_degree">{{degree}}{% if not loop.last %}, {% endif %}</span>
+					{% endfor %}
+				</span>
+			</div>
+		</header>
+		<div class="program_caption">{{caption}}</div>
+		{{site.button("program", "Learn More", "#", "arrow_right")}}
+	</div>
+</article>

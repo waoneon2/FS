@@ -1,0 +1,106 @@
+{% extends "_base.twig" %}
+
+{% block page %}
+	{% set page = {
+		title: "News",
+		layout: "default",
+		theme: "default page_theme_sky"
+	} %}
+{% endblock %}
+
+{% block page_header_append %}
+	{% include feat ~ "filter.twig" with {
+		options: [
+			"Filter by Category",
+			"Orcs",
+			"Fairies",
+			"Cordellias",
+			"Killer Squirrels"
+		]
+	} %}
+{% endblock %}
+
+{% block subNav_block %}
+{% endblock %}
+
+{% block full_width_callouts %}
+	{% include full ~ "news.twig" with {
+		items: [
+			{
+				image: 1,
+				label: "Announcement",
+				date: "May 01",
+				title: "Announcing Tenure for Six Faculty Members",
+				caption: "The Trinity College Board of Trustees voted recently to promote six faculty members to the position of associate professor with tenure."
+			},
+			{
+				image: 2,
+				label: "Academics",
+				date: "Apr 30",
+				author: "Author",
+				source: "Source",
+				title: "Hilary E. Wyss Brings Indigenous Connecticut Life to the Forefront Two Centuries Later",
+				caption: "The Trinity College Board of Trustees voted recently to promote six faculty members to the position of associate professor with tenure."
+			},
+			{
+				label: "Athletics",
+				date: "Apr 28",
+				source: "Bantam Sports",
+				title: "Trinity Men's Golf Wins 2018 NESCAC Title With Strong Second Day",
+				caption: "Junior Will Rosenfield shot the day's lowest round of 69 and tied senior teammate Kole Kelly for medalist honors to lead the host Trinity College Bantams to the 2018 New England Small College Athletic Conference Men's Golf Championship."
+			},
+			{
+				image: 1,
+				date: "Apr 27",
+				author: "Timothy Landry",
+				title: "Students Explore Trinity College Chapel with Paranormal Research Team",
+				caption: "While learning to think critically about the blurry boundaries between science and religion, students in an Anthropology of Religion class recently joined the Connecticut Paranormal Research Team in a search for paranormal activity."
+			},
+			{
+				label: "Outcomes",
+				date: "Apr 24",
+				title: "Cassia Armstrong ’18 Plays Key Role in Researching Chemical Dispersants’ Use after Oil Spill",
+				caption: "Cassia Armstrong ’18 is part of a team of scientists led by the Woods Hole Oceanographic Institution (WHOI) whose research was published in Environmental Science and Technology Letters."
+			},
+			{
+				date: "Apr 24",
+				title: "Encouraging Young Students to Explore Science During Summer",
+				caption: "Members the national biological honor society Tri-Beta recently hosted a ceremony at which four students from Hartford public schools were awarded scholarships to attend a week of summer camp at the Connecticut Science Center."
+			},
+			{
+				image: 2,
+				label: "Outcomes",
+				date: "Apr 23",
+				title: "Trinity College Senior Awarded Fulbright U.S. Student English Teaching Assistantship",
+				caption: "Alicia Abbaspour ’18 was recently awarded an English Teaching Assistantship (ETA) through the Fulbright U.S. Student Program."
+			},
+			{
+				image: 1,
+				label: "Announcement",
+				date: "Apr 20",
+				author: "Author",
+				source: "Source",
+				title: "President Joanne Berger-Sweeney Elected to American Academy of Arts and Sciences",
+				caption: "President and Professor of Neuroscience Joanne Berger-Sweeney is among the 213 newly elected members of the American Academy of Arts and Sciences."
+			},
+			{
+				image: 2,
+				date: "Apr 13",
+				title: "Announcing Tenure for Six Faculty Members",
+				caption: "The Trinity College Board of Trustees voted recently to promote six faculty members to the position of associate professor with tenure."
+			},
+			{
+				image: 1,
+				date: "Apr 12",
+				author: "Author",
+				source: "Source",
+				title: "Hilary E. Wyss Brings Indigenous Connecticut Life to the Forefront Two Centuries Later",
+				caption: "The Trinity College Board of Trustees voted recently to promote six faculty members to the position of associate professor with tenure."
+			}
+		]
+	} %}
+
+	{% include "../partials/pagination.twig" with {
+		pages: 5
+	} %}
+{% endblock %}

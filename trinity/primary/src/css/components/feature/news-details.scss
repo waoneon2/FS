@@ -1,0 +1,32 @@
+.news_item_details_block {
+	margin-top: 20px;
+	transform: translate(0, 50%);
+
+	@media #{$min_xl} {
+		margin-top: 28px;
+	}
+
+	.page_theme_image & {
+		
+		@media #{$min_xl} {
+			margin-bottom: -54px;
+		}
+	}
+}
+
+.news_item_details_inner {
+	background: $gray;
+	padding: 14px 20px;
+
+	@media print {
+		padding: 0;
+	}
+
+	@media #{$min_sm} {
+		padding: 14px 30px;
+	}
+
+	.news_item_details {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,74 @@
+<div class="mix">
+	<div class="fs-row">
+		<div class="fs-cell">
+			<div class="mix_inner">
+				<div class="mix_news">
+					<header class="mix_news_header">
+						<span class="mix_news_link_wrapper mix_news_link_wrapper_lg">
+							{{site.button("mix_news", "View All News", "#", "arrow_right")}}
+						</span>
+						<h2 class="mix_news_title">{{news.heading}}</h2>
+						<span class="mix_news_link_wrapper mix_news_link_wrapper_sm">
+							{{site.button("mix_news", "View All News", "#", "arrow_right")}}
+						</span>
+					</header>
+					<article class="mix_news_item">
+						<figure class="mix_news_item_figure">
+							<a class="mix_news_item_figure_link" href="#">
+								{{site.image("mix_news_item", img.wide.xsml, news.image)}}
+							</a>
+						</figure>
+						<div class="mix_news_item_body">
+							<header class="mix_news_item_header">
+								<h3 class="mix_news_item_title">
+									{{site.button("mix_news_item_title", news.title, "#", "arrow_right")}}
+								</h3>
+							</header>
+							<div class="mix_news_item_caption">{{news.caption}}</div>
+						</div>
+					</article>
+				</div>
+				<div class="mix_events">
+					<header class="mix_events_header">
+						<span class="mix_events_link_wrapper mix_events_link_wrapper_lg">
+							{{site.button("mix_events", "View All Events", "#", "arrow_right")}}
+						</span>
+						<h2 class="mix_events_title">{{eventsHeading}}</h2>
+						<span class="mix_events_link_wrapper mix_events_link_wrapper_sm">
+							{{site.button("mix_events", "View All Events", "#", "arrow_right")}}
+						</span>
+					</header>
+					<div class="mix_events_items">
+						{% for item in events %}
+							<div class="mix_event">
+								<time class="mix_event_date">
+									<span class="mix_event_day">{{item.day}}</span>
+									<span class="mix_event_month_year">{{item.month}} {{item.year}}</span>
+								</time>
+								<div class="mix_event_body">
+									<h3 class="mix_event_title">
+										{{site.button("mix_event_title", item.title, "#", "arrow_right")}}
+									</h3>
+									<div class="mix_event_details">
+										{% if item.location %}
+											<div class="mix_event_detail">
+												<span class="mix_event_detail_icon">{{site.icon("marker")}}</span>
+												<span class="mix_event_detail_label">{{item.location}}</span>
+											</div>
+										{% endif %}
+										{% if item.time %}
+											<div class="mix_event_detail">
+												<span class="mix_event_detail_icon">{{site.icon("clock")}}</span>
+												<time class="mix_event_detail_label">{{item.time}}</time>
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
